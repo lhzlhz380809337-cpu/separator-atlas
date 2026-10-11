@@ -1,0 +1,190 @@
+{
+  "articles": [
+    {
+      "id": "foundation_full_process",
+      "title": "全流程地图、对象层级与质量传递",
+      "summary": "建立基膜到涂覆、电芯的主干与分支，区分材料、结构、特性、检测和控制，并用遗传、放大、新生、遮蔽安排排查。",
+      "stage": "方法",
+      "category": "知识框架",
+      "tags": [
+        "全流程",
+        "质量传递",
+        "知识图谱",
+        "工序接口",
+        "对象层级"
+      ],
+      "aliases": [
+        "地图",
+        "主干",
+        "基膜到涂覆",
+        "电芯影响",
+        "上下游",
+        "遗传缺陷"
+      ],
+      "file": "foundation/full_process.md"
+    },
+    {
+      "id": "foundation_terminology",
+      "title": "隔膜质量分析术语与同词异义",
+      "summary": "统一膜态、方向、涂层及界面术语，优先澄清前态膜、透气方向和粘结测试对象。",
+      "stage": "方法",
+      "category": "术语与概念",
+      "tags": [
+        "术语",
+        "MD",
+        "TD",
+        "前态膜",
+        "剥离",
+        "粘结",
+        "掉粉",
+        "Gurley"
+      ],
+      "aliases": [
+        "MDTD",
+        "MD/TD",
+        "纵横",
+        "粘接",
+        "粘结力",
+        "透气性",
+        "涂胶",
+        "混涂",
+        "复合"
+      ],
+      "file": "foundation/terminology.md"
+    },
+    {
+      "id": "foundation_quantitative_metrics",
+      "title": "常用量化指标、单位与计算边界",
+      "summary": "给出厚度、面密度、孔隙率、透气增值和离子电导计算的前提，防止非配对数据及复合膜误算。",
+      "stage": "方法",
+      "category": "指标与计算",
+      "tags": [
+        "公式",
+        "单位",
+        "透气增值",
+        "孔隙率",
+        "面密度",
+        "离子电导率",
+        "ASR"
+      ],
+      "aliases": [
+        "怎么算",
+        "克重",
+        "ΔG",
+        "Rb",
+        "电阻",
+        "电导",
+        "MacMullin",
+        "热收缩率",
+        "保液率"
+      ],
+      "file": "foundation/quantitative_metrics.md"
+    },
+    {
+      "id": "foundation_spatiotemporal_fingerprints",
+      "title": "缺陷时空指纹与卷段定位",
+      "summary": "按横向位置、纵向周期、工位和卷径缩小候选原因，处理倒卷、分切、接头与速度变化造成的坐标误差。",
+      "stage": "方法",
+      "category": "异常定位",
+      "tags": [
+        "缺陷指纹",
+        "横向",
+        "卷长",
+        "周期",
+        "母卷",
+        "分切卷",
+        "追溯"
+      ],
+      "aliases": [
+        "周期性",
+        "固定位置",
+        "随机黑点",
+        "条带",
+        "横纹",
+        "纵纹",
+        "卷径",
+        "设备原因",
+        "原料原因"
+      ],
+      "file": "foundation/spatiotemporal_fingerprints.md"
+    },
+    {
+      "id": "foundation_control_reaction",
+      "title": "控制计划与反应计划的通用组织",
+      "summary": "将风险、控制对象、检测和异常动作连成可执行条目，明确首件变更、影响划界、隔离追溯及关闭证据。",
+      "stage": "方法",
+      "category": "质量控制方法",
+      "tags": [
+        "控制计划",
+        "反应计划",
+        "首件",
+        "变更",
+        "隔离",
+        "追溯",
+        "关闭"
+      ],
+      "aliases": [
+        "CP",
+        "FMEA",
+        "恢复生产",
+        "放行",
+        "围堵",
+        "控制限",
+        "规格限",
+        "防错",
+        "抽样"
+      ],
+      "file": "foundation/control_reaction.md"
+    }
+  ],
+  "sources": [
+    {
+      "id": "foundation_source_manufacturing",
+      "title": "Lithium-ion battery separator manufacturing processes",
+      "url": "https://www.asahi-kasei.com/ir/library/presentation/pdf/160908_03.pdf",
+      "type": "technical",
+      "scope": "制造商公开的干湿法流程及湿法结构设计因素，支持全流程地图的通用工艺分类。",
+      "limits": "不代表任何具体产线的现行流程、产品参数或工序名称；只引用通用机制和类别。"
+    },
+    {
+      "id": "foundation_source_gurley",
+      "title": "Air Permeability, Softness & Smoothness — Gurley Precision Instruments",
+      "url": "https://www.gurley.com/instruments/air-permeability-softness-smoothness/",
+      "type": "technical",
+      "scope": "原厂关于计时式空气阻力、体积、面积和压差的说明，支持指标语义与比较边界。",
+      "limits": "不将原厂用语中的 porosity 直接等同于隔膜体积孔隙率；具体试验采用适用的受控方法。"
+    },
+    {
+      "id": "foundation_source_tensile",
+      "title": "ASTM D882 — Standard Test Method for Tensile Properties of Thin Plastic Sheeting",
+      "url": "https://store.astm.org/d0882-26a.html",
+      "type": "standard",
+      "scope": "薄膜拉伸指标与试样、速度、夹持等比较条件。",
+      "limits": "仅核验公开范围及用途说明，未取得标准全文；不据此编造试验参数。"
+    },
+    {
+      "id": "foundation_source_ionic",
+      "title": "Determination of the MacMullin number — The stacking method",
+      "url": "https://www.metrohm.com/en/applications/application-notes/autolab-applikationen-anautolab/an-bat-006.html",
+      "type": "technical",
+      "scope": "隔膜浸液离子传输、堆叠测量、有效电导和 MacMullin 数定义。",
+      "limits": "原厂应用研究使用特定体系；样品、接触、温度和电解液必须匹配，不照搬其实验数值或把公式应用于整电芯内阻。"
+    },
+    {
+      "id": "foundation_source_winding",
+      "title": "Optimum Winding Tension and Nip-load into Wound Webs for Protecting Wrinkles and Slippage",
+      "url": "https://www.jstage.jst.go.jp/article/jamdsm/4/1/4_1_214/_article/-char/en",
+      "type": "research",
+      "scope": "卷绕张力、压合及摩擦与卷内缺陷的权衡，为卷径指纹提供一般机制支持。",
+      "limits": "不是现场隔膜缺陷定位研究；时空指纹排查流程属于通用诊断方法，须用对应工位证据验证。"
+    },
+    {
+      "id": "foundation_source_control",
+      "title": "Control Plan — AIAG public overview",
+      "url": "https://www.aiag.org/training-and-resources/manuals/details/CP-1",
+      "type": "technical",
+      "scope": "控制计划与产品质量策划的关联以及控制计划开发、使用的公开说明。",
+      "limits": "未复制或声称掌握手册全文；正文是通用组织建议，不能替代适用标准、客户要求和受控反应程序。"
+    }
+  ]
+}

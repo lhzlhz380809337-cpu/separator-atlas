@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="隔膜工艺、结构、物性与电芯应用知识工作台">
+  <title>隔膜研析 · 质量知识工作台</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/cosmos.css">
+  <link rel="stylesheet" href="/atlas.css">
+  <script src="/cosmos.js" defer></script>
+  <script src="/atlas.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body class="cosmos-view">
+<aside class="sidebar">
+  <a class="brand" href="#home" aria-label="隔膜研析首页"><img src="/favicon.svg" alt=""><span>隔膜研析<small>质量知识工作台</small></span></a>
+  <nav aria-label="工作台导航">
+    <button class="nav active" data-view="home"><span class="navicon">◌</span>知识星图</button>
+    <button class="nav" data-view="graph"><span class="navicon">⌘</span>知识图谱</button>
+    <button class="nav" data-view="library"><span class="navicon">▤</span>知识库</button>
+    <button class="nav" data-view="settings"><span class="navicon">⚙</span>模型与迁移</button>
+  </nav>
+  <div class="sidebar-bottom"><div id="side-count">正在载入知识…</div><div class="local-label">本机运行 · v0.3</div></div>
+</aside>
+<div class="shell">
+<header class="cosmos-header">
+          <a class="cosmos-brand" href="#home" aria-label="知识星图"><img src="/favicon.svg" alt=""><span>隔膜研析<small>KNOWLEDGE UNIVERSE</small></span></a>
+          <nav aria-label="星图导航"><button class="current" data-open-view="home">知识星图</button><button data-open-view="graph">知识图谱</button><button data-open-view="library">知识库</button><button data-open-view="settings">模型设置</button></nav>
+          <button id="inbox-open" class="cosmos-outline"><span aria-hidden="true">＋</span> 扩充知识</button>
+        </header>
+  <header class="topbar"><div><span class="eyebrow">SEPARATOR KNOWLEDGE</span><span class="top-title" id="view-caption">知识星图</span></div><button class="quiet" id="refresh-btn">刷新知识</button></header>
+  <main>
+    <section id="view-home" class="view active" aria-label="知识星图首页">
+      <div class="cosmos-shell">
+
+        <div class="cosmos-workspace">
+          <section class="universe-scene" aria-label="交互知识球">
+            <div class="universe-heading"><span class="cosmos-overline">连接工艺，理解影响</span><h1>让知识彼此连接<span>，</span><br>让问题逐渐清晰<span>。</span></h1><p><b id="universe-node-count">—</b> 个知识节点 <i>·</i> <b id="universe-edge-count">—</b> 条联系</p></div>
+            <canvas id="universe-canvas" tabindex="0" role="img" aria-label="可旋转的隔膜知识球。拖动旋转、滚轮缩放；也可通过下方搜索选择知识节点。"></canvas>
+            <div class="universe-tooltip" id="universe-tooltip" hidden></div>
+            <div class="universe-search"><span aria-hidden="true">⌕</span><input id="universe-search" autocomplete="off" placeholder="寻找一个知识节点" aria-label="搜索星图节点"><div id="universe-search-results" hidden></div></div>
+            <div id="universe-selection" class="universe-selection" hidden><button id="universe-selection-close" aria-label="取消节点选择">×</button><small id="selection-stage"></small><h2 id="selection-title"></h2><p id="selection-description"></p><button id="selection-read">阅读知识</button></div>
+            <div class="universe-bottom"><div class="universe-legend"><span><i class="legend-base"></i>基膜</span><span><i class="legend-coat"></i>涂覆</span><span><i class="legend-cell"></i>电芯</span><span><i class="legend-method"></i>方法</span><span class="legend-doc">◇ 知识正文</span></div><div class="universe-controls"><span>拖动旋转 · 滚轮缩放</span><button id="universe-pause" aria-label="暂停知识球动画" title="暂停动画">Ⅱ</button><button id="universe-reset" aria-label="重置知识球视角" title="重置视角">↺</button></div></div>
+            <div class="activation-bar" id="activation-bar"><span class="activation-mark"></span><span id="activation-label">知识已就绪，等待你的问题</span><button id="activation-clear" hidden>清除高亮</button></div>
+          </section>
+          <div id="chat-resizer" class="chat-resizer" role="separator" tabindex="0" aria-label="调整对话区宽度" aria-orientation="vertical" aria-valuemin="32" aria-valuemax="68" aria-valuenow="45" title="左右拖动调整宽度，双击恢复"><span></span></div>
+          <aside class="cosmic-chat" aria-label="知识对话">
+            <header class="chat-header"><div><span class="chat-avatar" aria-hidden="true">✦</span><div><h2>与知识对话</h2><span id="cosmic-mode-label">本地知识已连接</span></div></div><button id="cosmic-new" title="清空当前对话" aria-label="新对话">＋</button></header>
+            <div class="chat-tools"><button id="cosmic-conclude" disabled>整理当前结论</button><button id="cosmic-packet" disabled>分析材料</button><button id="cosmic-export" disabled>导出对话</button><label><input type="checkbox" id="cosmic-remember" checked>本机记忆</label></div><details class="chat-research"><summary><span id="research-label">外部知识 · 未开启</span></summary><label><input type="checkbox" id="cosmic-web">联网补充公开资料</label><input id="research-query" aria-label="公开检索词" placeholder="只发送这里的公开检索词"><p>通过 Tavily 检索。结果作为本次分析的待核验资料，不自动写入正式知识库。</p><button id="research-run">检索并融入星图</button></details>
+            <div class="chat-feed" id="cosmic-feed" aria-live="polite" aria-relevant="additions">
+              <div class="chat-welcome" id="cosmic-welcome"><div class="welcome-orbit" aria-hidden="true">✧</div><h3>从一个具体问题开始</h3><p>从一个现象开始，一问一答缩小范围。<br>每轮使用的知识，会在星图中亮起。</p><div class="cosmic-suggestions"><button data-cosmic-question="涂覆后透气增值升高，应该先查什么？">涂覆后，透气增值为什么升高？<span>↗</span></button><button data-cosmic-question="湿法 PE 基膜出现油斑，CCD 检出影响 A 品率，怎样排查？">基膜出现油斑，怎样逐步排查？<span>↗</span></button><button data-cosmic-question="电芯耐压不良，穿刺合格能否排除隔膜？">穿刺合格，能否排除隔膜问题？<span>↗</span></button></div></div>
+            </div>
+            <div class="cosmic-chat-status" id="cosmic-chat-status" role="status"></div>
+            <form id="cosmic-form" class="cosmic-composer"><label class="sr-only" for="cosmic-question">你的问题</label><textarea id="cosmic-question" rows="3" maxlength="6000" placeholder="问一个问题，或继续补充观察…"></textarea><div class="composer-bottom"><label class="sr-only" for="cosmic-mode">回答模式</label><select id="cosmic-mode"><option value="offline">本地引导</option><option value="model">模型对话</option></select><button id="cosmic-send" type="submit" aria-label="发送问题">↑</button></div><p>Enter 发送 · Shift + Enter 换行</p></form>
+            <footer class="chat-footer">本地节点＝检索依据 · 流星＝新取得的外部资料，待核验</footer>
+          </aside>
+        </div>
+        <footer class="cosmos-footer"><span><i></i>本机运行 · 知识保存在你的文件夹</span><button id="cosmic-sync">同步知识</button><span id="cosmic-sync-label">自建知识 0 篇</span><button data-open-view="library">知识库</button><button data-open-view="settings">模型设置</button><button data-open-view="graph">工序关系图</button></footer>
+      </div>
+    </section>
+    <section id="view-graph" class="view">
+      <div class="page-heading atlas-heading"><div><span class="eyebrow">PROCESS · STRUCTURE · PERFORMANCE</span><h1>看见工艺背后的联系<span class="title-dot">。</span></h1><p>从基膜到电芯，沿着材料变化，理解质量如何传递。</p></div><span id="graph-count" class="mode-label"></span></div>
+      <div class="atlas-toolbar"><div class="stage-tabs" id="graph-stages"><button class="active" data-stage="全部">全流程</button><button data-stage="基膜">基膜制造</button><button data-stage="涂覆">涂覆加工</button><button data-stage="电芯">电芯应用</button></div><div class="atlas-search"><input id="node-search" placeholder="寻找工序、物性或缺陷" aria-label="查找图谱节点"><div id="node-list" hidden></div></div></div>
+      <div class="graph-layout" id="atlas-layout">
+        <div class="panel graph-panel"><div class="atlas-map-heading"><div><span class="live-dot"></span><strong id="map-caption">全流程关系总览</strong></div><div class="atlas-map-tools"><button id="graph-zoom-out" aria-label="缩小图谱">−</button><span id="graph-zoom-label">100%</span><button id="graph-zoom-in" aria-label="放大图谱">＋</button><button id="graph-reset">返回总览</button></div></div><div class="atlas-legend"><span data-kind="工序">工序</span><span data-kind="物性">结构与物性</span><span data-kind="缺陷">缺陷与失效</span><span data-kind="材料">材料</span><small>点击节点，沿高亮连线查看影响</small></div><div class="graph-canvas" id="graph-viewport"><svg id="graph-svg" role="group" aria-label="基膜、涂覆与电芯的完整关系图谱"></svg></div><div class="atlas-map-footer"><span>箭头表示作用方向 · 连线详情说明机理与适用条件</span><span id="map-visible-count"></span></div></div>
+        <aside class="panel atlas-detail" id="atlas-detail" hidden><div class="panel-heading"><span id="node-category" class="eyebrow"></span><button id="node-close" class="quiet" aria-label="关闭节点详情">×</button></div><h2 id="node-title"></h2><p id="node-summary" class="graph-summary"></p><button id="node-read" class="secondary full">阅读完整知识</button><div class="relation-heading"><h3>这个节点如何影响上下游</h3><span id="edge-count" class="subtle"></span></div><div id="edge-list"></div></aside>
+      </div>
+    </section>
+    <section id="view-library" class="view">
+      <div class="page-heading"><div><span class="eyebrow">THE KNOWLEDGE COLLECTION</span><h1>让每一次理解，都有积累<span class="title-dot">。</span></h1><p>从工序机理到质量问题，把专业知识连接起来。</p></div><button class="secondary" id="sources-btn">公开研究依据</button></div>
+      <div id="library-collections" class="library-collections"></div>
+      <div class="library-tools"><label class="search-wide"><span>检索</span><input id="knowledge-search" placeholder="搜索术语、异常或作用机制"></label><select id="knowledge-stage" aria-label="知识范围"><option>全部</option><option>基膜</option><option>涂覆</option><option>电芯</option><option>方法</option></select><button class="primary" id="search-btn">搜索</button></div>
+      <div id="library-status" class="subtle"></div><div id="article-grid" class="article-grid"></div>
+    </section>
+    <section id="view-settings" class="view">
+      <div class="page-heading"><div><h1>模型接入与知识迁移</h1><p>模型可以更换，知识、分析规则和测试集持续保留。</p></div></div>
+      <div class="settings-layout"><div class="panel settings-form"><div class="panel-heading"><h2>连接模型服务</h2><span class="mode-label">可选</span></div>
+        <label for="protocol">接口协议</label><select id="protocol"><option value="chat_completions">OpenAI 兼容 Chat Completions</option><option value="responses">OpenAI Responses</option></select>
+        <label for="base-url">接口基础地址</label><input id="base-url" type="url" autocomplete="off" placeholder="https://服务商地址/v1"><p class="field-note">DeepSeek 官方接口可填 https://api.deepseek.com/chat/completions，并选择 Chat Completions 协议。第三方平台提供的 DeepSeek 密钥须使用该平台的地址。本机模型例如 http://127.0.0.1:1234/v1。</p>
+        <label for="model-name">模型名称</label><input id="model-name" autocomplete="off" placeholder="填写服务商提供的模型 ID">
+        <label for="api-key">API 密钥</label><input id="api-key" type="password" autocomplete="new-password" placeholder="本机免密服务可留空"><p class="field-note" id="key-note">密钥仅保留在当前页面内存，刷新后清空。也支持由启动环境提供。</p>
+        <label for="search-key">联网检索密钥 · Tavily（可选）</label><input id="search-key" type="password" autocomplete="new-password" placeholder="仅本次页面保存，也支持 TAVILY_API_KEY"><p class="field-note" id="search-key-note">仅把星图对话中的公开检索词发给搜索服务。模型密钥与搜索密钥相互独立。</p>
+        <label for="context-budget">检索知识预算</label><select id="context-budget"><option value="6000">精简 · 6,000 字符</option><option value="16000" selected>标准 · 16,000 字符</option><option value="30000">扩展 · 30,000 字符</option></select><p class="field-note">此预算不含系统规则和你的输入；实际材料量会在发送前显示。字符数不等于 token 数。</p>
+        <label class="check-line"><input id="two-pass" type="checkbox"><span>增加一轮答案复核（额外调用一次模型）</span></label>
+        <label class="check-line"><input id="model-custom" type="checkbox"><span>本次允许向模型发送已整理、可外发的自建知识</span></label><p class="field-note">知识投递文件夹默认仅供本地检索，不进入通用导出包。</p>
+        <label class="check-line consent"><input id="allow-send" type="checkbox"><span>我已将问题通用化，确认可以把当前输入和检索知识发送到上述模型服务</span></label><p class="field-note">发送前检查不能识别全部内部代号或数据。请先查看材料包，不输入内部文件名、真实配方、客户身份或未经许可的数据。</p>
+        <div class="action-row"><button class="primary" id="test-model">测试连接</button><button class="secondary" id="save-settings">保存非敏感设置</button></div><div id="connection-status" role="status" aria-live="polite"></div>
+      </div><div><div class="panel"><div class="panel-heading"><h2>可迁移知识包</h2></div><p>包含知识正文、结构化图谱、诊断剧本、系统指令、分析协议和评测案例。</p><ul class="plain-list"><li>Markdown 可由其他模型或知识库直接读取。</li><li>JSON 保留节点、关系、条件与验证方法。</li><li>问题材料包可复制到其他对话工具使用。</li></ul><button class="secondary full" id="export-package">下载通用知识包</button><p class="field-note">仅打包专门的知识目录和说明文档。原始示例、密钥和当前问题不会进入此包。</p></div>
+      <div class="panel spacing-top"><div class="panel-heading"><h2>当前能力边界</h2></div><p>离线模式提供知识检索与规则化排查材料。模型模式生成分析草案。程序不会操作产线或自动放行产品。</p><p>知识覆盖和规则能改善模型表现，具体模型仍须使用测试集评估。未完成现场验证的结论保留为候选解释。</p></div></div></div>
+    </section>
+  </main>
+</div>
+<dialog id="reader-dialog"><div class="dialog-header"><div><span id="reader-stage" class="eyebrow"></span><h2 id="reader-title"></h2></div><button class="quiet close-dialog" aria-label="关闭阅读窗口">关闭</button></div><article id="reader-content" class="markdown"></article></dialog>
+<dialog id="context-dialog"><div class="dialog-header"><div><span class="eyebrow">可移植上下文</span><h2>模型分析材料包</h2></div><button class="quiet close-dialog" aria-label="关闭材料窗口">关闭</button></div><p id="packet-info"></p><div class="action-row"><button class="secondary" id="copy-packet">复制全文</button><button class="secondary" id="download-packet">下载 JSON</button></div><pre id="packet-preview"></pre></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+<dialog id="inbox-dialog" class="inbox-dialog"><div class="dialog-header"><div><span class="eyebrow">让知识持续生长</span><h2>把新的知识放进这里</h2></div><button class="quiet close-dialog" aria-label="关闭扩充知识窗口">关闭</button></div><div class="inbox-path">隔膜知识图谱 / <strong>知识投递</strong></div><p>将整理好的 <strong>.md 或 .txt</strong> 放入“知识投递”文件夹。回到星图后会自动同步，也可以点击“立即同步”。支持子文件夹。</p><ol><li>一篇文件写一个主题，第一行用 <code># 标题</code>。</li><li>正文写清概念、机制、条件和验证方法。</li><li>使用 <code>[[已有知识标题]]</code> 把新知识连到现有节点。直接提及图谱中的术语也会建立主题关联。</li></ol><p class="field-note">文件夹内已有填写模板。以“_”开头的说明和模板不会载入。自建知识标记为未审核，主题关联不等同因果。</p><div id="inbox-status" role="status"></div><div class="action-row"><button class="primary" id="inbox-sync">立即同步</button><button class="secondary" id="inbox-template">复制 Markdown 模板</button></div><p class="field-note">只放已通用化的知识。原始公司材料保持在原目录。自建知识默认不发送给模型，也不进入通用知识包。</p></dialog>
+</body>
+</html>

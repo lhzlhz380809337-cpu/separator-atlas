@@ -1,0 +1,2757 @@
+{
+  "nodes": [
+    {
+      "id": "coat_feed",
+      "label": "前态膜",
+      "type": "材料",
+      "stage": "涂覆",
+      "summary": "进入本次涂覆的膜，可能是原始基膜或已涂覆中间体。",
+      "article_ids": [
+        "atlas_application",
+        "coat_structure"
+      ]
+    },
+    {
+      "id": "coat_ceramic",
+      "label": "陶瓷颗粒",
+      "type": "材料",
+      "stage": "涂覆",
+      "summary": "提供颗粒骨架，其作用依赖结合与覆盖结构。",
+      "article_ids": [
+        "atlas_slurry",
+        "coat_structure"
+      ]
+    },
+    {
+      "id": "coat_polymer",
+      "label": "功能聚合物",
+      "type": "材料",
+      "stage": "涂覆",
+      "summary": "参与粘接、润湿和结构调节，受溶胀与热历史影响。",
+      "article_ids": [
+        "atlas_slurry",
+        "coat_structure"
+      ]
+    },
+    {
+      "id": "coat_binder",
+      "label": "粘结剂",
+      "type": "材料",
+      "stage": "涂覆",
+      "summary": "连接颗粒及界面，其位置与状态影响内聚和孔道。",
+      "article_ids": [
+        "atlas_slurry",
+        "coat_adhesion"
+      ]
+    },
+    {
+      "id": "coat_dispersion_process",
+      "label": "投料与分散",
+      "type": "工序",
+      "stage": "涂覆",
+      "summary": "投料、润湿和分散过程建立浆料初始状态。",
+      "article_ids": [
+        "atlas_slurry",
+        "coat_slurry"
+      ]
+    },
+    {
+      "id": "coat_dispersion",
+      "label": "分散状态",
+      "type": "结构",
+      "stage": "涂覆",
+      "summary": "颗粒分布、团聚与相互作用的综合状态。",
+      "article_ids": [
+        "atlas_slurry",
+        "coat_slurry"
+      ]
+    },
+    {
+      "id": "coat_rheology",
+      "label": "浆料流变",
+      "type": "质量特性",
+      "stage": "涂覆",
+      "summary": "在给定温度、剪切与时间条件下的流动响应。",
+      "article_ids": [
+        "atlas_slurry",
+        "coat_slurry"
+      ]
+    },
+    {
+      "id": "coat_stability",
+      "label": "浆料使用稳定性",
+      "type": "质量特性",
+      "stage": "涂覆",
+      "summary": "静置、循环及停机重启后组成和流变的保持程度。",
+      "article_ids": [
+        "atlas_slurry",
+        "coat_slurry"
+      ]
+    },
+    {
+      "id": "coat_filter",
+      "label": "过滤与脱泡",
+      "type": "工序",
+      "stage": "涂覆",
+      "summary": "控制截留范围内的物质及气泡，需分别验证效果。",
+      "article_ids": [
+        "atlas_coatclean",
+        "coat_slurry"
+      ]
+    },
+    {
+      "id": "coat_bubble",
+      "label": "浆料气泡",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "可参与局部供液中断或成膜缺口。",
+      "article_ids": [
+        "atlas_coatclean",
+        "coat_slurry"
+      ]
+    },
+    {
+      "id": "coat_agglomerate",
+      "label": "颗粒团聚",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "区别于一次颗粒的聚集体，可改变表面与流动。",
+      "article_ids": [
+        "atlas_coatclean",
+        "coat_slurry"
+      ]
+    },
+    {
+      "id": "coat_surface",
+      "label": "前态膜表面状态",
+      "type": "质量特性",
+      "stage": "涂覆",
+      "summary": "表面能、污染及既有涂层共同决定浆料接触。",
+      "article_ids": [
+        "atlas_application",
+        "coat_uniformity"
+      ]
+    },
+    {
+      "id": "coat_application",
+      "label": "涂布转移",
+      "type": "工序",
+      "stage": "涂覆",
+      "summary": "由供液、接触几何及运行状态共同决定湿膜分布。",
+      "article_ids": [
+        "atlas_application",
+        "coat_uniformity"
+      ]
+    },
+    {
+      "id": "coat_coverage",
+      "label": "涂层覆盖形态",
+      "type": "结构",
+      "stage": "涂覆",
+      "summary": "连续或离散覆盖、局部厚薄与开放区域。",
+      "article_ids": [
+        "atlas_application",
+        "coat_structure"
+      ]
+    },
+    {
+      "id": "coat_uniformity",
+      "label": "横纵向涂布一致性",
+      "type": "质量特性",
+      "stage": "涂覆",
+      "summary": "涂层量与覆盖在空间和时间上的一致程度。",
+      "article_ids": [
+        "atlas_application",
+        "coat_uniformity"
+      ]
+    },
+    {
+      "id": "coat_mass",
+      "label": "涂层面密度",
+      "type": "质量特性",
+      "stage": "涂覆",
+      "summary": "单位面积涂层质量，需与前态膜正确对应。",
+      "article_ids": [
+        "atlas_application",
+        "coat_uniformity"
+      ]
+    },
+    {
+      "id": "coat_thickness",
+      "label": "涂层厚度",
+      "type": "质量特性",
+      "stage": "涂覆",
+      "summary": "厚度受测量压力、粗糙度与孔隙影响。",
+      "article_ids": [
+        "atlas_application",
+        "coat_uniformity"
+      ]
+    },
+    {
+      "id": "coat_stripe",
+      "label": "条纹与漏涂",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "局部供液、铺展或后续干燥形成的覆盖异常。",
+      "article_ids": [
+        "atlas_application",
+        "coat_uniformity"
+      ]
+    },
+    {
+      "id": "coat_drying",
+      "label": "涂层干燥",
+      "type": "工序",
+      "stage": "涂覆",
+      "summary": "液体移除与结构形成，同时带来膜热历史。",
+      "article_ids": [
+        "atlas_coatdry",
+        "coat_drying"
+      ]
+    },
+    {
+      "id": "coat_migration",
+      "label": "组分厚向分布",
+      "type": "结构",
+      "stage": "涂覆",
+      "summary": "液相迁移、扩散与固定化竞争后的组分位置。",
+      "article_ids": [
+        "atlas_coatdry",
+        "coat_drying"
+      ]
+    },
+    {
+      "id": "coat_pore",
+      "label": "涂层贯穿孔道",
+      "type": "结构",
+      "stage": "涂覆",
+      "summary": "开放且连通的跨层路径，区别于总孔隙数量。",
+      "article_ids": [
+        "atlas_coatdry",
+        "coat_drying"
+      ]
+    },
+    {
+      "id": "coat_residual",
+      "label": "水分与挥发物残留",
+      "type": "质量特性",
+      "stage": "涂覆",
+      "summary": "残留水平须由适配检测及一致取样确认。",
+      "article_ids": [
+        "atlas_coatdry",
+        "coat_drying"
+      ]
+    },
+    {
+      "id": "coat_interface",
+      "label": "涂层与基膜界面",
+      "type": "结构",
+      "stage": "涂覆",
+      "summary": "连接前态膜与涂层的边界，需区分干湿状态。",
+      "article_ids": [
+        "atlas_interface",
+        "coat_adhesion"
+      ]
+    },
+    {
+      "id": "coat_cohesion",
+      "label": "涂层内聚结合",
+      "type": "结构",
+      "stage": "涂覆",
+      "summary": "颗粒和聚合物组成的层内载荷传递网络。",
+      "article_ids": [
+        "atlas_interface",
+        "coat_adhesion"
+      ]
+    },
+    {
+      "id": "coat_peel",
+      "label": "剥离表现",
+      "type": "质量特性",
+      "stage": "涂覆",
+      "summary": "规定方法下的破坏响应，需记录失效位置。",
+      "article_ids": [
+        "atlas_interface",
+        "coat_adhesion"
+      ]
+    },
+    {
+      "id": "coat_bond",
+      "label": "极片粘接表现",
+      "type": "质量特性",
+      "stage": "涂覆",
+      "summary": "在规定极片和热压/浸液条件下的界面结合。",
+      "article_ids": [
+        "atlas_interface",
+        "coat_adhesion"
+      ]
+    },
+    {
+      "id": "coat_powder",
+      "label": "涂层掉粉",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "载荷或摩擦下的涂层物质脱落。",
+      "article_ids": [
+        "atlas_interface",
+        "coat_adhesion"
+      ]
+    },
+    {
+      "id": "coat_slitting",
+      "label": "涂覆分切",
+      "type": "工序",
+      "stage": "涂覆",
+      "summary": "形成宽度和切边，可能引入局部损伤与异物。",
+      "article_ids": [
+        "atlas_finishing",
+        "coat_finishing"
+      ]
+    },
+    {
+      "id": "coat_edge",
+      "label": "切边与局部损伤",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "切边、擦伤或局部应力集中形成的缺陷。",
+      "article_ids": [
+        "atlas_finishing",
+        "coat_finishing"
+      ]
+    },
+    {
+      "id": "coat_winding",
+      "label": "收卷与复卷",
+      "type": "工序",
+      "stage": "涂覆",
+      "summary": "改变卷形、层间接触压力与摩擦历史。",
+      "article_ids": [
+        "atlas_finishing",
+        "coat_finishing"
+      ]
+    },
+    {
+      "id": "coat_foreign",
+      "label": "膜面异物",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "需按形状、组成、位置及来源分类评价。",
+      "article_ids": [
+        "atlas_coatclean",
+        "coat_finishing"
+      ]
+    },
+    {
+      "id": "coat_static",
+      "label": "静电状态",
+      "type": "质量特性",
+      "stage": "涂覆",
+      "summary": "影响微粒吸附的因素之一，不能替代洁净度。",
+      "article_ids": [
+        "atlas_coatclean",
+        "coat_finishing"
+      ]
+    },
+    {
+      "id": "coat_package",
+      "label": "包装与储运",
+      "type": "工序",
+      "stage": "涂覆",
+      "summary": "决定环境暴露、吸湿与污染的交付历史。",
+      "article_ids": [
+        "atlas_finishing",
+        "coat_finishing"
+      ]
+    },
+    {
+      "id": "coat_shrink",
+      "label": "热尺寸稳定性",
+      "type": "质量特性",
+      "stage": "涂覆",
+      "summary": "给定受热时间、温度、方向和约束下的尺寸表现。",
+      "article_ids": [
+        "atlas_finishing",
+        "cell_failure"
+      ]
+    },
+    {
+      "id": "cell_assembly",
+      "label": "卷绕与叠片",
+      "type": "工序",
+      "stage": "电芯",
+      "summary": "将隔膜与极片组合，并引入张力、接触与定位要求。",
+      "article_ids": [
+        "atlas_assembly",
+        "cell_processing"
+      ]
+    },
+    {
+      "id": "cell_heatpress",
+      "label": "电芯热压",
+      "type": "工序",
+      "stage": "电芯",
+      "summary": "改变界面贴合、接触面积与孔结构。",
+      "article_ids": [
+        "atlas_assembly",
+        "cell_processing"
+      ]
+    },
+    {
+      "id": "cell_baking",
+      "label": "电芯烘烤",
+      "type": "工序",
+      "stage": "电芯",
+      "summary": "去除挥发物并施加额外热历史。",
+      "article_ids": [
+        "atlas_assembly",
+        "cell_processing"
+      ]
+    },
+    {
+      "id": "cell_filling",
+      "label": "注液与静置",
+      "type": "工序",
+      "stage": "电芯",
+      "summary": "液体进入和气体排出共同决定实际浸润。",
+      "article_ids": [
+        "atlas_wetting",
+        "cell_processing"
+      ]
+    },
+    {
+      "id": "cell_electrolyte",
+      "label": "电解液体系",
+      "type": "材料",
+      "stage": "电芯",
+      "summary": "电导率、粘度、表面相容与溶胀作用依体系而异。",
+      "article_ids": [
+        "atlas_wetting",
+        "cell_processing"
+      ]
+    },
+    {
+      "id": "cell_wetout",
+      "label": "实际浸润状态",
+      "type": "质量特性",
+      "stage": "电芯",
+      "summary": "在装配条件下的面内和贯穿浸润程度。",
+      "article_ids": [
+        "atlas_wetting",
+        "cell_processing"
+      ]
+    },
+    {
+      "id": "cell_compression",
+      "label": "受压孔结构",
+      "type": "结构",
+      "stage": "电芯",
+      "summary": "隔膜在热压或电芯压力下的变形与通路状态。",
+      "article_ids": [
+        "atlas_assembly",
+        "cell_transport"
+      ]
+    },
+    {
+      "id": "cell_swelling",
+      "label": "聚合物湿态变化",
+      "type": "结构",
+      "stage": "电芯",
+      "summary": "电解液引起的溶胀、塑化及界面响应。",
+      "article_ids": [
+        "atlas_wetting",
+        "coat_adhesion"
+      ]
+    },
+    {
+      "id": "cell_resistance",
+      "label": "隔膜有效离子电阻",
+      "type": "质量特性",
+      "stage": "电芯",
+      "summary": "受液体、温度、浸润、孔道及受压状态共同影响。",
+      "article_ids": [
+        "atlas_celltransport",
+        "cell_transport"
+      ]
+    },
+    {
+      "id": "cell_polarization",
+      "label": "电芯极化",
+      "type": "电芯表现",
+      "stage": "电芯",
+      "summary": "多种传输与反应过程造成的电压偏离。",
+      "article_ids": [
+        "atlas_celltransport",
+        "cell_transport"
+      ]
+    },
+    {
+      "id": "cell_rate",
+      "label": "倍率表现",
+      "type": "电芯表现",
+      "stage": "电芯",
+      "summary": "在明确温度和测试程序下的高电流响应。",
+      "article_ids": [
+        "atlas_celltransport",
+        "cell_transport"
+      ]
+    },
+    {
+      "id": "cell_cycle",
+      "label": "循环表现",
+      "type": "电芯表现",
+      "stage": "电芯",
+      "summary": "多材料、多机制共同决定的随循环变化。",
+      "article_ids": [
+        "atlas_celltransport",
+        "cell_transport"
+      ]
+    },
+    {
+      "id": "cell_local_weak",
+      "label": "局部绝缘薄弱",
+      "type": "缺陷",
+      "stage": "电芯",
+      "summary": "局部缺陷或受损导致隔离能力减弱。",
+      "article_ids": [
+        "atlas_cellsafety",
+        "cell_failure"
+      ]
+    },
+    {
+      "id": "cell_short",
+      "label": "局部电子通路",
+      "type": "电芯表现",
+      "stage": "电芯",
+      "summary": "需缺陷与电极接触等条件共同形成。",
+      "article_ids": [
+        "atlas_cellsafety",
+        "cell_failure"
+      ]
+    },
+    {
+      "id": "cell_heat_risk",
+      "label": "电芯热风险",
+      "type": "电芯表现",
+      "stage": "电芯",
+      "summary": "由发热、电芯状态、反应和散热条件共同决定。",
+      "article_ids": [
+        "atlas_cellsafety",
+        "cell_failure"
+      ]
+    },
+    {
+      "id": "cell_shutdown",
+      "label": "闭孔响应",
+      "type": "质量特性",
+      "stage": "电芯",
+      "summary": "温度驱动的孔道关闭响应，需区别后续完整性。",
+      "article_ids": [
+        "atlas_cellsafety",
+        "cell_failure"
+      ]
+    },
+    {
+      "id": "cell_thermal_integrity",
+      "label": "受热后膜完整性",
+      "type": "结构",
+      "stage": "电芯",
+      "summary": "在给定受热和约束条件下是否保持连续隔离。",
+      "article_ids": [
+        "atlas_cellsafety",
+        "cell_failure"
+      ]
+    },
+    {
+      "id": "cell_capacity",
+      "label": "可用容量",
+      "type": "电芯表现",
+      "stage": "电芯",
+      "summary": "规定温度、倍率及截止条件下可充放的容量，受活性材料与局部传输共同影响。",
+      "article_ids": [
+        "atlas_celltransport"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "coat_edge_001",
+      "source": "coat_dispersion_process",
+      "target": "coat_dispersion",
+      "relation": "改变",
+      "mechanism": "分散过程用润湿和机械能拆开颗粒团聚。投料顺序、能量和温升不合适时，浆料看似均匀也可能保留大颗粒尾部。",
+      "conditions": [
+        "粉体与聚合物体系明确",
+        "记录投料顺序与能量历史"
+      ],
+      "checks": [
+        "比较前后粒径及显微形貌",
+        "保留分散温升"
+      ],
+      "tradeoffs": [
+        "强化分散可能引入磨耗与气泡"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_slurry",
+        "coat_slurry"
+      ],
+      "control_points": [
+        "确认颗粒粒径尾部、含水及原料一致性，按已验证的投料顺序和配比执行",
+        "控制分散能量、时间、温升和剪切历史，防止未打散或过度处理",
+        "在规定温度与剪切条件下测粘度和流变，控制储存、循环、沉降与使用时限"
+      ],
+      "failure_modes": [
+        "大颗粒尾部或分散状态不均，可能引出条纹、流变波动和沉降。"
+      ]
+    },
+    {
+      "id": "coat_edge_002",
+      "source": "coat_dispersion",
+      "target": "coat_rheology",
+      "relation": "影响",
+      "mechanism": "分散改变颗粒接触网络和可流动液体比例，因此改变粘度、屈服和剪切后的恢复。同样固含量也可能有不同上机流动表现。",
+      "conditions": [
+        "温度与剪切条件一致"
+      ],
+      "checks": [
+        "流动曲线",
+        "剪切后恢复"
+      ],
+      "tradeoffs": [
+        "单点粘度改善不保证沉降稳定"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_slurry",
+        "coat_slurry"
+      ],
+      "control_points": [
+        "确认颗粒粒径尾部、含水及原料一致性，按已验证的投料顺序和配比执行",
+        "控制分散能量、时间、温升和剪切历史，防止未打散或过度处理",
+        "在规定温度与剪切条件下测粘度和流变，控制储存、循环、沉降与使用时限"
+      ],
+      "failure_modes": [
+        "供料、铺展或流平不稳，可能形成局部缺涂和涂布量波动。"
+      ]
+    },
+    {
+      "id": "coat_edge_003",
+      "source": "coat_dispersion",
+      "target": "coat_agglomerate",
+      "relation": "控制候选因素",
+      "mechanism": "未充分润湿或拆散的颗粒会以团聚体存在；分散后若体系不稳定，还会再次聚集。因此过滤前的大颗粒不一定全来自原料。",
+      "conditions": [
+        "排除粒径制样改变团聚状态"
+      ],
+      "checks": [
+        "上机浆料显微",
+        "过滤前后对比"
+      ],
+      "tradeoffs": [
+        "过度预处理可掩盖实际团聚"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_slurry",
+        "atlas_coatclean",
+        "coat_slurry"
+      ],
+      "control_points": [
+        "确认颗粒粒径尾部、含水及原料一致性，按已验证的投料顺序和配比执行",
+        "控制分散能量、时间、温升和剪切历史，防止未打散或过度处理",
+        "在规定温度与剪切条件下测粘度和流变，控制储存、循环、沉降与使用时限"
+      ],
+      "failure_modes": [
+        "大团聚体可能堵涂头、形成凸点或拖出条纹。"
+      ]
+    },
+    {
+      "id": "coat_edge_004",
+      "source": "coat_dispersion",
+      "target": "coat_stability",
+      "relation": "影响",
+      "mechanism": "良好分散有助于均匀悬浮，但稳定性还受颗粒表面、粘结剂和介质相容性影响。分散当时合格不能保证储存或循环后不分层。",
+      "conditions": [
+        "模拟实际使用时间与循环"
+      ],
+      "checks": [
+        "静置/循环对照",
+        "不同位置取样"
+      ],
+      "tradeoffs": [
+        "静置瓶结果未必代表循环罐"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_slurry",
+        "coat_slurry"
+      ],
+      "control_points": [
+        "确认颗粒粒径尾部、含水及原料一致性，按已验证的投料顺序和配比执行",
+        "控制分散能量、时间、温升和剪切历史，防止未打散或过度处理",
+        "在规定温度与剪切条件下测粘度和流变，控制储存、循环、沉降与使用时限"
+      ],
+      "failure_modes": [
+        "沉降、分层或再团聚使实际供料状态漂移，导致随时间变化的涂层差异。"
+      ]
+    },
+    {
+      "id": "coat_edge_005",
+      "source": "coat_stability",
+      "target": "coat_uniformity",
+      "relation": "影响",
+      "mechanism": "沉降、絮凝或局部浓缩使供到涂头的浆料随时间或位置改变，形成涂布量和表面形貌差异，平均固含可能仍在范围内。",
+      "conditions": [
+        "供液与线速可比"
+      ],
+      "checks": [
+        "浆料年龄对应纵向面密度",
+        "记录停机重启"
+      ],
+      "tradeoffs": [
+        "提高循环强度可能带来升温和泡沫"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_slurry",
+        "atlas_application",
+        "coat_slurry",
+        "coat_uniformity"
+      ],
+      "control_points": [
+        "确认颗粒粒径尾部、含水及原料一致性，按已验证的投料顺序和配比执行",
+        "控制分散能量、时间、温升和剪切历史，防止未打散或过度处理",
+        "在规定温度与剪切条件下测粘度和流变，控制储存、循环、沉降与使用时限"
+      ],
+      "failure_modes": [
+        "横纵涂层量和结构差异增大，可能造成局部传输和加工表现不一致。"
+      ]
+    },
+    {
+      "id": "coat_edge_006",
+      "source": "coat_rheology",
+      "target": "coat_application",
+      "relation": "影响",
+      "mechanism": "浆料在供液、间隙和铺展时经历不同剪切，流变决定它能否连续供给、铺平并保持形状。单一转速测得的粘度不能完整代表涂布状态。",
+      "conditions": [
+        "涂布方式与几何明确"
+      ],
+      "checks": [
+        "流变曲线与湿膜对应",
+        "供液稳定性"
+      ],
+      "tradeoffs": [
+        "降粘可能改变流平与抗沉降"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_slurry",
+        "atlas_application",
+        "coat_uniformity"
+      ],
+      "control_points": [
+        "确认颗粒粒径尾部、含水及原料一致性，按已验证的投料顺序和配比执行",
+        "控制分散能量、时间、温升和剪切历史，防止未打散或过度处理",
+        "在规定温度与剪切条件下测粘度和流变，控制储存、循环、沉降与使用时限"
+      ],
+      "failure_modes": [
+        "湿层无法稳定形成，出现供料不连续、边部覆盖或均匀性问题。"
+      ]
+    },
+    {
+      "id": "coat_edge_007",
+      "source": "coat_filter",
+      "target": "coat_agglomerate",
+      "relation": "截留部分",
+      "mechanism": "过滤主要截留较大颗粒或团聚体。网孔、压差、密封和团聚体变形能力决定截留效果，过滤不能替代前端分散。",
+      "conditions": [
+        "过滤介质与流量明确"
+      ],
+      "checks": [
+        "过滤前后粒径",
+        "压差和滤渣"
+      ],
+      "tradeoffs": [
+        "过滤不能防止后续重新团聚"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_coatclean",
+        "coat_slurry"
+      ],
+      "control_points": [
+        "匹配过滤精度与正常颗粒尺寸，管理压差、密封、换滤和下游洁净",
+        "保持供液、泵入口、回流和脱泡稳定，避免吸气或再卷气",
+        "控制静电、设备磨屑、清洁残留和环境落尘，对异常颗粒识别成分与尺寸"
+      ],
+      "failure_modes": [
+        "大团聚体可能堵涂头、形成凸点或拖出条纹。"
+      ]
+    },
+    {
+      "id": "coat_edge_008",
+      "source": "coat_filter",
+      "target": "coat_bubble",
+      "relation": "降低候选因素",
+      "mechanism": "过滤压降和换滤操作可能造成气体释放或卷入，入口供液不足也会诱发吸气。气泡应结合过滤器、泵和回路一起排查。",
+      "conditions": [
+        "脱泡方法与浆料相容"
+      ],
+      "checks": [
+        "脱泡前后气泡观察",
+        "湿膜缺陷"
+      ],
+      "tradeoffs": [
+        "过滤本身不等于脱泡"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_coatclean",
+        "coat_slurry"
+      ],
+      "control_points": [
+        "匹配过滤精度与正常颗粒尺寸，管理压差、密封、换滤和下游洁净",
+        "保持供液、泵入口、回流和脱泡稳定，避免吸气或再卷气",
+        "控制静电、设备磨屑、清洁残留和环境落尘，对异常颗粒识别成分与尺寸"
+      ],
+      "failure_modes": [
+        "气泡可能在干燥后留下孔洞、露底或条纹。"
+      ]
+    },
+    {
+      "id": "coat_edge_009",
+      "source": "coat_bubble",
+      "target": "coat_stripe",
+      "relation": "可能造成",
+      "mechanism": "气泡占据应由浆料覆盖的位置，破裂后留下针孔、缺涂或拖尾条纹。烘干后气泡本身消失，缺陷却可能保留下来。",
+      "conditions": [
+        "排除颗粒与表面污染"
+      ],
+      "checks": [
+        "缺口形貌",
+        "脱泡对照"
+      ],
+      "tradeoffs": [
+        "不能把全部针点归为气泡"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_coatclean",
+        "atlas_application",
+        "coat_slurry",
+        "coat_uniformity"
+      ],
+      "control_points": [
+        "匹配过滤精度与正常颗粒尺寸，管理压差、密封、换滤和下游洁净",
+        "保持供液、泵入口、回流和脱泡稳定，避免吸气或再卷气",
+        "控制静电、设备磨屑、清洁残留和环境落尘，对异常颗粒识别成分与尺寸"
+      ],
+      "failure_modes": [
+        "连续或间歇条纹可能造成缺涂或局部堆料，并影响外观判级。"
+      ]
+    },
+    {
+      "id": "coat_edge_010",
+      "source": "coat_agglomerate",
+      "target": "coat_stripe",
+      "relation": "可能造成",
+      "mechanism": "大团聚体可阻塞局部涂布通道，或被拖动形成长条痕，也可能直接形成凸点。异常常随涂头位置或颗粒通过而呈现不同形态。",
+      "conditions": [
+        "与涂布几何及缺陷位置匹配"
+      ],
+      "checks": [
+        "缺陷成分形貌",
+        "过滤前后对照"
+      ],
+      "tradeoffs": [
+        "过滤改善不证明一次颗粒异常"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_coatclean",
+        "atlas_application",
+        "coat_uniformity"
+      ],
+      "control_points": [
+        "匹配过滤精度与正常颗粒尺寸，管理压差、密封、换滤和下游洁净",
+        "保持供液、泵入口、回流和脱泡稳定，避免吸气或再卷气",
+        "控制静电、设备磨屑、清洁残留和环境落尘，对异常颗粒识别成分与尺寸"
+      ],
+      "failure_modes": [
+        "连续或间歇条纹可能造成缺涂或局部堆料，并影响外观判级。"
+      ]
+    },
+    {
+      "id": "coat_edge_011",
+      "source": "coat_feed",
+      "target": "coat_surface",
+      "relation": "决定初始状态",
+      "mechanism": "前态膜的材料、涂层、残油和表面处理共同决定表面状态。裸PE与已有涂层中间体的润湿和结合方式可能完全不同。",
+      "conditions": [
+        "明确前态膜层次及面向"
+      ],
+      "checks": [
+        "表面形貌",
+        "润湿对照"
+      ],
+      "tradeoffs": [
+        "不能将中间体简化为原始基膜"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_application",
+        "coat_structure"
+      ],
+      "control_points": [
+        "核对前态层结构、涂布面、方向和卷段，检查残油、皱折及表面润湿状态",
+        "按实际涂布方式管理供料、间隙或辊接触、线速比、张力和边缘覆盖",
+        "对涂前涂后厚度、干涂层克重、覆盖率及横纵分布进行配对管理，识别细条纹和局部缺涂"
+      ],
+      "failure_modes": [
+        "润湿或表面清洁不足会形成缩边、缺涂和界面结合不良。"
+      ]
+    },
+    {
+      "id": "coat_edge_012",
+      "source": "coat_surface",
+      "target": "coat_application",
+      "relation": "影响",
+      "mechanism": "浆料只有充分铺展并接触表面才能形成连续湿层。表面能不匹配或局部油污会导致缩边、露底和界面接触不足。",
+      "conditions": [
+        "同浆料同方法比较"
+      ],
+      "checks": [
+        "湿膜观察",
+        "表面污染检查"
+      ],
+      "tradeoffs": [
+        "增强润湿需兼顾材料老化"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_application",
+        "coat_uniformity"
+      ],
+      "control_points": [
+        "核对前态层结构、涂布面、方向和卷段，检查残油、皱折及表面润湿状态",
+        "按实际涂布方式管理供料、间隙或辊接触、线速比、张力和边缘覆盖",
+        "对涂前涂后厚度、干涂层克重、覆盖率及横纵分布进行配对管理，识别细条纹和局部缺涂"
+      ],
+      "failure_modes": [
+        "湿层无法稳定形成，出现供料不连续、边部覆盖或均匀性问题。"
+      ]
+    },
+    {
+      "id": "coat_edge_013",
+      "source": "coat_application",
+      "target": "coat_coverage",
+      "relation": "形成",
+      "mechanism": "供料、间隙或辊接触决定湿层能否覆盖目标区域。张力、润湿和边部形貌不稳时，即使平均涂布量足够也会留下缺涂。",
+      "conditions": [
+        "涂布方式已知"
+      ],
+      "checks": [
+        "湿膜与干膜对应",
+        "覆盖面积定义"
+      ],
+      "tradeoffs": [
+        "覆盖增加可能减少开放区域"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_application",
+        "coat_uniformity"
+      ],
+      "control_points": [
+        "核对前态层结构、涂布面、方向和卷段，检查残油、皱折及表面润湿状态",
+        "按实际涂布方式管理供料、间隙或辊接触、线速比、张力和边缘覆盖",
+        "对涂前涂后厚度、干涂层克重、覆盖率及横纵分布进行配对管理，识别细条纹和局部缺涂"
+      ],
+      "failure_modes": [
+        "局部露底、缺涂或孔口覆盖过度，可能分别影响支撑、界面和离子入口。"
+      ]
+    },
+    {
+      "id": "coat_edge_014",
+      "source": "coat_application",
+      "target": "coat_uniformity",
+      "relation": "决定部分",
+      "mechanism": "涂布过程把浆料流量转换为单位面积湿层。供料脉动、间隙偏差、辊速或张力不稳，会形成横向或纵向涂布量差异。",
+      "conditions": [
+        "固定浆料与前态膜"
+      ],
+      "checks": [
+        "横向位置图",
+        "周期性缺陷图"
+      ],
+      "tradeoffs": [
+        "平均量稳定可掩盖局部波动"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_application",
+        "coat_uniformity"
+      ],
+      "control_points": [
+        "核对前态层结构、涂布面、方向和卷段，检查残油、皱折及表面润湿状态",
+        "按实际涂布方式管理供料、间隙或辊接触、线速比、张力和边缘覆盖",
+        "对涂前涂后厚度、干涂层克重、覆盖率及横纵分布进行配对管理，识别细条纹和局部缺涂"
+      ],
+      "failure_modes": [
+        "横纵涂层量和结构差异增大，可能造成局部传输和加工表现不一致。"
+      ]
+    },
+    {
+      "id": "coat_edge_015",
+      "source": "coat_uniformity",
+      "target": "coat_mass",
+      "relation": "表现为分布",
+      "mechanism": "局部湿层量及固含不同，干燥后留下的固体质量也不同。整幅平均克重可能掩盖细条纹和边部异常。",
+      "conditions": [
+        "前态膜取样准确对应"
+      ],
+      "checks": [
+        "横向极差",
+        "纵向一致性"
+      ],
+      "tradeoffs": [
+        "点位不足会低估差异"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_application",
+        "coat_uniformity"
+      ],
+      "control_points": [
+        "核对前态层结构、涂布面、方向和卷段，检查残油、皱折及表面润湿状态",
+        "按实际涂布方式管理供料、间隙或辊接触、线速比、张力和边缘覆盖",
+        "对涂前涂后厚度、干涂层克重、覆盖率及横纵分布进行配对管理，识别细条纹和局部缺涂"
+      ],
+      "failure_modes": [
+        "干涂层量不足或过多，可能影响覆盖、连接和孔道；平均值可能漏掉局部异常。"
+      ]
+    },
+    {
+      "id": "coat_edge_016",
+      "source": "coat_mass",
+      "target": "coat_thickness",
+      "relation": "条件性相关",
+      "mechanism": "同样干涂层质量在不同堆积密度和孔隙率下会形成不同厚度；同样厚度也可能含不同固体量。克重与厚度需成对解释。",
+      "conditions": [
+        "组成与孔隙状态可比"
+      ],
+      "checks": [
+        "质量厚度联合测量",
+        "截面观察"
+      ],
+      "tradeoffs": [
+        "相同质量不能唯一确定厚度"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_application",
+        "coat_structure",
+        "coat_uniformity"
+      ],
+      "control_points": [
+        "核对前态层结构、涂布面、方向和卷段，检查残油、皱折及表面润湿状态",
+        "按实际涂布方式管理供料、间隙或辊接触、线速比、张力和边缘覆盖",
+        "对涂前涂后厚度、干涂层克重、覆盖率及横纵分布进行配对管理，识别细条纹和局部缺涂"
+      ],
+      "failure_modes": [
+        "局部厚度和压缩性差异，可能影响卷形、装配压力及传输距离。"
+      ]
+    },
+    {
+      "id": "coat_edge_017",
+      "source": "coat_ceramic",
+      "target": "coat_cohesion",
+      "relation": "参与构成",
+      "mechanism": "陶瓷颗粒的粒径、形状和表面状态影响接触点和堆积方式。它们必须借助合适的粘结网络形成稳定骨架，不能单靠颗粒耐热保证不掉粉。",
+      "conditions": [
+        "颗粒分布和粘结剂状态明确"
+      ],
+      "checks": [
+        "层内破坏形貌",
+        "掉粉测试"
+      ],
+      "tradeoffs": [
+        "耐热颗粒不保证整层完整"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_slurry",
+        "atlas_interface",
+        "coat_structure",
+        "coat_adhesion"
+      ],
+      "control_points": [
+        "确认颗粒粒径尾部、含水及原料一致性，按已验证的投料顺序和配比执行",
+        "控制分散能量、时间、温升和剪切历史，防止未打散或过度处理",
+        "在规定温度与剪切条件下测粘度和流变，控制储存、循环、沉降与使用时限"
+      ],
+      "failure_modes": [
+        "涂层内部易开裂或粉化，颗粒支撑不能连续保持。"
+      ]
+    },
+    {
+      "id": "coat_edge_018",
+      "source": "coat_binder",
+      "target": "coat_cohesion",
+      "relation": "影响",
+      "mechanism": "粘结剂在颗粒之间形成连接，使涂层能承受摩擦和弯折。用量或分布不足会弱化连接，局部富集又可能改变孔道。",
+      "conditions": [
+        "干湿状态和干燥一致"
+      ],
+      "checks": [
+        "破坏面观察",
+        "层内结合评价"
+      ],
+      "tradeoffs": [
+        "提高含量可能阻碍孔道"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_slurry",
+        "atlas_interface",
+        "coat_adhesion"
+      ],
+      "control_points": [
+        "确认颗粒粒径尾部、含水及原料一致性，按已验证的投料顺序和配比执行",
+        "控制分散能量、时间、温升和剪切历史，防止未打散或过度处理",
+        "在规定温度与剪切条件下测粘度和流变，控制储存、循环、沉降与使用时限"
+      ],
+      "failure_modes": [
+        "涂层内部易开裂或粉化，颗粒支撑不能连续保持。"
+      ]
+    },
+    {
+      "id": "coat_edge_019",
+      "source": "coat_binder",
+      "target": "coat_interface",
+      "relation": "影响",
+      "mechanism": "粘结剂需要到达并充分接触基膜表面，才能形成可靠界面。润湿不良、干燥迁移或浸液软化可能使界面成为易剥离位置。",
+      "conditions": [
+        "前态膜表面与电解液条件明确"
+      ],
+      "checks": [
+        "界面失效位置",
+        "湿态剥离"
+      ],
+      "tradeoffs": [
+        "高干态结合不保证湿态保持"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_slurry",
+        "atlas_interface",
+        "coat_adhesion"
+      ],
+      "control_points": [
+        "确认颗粒粒径尾部、含水及原料一致性，按已验证的投料顺序和配比执行",
+        "控制分散能量、时间、温升和剪切历史，防止未打散或过度处理",
+        "在规定温度与剪切条件下测粘度和流变，控制储存、循环、沉降与使用时限"
+      ],
+      "failure_modes": [
+        "涂层从基膜表面脱离，湿态或受热后可能失去局部约束。"
+      ]
+    },
+    {
+      "id": "coat_edge_020",
+      "source": "coat_polymer",
+      "target": "coat_coverage",
+      "relation": "参与形成",
+      "mechanism": "聚合物颗粒、岛状层或连续层的成膜方式不同，会得到不同覆盖形态。相同涂覆量不能推定孔口被覆盖的程度相同。",
+      "conditions": [
+        "材料结构和成膜方式明确"
+      ],
+      "checks": [
+        "表面形貌",
+        "热压前后对照"
+      ],
+      "tradeoffs": [
+        "粘接点增加可能改变传输"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_slurry",
+        "atlas_application",
+        "coat_structure"
+      ],
+      "control_points": [
+        "确认颗粒粒径尾部、含水及原料一致性，按已验证的投料顺序和配比执行",
+        "控制分散能量、时间、温升和剪切历史，防止未打散或过度处理",
+        "在规定温度与剪切条件下测粘度和流变，控制储存、循环、沉降与使用时限"
+      ],
+      "failure_modes": [
+        "局部露底、缺涂或孔口覆盖过度，可能分别影响支撑、界面和离子入口。"
+      ]
+    },
+    {
+      "id": "coat_edge_021",
+      "source": "coat_coverage",
+      "target": "coat_pore",
+      "relation": "影响",
+      "mechanism": "覆盖孔口的涂层可能让离子改走涂层间隙，也可能堵住部分入口。影响取决于覆盖方式、涂层自身孔隙及受压后的形态。",
+      "conditions": [
+        "区分表面空白与实际连通孔"
+      ],
+      "checks": [
+        "表面/截面联看",
+        "湿态电阻"
+      ],
+      "tradeoffs": [
+        "覆盖率不是孔隙率"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_application",
+        "atlas_coatdry",
+        "coat_structure",
+        "cell_transport"
+      ],
+      "control_points": [
+        "核对前态层结构、涂布面、方向和卷段，检查残油、皱折及表面润湿状态",
+        "按实际涂布方式管理供料、间隙或辊接触、线速比、张力和边缘覆盖",
+        "对涂前涂后厚度、干涂层克重、覆盖率及横纵分布进行配对管理，识别细条纹和局部缺涂"
+      ],
+      "failure_modes": [
+        "有效液体通路缩窄或不均，即使厚度克重正常，透气和湿态电阻也可能变差。"
+      ]
+    },
+    {
+      "id": "coat_edge_022",
+      "source": "coat_drying",
+      "target": "coat_migration",
+      "relation": "可能改变",
+      "mechanism": "干燥时液体流向蒸发表面，粘结剂随液体移动，同时自身又向浓度较低处扩散。两种速度不匹配时，最终分布可能不均。",
+      "conditions": [
+        "仅为待验证机理",
+        "不能直接移植电极结论"
+      ],
+      "checks": [
+        "成分厚向分析",
+        "失效位置对照"
+      ],
+      "tradeoffs": [
+        "更快脱除可能改变结构"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_coatdry",
+        "coat_drying"
+      ],
+      "control_points": [
+        "控制分区温度、实际膜温、风量、湿度或溶剂负荷与停留时间，防止入口骤干和局部过热",
+        "联查干燥前后透气增值、孔口形貌、剥离断口及残留，不以克重厚度正常排除孔道异常",
+        "分开控制水分、工艺溶剂和基膜残留，规定取样密封、储存与复验条件"
+      ],
+      "failure_modes": [
+        "粘结剂在界面或孔口分布不均，可能同时出现剥离与透气增值异常。"
+      ]
+    },
+    {
+      "id": "coat_edge_023",
+      "source": "coat_migration",
+      "target": "coat_interface",
+      "relation": "可能改变",
+      "mechanism": "粘结剂若从界面附近迁走，该处连接可能不足；局部富集也可能改变断裂位置。是否发生需结合断口和组分分布验证。",
+      "conditions": [
+        "证明实际发生迁移"
+      ],
+      "checks": [
+        "成分与剥离互证",
+        "同残留不同历程"
+      ],
+      "tradeoffs": [
+        "剥离改变不独自证明迁移"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_coatdry",
+        "atlas_interface",
+        "coat_drying",
+        "coat_adhesion"
+      ],
+      "control_points": [
+        "控制分区温度、实际膜温、风量、湿度或溶剂负荷与停留时间，防止入口骤干和局部过热",
+        "联查干燥前后透气增值、孔口形貌、剥离断口及残留，不以克重厚度正常排除孔道异常",
+        "分开控制水分、工艺溶剂和基膜残留，规定取样密封、储存与复验条件"
+      ],
+      "failure_modes": [
+        "涂层从基膜表面脱离，湿态或受热后可能失去局部约束。"
+      ]
+    },
+    {
+      "id": "coat_edge_024",
+      "source": "coat_migration",
+      "target": "coat_pore",
+      "relation": "可能改变",
+      "mechanism": "迁移后的粘结剂可能聚集在表面、颗粒间或基膜孔口，缩窄传输通道。厚度和克重未变时，透气与湿态电阻仍可能改变。",
+      "conditions": [
+        "材料分辨能力足够"
+      ],
+      "checks": [
+        "截面与透气",
+        "湿态传输"
+      ],
+      "tradeoffs": [
+        "表面富集不必然导致全部堵孔"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_coatdry",
+        "coat_drying"
+      ],
+      "control_points": [
+        "控制分区温度、实际膜温、风量、湿度或溶剂负荷与停留时间，防止入口骤干和局部过热",
+        "联查干燥前后透气增值、孔口形貌、剥离断口及残留，不以克重厚度正常排除孔道异常",
+        "分开控制水分、工艺溶剂和基膜残留，规定取样密封、储存与复验条件"
+      ],
+      "failure_modes": [
+        "有效液体通路缩窄或不均，即使厚度克重正常，透气和湿态电阻也可能变差。"
+      ]
+    },
+    {
+      "id": "coat_edge_025",
+      "source": "coat_drying",
+      "target": "coat_residual",
+      "relation": "控制候选因素",
+      "mechanism": "干燥把水或工艺溶剂从涂层内部带走，膜面干燥并不保证内部残留已达要求。气流负荷、停留时间和后续再吸湿都影响最终结果。",
+      "conditions": [
+        "测量目标物与方法适配"
+      ],
+      "checks": [
+        "密封取样",
+        "残留与膜温对照"
+      ],
+      "tradeoffs": [
+        "强化干燥同时增加热负荷"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_coatdry",
+        "coat_drying"
+      ],
+      "control_points": [
+        "控制分区温度、实际膜温、风量、湿度或溶剂负荷与停留时间，防止入口骤干和局部过热",
+        "联查干燥前后透气增值、孔口形貌、剥离断口及残留，不以克重厚度正常排除孔道异常",
+        "分开控制水分、工艺溶剂和基膜残留，规定取样密封、储存与复验条件"
+      ],
+      "failure_modes": [
+        "水分或工艺溶剂残留可能带入后续工序，影响界面反应及储存一致性。"
+      ]
+    },
+    {
+      "id": "coat_edge_026",
+      "source": "coat_drying",
+      "target": "coat_shrink",
+      "relation": "改变热历史",
+      "mechanism": "涂覆烘箱的热量会作用到PE骨架，使其应力释放或继续受拉。局部受热和张力不同，可改变尺寸稳定性和卷后平整度。",
+      "conditions": [
+        "前态膜与累计热历史明确"
+      ],
+      "checks": [
+        "热收缩方向性",
+        "受约束对照"
+      ],
+      "tradeoffs": [
+        "残留下降可能伴随尺寸变化"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_coatdry",
+        "atlas_finishing",
+        "coat_drying",
+        "cell_failure"
+      ],
+      "control_points": [
+        "控制分区温度、实际膜温、风量、湿度或溶剂负荷与停留时间，防止入口骤干和局部过热",
+        "联查干燥前后透气增值、孔口形貌、剥离断口及残留，不以克重厚度正常排除孔道异常",
+        "分开控制水分、工艺溶剂和基膜残留，规定取样密封、储存与复验条件"
+      ],
+      "failure_modes": [
+        "涂层不能有效约束基膜，复合膜受热尺寸或平整度可能不稳定。"
+      ]
+    },
+    {
+      "id": "coat_edge_027",
+      "source": "coat_interface",
+      "target": "coat_peel",
+      "relation": "影响",
+      "mechanism": "若涂层与基膜的界面最弱，剥离裂纹会沿界面推进。要看断口在哪一侧，不能把所有剥离数值都解释成界面强度。",
+      "conditions": [
+        "角度速度背衬等一致"
+      ],
+      "checks": [
+        "破坏面观察",
+        "方法重复性"
+      ],
+      "tradeoffs": [
+        "数值上升可能源于破坏位置改变"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_interface",
+        "coat_adhesion"
+      ],
+      "control_points": [
+        "控制基膜润湿和表面洁净、粘结剂接触界面的机会以及干燥分布",
+        "剥离试验统一配对材料、角度、速度和制样，记录破坏发生在哪一层",
+        "按实际应用增加浸液、热压或受热后的界面复验，避免只控制干态数值"
+      ],
+      "failure_modes": [
+        "剥离结果降低或离散扩大；需要按断口区分界面失效与涂层内部破坏。"
+      ]
+    },
+    {
+      "id": "coat_edge_028",
+      "source": "coat_cohesion",
+      "target": "coat_peel",
+      "relation": "影响",
+      "mechanism": "当涂层内部连接较弱，剥离可能在涂层内部断开并在两面留下残留。这时改善界面处理未必能解决低剥离结果。",
+      "conditions": [
+        "区分层内与界面残留"
+      ],
+      "checks": [
+        "胶带及膜面观察",
+        "深度分析"
+      ],
+      "tradeoffs": [
+        "同名剥离值可代表不同对象"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_interface",
+        "coat_adhesion"
+      ],
+      "control_points": [
+        "管理颗粒分散、粘结剂用量与分布，保持涂层内部连续连接",
+        "剥离后识别两侧涂层残留及内部断裂，区分内聚破坏与界面脱离",
+        "联查掉粉、弯折及湿态稳定性，验证改善是否增强了涂层内部连接"
+      ],
+      "failure_modes": [
+        "剥离结果降低或离散扩大；需要按断口区分界面失效与涂层内部破坏。"
+      ]
+    },
+    {
+      "id": "coat_edge_029",
+      "source": "coat_cohesion",
+      "target": "coat_powder",
+      "relation": "影响",
+      "mechanism": "颗粒间连接不足时，后道摩擦和弯折会使颗粒脱落。掉粉也可能来自边部切割，需区分主体涂层内聚与切口损伤。",
+      "conditions": [
+        "摩擦和掉粉方法明确"
+      ],
+      "checks": [
+        "掉落物成分",
+        "表面前后形貌"
+      ],
+      "tradeoffs": [
+        "界面剥离合格仍可能掉粉"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_interface",
+        "coat_adhesion"
+      ],
+      "control_points": [
+        "明确配方中粘结剂、陶瓷与功能聚合物的作用，控制润湿、分布与干燥过程",
+        "剥离统一胶带或配对材料、角度速度及干湿状态，记录残留面和断裂位置",
+        "控制后道摩擦、弯折和张力，并在规定浸泡及热压条件下复验结合与掉粉"
+      ],
+      "failure_modes": [
+        "粉末脱落造成涂层减薄、颗粒再污染和后续接触异常。"
+      ]
+    },
+    {
+      "id": "coat_edge_030",
+      "source": "coat_slitting",
+      "target": "coat_edge",
+      "relation": "可能引入",
+      "mechanism": "分切直接在涂层与基膜上形成新边缘，刀口和张力不匹配会造成边裂、毛边、缺口或局部涂层脱落。",
+      "conditions": [
+        "刀具支撑张力与材料匹配"
+      ],
+      "checks": [
+        "边缘显微",
+        "分切前后对照"
+      ],
+      "tradeoffs": [
+        "宽度合格不证明边缘完好"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_finishing",
+        "coat_finishing"
+      ],
+      "control_points": [
+        "管理分切刀口、张力、辊面摩擦和卷径张力，检查边部掉粉及涂层裂纹",
+        "控制包装洁净、防潮密封和储存条件，复验暴露后水分与外观",
+        "在规定温度、时间、受力和干湿状态下同时检查尺寸变化、涂层开裂脱落及基膜连续性"
+      ],
+      "failure_modes": [
+        "边裂、缺口、掉粉或折边可能影响走膜对齐和有效覆盖。"
+      ]
+    },
+    {
+      "id": "coat_edge_031",
+      "source": "coat_slitting",
+      "target": "coat_foreign",
+      "relation": "可能引入",
+      "mechanism": "切割可能产生膜屑、涂层粉末或刀具磨屑。没有及时收集的碎屑会再次附着到膜上，并随卷绕进入后续加工。",
+      "conditions": [
+        "有来源与组成证据"
+      ],
+      "checks": [
+        "异物形貌成分",
+        "接触点收集"
+      ],
+      "tradeoffs": [
+        "元素一致不独自证明来源"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_finishing",
+        "atlas_coatclean",
+        "coat_finishing"
+      ],
+      "control_points": [
+        "管理分切刀口、张力、辊面摩擦和卷径张力，检查边部掉粉及涂层裂纹",
+        "控制包装洁净、防潮密封和储存条件，复验暴露后水分与外观",
+        "在规定温度、时间、受力和干湿状态下同时检查尺寸变化、涂层开裂脱落及基膜连续性"
+      ],
+      "failure_modes": [
+        "异物可能形成孔道堵塞、压点或导电路径，风险随成分与尺寸而变化。"
+      ]
+    },
+    {
+      "id": "coat_edge_032",
+      "source": "coat_winding",
+      "target": "coat_powder",
+      "relation": "可能加剧",
+      "mechanism": "收卷和放卷使涂层经历接触、弯曲和层间摩擦。涂层结合不足或辊面粗糙时，会产生或放大掉粉。",
+      "conditions": [
+        "涂层及接触条件明确"
+      ],
+      "checks": [
+        "复卷前后掉粉",
+        "卷内位置对比"
+      ],
+      "tradeoffs": [
+        "改善卷形可能增加接触压力"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_finishing",
+        "atlas_interface",
+        "coat_finishing"
+      ],
+      "control_points": [
+        "管理分切刀口、张力、辊面摩擦和卷径张力，检查边部掉粉及涂层裂纹",
+        "控制包装洁净、防潮密封和储存条件，复验暴露后水分与外观",
+        "在规定温度、时间、受力和干湿状态下同时检查尺寸变化、涂层开裂脱落及基膜连续性"
+      ],
+      "failure_modes": [
+        "粉末脱落造成涂层减薄、颗粒再污染和后续接触异常。"
+      ]
+    },
+    {
+      "id": "coat_edge_033",
+      "source": "coat_winding",
+      "target": "coat_edge",
+      "relation": "可能加剧",
+      "mechanism": "纠偏不稳、端面对齐不良或卷边受压，会使边缘折叠、擦伤或挤伤。边缘来料合格也需要复核收卷后的状态。",
+      "conditions": [
+        "排除上游既有损伤"
+      ],
+      "checks": [
+        "卷形与缺陷坐标",
+        "前后对照"
+      ],
+      "tradeoffs": [
+        "松卷也可能降低放卷稳定"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_finishing",
+        "coat_finishing"
+      ],
+      "control_points": [
+        "管理分切刀口、张力、辊面摩擦和卷径张力，检查边部掉粉及涂层裂纹",
+        "控制包装洁净、防潮密封和储存条件，复验暴露后水分与外观",
+        "在规定温度、时间、受力和干湿状态下同时检查尺寸变化、涂层开裂脱落及基膜连续性"
+      ],
+      "failure_modes": [
+        "边裂、缺口、掉粉或折边可能影响走膜对齐和有效覆盖。"
+      ]
+    },
+    {
+      "id": "coat_edge_034",
+      "source": "coat_static",
+      "target": "coat_foreign",
+      "relation": "影响吸附可能性",
+      "mechanism": "带电薄膜会吸附悬浮粉尘并使碎屑更难脱离。静电是异物附着的促进因素，异物本身仍需追溯产生源和成分。",
+      "conditions": [
+        "存在可接近颗粒",
+        "测量距离一致"
+      ],
+      "checks": [
+        "静电与膜面颗粒联测"
+      ],
+      "tradeoffs": [
+        "降低静电不替代清洁来源控制"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_coatclean",
+        "coat_finishing"
+      ],
+      "control_points": [
+        "匹配过滤精度与正常颗粒尺寸，管理压差、密封、换滤和下游洁净",
+        "保持供液、泵入口、回流和脱泡稳定，避免吸气或再卷气",
+        "控制静电、设备磨屑、清洁残留和环境落尘，对异常颗粒识别成分与尺寸"
+      ],
+      "failure_modes": [
+        "异物可能形成孔道堵塞、压点或导电路径，风险随成分与尺寸而变化。"
+      ]
+    },
+    {
+      "id": "coat_edge_035",
+      "source": "coat_powder",
+      "target": "coat_foreign",
+      "relation": "构成一类颗粒",
+      "mechanism": "掉落粉末如果留在膜面，会变成后续可见颗粒或局部压点。陶瓷或聚合物粉末与导电金属碎屑的失效路径不同。",
+      "conditions": [
+        "区分自生颗粒与外来物"
+      ],
+      "checks": [
+        "成分形貌匹配",
+        "过程前后对照"
+      ],
+      "tradeoffs": [
+        "不能把所有异物归为掉粉"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_interface",
+        "atlas_coatclean",
+        "coat_finishing"
+      ],
+      "control_points": [
+        "明确配方中粘结剂、陶瓷与功能聚合物的作用，控制润湿、分布与干燥过程",
+        "剥离统一胶带或配对材料、角度速度及干湿状态，记录残留面和断裂位置",
+        "控制后道摩擦、弯折和张力，并在规定浸泡及热压条件下复验结合与掉粉"
+      ],
+      "failure_modes": [
+        "异物可能形成孔道堵塞、压点或导电路径，风险随成分与尺寸而变化。"
+      ]
+    },
+    {
+      "id": "coat_edge_036",
+      "source": "coat_package",
+      "target": "coat_residual",
+      "relation": "影响暴露状态",
+      "mechanism": "包装的防潮性和密封状态影响膜与空气的水分交换。干燥后暴露时间过长或密封失效，可能使水分重新升高。",
+      "conditions": [
+        "记录时间与环境"
+      ],
+      "checks": [
+        "密封和暴露对照",
+        "包装完整性"
+      ],
+      "tradeoffs": [
+        "包装完整不证明内部恒湿"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_finishing",
+        "atlas_coatdry",
+        "coat_finishing"
+      ],
+      "control_points": [
+        "管理分切刀口、张力、辊面摩擦和卷径张力，检查边部掉粉及涂层裂纹",
+        "控制包装洁净、防潮密封和储存条件，复验暴露后水分与外观",
+        "在规定温度、时间、受力和干湿状态下同时检查尺寸变化、涂层开裂脱落及基膜连续性"
+      ],
+      "failure_modes": [
+        "水分或工艺溶剂残留可能带入后续工序，影响界面反应及储存一致性。"
+      ]
+    },
+    {
+      "id": "coat_edge_037",
+      "source": "coat_package",
+      "target": "coat_foreign",
+      "relation": "影响引入概率",
+      "mechanism": "包装材料、洁净度和搬运会影响成品表面是否新增颗粒。封装前合格不能排除包装操作中的二次污染。",
+      "conditions": [
+        "保持来源追踪"
+      ],
+      "checks": [
+        "包装空白",
+        "内外表面检查"
+      ],
+      "tradeoffs": [
+        "清洁包装仍需控制前道污染"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_finishing",
+        "atlas_coatclean",
+        "coat_finishing"
+      ],
+      "control_points": [
+        "管理分切刀口、张力、辊面摩擦和卷径张力，检查边部掉粉及涂层裂纹",
+        "控制包装洁净、防潮密封和储存条件，复验暴露后水分与外观",
+        "在规定温度、时间、受力和干湿状态下同时检查尺寸变化、涂层开裂脱落及基膜连续性"
+      ],
+      "failure_modes": [
+        "异物可能形成孔道堵塞、压点或导电路径，风险随成分与尺寸而变化。"
+      ]
+    },
+    {
+      "id": "coat_edge_038",
+      "source": "coat_edge",
+      "target": "cell_assembly",
+      "relation": "影响加工适配",
+      "mechanism": "边缘损伤、弯曲或涂层缺口会改变走膜和对齐状态。进入卷绕叠片后，可能增加褶皱、覆盖不足或颗粒夹入的机会。",
+      "conditions": [
+        "客户加工载荷和路径明确"
+      ],
+      "checks": [
+        "卷绕叠片后定位",
+        "缺陷位置追踪"
+      ],
+      "tradeoffs": [
+        "独立样片合格不能覆盖使用损伤"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_finishing",
+        "atlas_assembly",
+        "coat_finishing",
+        "cell_processing"
+      ],
+      "control_points": [
+        "管理分切刀口、张力、辊面摩擦和卷径张力，检查边部掉粉及涂层裂纹",
+        "控制包装洁净、防潮密封和储存条件，复验暴露后水分与外观",
+        "在规定温度、时间、受力和干湿状态下同时检查尺寸变化、涂层开裂脱落及基膜连续性"
+      ],
+      "failure_modes": [
+        "装配偏移、褶皱或覆盖不足，可能增加局部隔离和接触不均问题。"
+      ]
+    },
+    {
+      "id": "coat_edge_039",
+      "source": "cell_assembly",
+      "target": "cell_local_weak",
+      "relation": "可能形成或放大",
+      "mechanism": "装配张力、偏移、折叠和极片毛刺把载荷集中到局部。隔膜即使出厂平均指标合格，也可能在这些位置形成新的薄弱点。",
+      "conditions": [
+        "受载与接触条件明确"
+      ],
+      "checks": [
+        "装配前后缺陷",
+        "正常对照"
+      ],
+      "tradeoffs": [
+        "不能把装配后缺陷全归因来料"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_assembly",
+        "atlas_cellsafety",
+        "cell_failure"
+      ],
+      "control_points": [
+        "控制隔膜和极片对齐、覆盖余量、张力、边缘和褶皱，排查极片毛刺与颗粒",
+        "按体系管理热压温度、压力、时间及均匀性，联查粘接与受压透过性能",
+        "控制烘烤温度时间、真空与转运暴露，验证残留去除和尺寸稳定"
+      ],
+      "failure_modes": [
+        "孔洞、压伤或覆盖不足使局部更易失去有效隔离。"
+      ]
+    },
+    {
+      "id": "coat_edge_040",
+      "source": "cell_heatpress",
+      "target": "coat_bond",
+      "relation": "改变",
+      "mechanism": "适配的热压使某些聚合物涂层软化、接触并与极片结合。结合强度取决于材料状态和压力温度时间，不能把所有涂层按同一条件处理。",
+      "conditions": [
+        "极片热压和干湿条件固定"
+      ],
+      "checks": [
+        "粘接及失效面",
+        "热压前后对照"
+      ],
+      "tradeoffs": [
+        "更强粘接可能伴随孔道压实"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_assembly",
+        "atlas_interface",
+        "cell_processing",
+        "coat_adhesion"
+      ],
+      "control_points": [
+        "控制隔膜和极片对齐、覆盖余量、张力、边缘和褶皱，排查极片毛刺与颗粒",
+        "按体系管理热压温度、压力、时间及均匀性，联查粘接与受压透过性能",
+        "控制烘烤温度时间、真空与转运暴露，验证残留去除和尺寸稳定"
+      ],
+      "failure_modes": [
+        "极片与隔膜接触或位置保持不足；不合适压实又可能使孔道受限。"
+      ]
+    },
+    {
+      "id": "coat_edge_041",
+      "source": "coat_polymer",
+      "target": "coat_bond",
+      "relation": "参与形成",
+      "mechanism": "功能聚合物的软化、溶胀和粘接特性决定其与极片结合的能力。涂层量和分布会影响接触面积，也影响孔道。",
+      "conditions": [
+        "具体材料和极片匹配"
+      ],
+      "checks": [
+        "粘接与形貌",
+        "湿态保持"
+      ],
+      "tradeoffs": [
+        "高粘接不等于低阻抗"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_slurry",
+        "atlas_interface",
+        "coat_structure",
+        "coat_adhesion"
+      ],
+      "control_points": [
+        "确认颗粒粒径尾部、含水及原料一致性，按已验证的投料顺序和配比执行",
+        "控制分散能量、时间、温升和剪切历史，防止未打散或过度处理",
+        "在规定温度与剪切条件下测粘度和流变，控制储存、循环、沉降与使用时限"
+      ],
+      "failure_modes": [
+        "极片与隔膜接触或位置保持不足；不合适压实又可能使孔道受限。"
+      ]
+    },
+    {
+      "id": "coat_edge_042",
+      "source": "cell_heatpress",
+      "target": "cell_compression",
+      "relation": "改变",
+      "mechanism": "热压使层间空隙和涂层孔隙受到压缩。压力过大或分布不均可能局部关闭通道，即使外观更平整也不代表传输更好。",
+      "conditions": [
+        "受压时间及实际接触明确"
+      ],
+      "checks": [
+        "厚度和受压阻抗",
+        "截面对照"
+      ],
+      "tradeoffs": [
+        "贴合改善可能压缩通路"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_assembly",
+        "cell_processing",
+        "cell_transport"
+      ],
+      "control_points": [
+        "控制隔膜和极片对齐、覆盖余量、张力、边缘和褶皱，排查极片毛刺与颗粒",
+        "按体系管理热压温度、压力、时间及均匀性，联查粘接与受压透过性能",
+        "控制烘烤温度时间、真空与转运暴露，验证残留去除和尺寸稳定"
+      ],
+      "failure_modes": [
+        "局部孔道压缩不均，可能增加传输阻力或造成局部机械损伤。"
+      ]
+    },
+    {
+      "id": "coat_edge_043",
+      "source": "cell_baking",
+      "target": "coat_residual",
+      "relation": "促进脱除",
+      "mechanism": "烘烤可移除部分水和挥发性物质，但效果受扩散距离、真空、温度和时间限制。烘后转运暴露又可能引入吸湿。",
+      "conditions": [
+        "整卷或电芯状态明确"
+      ],
+      "checks": [
+        "残留方法",
+        "位置取样"
+      ],
+      "tradeoffs": [
+        "需兼顾额外热历史"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_assembly",
+        "atlas_coatdry",
+        "cell_processing"
+      ],
+      "control_points": [
+        "控制隔膜和极片对齐、覆盖余量、张力、边缘和褶皱，排查极片毛刺与颗粒",
+        "按体系管理热压温度、压力、时间及均匀性，联查粘接与受压透过性能",
+        "控制烘烤温度时间、真空与转运暴露，验证残留去除和尺寸稳定"
+      ],
+      "failure_modes": [
+        "水分或工艺溶剂残留可能带入后续工序，影响界面反应及储存一致性。"
+      ]
+    },
+    {
+      "id": "coat_edge_044",
+      "source": "cell_baking",
+      "target": "coat_shrink",
+      "relation": "施加热历史",
+      "mechanism": "电芯烘烤再次给复合膜热历程，残余应力和涂层约束会共同决定尺寸变化。自由膜热收缩结果不能直接代替受约束电芯状态。",
+      "conditions": [
+        "温度时间约束可比"
+      ],
+      "checks": [
+        "自由与受约束对比",
+        "尺寸定位"
+      ],
+      "tradeoffs": [
+        "小片热收缩不能直接替代整卷"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_assembly",
+        "atlas_finishing",
+        "cell_processing"
+      ],
+      "control_points": [
+        "控制隔膜和极片对齐、覆盖余量、张力、边缘和褶皱，排查极片毛刺与颗粒",
+        "按体系管理热压温度、压力、时间及均匀性，联查粘接与受压透过性能",
+        "控制烘烤温度时间、真空与转运暴露，验证残留去除和尺寸稳定"
+      ],
+      "failure_modes": [
+        "涂层不能有效约束基膜，复合膜受热尺寸或平整度可能不稳定。"
+      ]
+    },
+    {
+      "id": "coat_edge_045",
+      "source": "cell_filling",
+      "target": "cell_wetout",
+      "relation": "形成",
+      "mechanism": "注液程序决定液体进入层间并排出气体的机会。注液量足够也可能因困气、堆叠压紧或静置不足而留下局部干区。",
+      "conditions": [
+        "注液路径液体及静置明确"
+      ],
+      "checks": [
+        "质量与浸润观察",
+        "阻抗随时间"
+      ],
+      "tradeoffs": [
+        "吸液量与动态速度并非同一指标"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_wetting",
+        "cell_processing"
+      ],
+      "control_points": [
+        "固定电解液体系、温度、接触时间与受压状态，区分面内扩散与贯穿浸润",
+        "管理注液、真空、静置或加压程序，结合实际层间间隙判断局部干区",
+        "检查浸泡后尺寸、质量、涂层脱落及湿态电阻，区分吸液、溶胀和溶出"
+      ],
+      "failure_modes": [
+        "局部干区或困气使离子通路不连续，形成电流与反应分布不均。"
+      ]
+    },
+    {
+      "id": "coat_edge_046",
+      "source": "coat_pore",
+      "target": "cell_wetout",
+      "relation": "影响",
+      "mechanism": "涂层的贯通孔、孔喉和表面润湿影响电解液穿过涂层的速度。表面很容易铺展不等于厚度方向全部浸透。",
+      "conditions": [
+        "液体表面作用与装配压力明确"
+      ],
+      "checks": [
+        "面内/贯穿分测",
+        "实际液体测试"
+      ],
+      "tradeoffs": [
+        "增加开放结构需兼顾其他性能"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_coatdry",
+        "atlas_wetting",
+        "cell_processing"
+      ],
+      "control_points": [
+        "控制分区温度、实际膜温、风量、湿度或溶剂负荷与停留时间，防止入口骤干和局部过热",
+        "联查干燥前后透气增值、孔口形貌、剥离断口及残留，不以克重厚度正常排除孔道异常",
+        "分开控制水分、工艺溶剂和基膜残留，规定取样密封、储存与复验条件"
+      ],
+      "failure_modes": [
+        "局部干区或困气使离子通路不连续，形成电流与反应分布不均。"
+      ]
+    },
+    {
+      "id": "coat_edge_047",
+      "source": "coat_coverage",
+      "target": "cell_wetout",
+      "relation": "影响方向性",
+      "mechanism": "连续覆盖、岛状覆盖及局部缺涂会形成不同的液体入口分布。若覆盖后孔口被堵，局部浸润可能变慢或不均。",
+      "conditions": [
+        "明确方向和材料结构"
+      ],
+      "checks": [
+        "分别测试两方向",
+        "控制前态膜"
+      ],
+      "tradeoffs": [
+        "表面铺展快不保证贯穿快"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_application",
+        "atlas_wetting",
+        "cell_processing"
+      ],
+      "control_points": [
+        "核对前态层结构、涂布面、方向和卷段，检查残油、皱折及表面润湿状态",
+        "按实际涂布方式管理供料、间隙或辊接触、线速比、张力和边缘覆盖",
+        "对涂前涂后厚度、干涂层克重、覆盖率及横纵分布进行配对管理，识别细条纹和局部缺涂"
+      ],
+      "failure_modes": [
+        "局部干区或困气使离子通路不连续，形成电流与反应分布不均。"
+      ]
+    },
+    {
+      "id": "coat_edge_048",
+      "source": "cell_electrolyte",
+      "target": "cell_wetout",
+      "relation": "影响",
+      "mechanism": "电解液粘度、表面张力及与材料的相互作用会改变铺展与入孔行为。某种电解液下的好润湿不能自动外推到其他体系。",
+      "conditions": [
+        "配方温度与预处理明确"
+      ],
+      "checks": [
+        "实际液体接触角",
+        "动态浸润"
+      ],
+      "tradeoffs": [
+        "水润湿不能替代电解液"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_wetting",
+        "cell_processing"
+      ],
+      "control_points": [
+        "固定电解液体系、温度、接触时间与受压状态，区分面内扩散与贯穿浸润",
+        "管理注液、真空、静置或加压程序，结合实际层间间隙判断局部干区",
+        "检查浸泡后尺寸、质量、涂层脱落及湿态电阻，区分吸液、溶胀和溶出"
+      ],
+      "failure_modes": [
+        "局部干区或困气使离子通路不连续，形成电流与反应分布不均。"
+      ]
+    },
+    {
+      "id": "coat_edge_049",
+      "source": "cell_electrolyte",
+      "target": "cell_swelling",
+      "relation": "引起条件性变化",
+      "mechanism": "电解液进入聚合物后可能增加链间距离，使涂层溶胀或软化。程度取决于材料和溶剂相容性、时间及温度。",
+      "conditions": [
+        "材料与液体特定",
+        "时间温度明确"
+      ],
+      "checks": [
+        "尺寸/形貌",
+        "干湿力学对照"
+      ],
+      "tradeoffs": [
+        "增强相容可能降低某些力学保持"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_wetting",
+        "coat_adhesion"
+      ],
+      "control_points": [
+        "固定电解液体系、温度、接触时间与受压状态，区分面内扩散与贯穿浸润",
+        "管理注液、真空、静置或加压程序，结合实际层间间隙判断局部干区",
+        "检查浸泡后尺寸、质量、涂层脱落及湿态电阻，区分吸液、溶胀和溶出"
+      ],
+      "failure_modes": [
+        "聚合物尺寸或力学状态变化，可能影响孔道、界面和湿态稳定性。"
+      ]
+    },
+    {
+      "id": "coat_edge_050",
+      "source": "cell_swelling",
+      "target": "coat_interface",
+      "relation": "改变",
+      "mechanism": "涂层吸液溶胀后，界面应力和粘结剂状态会改变，可能增大接触，也可能削弱结合。必须检查湿态断口而不只看干态剥离。",
+      "conditions": [
+        "浸液历程一致"
+      ],
+      "checks": [
+        "湿态剥离",
+        "失效位置"
+      ],
+      "tradeoffs": [
+        "干态优势可能不在湿态保持"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_wetting",
+        "atlas_interface",
+        "coat_adhesion"
+      ],
+      "control_points": [
+        "固定电解液体系、温度、接触时间与受压状态，区分面内扩散与贯穿浸润",
+        "管理注液、真空、静置或加压程序，结合实际层间间隙判断局部干区",
+        "检查浸泡后尺寸、质量、涂层脱落及湿态电阻，区分吸液、溶胀和溶出"
+      ],
+      "failure_modes": [
+        "涂层从基膜表面脱离，湿态或受热后可能失去局部约束。"
+      ]
+    },
+    {
+      "id": "coat_edge_051",
+      "source": "cell_swelling",
+      "target": "coat_pore",
+      "relation": "可能改变",
+      "mechanism": "溶胀使聚合物占据的空间变化，可能缩窄孔喉或改变液体通道。吸液量增加并不保证贯穿方向电阻下降。",
+      "conditions": [
+        "排除未浸润与测试几何"
+      ],
+      "checks": [
+        "湿态厚度",
+        "受压电阻"
+      ],
+      "tradeoffs": [
+        "吸液增加不保证传输增加"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_wetting",
+        "atlas_coatdry",
+        "cell_transport"
+      ],
+      "control_points": [
+        "固定电解液体系、温度、接触时间与受压状态，区分面内扩散与贯穿浸润",
+        "管理注液、真空、静置或加压程序，结合实际层间间隙判断局部干区",
+        "检查浸泡后尺寸、质量、涂层脱落及湿态电阻，区分吸液、溶胀和溶出"
+      ],
+      "failure_modes": [
+        "有效液体通路缩窄或不均，即使厚度克重正常，透气和湿态电阻也可能变差。"
+      ]
+    },
+    {
+      "id": "coat_edge_052",
+      "source": "cell_compression",
+      "target": "cell_resistance",
+      "relation": "影响",
+      "mechanism": "受压会改变膜厚、孔形和可通液截面，这些变化共同决定湿态电阻。压力也改变电极接触，整电芯变化不能全部归于隔膜。",
+      "conditions": [
+        "温度压力和液体一致"
+      ],
+      "checks": [
+        "受压阻抗",
+        "卸载恢复"
+      ],
+      "tradeoffs": [
+        "电阻方向依结构而异"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_assembly",
+        "atlas_celltransport",
+        "cell_transport"
+      ],
+      "control_points": [
+        "控制隔膜和极片对齐、覆盖余量、张力、边缘和褶皱，排查极片毛刺与颗粒",
+        "按体系管理热压温度、压力、时间及均匀性，联查粘接与受压透过性能",
+        "控制烘烤温度时间、真空与转运暴露，验证残留去除和尺寸稳定"
+      ],
+      "failure_modes": [
+        "离子传输或其他电芯阻抗贡献增大，需分解来源后才能归因。"
+      ]
+    },
+    {
+      "id": "coat_edge_053",
+      "source": "cell_wetout",
+      "target": "cell_resistance",
+      "relation": "影响",
+      "mechanism": "未浸透区域缺少连续液体通路，电流被迫通过其余区域，局部离子传输阻力和不均匀性增加。",
+      "conditions": [
+        "排除离子旁路和接触问题"
+      ],
+      "checks": [
+        "阻抗随浸润时间",
+        "面积控制"
+      ],
+      "tradeoffs": [
+        "过量液体可能形成测量旁路"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_wetting",
+        "atlas_celltransport",
+        "cell_transport"
+      ],
+      "control_points": [
+        "固定电解液体系、温度、接触时间与受压状态，区分面内扩散与贯穿浸润",
+        "管理注液、真空、静置或加压程序，结合实际层间间隙判断局部干区",
+        "检查浸泡后尺寸、质量、涂层脱落及湿态电阻，区分吸液、溶胀和溶出"
+      ],
+      "failure_modes": [
+        "离子传输或其他电芯阻抗贡献增大，需分解来源后才能归因。"
+      ]
+    },
+    {
+      "id": "coat_edge_054",
+      "source": "coat_pore",
+      "target": "cell_resistance",
+      "relation": "影响",
+      "mechanism": "涂层形成额外的离子传输路径，孔喉狭窄、堵塞或曲折程度增加时，湿态电阻可能上升；连续且充分润湿的孔道有助于维持传输。",
+      "conditions": [
+        "相同电解液温度与厚度基准"
+      ],
+      "checks": [
+        "独立隔膜阻抗",
+        "孔结构对照"
+      ],
+      "tradeoffs": [
+        "透气只作间接线索"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_coatdry",
+        "atlas_celltransport",
+        "cell_transport"
+      ],
+      "control_points": [
+        "控制分区温度、实际膜温、风量、湿度或溶剂负荷与停留时间，防止入口骤干和局部过热",
+        "联查干燥前后透气增值、孔口形貌、剥离断口及残留，不以克重厚度正常排除孔道异常",
+        "分开控制水分、工艺溶剂和基膜残留，规定取样密封、储存与复验条件"
+      ],
+      "failure_modes": [
+        "离子传输或其他电芯阻抗贡献增大，需分解来源后才能归因。"
+      ]
+    },
+    {
+      "id": "coat_edge_055",
+      "source": "coat_thickness",
+      "target": "cell_resistance",
+      "relation": "条件性影响",
+      "mechanism": "在结构和润湿状态相近时，较厚涂层增加离子需要经过的路径。若同时改变孔隙或接触状态，就需要拆分这些影响。",
+      "conditions": [
+        "结构和浸润状态可比"
+      ],
+      "checks": [
+        "厚度压力基准",
+        "有效电阻"
+      ],
+      "tradeoffs": [
+        "减薄需检查机械与绝缘裕度"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_application",
+        "atlas_celltransport",
+        "cell_transport"
+      ],
+      "control_points": [
+        "核对前态层结构、涂布面、方向和卷段，检查残油、皱折及表面润湿状态",
+        "按实际涂布方式管理供料、间隙或辊接触、线速比、张力和边缘覆盖",
+        "对涂前涂后厚度、干涂层克重、覆盖率及横纵分布进行配对管理，识别细条纹和局部缺涂"
+      ],
+      "failure_modes": [
+        "离子传输或其他电芯阻抗贡献增大，需分解来源后才能归因。"
+      ]
+    },
+    {
+      "id": "coat_edge_056",
+      "source": "cell_electrolyte",
+      "target": "cell_resistance",
+      "relation": "共同决定",
+      "mechanism": "电解液本身的离子电导率和粘度决定液体通路的传输能力。相同隔膜在不同电解液和温度下可得到不同电阻。",
+      "conditions": [
+        "电解液与温度固定"
+      ],
+      "checks": [
+        "液体本体电导",
+        "隔膜电阻"
+      ],
+      "tradeoffs": [
+        "不可跨液体直接排序隔膜"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_wetting",
+        "atlas_celltransport",
+        "cell_transport"
+      ],
+      "control_points": [
+        "固定电解液体系、温度、接触时间与受压状态，区分面内扩散与贯穿浸润",
+        "管理注液、真空、静置或加压程序，结合实际层间间隙判断局部干区",
+        "检查浸泡后尺寸、质量、涂层脱落及湿态电阻，区分吸液、溶胀和溶出"
+      ],
+      "failure_modes": [
+        "离子传输或其他电芯阻抗贡献增大，需分解来源后才能归因。"
+      ]
+    },
+    {
+      "id": "coat_edge_057",
+      "source": "cell_resistance",
+      "target": "cell_polarization",
+      "relation": "贡献于",
+      "mechanism": "离子传输阻力增大时，同样电流需要更大的电位差，并可能形成更明显的浓度梯度，表现为更大的极化。",
+      "conditions": [
+        "电流温度和其他材料可比"
+      ],
+      "checks": [
+        "独立电阻与电芯阻抗",
+        "倍率对照"
+      ],
+      "tradeoffs": [
+        "其他限制可掩盖改善"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_celltransport",
+        "cell_transport"
+      ],
+      "control_points": [
+        "比较相同SOC、温度、倍率、压力和老化状态下的电芯，避免把测试条件差异当作材料差异",
+        "先区分隔膜电阻、界面阻抗与电子接触问题，再结合局部浸润和拆解定位",
+        "对改善同步复验容量、倍率、循环及局部失效现象，保留电极和电解液对照"
+      ],
+      "failure_modes": [
+        "充放电电位偏离增大，可能提前触及截止电压并放大局部反应差异。"
+      ]
+    },
+    {
+      "id": "coat_edge_058",
+      "source": "cell_polarization",
+      "target": "cell_rate",
+      "relation": "影响",
+      "mechanism": "较高倍率下的极化会使电芯更早达到电压截止条件，使部分容量无法在该倍率下释放；同时伴随发热和局部反应不均。",
+      "conditions": [
+        "截止条件与温度一致"
+      ],
+      "checks": [
+        "倍率程序",
+        "电压曲线"
+      ],
+      "tradeoffs": [
+        "倍率变化不专属于隔膜"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_celltransport",
+        "cell_transport"
+      ],
+      "control_points": [
+        "比较相同SOC、温度、倍率、压力和老化状态下的电芯，避免把测试条件差异当作材料差异",
+        "先区分隔膜电阻、界面阻抗与电子接触问题，再结合局部浸润和拆解定位",
+        "对改善同步复验容量、倍率、循环及局部失效现象，保留电极和电解液对照"
+      ],
+      "failure_modes": [
+        "高倍率下可释放容量降低或发热增加，需排查电極和传输的共同影响。"
+      ]
+    },
+    {
+      "id": "coat_edge_059",
+      "source": "cell_polarization",
+      "target": "cell_cycle",
+      "relation": "可能关联",
+      "mechanism": "长期的局部传输不均会使反应负荷分布不均，可能加速界面老化或在特定条件下诱发析锂。循环衰减仍需排查电极和电解液因素。",
+      "conditions": [
+        "需电芯与拆解证据",
+        "排除其他材料因素"
+      ],
+      "checks": [
+        "循环统计",
+        "阻抗演变",
+        "界面检查"
+      ],
+      "tradeoffs": [
+        "初始电阻不能预测全部循环"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_celltransport",
+        "cell_transport"
+      ],
+      "control_points": [
+        "比较相同SOC、温度、倍率、压力和老化状态下的电芯，避免把测试条件差异当作材料差异",
+        "先区分隔膜电阻、界面阻抗与电子接触问题，再结合局部浸润和拆解定位",
+        "对改善同步复验容量、倍率、循环及局部失效现象，保留电极和电解液对照"
+      ],
+      "failure_modes": [
+        "长期反应不均和界面老化可能加速容量衰减；循环变化不专属于隔膜。"
+      ]
+    },
+    {
+      "id": "coat_edge_060",
+      "source": "coat_bond",
+      "target": "cell_cycle",
+      "relation": "条件性影响",
+      "mechanism": "合适粘接有助于保持极片与隔膜的接触和位置，但过强压实或孔道变化也可能影响传输。循环结果取决于湿态结构是否保持稳定。",
+      "conditions": [
+        "材料体系与装配条件匹配"
+      ],
+      "checks": [
+        "循环前后界面",
+        "粘接保持"
+      ],
+      "tradeoffs": [
+        "更高粘接未必带来更好循环"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_interface",
+        "atlas_celltransport",
+        "coat_adhesion",
+        "cell_transport"
+      ],
+      "control_points": [
+        "明确配方中粘结剂、陶瓷与功能聚合物的作用，控制润湿、分布与干燥过程",
+        "剥离统一胶带或配对材料、角度速度及干湿状态，记录残留面和断裂位置",
+        "控制后道摩擦、弯折和张力，并在规定浸泡及热压条件下复验结合与掉粉"
+      ],
+      "failure_modes": [
+        "长期反应不均和界面老化可能加速容量衰减；循环变化不专属于隔膜。"
+      ]
+    },
+    {
+      "id": "coat_edge_061",
+      "source": "coat_foreign",
+      "target": "cell_local_weak",
+      "relation": "可能削弱",
+      "mechanism": "金属颗粒可能导电，硬颗粒可能集中压力并压伤隔膜，普通软粉末则可能主要影响孔道和接触。成分、尺寸与位置决定风险路径。",
+      "conditions": [
+        "形貌位置组成与受载明确"
+      ],
+      "checks": [
+        "异物对应局部损伤",
+        "受控正常对照"
+      ],
+      "tradeoffs": [
+        "检测到颗粒不等于确认根因"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_coatclean",
+        "atlas_cellsafety",
+        "cell_failure"
+      ],
+      "control_points": [
+        "匹配过滤精度与正常颗粒尺寸，管理压差、密封、换滤和下游洁净",
+        "保持供液、泵入口、回流和脱泡稳定，避免吸气或再卷气",
+        "控制静电、设备磨屑、清洁残留和环境落尘，对异常颗粒识别成分与尺寸"
+      ],
+      "failure_modes": [
+        "孔洞、压伤或覆盖不足使局部更易失去有效隔离。"
+      ]
+    },
+    {
+      "id": "coat_edge_062",
+      "source": "coat_edge",
+      "target": "cell_local_weak",
+      "relation": "可能削弱",
+      "mechanism": "边部缺口、毛刺或折边会减小有效覆盖或形成局部应力集中。是否构成薄弱点还取决于装配对齐和极片边缘位置。",
+      "conditions": [
+        "损伤位置进入有效电极区域"
+      ],
+      "checks": [
+        "电弱点与位置",
+        "显微观察"
+      ],
+      "tradeoffs": [
+        "平均穿刺性能可保持正常"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_finishing",
+        "atlas_cellsafety",
+        "cell_failure"
+      ],
+      "control_points": [
+        "管理分切刀口、张力、辊面摩擦和卷径张力，检查边部掉粉及涂层裂纹",
+        "控制包装洁净、防潮密封和储存条件，复验暴露后水分与外观",
+        "在规定温度、时间、受力和干湿状态下同时检查尺寸变化、涂层开裂脱落及基膜连续性"
+      ],
+      "failure_modes": [
+        "孔洞、压伤或覆盖不足使局部更易失去有效隔离。"
+      ]
+    },
+    {
+      "id": "coat_edge_063",
+      "source": "cell_local_weak",
+      "target": "cell_short",
+      "relation": "条件性形成",
+      "mechanism": "当局部孔洞、颗粒或破损让正负极形成电子通路时，可能出现内短路。只有薄弱外观而未形成导通，不能直接判定已短路。",
+      "conditions": [
+        "电极位置接触载荷和状态明确"
+      ],
+      "checks": [
+        "定位与电学信号互证",
+        "拆解证据"
+      ],
+      "tradeoffs": [
+        "局部缺陷不必然发生短路"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_cellsafety",
+        "cell_failure"
+      ],
+      "control_points": [
+        "控制颗粒成分与尺寸、局部孔洞、划伤、极片毛刺及有效覆盖，复核缺陷在装配后的位置",
+        "在匹配的受压和温度历程下区分闭孔阻抗变化与机械连续性丧失",
+        "短路或异常发热按现场隔离与升级流程处理，不以平均穿刺合格或单一热收缩值放行"
+      ],
+      "failure_modes": [
+        "形成电子导通路径后可能出现自放电、内短路或异常发热。"
+      ]
+    },
+    {
+      "id": "coat_edge_064",
+      "source": "cell_short",
+      "target": "cell_heat_risk",
+      "relation": "可能引发",
+      "mechanism": "短路电流在局部产生热量，热量若无法及时散出，可能进一步损伤隔膜并触发其他放热反应。结果受短路位置、能量和电芯状态影响。",
+      "conditions": [
+        "荷电状态化学体系和散热明确"
+      ],
+      "checks": [
+        "电芯级热电证据",
+        "失效定位"
+      ],
+      "tradeoffs": [
+        "短路不自动等同热失控"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_cellsafety",
+        "cell_failure"
+      ],
+      "control_points": [
+        "控制颗粒成分与尺寸、局部孔洞、划伤、极片毛刺及有效覆盖，复核缺陷在装配后的位置",
+        "在匹配的受压和温度历程下区分闭孔阻抗变化与机械连续性丧失",
+        "短路或异常发热按现场隔离与升级流程处理，不以平均穿刺合格或单一热收缩值放行"
+      ],
+      "failure_modes": [
+        "局部热量积聚可能加重结构损伤并触发后续放热反应。"
+      ]
+    },
+    {
+      "id": "coat_edge_065",
+      "source": "coat_ceramic",
+      "target": "coat_shrink",
+      "relation": "条件性约束",
+      "mechanism": "陶瓷骨架可以在受热时提供尺寸约束，但需要颗粒之间及其与基膜的可靠连接。颗粒耐热本身不能保证复合膜不收缩或不开裂。",
+      "conditions": [
+        "涂层和界面保持完整"
+      ],
+      "checks": [
+        "热后形貌",
+        "方向尺寸变化"
+      ],
+      "tradeoffs": [
+        "颗粒耐热不等于膜完整"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_slurry",
+        "atlas_finishing",
+        "cell_failure"
+      ],
+      "control_points": [
+        "控制陶瓷骨架的覆盖与连接，联查颗粒间内聚及与基膜的界面结合",
+        "热处理前后检查脱层、裂纹和掉粉，不能仅检测平面尺寸",
+        "采用与用途匹配的温度、时间、受压和干湿状态复验整体稳定性"
+      ],
+      "failure_modes": [
+        "涂层不能有效约束基膜，复合膜受热尺寸或平整度可能不稳定。"
+      ]
+    },
+    {
+      "id": "coat_edge_066",
+      "source": "coat_interface",
+      "target": "cell_thermal_integrity",
+      "relation": "影响",
+      "mechanism": "基膜受热变化时，涂层必须仍与其有效结合才能持续提供约束。界面脱离后，陶瓷层存在也可能无法保持整体隔离形状。",
+      "conditions": [
+        "干湿和约束条件明确"
+      ],
+      "checks": [
+        "热后分层/裂纹",
+        "界面保持"
+      ],
+      "tradeoffs": [
+        "高干态剥离不能替代受热验证"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_interface",
+        "atlas_cellsafety",
+        "cell_failure"
+      ],
+      "control_points": [
+        "明确配方中粘结剂、陶瓷与功能聚合物的作用，控制润湿、分布与干燥过程",
+        "剥离统一胶带或配对材料、角度速度及干湿状态，记录残留面和断裂位置",
+        "控制后道摩擦、弯折和张力，并在规定浸泡及热压条件下复验结合与掉粉"
+      ],
+      "failure_modes": [
+        "受热后出现覆盖丧失、孔洞或破裂，隔离功能可能无法维持。"
+      ]
+    },
+    {
+      "id": "coat_edge_067",
+      "source": "coat_cohesion",
+      "target": "cell_thermal_integrity",
+      "relation": "影响",
+      "mechanism": "涂层内部连接使颗粒骨架在受热和受力时保持连续。若内聚不足、开裂或掉粉，局部支撑和覆盖会失效。",
+      "conditions": [
+        "材料热响应与湿态明确"
+      ],
+      "checks": [
+        "热后裂纹和掉粉",
+        "正常对照"
+      ],
+      "tradeoffs": [
+        "提高结合可能改变孔道"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_interface",
+        "atlas_cellsafety",
+        "cell_failure"
+      ],
+      "control_points": [
+        "明确配方中粘结剂、陶瓷与功能聚合物的作用，控制润湿、分布与干燥过程",
+        "剥离统一胶带或配对材料、角度速度及干湿状态，记录残留面和断裂位置",
+        "控制后道摩擦、弯折和张力，并在规定浸泡及热压条件下复验结合与掉粉"
+      ],
+      "failure_modes": [
+        "受热后出现覆盖丧失、孔洞或破裂，隔离功能可能无法维持。"
+      ]
+    },
+    {
+      "id": "coat_edge_068",
+      "source": "coat_shrink",
+      "target": "cell_thermal_integrity",
+      "relation": "提供部分线索",
+      "mechanism": "收缩会改变隔膜相对极片的覆盖，而裂纹或断裂会破坏连续隔离。尺寸变化只是热完整性的一部分，需要同时检查受热后的结构。",
+      "conditions": [
+        "温度时间方向约束一致"
+      ],
+      "checks": [
+        "尺寸与局部形貌联查"
+      ],
+      "tradeoffs": [
+        "小收缩不保证无局部失效"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_finishing",
+        "atlas_cellsafety",
+        "cell_failure"
+      ],
+      "control_points": [
+        "管理分切刀口、张力、辊面摩擦和卷径张力，检查边部掉粉及涂层裂纹",
+        "控制包装洁净、防潮密封和储存条件，复验暴露后水分与外观",
+        "在规定温度、时间、受力和干湿状态下同时检查尺寸变化、涂层开裂脱落及基膜连续性"
+      ],
+      "failure_modes": [
+        "受热后出现覆盖丧失、孔洞或破裂，隔离功能可能无法维持。"
+      ]
+    },
+    {
+      "id": "coat_edge_069",
+      "source": "cell_shutdown",
+      "target": "cell_resistance",
+      "relation": "受热条件下改变",
+      "mechanism": "PE孔道受热闭合后，可通行离子的截面减少，电阻可能显著升高。闭孔温度、速度和完整性与材料结构及受压状态有关。",
+      "conditions": [
+        "规定升温过程与测量条件"
+      ],
+      "checks": [
+        "温度阻抗响应",
+        "后续完整性"
+      ],
+      "tradeoffs": [
+        "闭孔响应不保证持续隔离"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_cellsafety",
+        "atlas_celltransport",
+        "cell_failure"
+      ],
+      "control_points": [
+        "控制颗粒成分与尺寸、局部孔洞、划伤、极片毛刺及有效覆盖，复核缺陷在装配后的位置",
+        "在匹配的受压和温度历程下区分闭孔阻抗变化与机械连续性丧失",
+        "短路或异常发热按现场隔离与升级流程处理，不以平均穿刺合格或单一热收缩值放行"
+      ],
+      "failure_modes": [
+        "离子传输或其他电芯阻抗贡献增大，需分解来源后才能归因。"
+      ]
+    },
+    {
+      "id": "coat_edge_070",
+      "source": "cell_thermal_integrity",
+      "target": "cell_local_weak",
+      "relation": "影响受热后隔离",
+      "mechanism": "受热后仍连续、无孔洞并保持有效覆盖的隔膜，有助于避免新增局部薄弱点。若收缩或破裂导致电极接触，则隔离功能可能丧失。",
+      "conditions": [
+        "受热与载荷状态接近应用"
+      ],
+      "checks": [
+        "热后定位形貌",
+        "电学互证"
+      ],
+      "tradeoffs": [
+        "自由样片结果不能替代电芯安全"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_cellsafety",
+        "cell_failure"
+      ],
+      "control_points": [
+        "控制颗粒成分与尺寸、局部孔洞、划伤、极片毛刺及有效覆盖，复核缺陷在装配后的位置",
+        "在匹配的受压和温度历程下区分闭孔阻抗变化与机械连续性丧失",
+        "短路或异常发热按现场隔离与升级流程处理，不以平均穿刺合格或单一热收缩值放行"
+      ],
+      "failure_modes": [
+        "孔洞、压伤或覆盖不足使局部更易失去有效隔离。"
+      ]
+    },
+    {
+      "id": "atlas_edge_042",
+      "source": "cell_polarization",
+      "target": "cell_capacity",
+      "relation": "经材料与过程状态传递影响",
+      "mechanism": "极化增大时，电芯可能更早达到充放电截止电压，实际可用容量下降。改变倍率或温度可帮助区分传输限制和活性材料损失。",
+      "conditions": [
+        "适用于所述材料状态和实际工序路线；用对应卷段、横向位置与可比正常样确认。"
+      ],
+      "checks": [
+        "定位实物与前后工序对应位置，比较正常对照并检查机制中的中间变化。"
+      ],
+      "article_ids": [
+        "atlas_celltransport"
+      ],
+      "control_points": [
+        "比较相同SOC、温度、倍率、压力和老化状态下的电芯，避免把测试条件差异当作材料差异",
+        "先区分隔膜电阻、界面阻抗与电子接触问题，再结合局部浸润和拆解定位",
+        "对改善同步复验容量、倍率、循环及局部失效现象，保留电极和电解液对照"
+      ],
+      "failure_modes": [
+        "规定测试条件下可用容量下降或一致性变差，需区分传输受限与活性材料损失。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,283 @@
+{
+  "articles": [
+    {
+      "id": "base_materials_phase",
+      "title": "湿法基膜材料功能与热致相分离",
+      "summary": "解释树脂、稀释剂与添加体系如何通过混合和相分离影响基膜，区分原料相关性与经验证原因。",
+      "stage": "基膜",
+      "category": "材料与结构",
+      "tags": [
+        "聚乙烯",
+        "稀释剂",
+        "石蜡油",
+        "相分离",
+        "TIPS",
+        "塑化"
+      ],
+      "aliases": [
+        "PE",
+        "UHMWPE",
+        "热致相分离",
+        "原料异常"
+      ],
+      "file": "base/materials_phase.md"
+    },
+    {
+      "id": "base_process_routes",
+      "title": "同步异步路线与工序边界",
+      "summary": "按膜态、受热与受力路径识别同步异步路线，避免跨产线误拼工序和重复计算热定型。",
+      "stage": "基膜",
+      "category": "工序边界",
+      "tags": [
+        "同步拉伸",
+        "异步拉伸",
+        "工序",
+        "热定型",
+        "牵引"
+      ],
+      "aliases": [
+        "双拉",
+        "纵拉",
+        "横拉",
+        "MDO",
+        "TDO",
+        "流程"
+      ],
+      "file": "base/process_routes.md"
+    },
+    {
+      "id": "base_extrusion_casting",
+      "title": "混炼挤出与流延冷却",
+      "summary": "用纵横位置与时间对应区分供料、过滤、模头和冷却问题，定位厚度与局部缺陷的生成区间。",
+      "stage": "基膜",
+      "category": "基膜制造",
+      "tags": [
+        "挤出",
+        "流延",
+        "冷却",
+        "模头",
+        "过滤",
+        "厚度"
+      ],
+      "aliases": [
+        "成型",
+        "铸片",
+        "压力波动",
+        "厚度不均",
+        "黑点"
+      ],
+      "file": "base/extrusion_casting.md"
+    },
+    {
+      "id": "base_stretching_pores",
+      "title": "拉伸取向、孔结构与方向性",
+      "summary": "分析含油状态、温度及变形路径如何共同作用于取向、孔道、力学与回复行为。",
+      "stage": "基膜",
+      "category": "基膜制造",
+      "tags": [
+        "拉伸",
+        "取向",
+        "孔结构",
+        "方向性",
+        "拉伸强度"
+      ],
+      "aliases": [
+        "倍率",
+        "纵横强度",
+        "孔径",
+        "断膜",
+        "各向异性"
+      ],
+      "file": "base/stretching_pores.md"
+    },
+    {
+      "id": "base_extraction_drying",
+      "title": "萃取、干燥与回收系统",
+      "summary": "区分残油、残溶与干燥收缩，结合回用液状态和位置证据安排排查。",
+      "stage": "基膜",
+      "category": "基膜制造",
+      "tags": [
+        "萃取",
+        "干燥",
+        "回收",
+        "残油",
+        "残溶",
+        "油斑"
+      ],
+      "aliases": [
+        "萃取剂",
+        "稀释剂残留",
+        "烘房",
+        "溶剂残留"
+      ],
+      "file": "base/extraction_drying.md"
+    },
+    {
+      "id": "base_heat_setting",
+      "title": "热定型、回缩与残余应力",
+      "summary": "结合热历史、受力约束和回缩解释热收缩与孔结构权衡，明确自由与受约束测试差异。",
+      "stage": "基膜",
+      "category": "基膜制造",
+      "tags": [
+        "热定型",
+        "回缩",
+        "残余应力",
+        "热收缩",
+        "结晶"
+      ],
+      "aliases": [
+        "热缩",
+        "退火",
+        "尺寸回复",
+        "幅宽收缩"
+      ],
+      "file": "base/heat_setting.md"
+    },
+    {
+      "id": "base_winding_slitting",
+      "title": "收卷、分切、熟化与卷材缺陷",
+      "summary": "区分膜本体与卷绕引入的缺陷，用位置、卷径和储放对照分析打皱、滑移、弧度及边缘损伤。",
+      "stage": "基膜",
+      "category": "后处理与缺陷",
+      "tags": [
+        "收卷",
+        "分切",
+        "熟化",
+        "张力",
+        "中波",
+        "塌边"
+      ],
+      "aliases": [
+        "一切",
+        "端面不齐",
+        "滑筒",
+        "褶皱",
+        "弧度",
+        "卷芯"
+      ],
+      "file": "base/winding_slitting.md"
+    },
+    {
+      "id": "base_structure_tradeoffs",
+      "title": "微观结构、物性与质量权衡",
+      "summary": "区分孔隙率、孔径、连通与曲折，避免用透气或平均力学指标替代离子传输及局部绝缘可靠性。",
+      "stage": "基膜",
+      "category": "结构与物性",
+      "tags": [
+        "孔隙率",
+        "透气度",
+        "曲折度",
+        "穿刺",
+        "电弱点",
+        "权衡"
+      ],
+      "aliases": [
+        "Gurley",
+        "克重",
+        "面密度",
+        "内阻",
+        "闭孔",
+        "破膜"
+      ],
+      "file": "base/structure_tradeoffs.md"
+    }
+  ],
+  "sources": [
+    {
+      "id": "base_source_phase",
+      "title": "Phase separation and structure control in ultra-high molecular weight polyethylene microporous membrane",
+      "url": "https://doi.org/10.1016/j.memsci.2011.05.073",
+      "type": "research",
+      "scope": "聚乙烯与液体石蜡体系相分离、结晶及观测路径。",
+      "limits": "已核对出版商公开摘要；具体组成和冷却路径有边界，不用于判断任意体系必然为某一种相分离。"
+    },
+    {
+      "id": "base_source_blend",
+      "title": "Effect of polymer blending and drawing conditions on properties of polyethylene separator prepared for Li-ion secondary battery",
+      "url": "https://doi.org/10.1016/S0378-7753(02)00097-6",
+      "type": "research",
+      "scope": "聚乙烯混合与拉伸条件对湿法膜力学和孔结构的影响。",
+      "limits": "已核对出版商公开摘要及可见片段；属于特定树脂及实验配方，未引用数值作为工艺标准。"
+    },
+    {
+      "id": "base_source_cooling",
+      "title": "Effects of cooling process on the solid–liquid phase separation process in ultra-high-molecular-weight polyethylene/liquid paraffin blends",
+      "url": "https://doi.org/10.1007/s00289-019-02733-y",
+      "type": "research",
+      "scope": "冷却路径与聚乙烯、液体石蜡体系的固液相分离。",
+      "limits": "已核对期刊公开页面；所研究体系不能代表所有稀释剂与树脂组合。"
+    },
+    {
+      "id": "base_source_stretch",
+      "title": "Effect of the Stretching Process of Polyethylene Separators on Rate Capability of Lithium-Ion Batteries",
+      "url": "https://doi.org/10.1021/acs.jpcc.1c01170",
+      "type": "research",
+      "scope": "湿法膜拉伸、孔道方向性及受控电芯体系中的倍率关联。",
+      "limits": "已核对出版商公开摘要；相关性限定于研究样品及电芯，不能把 Gurley 值通用换算成电芯内阻。"
+    },
+    {
+      "id": "base_source_cavitation",
+      "title": "Investigation on cavitation behavior of ultrahigh molecular weight polyethylene during stretching in wet process and dry process",
+      "url": "https://doi.org/10.1016/j.polymer.2021.124081",
+      "type": "research",
+      "scope": "含油与萃取后膜态的拉伸空穴行为差异。",
+      "limits": "已核对出版商公开摘要；用于提示膜态边界，不把实验室干态拉伸等同于全部商业干法工艺。"
+    },
+    {
+      "id": "base_source_extraction",
+      "title": "The morphology of polyethylene (PE) separator for lithium-ion battery tuned by the extracting process",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1572665720306184",
+      "type": "research",
+      "scope": "萃取介质、挥发收缩、孔结构及研究电芯表现。",
+      "limits": "已核对出版商公开摘要；仅说明介质及干燥路径可能改变结构，不推荐具体介质替换或工艺数值。"
+    },
+    {
+      "id": "base_source_heat",
+      "title": "拉伸外场作用下热定型工艺对湿法隔膜微观结构及性能影响关系研究",
+      "url": "https://www.gfzxb.org/zh/article/doi/10.11777/j.issn1000-3304.2021.21248/",
+      "type": "research",
+      "scope": "拉伸、回缩和温度场对湿法膜晶体、孔径与热收缩的耦合作用。",
+      "limits": "已核对期刊公开页面；结论限定于试验边界，不能推导回缩、倍率或温度的无限单调规律。"
+    },
+    {
+      "id": "base_source_anneal",
+      "title": "Effect of annealing temperature on pore formation in preparation of advanced polyethylene battery separator membranes",
+      "url": "https://doi.org/10.1016/j.mtcomm.2016.04.003",
+      "type": "research",
+      "scope": "退火、结晶与后续拉伸成孔的关系。",
+      "limits": "已核对出版商公开摘要及可见片段；材料和热处理顺序不同，不能照搬温度窗口。"
+    },
+    {
+      "id": "base_source_winding",
+      "title": "Optimum Winding Tension and Nip-load into Wound Webs for Protecting Wrinkles and Slippage",
+      "url": "https://www.jstage.jst.go.jp/article/jamdsm/4/1/4_1_214/_article/-char/en",
+      "type": "research",
+      "scope": "卷材张力、压合、层间摩擦与起皱及滑移权衡。",
+      "limits": "已核对原始论文公开页面；并非对本项目湿法隔膜的现场验证，须确认材料与设备边界。"
+    },
+    {
+      "id": "base_source_compression",
+      "title": "Mechanical Properties of a Battery Separator under Compression and Tension",
+      "url": "https://doi.org/10.1149/2.0191411jes",
+      "type": "research",
+      "scope": "隔膜压缩与拉伸响应及环境、加载边界。",
+      "limits": "已核对期刊索引与研究机构页面；研究对象不能代表全部湿法 PE 产品，仅支持区分加载模式。"
+    },
+    {
+      "id": "base_source_manufacturing",
+      "title": "Lithium-ion battery separator manufacturing processes",
+      "url": "https://www.asahi-kasei.com/ir/library/presentation/pdf/160908_03.pdf",
+      "type": "technical",
+      "scope": "制造商公开的干湿法路线与湿法孔结构设计因素。",
+      "limits": "制造商技术说明，不是同行评审的定量因果研究，也不是现行企业作业标准。"
+    },
+    {
+      "id": "base_source_tensile",
+      "title": "ASTM D882 — Standard Test Method for Tensile Properties of Thin Plastic Sheeting",
+      "url": "https://store.astm.org/d0882-26a.html",
+      "type": "standard",
+      "scope": "薄膜拉伸测试的适用范围及试样、速度、夹具的比较边界。",
+      "limits": "已核对发布机构公开范围与用途说明，未取得标准全文；实施时使用本地受控版本及产品约定，不在此规定操作参数。"
+    }
+  ]
+}

@@ -1,0 +1,3112 @@
+{
+  "nodes": [
+    {
+      "id": "base_pe",
+      "label": "聚乙烯树脂",
+      "type": "材料",
+      "stage": "基膜",
+      "summary": "构成承载骨架；需确认分子结构、分布与适用表征，不能按通用名称推定配方。",
+      "article_ids": [
+        "atlas_feed",
+        "base_materials_phase"
+      ]
+    },
+    {
+      "id": "base_diluent",
+      "label": "白油与稀释剂",
+      "type": "材料",
+      "stage": "基膜",
+      "summary": "参与高温混合和相分离的组分；与萃取剂功能不同。",
+      "article_ids": [
+        "atlas_feed",
+        "base_materials_phase",
+        "base_extraction_drying"
+      ]
+    },
+    {
+      "id": "base_extractant",
+      "label": "萃取剂",
+      "type": "材料",
+      "stage": "基膜",
+      "summary": "用于移除稀释剂；介质性质及回用状态影响传质和后续挥发。",
+      "article_ids": [
+        "atlas_extraction",
+        "base_extraction_drying"
+      ]
+    },
+    {
+      "id": "base_additives",
+      "label": "添加体系",
+      "type": "材料",
+      "stage": "基膜",
+      "summary": "按稳定、抗氧化、成核等实际功能识别，不把所有微量组分视为杂质。",
+      "article_ids": [
+        "atlas_feed",
+        "base_materials_phase"
+      ]
+    },
+    {
+      "id": "base_molecular",
+      "label": "分子量与链缠结",
+      "type": "结构",
+      "stage": "基膜",
+      "summary": "影响加工响应和承载潜力，成品表现还取决于混合与热力历史。",
+      "article_ids": [
+        "atlas_feed",
+        "base_materials_phase",
+        "base_stretching_pores"
+      ]
+    },
+    {
+      "id": "base_melt_uniformity",
+      "label": "熔体与凝胶均匀性",
+      "type": "结构",
+      "stage": "基膜",
+      "summary": "组成、温度与分散的空间均匀程度，压力稳定不能单独证明。",
+      "article_ids": [
+        "atlas_extrusion",
+        "base_materials_phase",
+        "base_extrusion_casting"
+      ]
+    },
+    {
+      "id": "base_phase",
+      "label": "相分离组织",
+      "type": "结构",
+      "stage": "基膜",
+      "summary": "热历史和组成共同形成的相区；需区分观测的液液分相与结晶耦合。",
+      "article_ids": [
+        "atlas_casting",
+        "base_materials_phase",
+        "base_extrusion_casting"
+      ]
+    },
+    {
+      "id": "base_crystal",
+      "label": "结晶结构",
+      "type": "结构",
+      "stage": "基膜",
+      "summary": "晶区含量、形态和组织，不能用单一熔融峰代表全部结构。",
+      "article_ids": [
+        "atlas_casting",
+        "base_materials_phase",
+        "base_heat_setting"
+      ]
+    },
+    {
+      "id": "base_orientation",
+      "label": "纵横取向",
+      "type": "结构",
+      "stage": "基膜",
+      "summary": "受变形路径影响的方向性；强度接近不代表完全各向同性。",
+      "article_ids": [
+        "atlas_stretch",
+        "base_stretching_pores",
+        "base_process_routes"
+      ]
+    },
+    {
+      "id": "base_stress",
+      "label": "残余应力与回复倾向",
+      "type": "结构",
+      "stage": "基膜",
+      "summary": "由全过程热力历史形成，在受热、储放和放卷条件下可能表现为回复与变形。",
+      "article_ids": [
+        "atlas_setting",
+        "base_heat_setting",
+        "base_winding_slitting"
+      ]
+    },
+    {
+      "id": "base_pores",
+      "label": "孔径及孔径分布",
+      "type": "结构",
+      "stage": "基膜",
+      "summary": "按指定方法测得的孔尺度分布，与孔隙率和贯通性分别描述。",
+      "article_ids": [
+        "atlas_stretch",
+        "base_stretching_pores",
+        "base_structure_tradeoffs"
+      ]
+    },
+    {
+      "id": "base_porosity",
+      "label": "孔隙率",
+      "type": "质量特性",
+      "stage": "基膜",
+      "summary": "孔体积比例；不同测试方法各有假设，不能替代孔道连通性。",
+      "article_ids": [
+        "atlas_transport",
+        "base_structure_tradeoffs"
+      ]
+    },
+    {
+      "id": "base_connectivity",
+      "label": "孔道连通性",
+      "type": "结构",
+      "stage": "基膜",
+      "summary": "孔道贯通及连接状态，单张表面图不能代表膜厚方向连通。",
+      "article_ids": [
+        "atlas_transport",
+        "base_stretching_pores",
+        "base_structure_tradeoffs"
+      ]
+    },
+    {
+      "id": "base_tortuosity",
+      "label": "有效通道曲折程度",
+      "type": "结构",
+      "stage": "基膜",
+      "summary": "传输路径绕行与约束；解释离子传输时需匹配电解液与浸润状态。",
+      "article_ids": [
+        "atlas_transport",
+        "base_structure_tradeoffs"
+      ]
+    },
+    {
+      "id": "base_skeleton",
+      "label": "微孔承载骨架",
+      "type": "结构",
+      "stage": "基膜",
+      "summary": "连接晶区与纤维状组织共同承载，孔空间与力学性能需联合评价。",
+      "article_ids": [
+        "atlas_stretch",
+        "base_stretching_pores",
+        "base_structure_tradeoffs"
+      ]
+    },
+    {
+      "id": "base_feed",
+      "label": "计量与混合供料",
+      "type": "工序",
+      "stage": "基膜",
+      "summary": "确认实际比例、供料稳定与切换追溯，避免只依据配方设定值。",
+      "article_ids": [
+        "atlas_feed",
+        "base_materials_phase",
+        "base_extrusion_casting"
+      ]
+    },
+    {
+      "id": "base_extrude",
+      "label": "混炼挤出",
+      "type": "工序",
+      "stage": "基膜",
+      "summary": "使材料混合并形成可流动的加工体系；热、剪切、时间与组成共同作用。",
+      "article_ids": [
+        "atlas_extrusion",
+        "base_extrusion_casting"
+      ]
+    },
+    {
+      "id": "base_filter",
+      "label": "熔体过滤",
+      "type": "工序",
+      "stage": "基膜",
+      "summary": "降低适用尺寸与性质的颗粒，同时改变流动阻力；压差需结合流量与黏度解释。",
+      "article_ids": [
+        "atlas_extrusion",
+        "base_extrusion_casting"
+      ]
+    },
+    {
+      "id": "base_cast",
+      "label": "流延成型",
+      "type": "工序",
+      "stage": "基膜",
+      "summary": "模头分配、片材接触和牵引共同作用于厚度及凝胶片状态。",
+      "article_ids": [
+        "atlas_casting",
+        "base_extrusion_casting"
+      ]
+    },
+    {
+      "id": "base_cool",
+      "label": "流延冷却",
+      "type": "工序",
+      "stage": "基膜",
+      "summary": "控制实际冷却路径及相分离结晶过程，设定温度不等于膜温。",
+      "article_ids": [
+        "atlas_casting",
+        "base_extrusion_casting",
+        "base_materials_phase"
+      ]
+    },
+    {
+      "id": "base_md",
+      "label": "纵向拉伸",
+      "type": "工序",
+      "stage": "基膜",
+      "summary": "以纵向变形改变组织，需确认含油状态、温度与实际速度路径。",
+      "article_ids": [
+        "atlas_stretch",
+        "base_stretching_pores",
+        "base_process_routes"
+      ]
+    },
+    {
+      "id": "base_td",
+      "label": "双拉段横向拉伸",
+      "type": "工序",
+      "stage": "基膜",
+      "summary": "以横向变形改变组织；入口膜态及是否萃取后拉伸需要说明。",
+      "article_ids": [
+        "atlas_stretch",
+        "base_stretching_pores",
+        "base_process_routes"
+      ]
+    },
+    {
+      "id": "base_sync",
+      "label": "双向同步拉伸",
+      "type": "工序",
+      "stage": "基膜",
+      "summary": "在相应区段协同施加纵横变形；不可把名义倍率直接与异步路线等同。",
+      "article_ids": [
+        "atlas_stretch",
+        "base_process_routes",
+        "base_stretching_pores"
+      ]
+    },
+    {
+      "id": "base_extract",
+      "label": "萃取",
+      "type": "工序",
+      "stage": "基膜",
+      "summary": "通过溶解与传质移除稀释剂，不能简化为过滤杂质。",
+      "article_ids": [
+        "atlas_extraction",
+        "base_extraction_drying"
+      ]
+    },
+    {
+      "id": "base_dry",
+      "label": "干燥",
+      "type": "工序",
+      "stage": "基膜",
+      "summary": "移出挥发组分，同时受热与受力可改变尺寸和结构。",
+      "article_ids": [
+        "atlas_setting",
+        "base_extraction_drying"
+      ]
+    },
+    {
+      "id": "base_recycle",
+      "label": "萃取剂回收与回用",
+      "type": "工序",
+      "stage": "基膜",
+      "summary": "回用液组成及波动属于萃取诊断条件，应核查适用质量项目。",
+      "article_ids": [
+        "atlas_extraction",
+        "base_extraction_drying"
+      ]
+    },
+    {
+      "id": "base_set",
+      "label": "热定型与回缩",
+      "type": "工序",
+      "stage": "基膜",
+      "summary": "热历史与约束共同调整回复倾向及结构，不一定是独立设备。",
+      "article_ids": [
+        "atlas_setting",
+        "base_heat_setting",
+        "base_process_routes"
+      ]
+    },
+    {
+      "id": "base_wind",
+      "label": "收卷",
+      "type": "工序",
+      "stage": "基膜",
+      "summary": "张力、压合、卷芯和来膜状态共同决定层间状态及卷内应力。",
+      "article_ids": [
+        "atlas_winding",
+        "base_winding_slitting"
+      ]
+    },
+    {
+      "id": "base_slit",
+      "label": "分切",
+      "type": "工序",
+      "stage": "基膜",
+      "summary": "形成目标幅宽并重新分配各分卷受力，需检查边缘与母卷位置。",
+      "article_ids": [
+        "atlas_slitting",
+        "base_winding_slitting"
+      ]
+    },
+    {
+      "id": "base_condition",
+      "label": "熟化与状态调节",
+      "type": "工序",
+      "stage": "基膜",
+      "summary": "按实际目的定义条件与时间；不默认能修复膜面缺陷。",
+      "article_ids": [
+        "atlas_winding",
+        "base_winding_slitting"
+      ]
+    },
+    {
+      "id": "base_thickness",
+      "label": "厚度及均匀性",
+      "type": "质量特性",
+      "stage": "基膜",
+      "summary": "需保留横向位置和纵向时间，平均值不能代表局部薄弱。",
+      "article_ids": [
+        "atlas_mechanical",
+        "base_extrusion_casting",
+        "base_structure_tradeoffs"
+      ]
+    },
+    {
+      "id": "base_grammage",
+      "label": "克重与面密度",
+      "type": "质量特性",
+      "stage": "基膜",
+      "summary": "单位面积质量；解释时需区分聚合物、残留与孔空间贡献。",
+      "article_ids": [
+        "atlas_transport",
+        "base_structure_tradeoffs"
+      ]
+    },
+    {
+      "id": "base_gurley",
+      "label": "透气度（Gurley 时间）",
+      "type": "质量特性",
+      "stage": "基膜",
+      "summary": "固定方法下通过时间较长表示空气阻力较大，不等同于离子电导。",
+      "article_ids": [
+        "atlas_transport",
+        "base_structure_tradeoffs"
+      ]
+    },
+    {
+      "id": "base_tensile",
+      "label": "纵横拉伸性能",
+      "type": "质量特性",
+      "stage": "基膜",
+      "summary": "强度、模量、伸长和韧性分别评价，保留方向与测试边界。",
+      "article_ids": [
+        "atlas_mechanical",
+        "base_stretching_pores",
+        "base_structure_tradeoffs"
+      ]
+    },
+    {
+      "id": "base_puncture",
+      "label": "穿刺强度",
+      "type": "质量特性",
+      "stage": "基膜",
+      "summary": "指定探针与加载条件下的局部力学响应，不能排除针孔与污染。",
+      "article_ids": [
+        "atlas_mechanical",
+        "base_structure_tradeoffs"
+      ]
+    },
+    {
+      "id": "base_shrink",
+      "label": "热收缩",
+      "type": "质量特性",
+      "stage": "基膜",
+      "summary": "给定热和约束条件下的尺寸变化，与闭孔、破膜含义不同。",
+      "article_ids": [
+        "atlas_mechanical",
+        "base_heat_setting"
+      ]
+    },
+    {
+      "id": "base_oil_residue",
+      "label": "残油",
+      "type": "质量特性",
+      "stage": "基膜",
+      "summary": "稀释剂残留需用适用方法定量，不能由外观干燥推断。",
+      "article_ids": [
+        "atlas_extraction",
+        "base_extraction_drying"
+      ]
+    },
+    {
+      "id": "base_solvent_residue",
+      "label": "残溶",
+      "type": "质量特性",
+      "stage": "基膜",
+      "summary": "萃取介质残留；取样密封和等待时间会影响可比性。",
+      "article_ids": [
+        "atlas_setting",
+        "base_extraction_drying"
+      ]
+    },
+    {
+      "id": "base_ionic",
+      "label": "浸液后离子传输阻力",
+      "type": "质量特性",
+      "stage": "基膜",
+      "summary": "需指定电解液、浸润和夹持条件，不直接等同于整电芯内阻。",
+      "article_ids": [
+        "atlas_transport",
+        "base_structure_tradeoffs"
+      ]
+    },
+    {
+      "id": "base_dimension",
+      "label": "尺寸与幅宽稳定性",
+      "type": "质量特性",
+      "stage": "基膜",
+      "summary": "包括干燥、受热、储放后的回复，按对应受力边界比较。",
+      "article_ids": [
+        "atlas_setting",
+        "base_heat_setting",
+        "base_winding_slitting"
+      ]
+    },
+    {
+      "id": "base_weak_electric",
+      "label": "局部电弱点",
+      "type": "质量特性",
+      "stage": "基膜",
+      "summary": "在规定电测试条件下出现的局部绝缘薄弱，需结合缺陷定位。",
+      "article_ids": [
+        "atlas_mechanical",
+        "base_structure_tradeoffs"
+      ]
+    },
+    {
+      "id": "base_black",
+      "label": "黑点与异物",
+      "type": "缺陷",
+      "stage": "基膜",
+      "summary": "外观名称不能判定成分；先区分聚合物降解物、金属及其他污染。",
+      "article_ids": [
+        "atlas_extrusion",
+        "base_extrusion_casting",
+        "base_structure_tradeoffs"
+      ]
+    },
+    {
+      "id": "base_thin",
+      "label": "局部薄点或针孔",
+      "type": "缺陷",
+      "stage": "基膜",
+      "summary": "局部承载和隔离能力异常，应与光学亮点进一步区分。",
+      "article_ids": [
+        "atlas_mechanical",
+        "base_extrusion_casting",
+        "base_structure_tradeoffs"
+      ]
+    },
+    {
+      "id": "base_oilspot",
+      "label": "油斑",
+      "type": "缺陷",
+      "stage": "基膜",
+      "summary": "疑似局部残油或相关外观异常，需位置与成分确认。",
+      "article_ids": [
+        "atlas_oil",
+        "base_extraction_drying"
+      ]
+    },
+    {
+      "id": "base_wrinkle",
+      "label": "打皱、中波与塌边",
+      "type": "缺陷",
+      "stage": "基膜",
+      "summary": "需区分自由来膜状态和卷绕、接触引入的变形。",
+      "article_ids": [
+        "atlas_winding",
+        "base_winding_slitting"
+      ]
+    },
+    {
+      "id": "base_camber",
+      "label": "弧度与跑偏倾向",
+      "type": "缺陷",
+      "stage": "基膜",
+      "summary": "需按自由膜及规定受力状态测量，不能只由端面外观判定。",
+      "article_ids": [
+        "atlas_winding",
+        "base_winding_slitting"
+      ]
+    },
+    {
+      "id": "base_slip",
+      "label": "层间滑移与端面不齐",
+      "type": "缺陷",
+      "stage": "基膜",
+      "summary": "可能与层间接触、摩擦、纠偏及卷芯有关，不能只归因张力不足。",
+      "article_ids": [
+        "atlas_winding",
+        "base_winding_slitting"
+      ]
+    },
+    {
+      "id": "base_edge",
+      "label": "分切边缘损伤",
+      "type": "缺陷",
+      "stage": "基膜",
+      "summary": "刀具、切割和边部受力造成或放大的局部损伤，应区别母卷原有缺陷。",
+      "article_ids": [
+        "atlas_slitting",
+        "base_winding_slitting"
+      ]
+    },
+    {
+      "id": "base_traction",
+      "label": "一牵引",
+      "type": "工序",
+      "stage": "基膜",
+      "summary": "输送含油膜，同时管理张力、速差、辊面与纠偏，避免额外变形。",
+      "article_ids": [
+        "atlas_traction"
+      ]
+    },
+    {
+      "id": "base_post_td",
+      "label": "萃取后横拉",
+      "type": "工序",
+      "stage": "基膜",
+      "summary": "在具体路线中承担后横拉、干燥或定型，需确认各区功能与约束方式。",
+      "article_ids": [
+        "atlas_setting"
+      ]
+    },
+    {
+      "id": "base_gel",
+      "label": "凝胶点与鱼眼",
+      "type": "缺陷",
+      "stage": "基膜",
+      "summary": "未塑化或局部聚集的物料形成结构不均，需与降解物及外来颗粒区分。",
+      "article_ids": [
+        "atlas_extrusion"
+      ]
+    },
+    {
+      "id": "base_break",
+      "label": "破膜与针孔",
+      "type": "缺陷",
+      "stage": "基膜",
+      "summary": "局部骨架失去连续性；尺寸、位置和成因决定后续隔离风险。",
+      "article_ids": [
+        "atlas_stretch"
+      ]
+    },
+    {
+      "id": "base_cast_ears",
+      "label": "铸片厚边",
+      "type": "缺陷",
+      "stage": "基膜",
+      "summary": "边部流动和冷却形成的增厚区域，可能干扰后续夹持、拉伸及边部均匀性。",
+      "article_ids": [
+        "atlas_casting"
+      ]
+    },
+    {
+      "id": "base_liquid_carry",
+      "label": "萃取混合液夹带",
+      "type": "结构",
+      "stage": "基膜",
+      "summary": "孔内和表面携带的萃取剂与白油混合液影响干燥负荷及污染路径。",
+      "article_ids": [
+        "atlas_extraction"
+      ]
+    },
+    {
+      "id": "base_scratch",
+      "label": "划伤与压印",
+      "type": "缺陷",
+      "stage": "基膜",
+      "summary": "接触造成的表面或厚度变化，需区分无损压印与骨架受损划伤。",
+      "article_ids": [
+        "atlas_slitting"
+      ]
+    },
+    {
+      "id": "base_oilstripe",
+      "label": "条状亮油斑",
+      "type": "缺陷",
+      "stage": "基膜",
+      "summary": "CCD识别的条状亮斑形态；需确认实物、成分及纵向周期。",
+      "article_ids": [
+        "atlas_oil"
+      ]
+    },
+    {
+      "id": "base_oildark",
+      "label": "暗油斑",
+      "type": "缺陷",
+      "stage": "基膜",
+      "summary": "CCD识别的暗斑形态；残油、积液转移或压痕等都需实物区分。",
+      "article_ids": [
+        "atlas_oil"
+      ]
+    },
+    {
+      "id": "base_oilrow",
+      "label": "横排点状亮斑",
+      "type": "缺陷",
+      "stage": "基膜",
+      "summary": "同一横向排布的点状亮斑，可用于追溯滴落、夹持或间歇接触事件。",
+      "article_ids": [
+        "atlas_oil"
+      ]
+    },
+    {
+      "id": "base_clipmark",
+      "label": "链夹痕与针板痕",
+      "type": "缺陷",
+      "stage": "基膜",
+      "summary": "夹持边部的压力、磨损或错位留下的痕迹，需检查损伤及有效幅宽。",
+      "article_ids": [
+        "atlas_oil"
+      ]
+    },
+    {
+      "id": "base_cut_burr",
+      "label": "分切边毛与毛刺",
+      "type": "缺陷",
+      "stage": "基膜",
+      "summary": "切割不整齐或刀具碎屑造成的边部异常，聚合物边毛与金属毛刺须分开识别。",
+      "article_ids": [
+        "atlas_slitting"
+      ]
+    },
+    {
+      "id": "base_dust",
+      "label": "膜屑与粉尘附着",
+      "type": "缺陷",
+      "stage": "基膜",
+      "summary": "切割、设备或环境产生的颗粒附着在膜面，成分和尺寸决定影响。",
+      "article_ids": [
+        "atlas_slitting"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "base_edge_001",
+      "source": "base_pe",
+      "target": "base_molecular",
+      "relation": "材料特性",
+      "mechanism": "树脂的分子量及分布决定长链缠结和流动难易。它们会影响塑化均匀性，也影响最终纤维能否传递载荷。",
+      "conditions": [
+        "明确树脂类别及方法适用范围"
+      ],
+      "checks": [
+        "比较原料留样的黏度或分子量相关表征",
+        "核对测试温度与预处理"
+      ],
+      "tradeoffs": [
+        "更高分子量的承载潜力可能伴随加工难度变化"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_feed",
+        "base_materials_phase"
+      ],
+      "control_points": [
+        "按已批准配方控制 PE/LB（白油）配比，核对固体喂料与液体计量的校准、线性和短周期波动",
+        "原料批次切换须保持追溯，按材料规范管理含水、储存时间及受热老化",
+        "投料与输送保持密闭清洁，控制金属磨屑及异物混入"
+      ],
+      "failure_modes": [
+        "树脂加工响应改变，可能出现塑化不充分或承载一致性变差。"
+      ]
+    },
+    {
+      "id": "base_edge_002",
+      "source": "base_diluent",
+      "target": "base_melt_uniformity",
+      "relation": "影响混合状态",
+      "mechanism": "白油使聚乙烯在高温下更易溶胀和混合。其相容性、比例及分散状态会改变熔体是否均匀，并影响冷却后的富油区域。",
+      "conditions": [
+        "配比和热历史可比",
+        "区分新料与回用组分"
+      ],
+      "checks": [
+        "核对计量实际值",
+        "对照过程样的组成和外观"
+      ],
+      "tradeoffs": [
+        "改善流动需同时评价相分离及后续移除负担"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_feed",
+        "atlas_extrusion",
+        "base_materials_phase"
+      ],
+      "control_points": [
+        "按已批准配方控制 PE/LB（白油）配比，核对固体喂料与液体计量的校准、线性和短周期波动",
+        "原料批次切换须保持追溯，按材料规范管理含水、储存时间及受热老化",
+        "投料与输送保持密闭清洁，控制金属磨屑及异物混入"
+      ],
+      "failure_modes": [
+        "塑化或混合不均会传递为鱼眼、局部厚度及成孔差异。"
+      ]
+    },
+    {
+      "id": "base_edge_003",
+      "source": "base_additives",
+      "target": "base_phase",
+      "relation": "可能调整组织",
+      "mechanism": "具有成核、稳定等功能的添加组分可能改变结晶起点或加工降解程度，进而改变相分离结构；作用方向取决于添加剂的实际功能。",
+      "conditions": [
+        "已确认添加剂实际功能",
+        "不得按代号猜测成分"
+      ],
+      "checks": [
+        "比对受控配方变化",
+        "用热分析或显微观察验证组织差异"
+      ],
+      "tradeoffs": [
+        "添加体系调整还需评价残留、稳定性和污染风险"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_feed",
+        "atlas_casting",
+        "base_materials_phase"
+      ],
+      "control_points": [
+        "按已批准配方控制 PE/LB（白油）配比，核对固体喂料与液体计量的校准、线性和短周期波动",
+        "原料批次切换须保持追溯，按材料规范管理含水、储存时间及受热老化",
+        "投料与输送保持密闭清洁，控制金属磨屑及异物混入"
+      ],
+      "failure_modes": [
+        "相分离模板不一致，后续同样拉伸条件也可能出现孔结构差异。"
+      ]
+    },
+    {
+      "id": "base_edge_004",
+      "source": "base_molecular",
+      "target": "base_extrude",
+      "relation": "改变加工响应",
+      "mechanism": "链越长、缠结越强，通常越难在有限时间内均匀塑化。挤出需要让温度、剪切和停留时间适应该树脂，避免颗粒未溶胀或局部过热。",
+      "conditions": [
+        "控制实际组成和温度",
+        "比较相同设备与产出状态"
+      ],
+      "checks": [
+        "对齐挤出压力及过程温度",
+        "检查留样和塑化状态"
+      ],
+      "tradeoffs": [
+        "追求承载能力需兼顾可加工性及分散"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_feed",
+        "atlas_extrusion",
+        "base_materials_phase",
+        "base_extrusion_casting"
+      ],
+      "control_points": [
+        "按已批准配方控制 PE/LB（白油）配比，核对固体喂料与液体计量的校准、线性和短周期波动",
+        "原料批次切换须保持追溯，按材料规范管理含水、储存时间及受热老化",
+        "投料与输送保持密闭清洁，控制金属磨屑及异物混入"
+      ],
+      "failure_modes": [
+        "挤出状态不匹配会留下未塑化颗粒、降解物或熔体流量波动。"
+      ]
+    },
+    {
+      "id": "base_edge_005",
+      "source": "base_feed",
+      "target": "base_melt_uniformity",
+      "relation": "影响组成一致性",
+      "mechanism": "固液配比或瞬时供料变化，会使相邻卷段的树脂与白油比例不同。即使平均配比合格，短周期波动仍可留下混合不均和后续成孔差异。",
+      "conditions": [
+        "确认物料停留与输送时延"
+      ],
+      "checks": [
+        "核对计量校验和实际流量",
+        "比较异常与正常时段过程样"
+      ],
+      "tradeoffs": [
+        "提高平均稳定性仍需检查局部混合和切换过渡"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_feed",
+        "atlas_extrusion",
+        "base_materials_phase",
+        "base_extrusion_casting"
+      ],
+      "control_points": [
+        "按已批准配方控制 PE/LB（白油）配比，核对固体喂料与液体计量的校准、线性和短周期波动",
+        "原料批次切换须保持追溯，按材料规范管理含水、储存时间及受热老化",
+        "投料与输送保持密闭清洁，控制金属磨屑及异物混入"
+      ],
+      "failure_modes": [
+        "塑化或混合不均会传递为鱼眼、局部厚度及成孔差异。"
+      ]
+    },
+    {
+      "id": "base_edge_006",
+      "source": "base_feed",
+      "target": "base_thickness",
+      "relation": "可能引起纵向波动",
+      "mechanism": "单位时间供给的聚合物量发生变化，在幅宽和速度相近时，单位面积获得的固体量也会变化，形成纵向厚度或克重波动。",
+      "conditions": [
+        "将产出信号按停留时间对齐",
+        "排除测厚扫描伪影"
+      ],
+      "checks": [
+        "对比供料与纵向厚度周期",
+        "核对牵引速度是否同时变化"
+      ],
+      "tradeoffs": [
+        "控制供料不能替代模头横向均匀性检查"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_feed",
+        "atlas_mechanical",
+        "base_extrusion_casting"
+      ],
+      "control_points": [
+        "按已批准配方控制 PE/LB（白油）配比，核对固体喂料与液体计量的校准、线性和短周期波动",
+        "原料批次切换须保持追溯，按材料规范管理含水、储存时间及受热老化",
+        "投料与输送保持密闭清洁，控制金属磨屑及异物混入"
+      ],
+      "failure_modes": [
+        "厚薄条带和薄点会影响后续拉伸、收卷、涂布及局部隔离余量。"
+      ]
+    },
+    {
+      "id": "base_edge_007",
+      "source": "base_extrude",
+      "target": "base_melt_uniformity",
+      "relation": "形成加工体系",
+      "mechanism": "挤出依靠热量和剪切把树脂充分塑化并与白油混匀。塑化不足保留颗粒，过热滞留则可能降解，两个方向都能破坏均匀性。",
+      "conditions": [
+        "材料与产量可比",
+        "实际反馈有效"
+      ],
+      "checks": [
+        "检查实际温度及压力分布",
+        "观察过程样中的未均匀区域"
+      ],
+      "tradeoffs": [
+        "增大热或剪切作用可能引入降解或其他变化"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_extrusion",
+        "base_extrusion_casting"
+      ],
+      "control_points": [
+        "控制各区实际温度及偏差、剪切负荷与停留时间，清除易滞留物料的死角",
+        "稳定连续供料，联动看熔体压力、过滤前后压差与产出波动",
+        "按颗粒截留要求管理过滤精度、密封及换网时机，防止旁路和破网"
+      ],
+      "failure_modes": [
+        "塑化或混合不均会传递为鱼眼、局部厚度及成孔差异。"
+      ]
+    },
+    {
+      "id": "base_edge_008",
+      "source": "base_melt_uniformity",
+      "target": "base_black",
+      "relation": "可能形成缺陷前体",
+      "mechanism": "未混匀区域可能留下凝胶或未塑化点；若伴随滞留降解，才可能出现炭化黑点。黑点也可能来自外来颗粒，不能只按颜色认定来源。",
+      "conditions": [
+        "先做缺陷形貌和成分确认"
+      ],
+      "checks": [
+        "比较黑点与树脂或外来物成分",
+        "检查停机再开机及缺陷聚集关系"
+      ],
+      "tradeoffs": [
+        "只改善混合可能无法解决设备或环境污染"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_extrusion",
+        "base_extrusion_casting"
+      ],
+      "control_points": [
+        "控制各区实际温度及偏差、剪切负荷与停留时间，清除易滞留物料的死角",
+        "稳定连续供料，联动看熔体压力、过滤前后压差与产出波动",
+        "按颗粒截留要求管理过滤精度、密封及换网时机，防止旁路和破网"
+      ],
+      "failure_modes": [
+        "黑点可能影响覆盖；含金属或硬质颗粒时还可能带来局部隔离风险。"
+      ]
+    },
+    {
+      "id": "base_edge_009",
+      "source": "base_filter",
+      "target": "base_black",
+      "relation": "拦截部分颗粒",
+      "mechanism": "过滤截留超过有效通道尺寸的颗粒。滤网破损、旁路或下游再污染会让颗粒重新进入膜，较软的凝胶也可能变形通过。",
+      "conditions": [
+        "确认过滤系统完整和工作状态"
+      ],
+      "checks": [
+        "检查滤后样缺陷",
+        "核对更换前后趋势及缺陷成分"
+      ],
+      "tradeoffs": [
+        "更严过滤可能增加流动阻力与过程扰动"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_extrusion",
+        "base_extrusion_casting"
+      ],
+      "control_points": [
+        "控制各区实际温度及偏差、剪切负荷与停留时间，清除易滞留物料的死角",
+        "稳定连续供料，联动看熔体压力、过滤前后压差与产出波动",
+        "按颗粒截留要求管理过滤精度、密封及换网时机，防止旁路和破网"
+      ],
+      "failure_modes": [
+        "黑点可能影响覆盖；含金属或硬质颗粒时还可能带来局部隔离风险。"
+      ]
+    },
+    {
+      "id": "base_edge_010",
+      "source": "base_filter",
+      "target": "base_thickness",
+      "relation": "可能经流动影响厚度",
+      "mechanism": "过滤阻力升高或换网扰动会改变熔体压力与流量。当供料控制补偿不足时，模头输出不稳会转化为铸片厚度波动。",
+      "conditions": [
+        "相同速度与物料条件或完成分层比较"
+      ],
+      "checks": [
+        "比较过滤压差与产出厚度时序",
+        "排除传感器偏移"
+      ],
+      "tradeoffs": [
+        "降低阻力与颗粒截留能力存在工艺权衡"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_extrusion",
+        "atlas_mechanical",
+        "base_extrusion_casting"
+      ],
+      "control_points": [
+        "控制各区实际温度及偏差、剪切负荷与停留时间，清除易滞留物料的死角",
+        "稳定连续供料，联动看熔体压力、过滤前后压差与产出波动",
+        "按颗粒截留要求管理过滤精度、密封及换网时机，防止旁路和破网"
+      ],
+      "failure_modes": [
+        "厚薄条带和薄点会影响后续拉伸、收卷、涂布及局部隔离余量。"
+      ]
+    },
+    {
+      "id": "base_edge_011",
+      "source": "base_cast",
+      "target": "base_thickness",
+      "relation": "形成横向与纵向分布",
+      "mechanism": "模头间隙和流道分配决定横向供料，牵引速度决定这些物料被摊开的程度。局部唇口积料和接触不均会留下厚薄条带。",
+      "conditions": [
+        "对应同一横向位置和卷段"
+      ],
+      "checks": [
+        "比较铸片与成品横向图",
+        "检查模头和接触异常"
+      ],
+      "tradeoffs": [
+        "局部调厚还需关注应力、后续拉伸和幅宽"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_casting",
+        "atlas_mechanical",
+        "base_extrusion_casting"
+      ],
+      "control_points": [
+        "保持模唇清洁、间隙和流道分配稳定，控制积料与模口拉线",
+        "控制冷却辊温度均匀性、接触状态及辊速比，确认膜面实际受冷却状态",
+        "跟踪横向厚度、含油分布和厚边耳朵，防止把边部异常带入拉伸区"
+      ],
+      "failure_modes": [
+        "厚薄条带和薄点会影响后续拉伸、收卷、涂布及局部隔离余量。"
+      ]
+    },
+    {
+      "id": "base_edge_012",
+      "source": "base_cool",
+      "target": "base_phase",
+      "relation": "改变相区形成路径",
+      "mechanism": "冷却使均匀热混合物形成聚乙烯富集区和白油富集区。冷却速度及横向差异影响晶体生长与两相空间分布。",
+      "conditions": [
+        "材料组成和初始状态明确"
+      ],
+      "checks": [
+        "对比冷却反馈与片材厚度",
+        "必要时用热分析和过程样显微验证"
+      ],
+      "tradeoffs": [
+        "冷却路径改变还会影响后续变形能力"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_casting",
+        "base_materials_phase",
+        "base_extrusion_casting"
+      ],
+      "control_points": [
+        "保持模唇清洁、间隙和流道分配稳定，控制积料与模口拉线",
+        "控制冷却辊温度均匀性、接触状态及辊速比，确认膜面实际受冷却状态",
+        "跟踪横向厚度、含油分布和厚边耳朵，防止把边部异常带入拉伸区"
+      ],
+      "failure_modes": [
+        "相分离模板不一致，后续同样拉伸条件也可能出现孔结构差异。"
+      ]
+    },
+    {
+      "id": "base_edge_013",
+      "source": "base_phase",
+      "target": "base_crystal",
+      "relation": "与结晶耦合",
+      "mechanism": "相分离伴随聚乙烯结晶，冷却历程决定晶体的形成速度和尺度。不同晶体组织会以不同方式响应后续拉伸与受热。",
+      "conditions": [
+        "不预设所有体系相分离类型一致"
+      ],
+      "checks": [
+        "结合热分析、流变或显微证据",
+        "避免单靠一个峰确定相分离类型"
+      ],
+      "tradeoffs": [
+        "提高某项结晶指标不保证总体性能提高"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_casting",
+        "base_materials_phase"
+      ],
+      "control_points": [
+        "保持模唇清洁、间隙和流道分配稳定，控制积料与模口拉线",
+        "控制冷却辊温度均匀性、接触状态及辊速比，确认膜面实际受冷却状态",
+        "跟踪横向厚度、含油分布和厚边耳朵，防止把边部异常带入拉伸区"
+      ],
+      "failure_modes": [
+        "晶体组织差异会传递到拉伸成孔、强度及后续热响应。"
+      ]
+    },
+    {
+      "id": "base_edge_014",
+      "source": "base_phase",
+      "target": "base_skeleton",
+      "relation": "提供初始组织",
+      "mechanism": "聚乙烯富集区形成连续骨架，富油区为后续孔隙提供空间。骨架分布不均会让不同位置承受拉伸的能力不同。",
+      "conditions": [
+        "比较相同后续加工路径"
+      ],
+      "checks": [
+        "对照铸片与成品形貌",
+        "记录中间工序是否出现异常"
+      ],
+      "tradeoffs": [
+        "不能把铸片形貌直接当成最终孔道"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_casting",
+        "atlas_stretch",
+        "base_materials_phase",
+        "base_stretching_pores"
+      ],
+      "control_points": [
+        "保持模唇清洁、间隙和流道分配稳定，控制积料与模口拉线",
+        "控制冷却辊温度均匀性、接触状态及辊速比，确认膜面实际受冷却状态",
+        "跟踪横向厚度、含油分布和厚边耳朵，防止把边部异常带入拉伸区"
+      ],
+      "failure_modes": [
+        "骨架局部不连续或分布不均，会使拉伸、穿刺和成孔稳定性变差。"
+      ]
+    },
+    {
+      "id": "base_edge_015",
+      "source": "base_md",
+      "target": "base_orientation",
+      "relation": "改变纵向取向",
+      "mechanism": "纵向拉伸使分子链和微纤更倾向于沿走膜方向排列。这个方向更容易传递载荷，但横向的承载和延伸也会随结构调整。",
+      "conditions": [
+        "确认含油或干膜状态",
+        "实际速度路径可比"
+      ],
+      "checks": [
+        "比较纵横力学和取向证据",
+        "检查入口片材及边部异常"
+      ],
+      "tradeoffs": [
+        "取向变化需同时评价横向能力和热回复"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_stretch",
+        "base_stretching_pores"
+      ],
+      "control_points": [
+        "按实际同步或异步路线控制纵横倍率匹配、拉伸顺序、速度和张力稳定性",
+        "控制各区温度、横向热风均匀性及实际膜温，避免局部过冷或过热",
+        "联查孔径分布、孔隙率、纵横强度、厚度和破膜位置，控制薄区及厚边对变形的放大"
+      ],
+      "failure_modes": [
+        "纵横承载和变形不平衡，可能表现为强度差、侧弯或热收缩方向差。"
+      ]
+    },
+    {
+      "id": "base_edge_016",
+      "source": "base_td",
+      "target": "base_orientation",
+      "relation": "改变横向取向",
+      "mechanism": "横向拉伸使骨架向幅宽方向展开并重新取向。它会改变纵横强度平衡，不能只根据横拉倍率推断单一方向强度。",
+      "conditions": [
+        "标明拉伸次序及是否萃取后"
+      ],
+      "checks": [
+        "比较拉伸前后纵横测试",
+        "检查夹持和横向温度一致性"
+      ],
+      "tradeoffs": [
+        "横向改善可能伴随其他方向或尺寸变化"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_stretch",
+        "base_stretching_pores",
+        "base_process_routes"
+      ],
+      "control_points": [
+        "按实际同步或异步路线控制纵横倍率匹配、拉伸顺序、速度和张力稳定性",
+        "控制各区温度、横向热风均匀性及实际膜温，避免局部过冷或过热",
+        "联查孔径分布、孔隙率、纵横强度、厚度和破膜位置，控制薄区及厚边对变形的放大"
+      ],
+      "failure_modes": [
+        "纵横承载和变形不平衡，可能表现为强度差、侧弯或热收缩方向差。"
+      ]
+    },
+    {
+      "id": "base_edge_017",
+      "source": "base_sync",
+      "target": "base_orientation",
+      "relation": "形成协同变形路径",
+      "mechanism": "同步拉伸使材料同时承受纵横变形，结构演化不同于先后拉伸。相同总倍率不保证得到相同孔形、取向与各向异性。",
+      "conditions": [
+        "比较材料、膜温和初始组织",
+        "同步不预设各向同性"
+      ],
+      "checks": [
+        "核查实际轨迹与倍率定义",
+        "对比方向性而非只比总强度"
+      ],
+      "tradeoffs": [
+        "路线比较还受厚度和其他工序差异影响"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_stretch",
+        "base_process_routes",
+        "base_stretching_pores"
+      ],
+      "control_points": [
+        "按实际同步或异步路线控制纵横倍率匹配、拉伸顺序、速度和张力稳定性",
+        "控制各区温度、横向热风均匀性及实际膜温，避免局部过冷或过热",
+        "联查孔径分布、孔隙率、纵横强度、厚度和破膜位置，控制薄区及厚边对变形的放大"
+      ],
+      "failure_modes": [
+        "纵横承载和变形不平衡，可能表现为强度差、侧弯或热收缩方向差。"
+      ]
+    },
+    {
+      "id": "base_edge_018",
+      "source": "base_orientation",
+      "target": "base_tensile",
+      "relation": "影响方向响应",
+      "mechanism": "取向使微纤沿载荷方向更有效地承载，因此会改变纵横拉伸强度及延伸。若取向伴随薄区或骨架损伤，强度并不会持续提高。",
+      "conditions": [
+        "统一试样、速度和夹具",
+        "排除夹持与切边破坏"
+      ],
+      "checks": [
+        "记录完整应力应变及断裂位置",
+        "对照纵横方向"
+      ],
+      "tradeoffs": [
+        "某一方向强度提高不代表全部方向更适用"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_stretch",
+        "atlas_mechanical",
+        "base_stretching_pores"
+      ],
+      "control_points": [
+        "按实际同步或异步路线控制纵横倍率匹配、拉伸顺序、速度和张力稳定性",
+        "控制各区温度、横向热风均匀性及实际膜温，避免局部过冷或过热",
+        "联查孔径分布、孔隙率、纵横强度、厚度和破膜位置，控制薄区及厚边对变形的放大"
+      ],
+      "failure_modes": [
+        "拉断或边部起裂风险上升，走膜稳定性及取样测得的强度可能变差。"
+      ]
+    },
+    {
+      "id": "base_edge_019",
+      "source": "base_md",
+      "target": "base_pores",
+      "relation": "可能重构孔道",
+      "mechanism": "纵向拉伸使部分片晶分离、转动并形成微纤，打开或延伸含油区域之间的空间。孔的变化还受初始晶体、温度和后续横拉约束。",
+      "conditions": [
+        "区分湿态与萃取后拉伸"
+      ],
+      "checks": [
+        "比较拉伸前后孔结构和透气",
+        "同时比较厚度"
+      ],
+      "tradeoffs": [
+        "孔道变化与局部损伤、方向性需共同评价"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_stretch",
+        "base_stretching_pores"
+      ],
+      "control_points": [
+        "按实际同步或异步路线控制纵横倍率匹配、拉伸顺序、速度和张力稳定性",
+        "控制各区温度、横向热风均匀性及实际膜温，避免局部过冷或过热",
+        "联查孔径分布、孔隙率、纵横强度、厚度和破膜位置，控制薄区及厚边对变形的放大"
+      ],
+      "failure_modes": [
+        "孔喉过窄会增加传输阻力，局部过度展开则可能留下薄弱区域；需看分布及骨架。"
+      ]
+    },
+    {
+      "id": "base_edge_020",
+      "source": "base_td",
+      "target": "base_pores",
+      "relation": "可能重构孔道",
+      "mechanism": "横拉进一步展开已有结构，改变孔形和孔喉分布。倍率、温度与纵横路径共同影响成孔，过度拉伸还可能形成薄弱区或破膜。",
+      "conditions": [
+        "入口组织和温度明确"
+      ],
+      "checks": [
+        "比较相同位置孔结构",
+        "检查边部与中部差异"
+      ],
+      "tradeoffs": [
+        "扩大部分孔尺度不等于提高均匀性和可靠性"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_stretch",
+        "base_stretching_pores"
+      ],
+      "control_points": [
+        "按实际同步或异步路线控制纵横倍率匹配、拉伸顺序、速度和张力稳定性",
+        "控制各区温度、横向热风均匀性及实际膜温，避免局部过冷或过热",
+        "联查孔径分布、孔隙率、纵横强度、厚度和破膜位置，控制薄区及厚边对变形的放大"
+      ],
+      "failure_modes": [
+        "孔喉过窄会增加传输阻力，局部过度展开则可能留下薄弱区域；需看分布及骨架。"
+      ]
+    },
+    {
+      "id": "base_edge_021",
+      "source": "base_md",
+      "target": "base_stress",
+      "relation": "形成回复历史",
+      "mechanism": "纵向拉伸把部分分子链拉直，并在膜内留下想要回缩的应力。后续加热和允许回缩可释放一部分应力；未充分释放的部分会在再次受热时促使膜缩短。",
+      "conditions": [
+        "包含后续热定型和冷却历史"
+      ],
+      "checks": [
+        "比较自由尺寸回复和热收缩",
+        "对齐实际温度与速度"
+      ],
+      "tradeoffs": [
+        "力学与尺寸稳定可能需要折中"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_stretch",
+        "atlas_setting",
+        "base_stretching_pores",
+        "base_heat_setting"
+      ],
+      "control_points": [
+        "控制纵拉实际温度、倍率和变形速率，避免冷拉及瞬时过拉",
+        "同时管理后续干燥和热定型的温度、时间、纵向张力与允许回缩量",
+        "按一致的热暴露与约束条件复验纵横热收缩和幅宽变化"
+      ],
+      "failure_modes": [
+        "未释放或分布不均的应力可能在后续受热、放松时形成收缩、皱折和幅宽变化。"
+      ]
+    },
+    {
+      "id": "base_edge_022",
+      "source": "base_td",
+      "target": "base_stress",
+      "relation": "形成横向回复历史",
+      "mechanism": "横拉会使横向骨架伸展并产生回缩倾向。随后是继续夹持、再次拉伸还是允许回缩，决定这部分应力能释放多少，因此相同倍率也可能有不同热收缩。",
+      "conditions": [
+        "区分拉伸段和回缩段"
+      ],
+      "checks": [
+        "测量幅宽位置热收缩",
+        "检查夹持及温度横向差异"
+      ],
+      "tradeoffs": [
+        "降低回复需防止损害幅宽和孔结构"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_stretch",
+        "atlas_setting",
+        "base_stretching_pores",
+        "base_heat_setting"
+      ],
+      "control_points": [
+        "匹配横拉温度、倍率和纵横拉伸路径，记录实际夹持状态",
+        "控制后续热定型的保温时间、夹持宽度及回缩过程，让应力按已验证的路径释放",
+        "横向分层取样，联查热收缩、孔结构与平整度，防止只改善平均值"
+      ],
+      "failure_modes": [
+        "未释放或分布不均的应力可能在后续受热、放松时形成收缩、皱折和幅宽变化。"
+      ]
+    },
+    {
+      "id": "base_edge_023",
+      "source": "base_skeleton",
+      "target": "base_puncture",
+      "relation": "参与局部承载",
+      "mechanism": "穿刺载荷需要周围骨架共同分担。纤维连接、局部厚度和缺陷决定应力能否扩散，少量薄弱点可能先于平均结构破坏。",
+      "conditions": [
+        "统一探针、加载和支撑条件"
+      ],
+      "checks": [
+        "比较穿刺分布与缺陷位置",
+        "避免只报平均值"
+      ],
+      "tradeoffs": [
+        "提高平均强度不能排除稀少局部缺陷"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_stretch",
+        "atlas_mechanical",
+        "base_structure_tradeoffs"
+      ],
+      "control_points": [
+        "按实际同步或异步路线控制纵横倍率匹配、拉伸顺序、速度和张力稳定性",
+        "控制各区温度、横向热风均匀性及实际膜温，避免局部过冷或过热",
+        "联查孔径分布、孔隙率、纵横强度、厚度和破膜位置，控制薄区及厚边对变形的放大"
+      ],
+      "failure_modes": [
+        "局部抵抗集中载荷的余量减少，颗粒或毛刺位置更需复核。"
+      ]
+    },
+    {
+      "id": "base_edge_024",
+      "source": "base_skeleton",
+      "target": "base_tensile",
+      "relation": "参与整体承载",
+      "mechanism": "拉伸时载荷沿骨架传递。骨架连续性、连接点和方向分布共同决定断裂位置及强度，孔隙较多并不自动等于强度不足。",
+      "conditions": [
+        "相同方向及试样制备"
+      ],
+      "checks": [
+        "核查断口和边缘",
+        "对照厚度及应力应变曲线"
+      ],
+      "tradeoffs": [
+        "力学增强不能单独保证离子传输"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_stretch",
+        "atlas_mechanical",
+        "base_stretching_pores",
+        "base_structure_tradeoffs"
+      ],
+      "control_points": [
+        "按实际同步或异步路线控制纵横倍率匹配、拉伸顺序、速度和张力稳定性",
+        "控制各区温度、横向热风均匀性及实际膜温，避免局部过冷或过热",
+        "联查孔径分布、孔隙率、纵横强度、厚度和破膜位置，控制薄区及厚边对变形的放大"
+      ],
+      "failure_modes": [
+        "拉断或边部起裂风险上升，走膜稳定性及取样测得的强度可能变差。"
+      ]
+    },
+    {
+      "id": "base_edge_025",
+      "source": "base_extractant",
+      "target": "base_extract",
+      "relation": "影响溶解与传质",
+      "mechanism": "萃取剂进入凝胶膜并溶解或置换白油。对两者的相容性、润湿和扩散能力不同，会改变白油被移除的效率。",
+      "conditions": [
+        "使用批准介质与实际回用状态"
+      ],
+      "checks": [
+        "检查有效组成及残油趋势",
+        "对照接触和停留条件"
+      ],
+      "tradeoffs": [
+        "介质变化还影响后续挥发与结构保持"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_extraction",
+        "base_extraction_drying"
+      ],
+      "control_points": [
+        "按检测定义控制各槽有效萃取剂浓度与含油量，维持合理梯度，不能把含油浓度和溶剂浓度混称为浓度",
+        "控制槽温、进液量、循环流量、停留时间与回用液状态",
+        "控制穿膜路径、辊速差及刮液辊靠距和受力，减少带液且避免擦伤变形",
+        "分开检测残油与残溶剂，对异常区和正常区进行配对取样"
+      ],
+      "failure_modes": [
+        "萃取有效推动力或换液能力不足，造成残油和空间分布异常。"
+      ]
+    },
+    {
+      "id": "base_edge_026",
+      "source": "base_recycle",
+      "target": "base_extract",
+      "relation": "影响回用液状态",
+      "mechanism": "回用液带回的白油和杂质会改变萃取剂的有效组成。即使温度和线速没变，槽液与膜内白油的浓度差也可能减小。",
+      "conditions": [
+        "明确取样点及检测覆盖范围"
+      ],
+      "checks": [
+        "比较回用液趋势与产出时延",
+        "检查未覆盖污染可能性"
+      ],
+      "tradeoffs": [
+        "回收效率与稳定质量需共同评价"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_extraction",
+        "base_extraction_drying"
+      ],
+      "control_points": [
+        "按检测定义控制各槽有效萃取剂浓度与含油量，维持合理梯度，不能把含油浓度和溶剂浓度混称为浓度",
+        "控制槽温、进液量、循环流量、停留时间与回用液状态",
+        "控制穿膜路径、辊速差及刮液辊靠距和受力，减少带液且避免擦伤变形",
+        "分开检测残油与残溶剂，对异常区和正常区进行配对取样"
+      ],
+      "failure_modes": [
+        "萃取有效推动力或换液能力不足，造成残油和空间分布异常。"
+      ]
+    },
+    {
+      "id": "base_edge_027",
+      "source": "base_extract",
+      "target": "base_oil_residue",
+      "relation": "控制稀释剂移除",
+      "mechanism": "白油需要从膜内扩散到槽液，再被循环和补液带走。传质推动力、时间或换液不足，会留下更高或更不均匀的残油。",
+      "conditions": [
+        "残油方法适用且位置匹配"
+      ],
+      "checks": [
+        "同时测异常及邻近正常区",
+        "核查入口含油状态"
+      ],
+      "tradeoffs": [
+        "强化移除需兼顾膜路稳定与结构变化"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_extraction",
+        "base_extraction_drying"
+      ],
+      "control_points": [
+        "按检测定义控制各槽有效萃取剂浓度与含油量，维持合理梯度，不能把含油浓度和溶剂浓度混称为浓度",
+        "控制槽温、进液量、循环流量、停留时间与回用液状态",
+        "控制穿膜路径、辊速差及刮液辊靠距和受力，减少带液且避免擦伤变形",
+        "分开检测残油与残溶剂，对异常区和正常区进行配对取样"
+      ],
+      "failure_modes": [
+        "残油可能占据孔道、影响表面润湿，并在局部形成可见斑点。"
+      ]
+    },
+    {
+      "id": "base_edge_028",
+      "source": "base_extract",
+      "target": "base_connectivity",
+      "relation": "可能改变可用孔道",
+      "mechanism": "移除白油让原有富油区域成为可使用的孔隙，但是否贯通仍取决于前面形成的骨架。萃取不完全会占据或堵住部分通道。",
+      "conditions": [
+        "区分残留影响与结构收缩"
+      ],
+      "checks": [
+        "比较残油、尺寸和透气组合",
+        "必要时观察前后结构"
+      ],
+      "tradeoffs": [
+        "残留合格不代表孔道达到目标"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_extraction",
+        "atlas_transport",
+        "base_extraction_drying",
+        "base_structure_tradeoffs"
+      ],
+      "control_points": [
+        "按检测定义控制各槽有效萃取剂浓度与含油量，维持合理梯度，不能把含油浓度和溶剂浓度混称为浓度",
+        "控制槽温、进液量、循环流量、停留时间与回用液状态",
+        "控制穿膜路径、辊速差及刮液辊靠距和受力，减少带液且避免擦伤变形",
+        "分开检测残油与残溶剂，对异常区和正常区进行配对取样"
+      ],
+      "failure_modes": [
+        "有效贯通通道减少，透气时间和湿态电阻可能升高。"
+      ]
+    },
+    {
+      "id": "base_edge_029",
+      "source": "base_dry",
+      "target": "base_solvent_residue",
+      "relation": "控制挥发残留",
+      "mechanism": "干燥依靠液体挥发和气体带走蒸气。换热、排风或停留不足，会让萃取剂留在孔内；表面看似干燥也可能存在内部残留。",
+      "conditions": [
+        "统一密封、送检和测试方法"
+      ],
+      "checks": [
+        "比较残溶与干燥状态",
+        "核查实际风温及排出条件"
+      ],
+      "tradeoffs": [
+        "强化干燥可能增加变形或膜面不稳"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_setting",
+        "base_extraction_drying"
+      ],
+      "control_points": [
+        "按区段功能控制实际膜温、热油温度、送风温度、线速与停留时间，防止局部过热",
+        "维持烘房负压、补排风平衡与干燥速比，控制溶剂蒸气积聚和冷凝回落",
+        "控制链夹夹持、轨迹与磨损、拉伸和回缩量，联查纵横热收缩",
+        "清除平台积油、废膜及辊面附着物，防止携带、接触或滴落污染"
+      ],
+      "failure_modes": [
+        "残留溶剂可能带入涂覆和电芯，影响干燥负荷与界面状态。"
+      ]
+    },
+    {
+      "id": "base_edge_030",
+      "source": "base_dry",
+      "target": "base_dimension",
+      "relation": "可能引起尺寸变化",
+      "mechanism": "干燥的热量和张力会让未稳定的膜继续伸展或回缩。各区受热、受力不一致时，幅宽、平整度和尺寸可能改变。",
+      "conditions": [
+        "前后样位置及测量受力一致"
+      ],
+      "checks": [
+        "比较干燥前后尺寸",
+        "同步比较残留与透气"
+      ],
+      "tradeoffs": [
+        "尺寸保持与残留移除需要联合验收"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_setting",
+        "base_extraction_drying"
+      ],
+      "control_points": [
+        "按区段功能控制实际膜温、热油温度、送风温度、线速与停留时间，防止局部过热",
+        "维持烘房负压、补排风平衡与干燥速比，控制溶剂蒸气积聚和冷凝回落",
+        "控制链夹夹持、轨迹与磨损、拉伸和回缩量，联查纵横热收缩",
+        "清除平台积油、废膜及辊面附着物，防止携带、接触或滴落污染"
+      ],
+      "failure_modes": [
+        "幅宽、侧弯或松弛变化可能导致后道对齐、接触和有效覆盖不稳。"
+      ]
+    },
+    {
+      "id": "base_edge_031",
+      "source": "base_dry",
+      "target": "base_stress",
+      "relation": "改变热力历史",
+      "mechanism": "加热使分子链更容易移动，应力可在允许回缩时部分释放；若膜同时被过度拉紧，又可能留下新的应力。因此干燥也参与尺寸稳定性形成。",
+      "conditions": [
+        "明确膜态、停留和张力"
+      ],
+      "checks": [
+        "比较入口出口回复",
+        "核查热与力反馈"
+      ],
+      "tradeoffs": [
+        "外观改善不证明残余应力已消除"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_setting",
+        "base_extraction_drying",
+        "base_heat_setting"
+      ],
+      "control_points": [
+        "按区段功能控制实际膜温、热油温度、送风温度、线速与停留时间，防止局部过热",
+        "维持烘房负压、补排风平衡与干燥速比，控制溶剂蒸气积聚和冷凝回落",
+        "控制链夹夹持、轨迹与磨损、拉伸和回缩量，联查纵横热收缩",
+        "清除平台积油、废膜及辊面附着物，防止携带、接触或滴落污染"
+      ],
+      "failure_modes": [
+        "未释放或分布不均的应力可能在后续受热、放松时形成收缩、皱折和幅宽变化。"
+      ]
+    },
+    {
+      "id": "base_edge_032",
+      "source": "base_set",
+      "target": "base_stress",
+      "relation": "调整回复倾向",
+      "mechanism": "热定型在受控温度和夹持或回缩条件下，让拉伸后的骨架调整并释放部分应力。只提高温度而不管理时间和约束，不保证收缩降低。",
+      "conditions": [
+        "实际膜温、停留和约束明确"
+      ],
+      "checks": [
+        "比较同条件热收缩及自由回复",
+        "检查幅宽分布"
+      ],
+      "tradeoffs": [
+        "降低热缩需同时评价透气、力学和尺寸"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_setting",
+        "base_heat_setting"
+      ],
+      "control_points": [
+        "控制实际膜温、受热时间和分区均匀性，不只看加热器设定",
+        "管理夹持、拉伸与回缩轨迹，防止应力释放后又被过度拉伸",
+        "用同一取样、方向和热收缩测试条件复验，并跟踪后道再次受热后的尺寸"
+      ],
+      "failure_modes": [
+        "未释放或分布不均的应力可能在后续受热、放松时形成收缩、皱折和幅宽变化。"
+      ]
+    },
+    {
+      "id": "base_edge_033",
+      "source": "base_set",
+      "target": "base_crystal",
+      "relation": "可能重组晶区",
+      "mechanism": "定型加热可使部分晶体重排、增厚或熔融后重组，具体变化取决于温度和受力。晶体变化会继续影响承载与后续受热行为。",
+      "conditions": [
+        "材料及入口组织可比"
+      ],
+      "checks": [
+        "对照热分析与适用结构表征",
+        "避免由单峰直接推断整体"
+      ],
+      "tradeoffs": [
+        "结构重组可能改变后续拉伸或传输"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_setting",
+        "atlas_casting",
+        "base_heat_setting"
+      ],
+      "control_points": [
+        "按区段功能控制实际膜温、热油温度、送风温度、线速与停留时间，防止局部过热",
+        "维持烘房负压、补排风平衡与干燥速比，控制溶剂蒸气积聚和冷凝回落",
+        "控制链夹夹持、轨迹与磨损、拉伸和回缩量，联查纵横热收缩",
+        "清除平台积油、废膜及辊面附着物，防止携带、接触或滴落污染"
+      ],
+      "failure_modes": [
+        "晶体组织差异会传递到拉伸成孔、强度及后续热响应。"
+      ]
+    },
+    {
+      "id": "base_edge_034",
+      "source": "base_set",
+      "target": "base_pores",
+      "relation": "可能调整孔结构",
+      "mechanism": "热定型时纤维会移动、重排或局部融合，使孔径和孔喉发生变化。需要同时看孔结构与尺寸稳定，不能假设热定型只影响热收缩。",
+      "conditions": [
+        "回缩轨迹和膜温已知"
+      ],
+      "checks": [
+        "比较孔径分布与透气",
+        "同步检查厚度"
+      ],
+      "tradeoffs": [
+        "热收缩改善可能伴随孔结构偏移"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_setting",
+        "atlas_stretch",
+        "base_heat_setting"
+      ],
+      "control_points": [
+        "按区段功能控制实际膜温、热油温度、送风温度、线速与停留时间，防止局部过热",
+        "维持烘房负压、补排风平衡与干燥速比，控制溶剂蒸气积聚和冷凝回落",
+        "控制链夹夹持、轨迹与磨损、拉伸和回缩量，联查纵横热收缩",
+        "清除平台积油、废膜及辊面附着物，防止携带、接触或滴落污染"
+      ],
+      "failure_modes": [
+        "孔喉过窄会增加传输阻力，局部过度展开则可能留下薄弱区域；需看分布及骨架。"
+      ]
+    },
+    {
+      "id": "base_edge_035",
+      "source": "base_stress",
+      "target": "base_shrink",
+      "relation": "在规定热条件下表现",
+      "mechanism": "残留应力使拉直的分子链在再次受热时倾向回到更松弛的状态，表现为膜尺寸减小。外部约束、温度和保温时间会改变测得的收缩量。",
+      "conditions": [
+        "测试温度、时间和放样方式一致"
+      ],
+      "checks": [
+        "复测纵横及不同位置",
+        "核对样品预处理"
+      ],
+      "tradeoffs": [
+        "自由热缩不能替代客户端受约束表现"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_setting",
+        "atlas_mechanical",
+        "base_heat_setting"
+      ],
+      "control_points": [
+        "把残余应力的控制追溯到拉伸和定型的温度、时间、张力及回缩",
+        "规定热收缩检测温度、时间、方向和受约束状态，保持跨批比较一致",
+        "同时检查幅宽与局部收缩分布，避免平均热收缩掩盖边中差异"
+      ],
+      "failure_modes": [
+        "再次受热时尺寸损失可能减小电极覆盖，或引起复合层变形。"
+      ]
+    },
+    {
+      "id": "base_edge_036",
+      "source": "base_thickness",
+      "target": "base_gurley",
+      "relation": "影响气体通过路径",
+      "mechanism": "在孔结构相近时，较厚的膜让空气通过的路径更长，透气时间可能增加。若厚度变化同时伴随孔结构改变，就不能只用厚度解释。",
+      "conditions": [
+        "孔结构及方法可比",
+        "核查密封"
+      ],
+      "checks": [
+        "同位置比较厚度与透气",
+        "排除测厚受压差异"
+      ],
+      "tradeoffs": [
+        "减薄还需检查力学和局部可靠性"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_mechanical",
+        "atlas_transport",
+        "base_structure_tradeoffs"
+      ],
+      "control_points": [
+        "控制局部厚度和薄点，并分方向管理强度、延伸和热收缩",
+        "统一制样、针头、夹持、加载速率、温度时间及受约束状态，避免跨方法直接比较",
+        "对可疑颗粒、针孔和划伤采用定位实物复核，联查结构与绝缘完整性"
+      ],
+      "failure_modes": [
+        "透气时间异常或空间分布不均，提示通道改变；不能直接换算电芯内阻。"
+      ]
+    },
+    {
+      "id": "base_edge_037",
+      "source": "base_pores",
+      "target": "base_gurley",
+      "relation": "参与气体阻力",
+      "mechanism": "空气通过时受到孔喉与孔壁阻碍，孔喉变窄或有效孔数减少往往延长透气时间。平均孔径相同的膜也可能因分布和贯通程度不同而透气不同。",
+      "conditions": [
+        "同厚度和测试条件或完成分层"
+      ],
+      "checks": [
+        "比较孔径分布、厚度和透气",
+        "检查局部大孔或缺陷"
+      ],
+      "tradeoffs": [
+        "更低空气阻力不自动代表更安全"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_stretch",
+        "atlas_transport",
+        "base_structure_tradeoffs"
+      ],
+      "control_points": [
+        "从冷却与拉伸控制孔喉尺寸、孔径分布及骨架均匀性，不只管理平均孔径",
+        "保持透气测试面积、压差、密封与温湿度一致，排除测试漏气",
+        "对异常点配对检查孔结构、厚度和贯通性，定位堵孔或局部大孔"
+      ],
+      "failure_modes": [
+        "透气时间异常或空间分布不均，提示通道改变；不能直接换算电芯内阻。"
+      ]
+    },
+    {
+      "id": "base_edge_038",
+      "source": "base_connectivity",
+      "target": "base_gurley",
+      "relation": "参与有效气体通路",
+      "mechanism": "只有贯穿膜两面的孔道才能形成有效透气通路。盲孔、断续孔或局部堵塞会减少可通气截面，使透气时间增大。",
+      "conditions": [
+        "膜厚、残留和方法可比"
+      ],
+      "checks": [
+        "对比表面与截面证据",
+        "检查残留及测试漏气"
+      ],
+      "tradeoffs": [
+        "透气异常仍需排除厚度和方法因素"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_transport",
+        "base_structure_tradeoffs"
+      ],
+      "control_points": [
+        "分别管理厚度、克重、孔隙率、孔径分布及贯通孔，按结构异常追溯冷却、拉伸和萃取",
+        "统一透气测试面积、压差、温湿度与取样方向，比较同卷同位置的涂前涂后数据",
+        "湿态电阻控制电解液、温度、压紧量和充分浸润条件，排除夹具与接触电阻"
+      ],
+      "failure_modes": [
+        "透气时间异常或空间分布不均，提示通道改变；不能直接换算电芯内阻。"
+      ]
+    },
+    {
+      "id": "base_edge_039",
+      "source": "base_tortuosity",
+      "target": "base_ionic",
+      "relation": "参与有效传输",
+      "mechanism": "离子沿充满电解液的孔道迁移，路径越绕，穿过同样膜厚需要走得越远。曲折度增加通常会提高有效离子传输阻力。",
+      "conditions": [
+        "固定电解液、温度和夹持条件"
+      ],
+      "checks": [
+        "比较浸液阻抗与充分浸润状态",
+        "检查样品厚度"
+      ],
+      "tradeoffs": [
+        "离子传输改善不等于全部电芯性能改善"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_transport",
+        "base_structure_tradeoffs"
+      ],
+      "control_points": [
+        "分别管理厚度、克重、孔隙率、孔径分布及贯通孔，按结构异常追溯冷却、拉伸和萃取",
+        "统一透气测试面积、压差、温湿度与取样方向，比较同卷同位置的涂前涂后数据",
+        "湿态电阻控制电解液、温度、压紧量和充分浸润条件，排除夹具与接触电阻"
+      ],
+      "failure_modes": [
+        "局部离子传输阻力增加或不均，进入电芯后可能加大极化。"
+      ]
+    },
+    {
+      "id": "base_edge_040",
+      "source": "base_porosity",
+      "target": "base_ionic",
+      "relation": "提供传输空间条件",
+      "mechanism": "充分润湿时，孔隙提供可供离子迁移的液体空间。但新增孔隙若不贯通，或在受压后关闭，就不能按孔隙率直接推算电阻降低。",
+      "conditions": [
+        "孔隙方法一致",
+        "浸润与压缩状态已知"
+      ],
+      "checks": [
+        "比较孔隙率与浸液阻抗",
+        "检查连通和残留"
+      ],
+      "tradeoffs": [
+        "增加孔空间可能影响骨架承载"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_transport",
+        "base_structure_tradeoffs"
+      ],
+      "control_points": [
+        "分别管理厚度、克重、孔隙率、孔径分布及贯通孔，按结构异常追溯冷却、拉伸和萃取",
+        "统一透气测试面积、压差、温湿度与取样方向，比较同卷同位置的涂前涂后数据",
+        "湿态电阻控制电解液、温度、压紧量和充分浸润条件，排除夹具与接触电阻"
+      ],
+      "failure_modes": [
+        "局部离子传输阻力增加或不均，进入电芯后可能加大极化。"
+      ]
+    },
+    {
+      "id": "base_edge_041",
+      "source": "base_oil_residue",
+      "target": "base_gurley",
+      "relation": "可能占据有效孔空间",
+      "mechanism": "残油占据部分孔容或附着在孔喉，会改变空气通路及表面状态。局部残油还可能被平均取样稀释，需与缺陷位置对应。",
+      "conditions": [
+        "残留定量可靠且同位置"
+      ],
+      "checks": [
+        "测异常与正常区残油",
+        "复核厚度及其他孔道变化"
+      ],
+      "tradeoffs": [
+        "残油降低后仍需检验结构是否改变"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_extraction",
+        "atlas_transport",
+        "base_extraction_drying",
+        "base_structure_tradeoffs"
+      ],
+      "control_points": [
+        "按检测定义控制各槽有效萃取剂浓度与含油量，维持合理梯度，不能把含油浓度和溶剂浓度混称为浓度",
+        "控制槽温、进液量、循环流量、停留时间与回用液状态",
+        "控制穿膜路径、辊速差及刮液辊靠距和受力，减少带液且避免擦伤变形",
+        "分开检测残油与残溶剂，对异常区和正常区进行配对取样"
+      ],
+      "failure_modes": [
+        "透气时间异常或空间分布不均，提示通道改变；不能直接换算电芯内阻。"
+      ]
+    },
+    {
+      "id": "base_edge_042",
+      "source": "base_oil_residue",
+      "target": "base_oilspot",
+      "relation": "可能形成局部表现",
+      "mechanism": "残油在局部富集时可能改变透光与散射，呈现油斑外观。总残油高不一定形成可见斑点，可见斑点也不一定是残油造成。",
+      "conditions": [
+        "确认局部缺陷与样品位置"
+      ],
+      "checks": [
+        "对缺陷区做适用成分检验",
+        "与邻近正常区比较"
+      ],
+      "tradeoffs": [
+        "平均残油合格可能掩盖局部异常"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_extraction",
+        "atlas_oil",
+        "base_extraction_drying"
+      ],
+      "control_points": [
+        "按检测定义控制各槽有效萃取剂浓度与含油量，维持合理梯度，不能把含油浓度和溶剂浓度混称为浓度",
+        "控制槽温、进液量、循环流量、停留时间与回用液状态",
+        "控制穿膜路径、辊速差及刮液辊靠距和受力，减少带液且避免擦伤变形",
+        "分开检测残油与残溶剂，对异常区和正常区进行配对取样"
+      ],
+      "failure_modes": [
+        "油斑或类似光学缺陷增多，影响外观判级；实物污染还可能引出缺涂和传输异常。"
+      ]
+    },
+    {
+      "id": "base_edge_043",
+      "source": "base_oilspot",
+      "target": "base_ionic",
+      "relation": "可能形成局部传输差异",
+      "mechanism": "若油斑处确有油性物质占据孔道或妨碍电解液进入，局部离子通路会变差。若只是压印或光学伪影，则应按实物结构另行判断。",
+      "conditions": [
+        "油斑性质已确认",
+        "后续浸润及电芯条件明确"
+      ],
+      "checks": [
+        "做局部结构与残留对照",
+        "必要时匹配应用试验"
+      ],
+      "tradeoffs": [
+        "单张外观与整电芯结果不能直接定因果"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_oil",
+        "atlas_transport",
+        "base_extraction_drying",
+        "base_structure_tradeoffs"
+      ],
+      "control_points": [
+        "锁定CCD规则与照明状态，保存原图、卷长和横向位置，用对应实物及正常对照确认异常",
+        "按缺陷节距与实际线速换算时间，再与辊周长、转速和间歇动作比对，考虑工序间拉伸比和打滑",
+        "分别管理萃取残油、刮液带液、烘房补排风、链夹润滑和辊面清洁，依据确认路径进行针对性调整"
+      ],
+      "failure_modes": [
+        "局部离子传输阻力增加或不均，进入电芯后可能加大极化。"
+      ]
+    },
+    {
+      "id": "base_edge_044",
+      "source": "base_thin",
+      "target": "base_weak_electric",
+      "relation": "可能降低局部隔离能力",
+      "mechanism": "局部薄点让绝缘隔离距离和承载余量减小。进一步出现孔洞或受压破损时，可能形成电气薄弱点，平均厚度合格不能覆盖这些小区域。",
+      "conditions": [
+        "区分光学亮点和真实薄点",
+        "电测试条件受控"
+      ],
+      "checks": [
+        "对齐光学缺陷与电弱点位置",
+        "检查厚度和形貌"
+      ],
+      "tradeoffs": [
+        "平均穿刺强度不能替代局部可靠性"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_mechanical",
+        "base_structure_tradeoffs"
+      ],
+      "control_points": [
+        "控制局部厚度和薄点，并分方向管理强度、延伸和热收缩",
+        "统一制样、针头、夹持、加载速率、温度时间及受约束状态，避免跨方法直接比较",
+        "对可疑颗粒、针孔和划伤采用定位实物复核，联查结构与绝缘完整性"
+      ],
+      "failure_modes": [
+        "局部绝缘余量不足，需定位孔洞、硬颗粒或深划伤，而不能依赖平均物性。"
+      ]
+    },
+    {
+      "id": "base_edge_045",
+      "source": "base_black",
+      "target": "base_weak_electric",
+      "relation": "可能引入局部风险",
+      "mechanism": "黑点若含金属或硬颗粒，可能导电或在压紧时损伤薄膜；普通有色聚合物颗粒的风险机制不同。要先识别成分、形状和是否贯穿。",
+      "conditions": [
+        "异物成分及形态已确认"
+      ],
+      "checks": [
+        "对齐电测试和缺陷位置",
+        "区分金属与非金属"
+      ],
+      "tradeoffs": [
+        "过度按颜色分类会误判污染风险"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_extrusion",
+        "atlas_mechanical",
+        "base_structure_tradeoffs",
+        "base_extrusion_casting"
+      ],
+      "control_points": [
+        "控制各区实际温度及偏差、剪切负荷与停留时间，清除易滞留物料的死角",
+        "稳定连续供料，联动看熔体压力、过滤前后压差与产出波动",
+        "按颗粒截留要求管理过滤精度、密封及换网时机，防止旁路和破网"
+      ],
+      "failure_modes": [
+        "局部绝缘余量不足，需定位孔洞、硬颗粒或深划伤，而不能依赖平均物性。"
+      ]
+    },
+    {
+      "id": "base_edge_046",
+      "source": "base_wind",
+      "target": "base_wrinkle",
+      "relation": "可能引入卷材变形",
+      "mechanism": "收卷张力或卷内压力不均，使部分区域被拉紧、部分区域松弛，层间不能均匀贴合，可能形成皱折及后续展开不平。",
+      "conditions": [
+        "区分收卷前已有变形和新增缺陷"
+      ],
+      "checks": [
+        "比较收卷前与放卷样",
+        "记录缺陷随卷径及位置变化"
+      ],
+      "tradeoffs": [
+        "减小压紧或张力可能增加滑移"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_winding",
+        "base_winding_slitting"
+      ],
+      "control_points": [
+        "按卷径管理张力锥度和接触压力，控制启停与速度变化的瞬态响应",
+        "检查摆辊动作、辊面清洁及干结硬物，保持辊系平行和纠偏稳定",
+        "检查卷硬度横向分布、端面齐整、错层和窜卷，按统一条件进行时效或调湿后复验"
+      ],
+      "failure_modes": [
+        "皱折影响走膜和涂布接触，可能造成缺涂、叠层与装配不均。"
+      ]
+    },
+    {
+      "id": "base_edge_047",
+      "source": "base_wind",
+      "target": "base_slip",
+      "relation": "影响层间稳定",
+      "mechanism": "层间摩擦不足、张力锥度不合适或端面受扰，会使已卷绕的膜层相对移动，形成错层、窜卷或端面不齐。",
+      "conditions": [
+        "同材料表面和卷芯条件"
+      ],
+      "checks": [
+        "检查卷内位置与端面演变",
+        "核查纠偏及层间状态"
+      ],
+      "tradeoffs": [
+        "提高层间稳定需防止压痕和应力过大"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_winding",
+        "base_winding_slitting"
+      ],
+      "control_points": [
+        "按卷径管理张力锥度和接触压力，控制启停与速度变化的瞬态响应",
+        "检查摆辊动作、辊面清洁及干结硬物，保持辊系平行和纠偏稳定",
+        "检查卷硬度横向分布、端面齐整、错层和窜卷，按统一条件进行时效或调湿后复验"
+      ],
+      "failure_modes": [
+        "层间滑移、窜卷或端面不齐可能造成边部损伤和放卷异常。"
+      ]
+    },
+    {
+      "id": "base_edge_048",
+      "source": "base_thickness",
+      "target": "base_wrinkle",
+      "relation": "可能经叠层受力放大",
+      "mechanism": "厚区在同一卷径下承受的接触和累积应变不同，薄区更容易出现松弛。横向厚度差随卷层累积，可放大卷形和皱折问题。",
+      "conditions": [
+        "有连续厚度带证据",
+        "排除卷芯与辊面原因"
+      ],
+      "checks": [
+        "比较横向厚度带与缺陷位置",
+        "查看随卷径的演变"
+      ],
+      "tradeoffs": [
+        "只修收卷外观可能掩盖前段厚度问题"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_mechanical",
+        "atlas_winding",
+        "base_winding_slitting",
+        "base_extrusion_casting"
+      ],
+      "control_points": [
+        "控制局部厚度和薄点，并分方向管理强度、延伸和热收缩",
+        "统一制样、针头、夹持、加载速率、温度时间及受约束状态，避免跨方法直接比较",
+        "对可疑颗粒、针孔和划伤采用定位实物复核，联查结构与绝缘完整性"
+      ],
+      "failure_modes": [
+        "皱折影响走膜和涂布接触，可能造成缺涂、叠层与装配不均。"
+      ]
+    },
+    {
+      "id": "base_edge_049",
+      "source": "base_slit",
+      "target": "base_edge",
+      "relation": "可能引入边部损伤",
+      "mechanism": "刀具通过局部剪切使薄膜断开。刀口磨损、配合或重叠不当会拉扯边缘，形成边毛、裂口和碎屑。",
+      "conditions": [
+        "对照母卷对应位置",
+        "统一观察方式"
+      ],
+      "checks": [
+        "比较分切前后边缘",
+        "检查刀位与异常分卷关系"
+      ],
+      "tradeoffs": [
+        "调整切割还需评价宽度与端面稳定"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_slitting",
+        "base_winding_slitting"
+      ],
+      "control_points": [
+        "核对刀具安装或连接角度、紧固状态、上下刀配合与重叠量，按磨损状态管理锋利度",
+        "匹配分切前后张力与纠偏，控制边部受力和接触损伤",
+        "控制除尘、集屑和静电，检查刀口及辊面异物，不把金属刀屑与普通膜屑混为一类"
+      ],
+      "failure_modes": [
+        "边部裂口、边毛和污染可能在后道继续扩大或进入有效覆盖区。"
+      ]
+    },
+    {
+      "id": "base_edge_050",
+      "source": "base_slit",
+      "target": "base_camber",
+      "relation": "可能改变边部受力状态",
+      "mechanism": "分切各分条受力或边缘损伤不对称时，条带两侧的伸长不同，展开后可能侧向弯曲。母卷已有应力差也会在分切释放后显现。",
+      "conditions": [
+        "按规定受力条件测量弧度"
+      ],
+      "checks": [
+        "比较分切前后自由展开状态",
+        "检查各分卷差异"
+      ],
+      "tradeoffs": [
+        "纠偏改善不证明自由膜弧度消失"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_slitting",
+        "atlas_winding",
+        "base_winding_slitting"
+      ],
+      "control_points": [
+        "核对刀具安装或连接角度、紧固状态、上下刀配合与重叠量，按磨损状态管理锋利度",
+        "匹配分切前后张力与纠偏，控制边部受力和接触损伤",
+        "控制除尘、集屑和静电，检查刀口及辊面异物，不把金属刀屑与普通膜屑混为一类"
+      ],
+      "failure_modes": [
+        "条带弯曲或横向轨迹不稳，后道更难维持对齐与边部覆盖。"
+      ]
+    },
+    {
+      "id": "base_edge_051",
+      "source": "base_condition",
+      "target": "base_dimension",
+      "relation": "观察或调整状态稳定",
+      "mechanism": "放置和调湿使部分应力及吸附状态逐渐变化，测试时的尺寸也可能随之改变。因此必须统一存放时间和环境，区分短时变化与稳定状态。",
+      "conditions": [
+        "熟化目的、包装、环境明确"
+      ],
+      "checks": [
+        "匹配卷段做时间对照",
+        "排除搬运和环境变化"
+      ],
+      "tradeoffs": [
+        "等待时间增加不保证缺陷可恢复"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_winding",
+        "atlas_setting",
+        "base_winding_slitting"
+      ],
+      "control_points": [
+        "按卷径管理张力锥度和接触压力，控制启停与速度变化的瞬态响应",
+        "检查摆辊动作、辊面清洁及干结硬物，保持辊系平行和纠偏稳定",
+        "检查卷硬度横向分布、端面齐整、错层和窜卷，按统一条件进行时效或调湿后复验"
+      ],
+      "failure_modes": [
+        "幅宽、侧弯或松弛变化可能导致后道对齐、接触和有效覆盖不稳。"
+      ]
+    },
+    {
+      "id": "base_edge_052",
+      "source": "base_stress",
+      "target": "base_wrinkle",
+      "relation": "可能形成不均匀回复",
+      "mechanism": "沿宽度或厚度分布不均的应力，在放松或加热后释放程度不同，局部膜长不一致会形成皱折和松弛区域。",
+      "conditions": [
+        "需排除辊面、卷芯与几何因素"
+      ],
+      "checks": [
+        "对比自由展开及受热后的状态",
+        "检查纵横位置分布"
+      ],
+      "tradeoffs": [
+        "展平可暂时改善外观而未消除形成原因"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_setting",
+        "atlas_winding",
+        "base_heat_setting",
+        "base_winding_slitting"
+      ],
+      "control_points": [
+        "按区段功能控制实际膜温、热油温度、送风温度、线速与停留时间，防止局部过热",
+        "维持烘房负压、补排风平衡与干燥速比，控制溶剂蒸气积聚和冷凝回落",
+        "控制链夹夹持、轨迹与磨损、拉伸和回缩量，联查纵横热收缩",
+        "清除平台积油、废膜及辊面附着物，防止携带、接触或滴落污染"
+      ],
+      "failure_modes": [
+        "皱折影响走膜和涂布接触，可能造成缺涂、叠层与装配不均。"
+      ]
+    },
+    {
+      "id": "base_edge_053",
+      "source": "base_edge",
+      "target": "base_tensile",
+      "relation": "可能主导试样破坏",
+      "mechanism": "边部裂口和损伤会集中拉伸应力，载荷尚未达到主体膜的承载能力时，就可能从切边起裂，降低测得的强度。",
+      "conditions": [
+        "确认试样制备和切割边缘"
+      ],
+      "checks": [
+        "查看断口位置",
+        "用合规制样复测"
+      ],
+      "tradeoffs": [
+        "不能用去掉全部异常区的取样掩盖产品边缘缺陷"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_slitting",
+        "atlas_mechanical",
+        "base_stretching_pores",
+        "base_winding_slitting"
+      ],
+      "control_points": [
+        "核对刀具安装或连接角度、紧固状态、上下刀配合与重叠量，按磨损状态管理锋利度",
+        "匹配分切前后张力与纠偏，控制边部受力和接触损伤",
+        "控制除尘、集屑和静电，检查刀口及辊面异物，不把金属刀屑与普通膜屑混为一类"
+      ],
+      "failure_modes": [
+        "拉断或边部起裂风险上升，走膜稳定性及取样测得的强度可能变差。"
+      ]
+    },
+    {
+      "id": "base_edge_054",
+      "source": "base_grammage",
+      "target": "base_porosity",
+      "relation": "辅助结构核查",
+      "mechanism": "对成分已知且没有额外残留的裸基膜，克重除以厚度反映表观密度，可与实质密度比较估算孔隙率。涂层、残油或测厚压缩会破坏这种简单换算。",
+      "conditions": [
+        "不用于未知复合结构",
+        "保留方法假设"
+      ],
+      "checks": [
+        "核对厚度与克重同位置",
+        "检查残留和密度定义"
+      ],
+      "tradeoffs": [
+        "估算与吸液法结果差异需核查而非任意择优"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_transport",
+        "base_structure_tradeoffs"
+      ],
+      "control_points": [
+        "仅在明确材料密度、层结构及残留状态时使用克重和厚度估算孔隙率",
+        "统一称重面积与测厚接触压力，避免涂层质量或压缩误差混入",
+        "对估算异常用合适的独立孔隙或结构方法复核，再追溯原料配比与成孔过程"
+      ],
+      "failure_modes": [
+        "孔隙率偏移或横向不均，可能影响吸液、传输及承载的一致性。"
+      ]
+    },
+    {
+      "id": "base_edge_055",
+      "source": "base_connectivity",
+      "target": "base_ionic",
+      "relation": "决定可参与的浸液通路",
+      "mechanism": "连通孔形成从一面到另一面的电解液通路。连通性变差会减少有效通道，即使总孔隙率相同，湿态电阻仍可能上升。",
+      "conditions": [
+        "电解液与浸润、夹持条件一致"
+      ],
+      "checks": [
+        "比较浸润完成前后阻抗",
+        "核查残留及截面证据"
+      ],
+      "tradeoffs": [
+        "高孔隙率不能替代有效连通性"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_transport",
+        "base_structure_tradeoffs"
+      ],
+      "control_points": [
+        "分别管理厚度、克重、孔隙率、孔径分布及贯通孔，按结构异常追溯冷却、拉伸和萃取",
+        "统一透气测试面积、压差、温湿度与取样方向，比较同卷同位置的涂前涂后数据",
+        "湿态电阻控制电解液、温度、压紧量和充分浸润条件，排除夹具与接触电阻"
+      ],
+      "failure_modes": [
+        "局部离子传输阻力增加或不均，进入电芯后可能加大极化。"
+      ]
+    },
+    {
+      "id": "base_edge_056",
+      "source": "base_orientation",
+      "target": "base_dimension",
+      "relation": "影响方向回复",
+      "mechanism": "取向不同的骨架在受热或放松时回缩能力不同。纵横取向不平衡或横向不均会使尺寸变化具有方向性，并影响平整度。",
+      "conditions": [
+        "温度和约束路径明确"
+      ],
+      "checks": [
+        "比较纵横尺寸变化",
+        "对照热历史与自由回复"
+      ],
+      "tradeoffs": [
+        "方向力学提高可能伴随回复倾向变化"
+      ],
+      "evidence": "机理支持，需现场确认",
+      "article_ids": [
+        "atlas_stretch",
+        "atlas_setting",
+        "base_heat_setting",
+        "base_stretching_pores"
+      ],
+      "control_points": [
+        "按实际同步或异步路线控制纵横倍率匹配、拉伸顺序、速度和张力稳定性",
+        "控制各区温度、横向热风均匀性及实际膜温，避免局部过冷或过热",
+        "联查孔径分布、孔隙率、纵横强度、厚度和破膜位置，控制薄区及厚边对变形的放大"
+      ],
+      "failure_modes": [
+        "幅宽、侧弯或松弛变化可能导致后道对齐、接触和有效覆盖不稳。"
+      ]
+    },
+    {
+      "id": "atlas_edge_001",
+      "source": "base_feed",
+      "target": "base_porosity",
+      "relation": "经材料与过程状态传递影响",
+      "mechanism": "PE与白油的比例决定可形成骨架和富油区域的相对数量，影响成孔空间的起点。最终孔隙率还受结晶、拉伸、萃取与回缩共同影响。",
+      "conditions": [
+        "适用于所述材料状态和实际工序路线；用对应卷段、横向位置与可比正常样确认。"
+      ],
+      "checks": [
+        "定位实物与前后工序对应位置，比较正常对照并检查机制中的中间变化。"
+      ],
+      "article_ids": [
+        "atlas_feed",
+        "atlas_transport"
+      ],
+      "control_points": [
+        "按已批准配方控制 PE/LB（白油）配比，核对固体喂料与液体计量的校准、线性和短周期波动",
+        "原料批次切换须保持追溯，按材料规范管理含水、储存时间及受热老化",
+        "投料与输送保持密闭清洁，控制金属磨屑及异物混入"
+      ],
+      "failure_modes": [
+        "孔隙率偏移或横向不均，可能影响吸液、传输及承载的一致性。"
+      ]
+    },
+    {
+      "id": "atlas_edge_002",
+      "source": "base_feed",
+      "target": "base_black",
+      "relation": "经材料与过程状态传递影响",
+      "mechanism": "原料、计量输送设备或投料操作带入的颗粒会随物料进入挤出。黑色外观不能区分金属、炭化物和其他污染，须定位并鉴别。",
+      "conditions": [
+        "适用于所述材料状态和实际工序路线；用对应卷段、横向位置与可比正常样确认。"
+      ],
+      "checks": [
+        "定位实物与前后工序对应位置，比较正常对照并检查机制中的中间变化。"
+      ],
+      "article_ids": [
+        "atlas_feed",
+        "atlas_extrusion"
+      ],
+      "control_points": [
+        "按已批准配方控制 PE/LB（白油）配比，核对固体喂料与液体计量的校准、线性和短周期波动",
+        "原料批次切换须保持追溯，按材料规范管理含水、储存时间及受热老化",
+        "投料与输送保持密闭清洁，控制金属磨屑及异物混入"
+      ],
+      "failure_modes": [
+        "黑点可能影响覆盖；含金属或硬质颗粒时还可能带来局部隔离风险。"
+      ]
+    },
+    {
+      "id": "atlas_edge_003",
+      "source": "base_feed",
+      "target": "base_break",
+      "relation": "经材料与过程状态传递影响",
+      "mechanism": "含水、异物或局部混合不良可在塑化和拉伸时形成空洞或应力集中。是否发展为针孔破膜，取决于缺陷尺度与后续受力。",
+      "conditions": [
+        "适用于所述材料状态和实际工序路线；用对应卷段、横向位置与可比正常样确认。"
+      ],
+      "checks": [
+        "定位实物与前后工序对应位置，比较正常对照并检查机制中的中间变化。"
+      ],
+      "article_ids": [
+        "atlas_feed",
+        "atlas_stretch"
+      ],
+      "control_points": [
+        "按已批准配方控制 PE/LB（白油）配比，核对固体喂料与液体计量的校准、线性和短周期波动",
+        "原料批次切换须保持追溯，按材料规范管理含水、储存时间及受热老化",
+        "投料与输送保持密闭清洁，控制金属磨屑及异物混入"
+      ],
+      "failure_modes": [
+        "破膜或针孔破坏连续隔离，并可能在后道受力时扩大。"
+      ]
+    },
+    {
+      "id": "atlas_edge_004",
+      "source": "base_extrude",
+      "target": "base_gel",
+      "relation": "经材料与过程状态传递影响",
+      "mechanism": "温度、剪切或停留不足时，局部树脂不能充分塑化，可能留下凝胶点或鱼眼。过热滞留造成的降解物则应另行辨认。",
+      "conditions": [
+        "适用于所述材料状态和实际工序路线；用对应卷段、横向位置与可比正常样确认。"
+      ],
+      "checks": [
+        "定位实物与前后工序对应位置，比较正常对照并检查机制中的中间变化。"
+      ],
+      "article_ids": [
+        "atlas_extrusion"
+      ],
+      "control_points": [
+        "控制各区实际温度及偏差、剪切负荷与停留时间，清除易滞留物料的死角",
+        "稳定连续供料，联动看熔体压力、过滤前后压差与产出波动",
+        "按颗粒截留要求管理过滤精度、密封及换网时机，防止旁路和破网"
+      ],
+      "failure_modes": [
+        "凝胶点和鱼眼造成局部结构或高度异常，可能导致涂布露底或薄弱区域。"
+      ]
+    },
+    {
+      "id": "atlas_edge_005",
+      "source": "base_extrude",
+      "target": "base_black",
+      "relation": "经材料与过程状态传递影响",
+      "mechanism": "物料在死角长时间受热，或局部温度失控时，可能降解并形成黑点或黄变。外来异物也是黑点来源，必须结合成分和出现时序区分。",
+      "conditions": [
+        "适用于所述材料状态和实际工序路线；用对应卷段、横向位置与可比正常样确认。"
+      ],
+      "checks": [
+        "定位实物与前后工序对应位置，比较正常对照并检查机制中的中间变化。"
+      ],
+      "article_ids": [
+        "atlas_extrusion"
+      ],
+      "control_points": [
+        "控制各区实际温度及偏差、剪切负荷与停留时间，清除易滞留物料的死角",
+        "稳定连续供料，联动看熔体压力、过滤前后压差与产出波动",
+        "按颗粒截留要求管理过滤精度、密封及换网时机，防止旁路和破网"
+      ],
+      "failure_modes": [
+        "黑点可能影响覆盖；含金属或硬质颗粒时还可能带来局部隔离风险。"
+      ]
+    },
+    {
+      "id": "atlas_edge_006",
+      "source": "base_cast",
+      "target": "base_cast_ears",
+      "relation": "经材料与过程状态传递影响",
+      "mechanism": "模口边部流动、颈缩和冷却差异可能使边缘增厚，形成铸片耳朵。过大的厚边会影响后续夹持、横拉展开和边部均匀性。",
+      "conditions": [
+        "适用于所述材料状态和实际工序路线；用对应卷段、横向位置与可比正常样确认。"
+      ],
+      "checks": [
+        "定位实物与前后工序对应位置，比较正常对照并检查机制中的中间变化。"
+      ],
+      "article_ids": [
+        "atlas_casting"
+      ],
+      "control_points": [
+        "保持模唇清洁、间隙和流道分配稳定，控制积料与模口拉线",
+        "控制冷却辊温度均匀性、接触状态及辊速比，确认膜面实际受冷却状态",
+        "跟踪横向厚度、含油分布和厚边耳朵，防止把边部异常带入拉伸区"
+      ],
+      "failure_modes": [
+        "厚边影响夹持与拉伸，未移除时可能造成边部涂布和卷形异常。"
+      ]
+    },
+    {
+      "id": "atlas_edge_007",
+      "source": "base_cast",
+      "target": "base_scratch",
+      "relation": "经材料与过程状态传递影响",
+      "mechanism": "模唇积料、辊面硬物或接触受力不均会在软片上留下拉线、划伤或压印。痕迹随拉伸延展后可能改变形态，需按工序映射追溯。",
+      "conditions": [
+        "适用于所述材料状态和实际工序路线；用对应卷段、横向位置与可比正常样确认。"
+      ],
+      "checks": [
+        "定位实物与前后工序对应位置，比较正常对照并检查机制中的中间变化。"
+      ],
+      "article_ids": [
+        "atlas_casting",
+        "atlas_slitting"
+      ],
+      "control_points": [
+        "保持模唇清洁、间隙和流道分配稳定，控制积料与模口拉线",
+        "控制冷却辊温度均匀性、接触状态及辊速比，确认膜面实际受冷却状态",
+        "跟踪横向厚度、含油分布和厚边耳朵，防止把边部异常带入拉伸区"
+      ],
+      "failure_modes": [
+        "深划伤会削弱骨架，压印则可能改变外观和涂布接触；须分别确认。"
+      ]
+    },
+    {
+      "id": "atlas_edge_008",
+      "source": "base_cast",
+      "target": "base_oilspot",
+      "relation": "经材料与过程状态传递影响",
+      "mechanism": "铸片两相分布不均可能让局部富油区偏大，增加后续萃取负担并遗留斑点。只有确认局部残油后才能将外观油斑归于该路径。",
+      "conditions": [
+        "适用于所述材料状态和实际工序路线；用对应卷段、横向位置与可比正常样确认。"
+      ],
+      "checks": [
+        "定位实物与前后工序对应位置，比较正常对照并检查机制中的中间变化。"
+      ],
+      "article_ids": [
+        "atlas_casting",
+        "atlas_oil"
+      ],
+      "control_points": [
+        "保持模唇清洁、间隙和流道分配稳定，控制积料与模口拉线",
+        "控制冷却辊温度均匀性、接触状态及辊速比，确认膜面实际受冷却状态",
+        "跟踪横向厚度、含油分布和厚边耳朵，防止把边部异常带入拉伸区"
+      ],
+      "failure_modes": [
+        "油斑或类似光学缺陷增多，影响外观判级；实物污染还可能引出缺涂和传输异常。"
+      ]
+    },
+    {
+      "id": "atlas_edge_009",
+      "source": "base_md",
+      "target": "base_break",
+      "relation": "经材料与过程状态传递影响",
+      "mechanism": "纵拉在低温、过大变形或局部薄弱处会集中应力，使骨架撕裂形成孔洞或破膜。应把破口位置与厚度、凝胶点和辊系异常对应。",
+      "conditions": [
+        "适用于所述材料状态和实际工序路线；用对应卷段、横向位置与可比正常样确认。"
+      ],
+      "checks": [
+        "定位实物与前后工序对应位置，比较正常对照并检查机制中的中间变化。"
+      ],
+      "article_ids": [
+        "atlas_stretch"
+      ],
+      "control_points": [
+        "按实际同步或异步路线控制纵横倍率匹配、拉伸顺序、速度和张力稳定性",
+        "控制各区温度、横向热风均匀性及实际膜温，避免局部过冷或过热",
+        "联查孔径分布、孔隙率、纵横强度、厚度和破膜位置，控制薄区及厚边对变形的放大"
+      ],
+      "failure_modes": [
+        "破膜或针孔破坏连续隔离，并可能在后道受力时扩大。"
+      ]
+    },
+    {
+      "id": "atlas_edge_010",
+      "source": "base_td",
+      "target": "base_wrinkle",
+      "relation": "经材料与过程状态传递影响",
+      "mechanism": "横向受热、夹持或拉伸不同步，会造成各区域伸长不一致，放松后形成皱折或松弛。单纯调整收卷张力可能只能暂时遮盖上游问题。",
+      "conditions": [
+        "适用于所述材料状态和实际工序路线；用对应卷段、横向位置与可比正常样确认。"
+      ],
+      "checks": [
+        "定位实物与前后工序对应位置，比较正常对照并检查机制中的中间变化。"
+      ],
+      "article_ids": [
+        "atlas_stretch",
+        "atlas_winding"
+      ],
+      "control_points": [
+        "按实际同步或异步路线控制纵横倍率匹配、拉伸顺序、速度和张力稳定性",
+        "控制各区温度、横向热风均匀性及实际膜温，避免局部过冷或过热",
+        "联查孔径分布、孔隙率、纵横强度、厚度和破膜位置，控制薄区及厚边对变形的放大"
+      ],
+      "failure_modes": [
+        "皱折影响走膜和涂布接触，可能造成缺涂、叠层与装配不均。"
+      ]
+    },
+    {
+      "id": "atlas_edge_011",
+      "source": "base_td",
+      "target": "base_break",
+      "relation": "经材料与过程状态传递影响",
+      "mechanism": "横拉负荷超过局部骨架承载能力时，会从薄区、异物点或夹持边缘起裂。倍率过高不是唯一原因，还要检查温差及初始结构。",
+      "conditions": [
+        "适用于所述材料状态和实际工序路线；用对应卷段、横向位置与可比正常样确认。"
+      ],
+      "checks": [
+        "定位实物与前后工序对应位置，比较正常对照并检查机制中的中间变化。"
+      ],
+      "article_ids": [
+        "atlas_stretch"
+      ],
+      "control_points": [
+        "按实际同步或异步路线控制纵横倍率匹配、拉伸顺序、速度和张力稳定性",
+        "控制各区温度、横向热风均匀性及实际膜温，避免局部过冷或过热",
+        "联查孔径分布、孔隙率、纵横强度、厚度和破膜位置，控制薄区及厚边对变形的放大"
+      ],
+      "failure_modes": [
+        "破膜或针孔破坏连续隔离，并可能在后道受力时扩大。"
+      ]
+    },
+    {
+      "id": "atlas_edge_012",
+      "source": "base_traction",
+      "target": "base_wrinkle",
+      "relation": "经材料与过程状态传递影响",
+      "mechanism": "牵引张力偏低或响应迟缓使膜段松弛，辊速差又会让局部多拉或少拉。长度不一致在后段累积后表现为皱折或松弛区。",
+      "conditions": [
+        "适用于所述材料状态和实际工序路线；用对应卷段、横向位置与可比正常样确认。"
+      ],
+      "checks": [
+        "定位实物与前后工序对应位置，比较正常对照并检查机制中的中间变化。"
+      ],
+      "article_ids": [
+        "atlas_traction",
+        "atlas_winding"
+      ],
+      "control_points": [
+        "控制牵引张力及闭环响应，避免低张力松弛与高张力过拉",
+        "匹配各辊表面速度与防滑状态，控制局部速差和急加减速",
+        "保持辊面清洁无损、纠偏稳定，记录横向位置和卷长以追踪缺陷起点"
+      ],
+      "failure_modes": [
+        "皱折影响走膜和涂布接触，可能造成缺涂、叠层与装配不均。"
+      ]
+    },
+    {
+      "id": "atlas_edge_013",
+      "source": "base_traction",
+      "target": "base_dimension",
+      "relation": "经材料与过程状态传递影响",
+      "mechanism": "辊速不匹配或打滑会改变含油膜实际伸长量，即使设定倍率未变，最终长度、幅宽及横向一致性也可能改变。",
+      "conditions": [
+        "适用于所述材料状态和实际工序路线；用对应卷段、横向位置与可比正常样确认。"
+      ],
+      "checks": [
+        "定位实物与前后工序对应位置，比较正常对照并检查机制中的中间变化。"
+      ],
+      "article_ids": [
+        "atlas_traction",
+        "atlas_setting"
+      ],
+      "control_points": [
+        "控制牵引张力及闭环响应，避免低张力松弛与高张力过拉",
+        "匹配各辊表面速度与防滑状态，控制局部速差和急加减速",
+        "保持辊面清洁无损、纠偏稳定，记录横向位置和卷长以追踪缺陷起点"
+      ],
+      "failure_modes": [
+        "幅宽、侧弯或松弛变化可能导致后道对齐、接触和有效覆盖不稳。"
+      ]
+    },
+    {
+      "id": "atlas_edge_014",
+      "source": "base_traction",
+      "target": "base_scratch",
+      "relation": "经材料与过程状态传递影响",
+      "mechanism": "脏污或损伤辊面与软膜反复接触，会留下周期压印或划伤。若痕迹节距与辊周长吻合，还需核对中间拉伸和打滑影响。",
+      "conditions": [
+        "适用于所述材料状态和实际工序路线；用对应卷段、横向位置与可比正常样确认。"
+      ],
+      "checks": [
+        "定位实物与前后工序对应位置，比较正常对照并检查机制中的中间变化。"
+      ],
+      "article_ids": [
+        "atlas_traction",
+        "atlas_slitting"
+      ],
+      "control_points": [
+        "控制牵引张力及闭环响应，避免低张力松弛与高张力过拉",
+        "匹配各辊表面速度与防滑状态，控制局部速差和急加减速",
+        "保持辊面清洁无损、纠偏稳定，记录横向位置和卷长以追踪缺陷起点"
+      ],
+      "failure_modes": [
+        "深划伤会削弱骨架，压印则可能改变外观和涂布接触；须分别确认。"
+      ]
+    },
+    {
+      "id": "atlas_edge_015",
+      "source": "base_traction",
+      "target": "base_camber",
+      "relation": "经材料与过程状态传递影响",
+      "mechanism": "纠偏不稳或辊系不平行会使膜两侧受力不同，产生跑偏、边部不齐或释放后侧弯。要区分走膜轨迹偏移与材料自身侧弯。",
+      "conditions": [
+        "适用于所述材料状态和实际工序路线；用对应卷段、横向位置与可比正常样确认。"
+      ],
+      "checks": [
+        "定位实物与前后工序对应位置，比较正常对照并检查机制中的中间变化。"
+      ],
+      "article_ids": [
+        "atlas_traction",
+        "atlas_winding"
+      ],
+      "control_points": [
+        "控制牵引张力及闭环响应，避免低张力松弛与高张力过拉",
+        "匹配各辊表面速度与防滑状态，控制局部速差和急加减速",
+        "保持辊面清洁无损、纠偏稳定，记录横向位置和卷长以追踪缺陷起点"
+      ],
+      "failure_modes": [
+        "条带弯曲或横向轨迹不稳，后道更难维持对齐与边部覆盖。"
+      ]
+    },
+    {
+      "id": "atlas_edge_016",
+      "source": "base_extract",
+      "target": "base_liquid_carry",
+      "relation": "经材料与过程状态传递影响",
+      "mechanism": "刮液不足、靠距或穿膜不合适，会让更多混合液随膜进入烘箱。流量或线速变化也会改变带液量和后续蒸发负荷。",
+      "conditions": [
+        "适用于所述材料状态和实际工序路线；用对应卷段、横向位置与可比正常样确认。"
+      ],
+      "checks": [
+        "定位实物与前后工序对应位置，比较正常对照并检查机制中的中间变化。"
+      ],
+      "article_ids": [
+        "atlas_extraction"
+      ],
+      "control_points": [
+        "按检测定义控制各槽有效萃取剂浓度与含油量，维持合理梯度，不能把含油浓度和溶剂浓度混称为浓度",
+        "控制槽温、进液量、循环流量、停留时间与回用液状态",
+        "控制穿膜路径、辊速差及刮液辊靠距和受力，减少带液且避免擦伤变形",
+        "分开检测残油与残溶剂，对异常区和正常区进行配对取样"
+      ],
+      "failure_modes": [
+        "增加干燥负荷，并可能经残留、冷凝或接触转移形成新的斑点。"
+      ]
+    },
+    {
+      "id": "atlas_edge_017",
+      "source": "base_liquid_carry",
+      "target": "base_oildark",
+      "relation": "经材料与过程状态传递影响",
+      "mechanism": "夹带的混合液若在表面局部聚集，挥发后可能留下白油或其他残留，形成暗斑；也可能只是液体造成的暂时光学差异。",
+      "conditions": [
+        "适用于所述材料状态和实际工序路线；用对应卷段、横向位置与可比正常样确认。"
+      ],
+      "checks": [
+        "定位实物与前后工序对应位置，比较正常对照并检查机制中的中间变化。"
+      ],
+      "article_ids": [
+        "atlas_extraction",
+        "atlas_oil"
+      ],
+      "control_points": [
+        "按检测定义控制各槽有效萃取剂浓度与含油量，维持合理梯度，不能把含油浓度和溶剂浓度混称为浓度",
+        "控制槽温、进液量、循环流量、停留时间与回用液状态",
+        "控制穿膜路径、辊速差及刮液辊靠距和受力，减少带液且避免擦伤变形",
+        "分开检测残油与残溶剂，对异常区和正常区进行配对取样"
+      ],
+      "failure_modes": [
+        "暗斑会影响外观判级；其后道影响取决于残油、夹带液还是皱折压印的实物性质。"
+      ]
+    },
+    {
+      "id": "atlas_edge_018",
+      "source": "base_liquid_carry",
+      "target": "base_dry",
+      "relation": "经材料与过程状态传递影响",
+      "mechanism": "进入干燥区的液体增加后，需要更多蒸发和排风能力。能力不足会残留，气流或冷表面条件不合适还可能发生冷凝和回落。",
+      "conditions": [
+        "适用于所述材料状态和实际工序路线；用对应卷段、横向位置与可比正常样确认。"
+      ],
+      "checks": [
+        "定位实物与前后工序对应位置，比较正常对照并检查机制中的中间变化。"
+      ],
+      "article_ids": [
+        "atlas_extraction",
+        "atlas_setting"
+      ],
+      "control_points": [
+        "按检测定义控制各槽有效萃取剂浓度与含油量，维持合理梯度，不能把含油浓度和溶剂浓度混称为浓度",
+        "控制槽温、进液量、循环流量、停留时间与回用液状态",
+        "控制穿膜路径、辊速差及刮液辊靠距和受力，减少带液且避免擦伤变形",
+        "分开检测残油与残溶剂，对异常区和正常区进行配对取样"
+      ],
+      "failure_modes": [
+        "蒸发与排风负荷失配，可能残留、冷凝或因过热改变膜态。"
+      ]
+    },
+    {
+      "id": "atlas_edge_019",
+      "source": "base_post_td",
+      "target": "base_stress",
+      "relation": "经材料与过程状态传递影响",
+      "mechanism": "萃取后再次横拉会重排骨架并产生或释放应力，热定型和允许回缩决定最终留下多少回缩倾向。因此需要跟踪完整温度与夹持历程。",
+      "conditions": [
+        "适用于所述材料状态和实际工序路线；用对应卷段、横向位置与可比正常样确认。"
+      ],
+      "checks": [
+        "定位实物与前后工序对应位置，比较正常对照并检查机制中的中间变化。"
+      ],
+      "article_ids": [
+        "atlas_setting"
+      ],
+      "control_points": [
+        "按区段功能控制实际膜温、热油温度、送风温度、线速与停留时间，防止局部过热",
+        "维持烘房负压、补排风平衡与干燥速比，控制溶剂蒸气积聚和冷凝回落",
+        "控制链夹夹持、轨迹与磨损、拉伸和回缩量，联查纵横热收缩",
+        "清除平台积油、废膜及辊面附着物，防止携带、接触或滴落污染"
+      ],
+      "failure_modes": [
+        "未释放或分布不均的应力可能在后续受热、放松时形成收缩、皱折和幅宽变化。"
+      ]
+    },
+    {
+      "id": "atlas_edge_020",
+      "source": "base_post_td",
+      "target": "base_solvent_residue",
+      "relation": "经材料与过程状态传递影响",
+      "mechanism": "后横拉烘房中的热量使萃取剂蒸发，补排风把蒸气移走。负压、风量、实际膜温和停留时间失配时，可能有残溶剂或冷凝问题。",
+      "conditions": [
+        "适用于所述材料状态和实际工序路线；用对应卷段、横向位置与可比正常样确认。"
+      ],
+      "checks": [
+        "定位实物与前后工序对应位置，比较正常对照并检查机制中的中间变化。"
+      ],
+      "article_ids": [
+        "atlas_setting"
+      ],
+      "control_points": [
+        "按区段功能控制实际膜温、热油温度、送风温度、线速与停留时间，防止局部过热",
+        "维持烘房负压、补排风平衡与干燥速比，控制溶剂蒸气积聚和冷凝回落",
+        "控制链夹夹持、轨迹与磨损、拉伸和回缩量，联查纵横热收缩",
+        "清除平台积油、废膜及辊面附着物，防止携带、接触或滴落污染"
+      ],
+      "failure_modes": [
+        "残留溶剂可能带入涂覆和电芯，影响干燥负荷与界面状态。"
+      ]
+    },
+    {
+      "id": "atlas_edge_021",
+      "source": "base_post_td",
+      "target": "base_oilstripe",
+      "relation": "经材料与过程状态传递影响",
+      "mechanism": "受热使已有油性残留迁移，或污染接触件把残留带到膜上，可能形成亮条斑。烘房负压和补排风异常是候选诱因，形态本身不能证明油的来源。",
+      "conditions": [
+        "适用于所述材料状态和实际工序路线；用对应卷段、横向位置与可比正常样确认。"
+      ],
+      "checks": [
+        "定位实物与前后工序对应位置，比较正常对照并检查机制中的中间变化。"
+      ],
+      "article_ids": [
+        "atlas_setting",
+        "atlas_oil"
+      ],
+      "control_points": [
+        "按区段功能控制实际膜温、热油温度、送风温度、线速与停留时间，防止局部过热",
+        "维持烘房负压、补排风平衡与干燥速比，控制溶剂蒸气积聚和冷凝回落",
+        "控制链夹夹持、轨迹与磨损、拉伸和回缩量，联查纵横热收缩",
+        "清除平台积油、废膜及辊面附着物，防止携带、接触或滴落污染"
+      ],
+      "failure_modes": [
+        "条状亮斑可能形成连续不良卷段，并在实际油污存在时引出条状缺涂。"
+      ]
+    },
+    {
+      "id": "atlas_edge_022",
+      "source": "base_post_td",
+      "target": "base_oilrow",
+      "relation": "经材料与过程状态传递影响",
+      "mechanism": "平台积油、废膜附着物、冷凝滴落或周期接触事件，可能在相近时刻影响多个横向位置，形成横排点斑。需要用设备位置和实物对应验证。",
+      "conditions": [
+        "适用于所述材料状态和实际工序路线；用对应卷段、横向位置与可比正常样确认。"
+      ],
+      "checks": [
+        "定位实物与前后工序对应位置，比较正常对照并检查机制中的中间变化。"
+      ],
+      "article_ids": [
+        "atlas_setting",
+        "atlas_oil"
+      ],
+      "control_points": [
+        "按区段功能控制实际膜温、热油温度、送风温度、线速与停留时间，防止局部过热",
+        "维持烘房负压、补排风平衡与干燥速比，控制溶剂蒸气积聚和冷凝回落",
+        "控制链夹夹持、轨迹与磨损、拉伸和回缩量，联查纵横热收缩",
+        "清除平台积油、废膜及辊面附着物，防止携带、接触或滴落污染"
+      ],
+      "failure_modes": [
+        "横排点斑会形成集中缺陷分布；污染存在时可能传递为点状缺涂。"
+      ]
+    },
+    {
+      "id": "atlas_edge_023",
+      "source": "base_post_td",
+      "target": "base_clipmark",
+      "relation": "经材料与过程状态传递影响",
+      "mechanism": "链夹磨损、夹持不稳或针板位置异常，会在边部集中压力并留下痕迹；严重时引起拉裂、有效幅宽损失或后续边部覆盖问题。",
+      "conditions": [
+        "适用于所述材料状态和实际工序路线；用对应卷段、横向位置与可比正常样确认。"
+      ],
+      "checks": [
+        "定位实物与前后工序对应位置，比较正常对照并检查机制中的中间变化。"
+      ],
+      "article_ids": [
+        "atlas_setting",
+        "atlas_oil"
+      ],
+      "control_points": [
+        "按区段功能控制实际膜温、热油温度、送风温度、线速与停留时间，防止局部过热",
+        "维持烘房负压、补排风平衡与干燥速比，控制溶剂蒸气积聚和冷凝回落",
+        "控制链夹夹持、轨迹与磨损、拉伸和回缩量，联查纵横热收缩",
+        "清除平台积油、废膜及辊面附着物，防止携带、接触或滴落污染"
+      ],
+      "failure_modes": [
+        "夹持边部损伤或裂口可能降低有效幅宽，并在未裁除时带入后道。"
+      ]
+    },
+    {
+      "id": "atlas_edge_024",
+      "source": "base_wind",
+      "target": "base_scratch",
+      "relation": "经材料与过程状态传递影响",
+      "mechanism": "摆辊或其他辊面上的干结硬物会反复挤压膜面，形成周期压印或划伤。辊面清洁、动作状态与实物表面检查需相互对应。",
+      "conditions": [
+        "适用于所述材料状态和实际工序路线；用对应卷段、横向位置与可比正常样确认。"
+      ],
+      "checks": [
+        "定位实物与前后工序对应位置，比较正常对照并检查机制中的中间变化。"
+      ],
+      "article_ids": [
+        "atlas_winding",
+        "atlas_slitting"
+      ],
+      "control_points": [
+        "按卷径管理张力锥度和接触压力，控制启停与速度变化的瞬态响应",
+        "检查摆辊动作、辊面清洁及干结硬物，保持辊系平行和纠偏稳定",
+        "检查卷硬度横向分布、端面齐整、错层和窜卷，按统一条件进行时效或调湿后复验"
+      ],
+      "failure_modes": [
+        "深划伤会削弱骨架，压印则可能改变外观和涂布接触；须分别确认。"
+      ]
+    },
+    {
+      "id": "atlas_edge_025",
+      "source": "base_wind",
+      "target": "base_oildark",
+      "relation": "经材料与过程状态传递影响",
+      "mechanism": "收卷皱折或压印改变局部散射，可能在后续CCD中被分为暗斑或暗条纹。未发现油性成分时，应按卷形或接触损伤排查。",
+      "conditions": [
+        "适用于所述材料状态和实际工序路线；用对应卷段、横向位置与可比正常样确认。"
+      ],
+      "checks": [
+        "定位实物与前后工序对应位置，比较正常对照并检查机制中的中间变化。"
+      ],
+      "article_ids": [
+        "atlas_winding",
+        "atlas_oil"
+      ],
+      "control_points": [
+        "按卷径管理张力锥度和接触压力，控制启停与速度变化的瞬态响应",
+        "检查摆辊动作、辊面清洁及干结硬物，保持辊系平行和纠偏稳定",
+        "检查卷硬度横向分布、端面齐整、错层和窜卷，按统一条件进行时效或调湿后复验"
+      ],
+      "failure_modes": [
+        "暗斑会影响外观判级；其后道影响取决于残油、夹带液还是皱折压印的实物性质。"
+      ]
+    },
+    {
+      "id": "atlas_edge_026",
+      "source": "base_slit",
+      "target": "base_cut_burr",
+      "relation": "经材料与过程状态传递影响",
+      "mechanism": "刀口钝化、重叠或安装连接角度不合适、紧固松动，会使切割变成局部拉扯与撕裂，形成边毛、毛刺或刀屑。",
+      "conditions": [
+        "适用于所述材料状态和实际工序路线；用对应卷段、横向位置与可比正常样确认。"
+      ],
+      "checks": [
+        "定位实物与前后工序对应位置，比较正常对照并检查机制中的中间变化。"
+      ],
+      "article_ids": [
+        "atlas_slitting"
+      ],
+      "control_points": [
+        "核对刀具安装或连接角度、紧固状态、上下刀配合与重叠量，按磨损状态管理锋利度",
+        "匹配分切前后张力与纠偏，控制边部受力和接触损伤",
+        "控制除尘、集屑和静电，检查刀口及辊面异物，不把金属刀屑与普通膜屑混为一类"
+      ],
+      "failure_modes": [
+        "切口不整齐会影响后道边部；金属刀屑另有导电及刺穿风险。"
+      ]
+    },
+    {
+      "id": "atlas_edge_027",
+      "source": "base_slit",
+      "target": "base_dust",
+      "relation": "经材料与过程状态传递影响",
+      "mechanism": "分切产生的膜屑或刀具碎屑，若收集不足或静电较强，会吸附到膜面。颗粒来源要通过成分和形态区分，不能只靠黑点颜色。",
+      "conditions": [
+        "适用于所述材料状态和实际工序路线；用对应卷段、横向位置与可比正常样确认。"
+      ],
+      "checks": [
+        "定位实物与前后工序对应位置，比较正常对照并检查机制中的中间变化。"
+      ],
+      "article_ids": [
+        "atlas_slitting"
+      ],
+      "control_points": [
+        "核对刀具安装或连接角度、紧固状态、上下刀配合与重叠量，按磨损状态管理锋利度",
+        "匹配分切前后张力与纠偏，控制边部受力和接触损伤",
+        "控制除尘、集屑和静电，检查刀口及辊面异物，不把金属刀屑与普通膜屑混为一类"
+      ],
+      "failure_modes": [
+        "粉尘可能被涂层包覆形成凸点，或在电芯压紧时形成局部压点。"
+      ]
+    }
+  ]
+}

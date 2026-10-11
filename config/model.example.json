@@ -1,0 +1,9 @@
+{
+  "description": "配置示意，程序不会自动读取此文件。界面可填写地址、协议和模型名；密钥仅保留在当前页面内存或使用环境变量。",
+  "protocol": "chat_completions",
+  "base_url": "https://your-provider.example/v1",
+  "model": "your-model-name",
+  "environment_variables": ["SEPARATOR_BASE_URL", "SEPARATOR_MODEL", "SEPARATOR_API_KEY"],
+  "context_chars": 16000,
+  "two_pass": false
+}

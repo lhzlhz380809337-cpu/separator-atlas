@@ -1,0 +1,267 @@
+{
+  "articles": [
+    {
+      "id": "coat_structure",
+      "title": "涂层结构与材料功能",
+      "summary": "陶瓷、聚合物、混涂和多层的结构区别与评价边界。",
+      "stage": "涂覆",
+      "category": "结构与材料",
+      "tags": [
+        "陶瓷",
+        "聚合物",
+        "混涂",
+        "多层",
+        "覆盖率"
+      ],
+      "aliases": [
+        "复合涂层",
+        "岛状涂层",
+        "前态膜"
+      ],
+      "file": "coating/layer_architecture.md"
+    },
+    {
+      "id": "coat_slurry",
+      "title": "浆料分散、流变与稳定性",
+      "summary": "把投料、分散、循环和浆料年龄关联到成膜表现。",
+      "stage": "涂覆",
+      "category": "制浆",
+      "tags": [
+        "浆料",
+        "流变",
+        "固含",
+        "分散",
+        "团聚"
+      ],
+      "aliases": [
+        "粘度",
+        "触变",
+        "沉降"
+      ],
+      "file": "coating/slurry_rheology.md"
+    },
+    {
+      "id": "coat_uniformity",
+      "title": "涂布与覆盖均匀性",
+      "summary": "区分横向、纵向、局部覆盖及平均涂层量的控制意义。",
+      "stage": "涂覆",
+      "category": "涂布",
+      "tags": [
+        "面密度",
+        "涂层厚度",
+        "横向极差",
+        "纵向一致性"
+      ],
+      "aliases": [
+        "克重",
+        "条纹",
+        "漏涂"
+      ],
+      "file": "coating/coating_uniformity.md"
+    },
+    {
+      "id": "coat_drying",
+      "title": "干燥迁移、孔道与残留",
+      "summary": "通过膜温、蒸发历程及热历史解释成膜和残留。",
+      "stage": "涂覆",
+      "category": "干燥",
+      "tags": [
+        "干燥",
+        "迁移",
+        "水分",
+        "残留",
+        "孔道"
+      ],
+      "aliases": [
+        "烘房",
+        "膜温",
+        "粘结剂迁移"
+      ],
+      "file": "coating/drying_migration.md"
+    },
+    {
+      "id": "coat_adhesion",
+      "title": "剥离、粘接与掉粉",
+      "summary": "区分界面结合、层内内聚、极片粘接及干湿状态。",
+      "stage": "涂覆",
+      "category": "界面与检测",
+      "tags": [
+        "剥离",
+        "粘接",
+        "掉粉",
+        "湿态",
+        "极片转印"
+      ],
+      "aliases": [
+        "附着力",
+        "粘接强度",
+        "层间结合"
+      ],
+      "file": "coating/adhesion_states.md"
+    },
+    {
+      "id": "coat_finishing",
+      "title": "分切、收卷、储运与洁净度",
+      "summary": "把局部损伤、接触污染、吸湿与客户使用状态相连。",
+      "stage": "涂覆",
+      "category": "后加工",
+      "tags": [
+        "分切",
+        "收卷",
+        "静电",
+        "异物",
+        "洁净度"
+      ],
+      "aliases": [
+        "切边",
+        "卷形",
+        "包装",
+        "储运"
+      ],
+      "file": "coating/slitting_storage.md"
+    },
+    {
+      "id": "cell_processing",
+      "title": "电芯加工与隔膜适配",
+      "summary": "理解热压、烘烤及注液对隔膜界面和浸润的影响。",
+      "stage": "电芯",
+      "category": "加工适配",
+      "tags": [
+        "卷绕",
+        "叠片",
+        "热压",
+        "烘烤",
+        "注液"
+      ],
+      "aliases": [
+        "浸润",
+        "吸液率",
+        "接触角"
+      ],
+      "file": "coating/cell_processing.md"
+    },
+    {
+      "id": "cell_transport",
+      "title": "离子传输、阻抗、倍率与循环",
+      "summary": "区分气体透过、湿态电阻及电芯综合性能。",
+      "stage": "电芯",
+      "category": "传输与性能",
+      "tags": [
+        "离子电导率",
+        "阻抗",
+        "倍率",
+        "循环",
+        "曲折度"
+      ],
+      "aliases": [
+        "Gurley",
+        "MacMullin",
+        "极化"
+      ],
+      "file": "coating/ionic_transport.md"
+    },
+    {
+      "id": "cell_failure",
+      "title": "绝缘、异物与热安全条件链",
+      "summary": "保留从局部缺陷到电芯失效之间的条件与验证边界。",
+      "stage": "电芯",
+      "category": "失效与可靠性",
+      "tags": [
+        "绝缘",
+        "针孔",
+        "电弱点",
+        "热收缩",
+        "闭孔"
+      ],
+      "aliases": [
+        "短路",
+        "热失控",
+        "穿刺",
+        "安全"
+      ],
+      "file": "coating/failure_thermal.md"
+    }
+  ],
+  "sources": [
+    {
+      "id": "coat_src_island",
+      "title": "Effects of Island-Coated PVdF-HFP Composite Separator on the Performance of Commercial Lithium-ion Batteries",
+      "url": "https://www.mdpi.com/2079-6412/8/12/437",
+      "type": "research",
+      "scope": "特定岛状聚合物涂覆的形态、溶胀及界面适配。",
+      "limits": "仅支持该材料与制备体系；不外推全部聚合物涂层。"
+    },
+    {
+      "id": "coat_src_mixing",
+      "title": "Upgrading the Properties of Ceramic-Coated Separators by Changing the Mixing Order of the Water-Based Ceramic Slurry Components",
+      "url": "https://www.mdpi.com/2313-0105/8/7/64",
+      "type": "research",
+      "scope": "同组成陶瓷浆料的混合顺序与成膜差异。",
+      "limits": "不提供其他体系的通用投料顺序或工艺限值。"
+    },
+    {
+      "id": "coat_src_surface",
+      "title": "A facile method to enhance the uniformity and adhesion properties of water-based ceramic coating layers on hydrophobic polyethylene separators",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0169433217322766",
+      "type": "research",
+      "scope": "前态膜润湿状态、涂层均匀性和界面结合。",
+      "limits": "已核对出版商摘要；仅用作方向性机制支持。"
+    },
+    {
+      "id": "coat_src_migration",
+      "title": "Binder migration during drying of lithium-ion battery electrodes: modelling and comparison to experiment",
+      "url": "https://arxiv.org/abs/1801.01580",
+      "type": "research",
+      "scope": "蒸发与扩散竞争的粘结剂迁移模型。",
+      "limits": "研究对象是电极；仅作机理类比，不能移植隔膜干燥窗口。"
+    },
+    {
+      "id": "coat_src_adhesion",
+      "title": "Comparative Study of the Adhesion Properties of Ceramic Composite Separators Using a Surface and Interfacial Cutting Analysis System",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31457568/",
+      "type": "research",
+      "scope": "涂层内部、涂层与基膜界面的区分及湿态影响。",
+      "limits": "剥离几何和材料体系决定结果，不作为通用指标阈值。"
+    },
+    {
+      "id": "cell_src_wetting",
+      "title": "On electrolyte wetting through lithium-ion battery separators",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2352431620302029",
+      "type": "research",
+      "scope": "面内与贯穿浸润的区分以及陶瓷涂覆影响。",
+      "limits": "已核对出版商摘要；方向差异需对具体结构重新验证。"
+    },
+    {
+      "id": "cell_src_impedance",
+      "title": "Tortuosity Determination of Battery Electrodes and Separators by Impedance Spectroscopy",
+      "url": "https://doi.org/10.1149/2.1141607JES",
+      "type": "research",
+      "scope": "隔膜阻抗、曲折度和测量几何误差。",
+      "limits": "不能用独立隔膜电阻代替整电芯阻抗或安全评价。"
+    },
+    {
+      "id": "cell_src_compression",
+      "title": "Performance and Properties of Laboratory and Commercial Separators under Compression and Varying Temperature",
+      "url": "https://doi.org/10.1149/1945-7111/ade47b",
+      "type": "research",
+      "scope": "受压与温度共同作用下的隔膜离子传输。",
+      "limits": "核对作者所属大学研究记录；结论受所选隔膜与工况限制。"
+    },
+    {
+      "id": "cell_src_failure",
+      "title": "Li-ion Battery Separators, Mechanical Integrity and Failure Mechanisms Leading to Soft and Hard Internal Shorts",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5007649/",
+      "type": "research",
+      "scope": "局部机械变形与不同失效模式。",
+      "limits": "机械试验条件特定；不能映射为通用穿刺限值或热失控概率。"
+    },
+    {
+      "id": "coat_src_crosslink",
+      "title": "Highly improved thermal stability of the ceramic coating layer on the polyethylene separator via chemical crosslinking between ceramic particles and polymeric binders",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1385894722000092",
+      "type": "research",
+      "scope": "陶瓷颗粒与粘结剂结合、湿态完整性和尺寸稳定。",
+      "limits": "已核对出版商摘要；只支持所用交联体系的机理，不推定一般涂层性能。"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+# Only the application, curated knowledge and maintenance instructions belong in Git.
+/*
+!/.gitignore
+!/README.md
+!/bundle_manifest.json
+!/启动工作台.cmd
+!/启动工作台.ps1
+!/agent/
+!/app/
+!/config/
+!/docs/
+!/evals/
+!/graph/
+!/knowledge/
+!/tests/
+!/tools/
+!/知识图谱/
+!/知识投递/
+!/正式案例库/
+
+# Raw reports, user notes and future case files remain local by default.
+首批文件/
+/知识投递/*
+!/知识投递/_使用说明.md
+!/知识投递/_模板.md
+/正式案例库/*
+!/正式案例库/_01_案例报告转Markdown入库规范.md
+!/正式案例库/_02_五类知识关联与图谱维护规范.md
+/config/*
+!/config/model.example.json
+
+# Credentials, runtime data and generated bundles.
+__pycache__/
+*.pyc
+.env
+.env.*
+*.local.json
+*.pem
+*.key
+private/
+exports/
+tmp/
+test-results/
+*.log

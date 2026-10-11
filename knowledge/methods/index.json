@@ -1,0 +1,176 @@
+{
+  "articles": [
+    {
+      "id": "method_problem_definition",
+      "title": "问题定义、分层与时间空间定位",
+      "category": "问题界定",
+      "summary": "对象、卷段、位置和变化点的分层规则。",
+      "stage": "方法",
+      "tags": [
+        "问题定义",
+        "分层",
+        "卷系谱",
+        "时间空间"
+      ],
+      "aliases": [
+        "问题定义",
+        "分层",
+        "卷系谱",
+        "时间空间"
+      ],
+      "file": "methods/problem_definition.md"
+    },
+    {
+      "id": "method_measurement_equivalence",
+      "title": "测量系统、测法等效与单位基准",
+      "category": "测量与检验",
+      "summary": "区分重复性、偏倚、稳定性与方法等效，先核验可比性。",
+      "stage": "方法",
+      "tags": [
+        "测量",
+        "MSA",
+        "GRR",
+        "检验方法",
+        "单位"
+      ],
+      "aliases": [
+        "测量",
+        "MSA",
+        "GRR",
+        "检验方法",
+        "单位"
+      ],
+      "file": "methods/measurement_equivalence.md"
+    },
+    {
+      "id": "method_spc_causality",
+      "title": "SPC、能力分析与相关因果",
+      "category": "统计与因果",
+      "summary": "稳定性、子组、能力口径和混杂限制。",
+      "stage": "方法",
+      "tags": [
+        "SPC",
+        "Cpk",
+        "Ppk",
+        "相关",
+        "因果",
+        "稳定性"
+      ],
+      "aliases": [
+        "SPC",
+        "Cpk",
+        "Ppk",
+        "相关",
+        "因果",
+        "稳定性"
+      ],
+      "file": "methods/spc_causality.md"
+    },
+    {
+      "id": "method_hypothesis_experiment",
+      "title": "假设、证据、反证与确认试验",
+      "category": "试验设计",
+      "summary": "以可反证假设组织对照、重复、区组及多指标确认。",
+      "stage": "方法",
+      "tags": [
+        "DOE",
+        "试验",
+        "反证",
+        "验证",
+        "改善"
+      ],
+      "aliases": [
+        "DOE",
+        "试验",
+        "反证",
+        "验证",
+        "改善"
+      ],
+      "file": "methods/hypothesis_experiment.md"
+    },
+    {
+      "id": "method_pfmea_control_response",
+      "title": "PFMEA、控制计划与反应闭环",
+      "category": "控制闭环",
+      "summary": "连接工序功能、失效、预防检测及反应计划。",
+      "stage": "方法",
+      "tags": [
+        "PFMEA",
+        "控制计划",
+        "CP",
+        "反应计划"
+      ],
+      "aliases": [
+        "PFMEA",
+        "控制计划",
+        "CP",
+        "反应计划"
+      ],
+      "file": "methods/pfmea_control_response.md"
+    },
+    {
+      "id": "method_knowledge_governance",
+      "title": "数据脱敏、版本与可迁移知识维护",
+      "category": "知识治理",
+      "summary": "将通用知识和现场证据分开，维护范围、版本与迁移质量。",
+      "stage": "方法",
+      "tags": [
+        "脱敏",
+        "隐私",
+        "版本",
+        "知识迁移",
+        "模型"
+      ],
+      "aliases": [
+        "脱敏",
+        "隐私",
+        "版本",
+        "知识迁移",
+        "模型"
+      ],
+      "file": "methods/knowledge_governance.md"
+    }
+  ],
+  "sources": [
+    {
+      "id": "method_nist_msa",
+      "title": "NIST Gauge R&R",
+      "url": "https://www.itl.nist.gov/div898/handbook/mpc/section4/mpc4.htm",
+      "type": "technical",
+      "scope": "测量过程变差的组织方法",
+      "limits": "通用方法，具体样品、破坏性与重复设计需重新确认。"
+    },
+    {
+      "id": "method_nist_stability",
+      "title": "NIST Process stability",
+      "url": "https://www.itl.nist.gov/div898/handbook/ppc/section4/ppc45.htm",
+      "type": "technical",
+      "scope": "稳定性评价",
+      "limits": "不是任意连续制膜数据的现成控制图设置。"
+    },
+    {
+      "id": "method_nist_capability",
+      "title": "NIST Process capability",
+      "url": "https://www.itl.nist.gov/div898/handbook/ppc/section4/ppc46.htm",
+      "type": "technical",
+      "scope": "能力指数的定义与前提",
+      "limits": "不提供企业或产品合格阈值。"
+    },
+    {
+      "id": "method_nist_blocks",
+      "title": "NIST Randomized block designs",
+      "url": "https://www.itl.nist.gov/div898/handbook/pri/section3/pri332.htm",
+      "type": "technical",
+      "scope": "区组与随机化",
+      "limits": "不能替代具体过程的可行性和样本量设计。"
+    },
+    {
+      "id": "method_aiag_fmea",
+      "title": "AIAG FMEA public white paper",
+      "url": "https://www.aiag.org/docs/default-source/quality-/new_aiag_vda_fmea_-whitepaper.pdf?sfvrsn=6923e9d_4",
+      "type": "technical",
+      "scope": "失效分析与行动优先级的公开说明",
+      "limits": "公开说明不等同完整受控手册；评分按适用版本核验。"
+    }
+  ]
+}
