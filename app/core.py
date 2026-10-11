@@ -13,6 +13,7 @@ import math
 import re
 import zipfile
 from app import custom_knowledge
+from app.retrieval import retrieve, included_trace
 
 ROOT = Path(__file__).resolve().parents[1]
 STAGES = ["全部", "基膜", "涂覆", "电芯", "方法"]
@@ -225,12 +226,7 @@ class KnowledgeStore:
         route = str(payload.get("route", "未确认"))[:300]
         observations = str(payload.get("observations", ""))[:14000]
         budget = max(5000, min(int(payload.get("context_chars", 16000)), 40000))
-        query = issue + " " + observations[:2500]
-        books = self.match_playbooks(query, stage)
-        preferred = unique(a for p in books for a in p.get("article_ids", []))
-        include_custom = not for_model or payload.get("allow_custom") is True
-        chunks = self.search(issue, stage, 18, secondary_query=observations[:2500]+" "+route, preferred_articles=preferred, include_custom=include_custom)
-        edges = self.related_edges(query, [c["article_id"] for c in chunks])
+        chunks, edges, books, trace, gaps = retrieve(self, payload, for_model)
         system_path = self.root / "agent/system_prompt.md"
         system = system_path.read_text(encoding="utf-8-sig") if system_path.exists() else "你是隔膜质量分析助手。区分事实与假设，未知时提出验证，不虚构工艺限值和因果。"
         protocol_path = self.root / "agent/analysis_protocol.md"
@@ -253,10 +249,11 @@ class KnowledgeStore:
                 used += len(segments[-1])
         graph_text = "## 相关机制关系\n"
         for edge in edges[:8]:
-            line = (f'- {edge["source_label"]} → {edge["target_label"]}：{edge.get("mechanism", "")}；'
+            line = (f'- 关系 {edge["id"]}：{edge["source_label"]} → {edge["target_label"]}：{edge.get("mechanism", "")}；'
                 f'质量控制点：{"；".join(edge.get("control_points", []))}；'
                 f'失控问题：{"；".join(edge.get("failure_modes", []))}；'
-                f'适用条件：{"；".join(edge.get("conditions", []))}\n')
+                f'适用条件：{"；".join(edge.get("conditions", []))}；'
+                f'核查方法：{"；".join(edge.get("checks", []))}\n')
             if used + len(graph_text) + len(line) <= budget * 0.65:
                 graph_text += line
                 used_edges.append(edge)
@@ -265,7 +262,7 @@ class KnowledgeStore:
             used += len(graph_text)
         for chunk in chunks:
             status = "用户自建，未审核" if self.by_article[chunk["article_id"]].get("origin") == "user" else "通用知识"
-            fragment = f'\n## 知识 {chunk["article_id"]} · {chunk["heading"]}（{status}）\n{chunk["text"]}\n'
+            fragment = f'\n## 知识 {chunk["article_id"]} · {chunk["heading"]}（{status}）\n补查缘由：{chunk.get("reason", "关键词匹配")}\n{chunk["text"]}\n'
             if used+len(fragment) > budget:
                 continue
             segments.append(fragment)
@@ -279,13 +276,16 @@ class KnowledgeStore:
             "不要把症状匹配分数当作根因概率；未提供的数据不能当成事实。")
         return {"issue": issue, "stage": stage, "route": route, "observations": observations,
             "messages": [{"role": "system", "content": system}, {"role": "user", "content": user_text}],
-            "retrieved": included, "related_edges": edges, "playbooks": books,
+            "retrieved": included, "related_edges": used_edges, "playbooks": books,
+            "retrieval_trace":included_trace(trace,included,used_edges), "retrieval_gaps":gaps,
             "activation":{"article_ids":unique(c["article_id"] for c in included),
                 "edge_ids":[e["id"] for e in used_edges],
                 "node_ids":unique(x for e in used_edges for x in (e["source"],e["target"])),
-                "meaning":"实际进入本次分析材料的知识及关系；不代表模型内部注意力或已确认根因"},
+                "graph_edge_ids":[e['id'] for e in used_edges if e.get('retrieval_kind')=='graph'],
+                "graph_node_ids":unique(x for e in used_edges if e.get('retrieval_kind')=='graph' for x in (e['source'],e['target'])),
+                "meaning":"实际进入本轮最终回答材料的片段及关系；不代表模型内部注意力、读过全文或已确认根因"},
             "knowledge_chars": used, "total_prompt_chars": len(system)+len(user_text),
-            "method": "本地关键词与术语扩展检索、图谱关系补充、规则化分析协议"}
+            "method": "当前证据检索、最多两层图谱补查、受限的模型补查请求"}
 
     def offline_analysis(self, payload):
         ctx = self.context(payload)

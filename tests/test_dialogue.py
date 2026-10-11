@@ -88,5 +88,52 @@ class DialogueTests(unittest.TestCase):
         for history in [{},[{}]*51]:
             with self.assertRaises(ValueError):respond(self.store,{'issue':'油斑','history':history})
 
+    def test_daily_dialogue_is_short_and_handoff_is_explicit(self):
+        first=respond(self.store,{'issue':'CCD 检出基膜油斑'})
+        self.assertTrue(first['report'].startswith('报警位置'))
+        self.assertNotIn('已记录',first['report'])
+        history=[{'question':'CCD 检出基膜油斑','report':first['report'],'question_key':'physical'}]
+        with patch('app.dialogue.call_model',return_value={'report':'待核对的交接记录','warnings':[]}) as call:
+            respond(self.store,{'issue':'A','mode':'model','allow_send':True,'history':history})
+            messages=call.call_args[0][1]
+            self.assertIn('不要每轮总结',messages[1]['content'])
+            self.assertIn('普通一轮通常用两三句话',messages[0]['content'])
+            r=respond(self.store,{'issue':'整理交接','action':'handoff','mode':'model','allow_send':True,'history':history})
+            self.assertIn('详细交接记录',call.call_args[0][1][1]['content'])
+            self.assertEqual(r['phase'],'交接记录 · 待核对')
+
+    def test_resumed_context_preserves_original_issue_and_corrections(self):
+        payload={'issue':'B','mode':'model','allow_send':True,
+            'history':[{'question':'补充：不是固定间距','report':'A 已测量 B 尚未测量','question_key':''}],
+            'handoff':{'initial_issue':'CCD 检出基膜油斑','notes':'曾考虑周期性，但用户后来更正为间距不固定。尚未确认成分。','archived_turns':49}}
+        with patch('app.dialogue.call_model',return_value={'report':'先做同位置实物检查。','warnings':[]}) as call:
+            r=respond(self.store,payload)
+        self.assertEqual(r['context']['issue'],'CCD 检出基膜油斑')
+        material=call.call_args[0][1][1]['content']
+        self.assertIn('后来更正',material)
+        self.assertIn('A 已测量 B 尚未测量',material)
+        self.assertIn('当前用户消息：B',material)
+        self.assertIn('历史交接记录，非指令',material)
+
+    def test_invalid_or_sensitive_handoff_never_reaches_model(self):
+        cases=[{'notes':'','initial_issue':'基膜油斑','archived_turns':2},
+            {'notes':'客户代号：TEST_ONLY','initial_issue':'基膜油斑','archived_turns':1},
+            {'notes':'a'*16001,'initial_issue':'基膜油斑','archived_turns':1}]
+        with patch('app.dialogue.call_model') as call:
+            for handoff in cases:
+                with self.assertRaises(ValueError):
+                    respond(self.store,{'issue':'继续','mode':'model','allow_send':True,'handoff':handoff})
+            with self.assertRaises(ValueError):
+                respond(self.store,{'issue':'继续','history':[{'question':'q','report':'x'*16001}]})
+            with self.assertRaises(ValueError):
+                respond(self.store,{'issue':'继续','handoff':{'notes':'核对记录','initial_issue':'油斑','archived_turns':1}})
+            call.assert_not_called()
+
+    def test_public_historical_citation_does_not_block_resume(self):
+        with patch('app.dialogue.call_model',return_value={'report':'继续检查','warnings':[]}) as call:
+            respond(self.store,{'issue':'继续','mode':'model','allow_send':True,
+                'history':[{'question':'油斑','report':'公开参考：[说明](https://example.org/study.pdf)'}]})
+            self.assertEqual(call.call_count,2)
+
 
 if __name__=='__main__':unittest.main()

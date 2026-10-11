@@ -9,7 +9,7 @@ sys.path.insert(0, str(ROOT))
 from app.core import KnowledgeStore
 from tools.validate import validate
 
-DOCS = ["模型接入与迁移.md", "知识结构与维护.md", "下一步资料需求.md", "数据边界.md", "验证记录.md", "星图对话使用说明.md"]
+DOCS = ["模型接入与迁移.md", "知识结构与维护.md", "下一步资料需求.md", "数据边界.md", "验证记录.md", "星图对话使用说明.md", "动态检索与分析进度.md"]
 
 
 def release():
@@ -17,7 +17,7 @@ def release():
     if not result["ok"]:
         raise ValueError("先修复知识结构校验错误")
     store = KnowledgeStore()
-    names = {"README.md", "agent/system_prompt.md", "agent/analysis_protocol.md", "agent/dialogue_protocol.md", "agent/playbooks.json", "evals/cases.json"}
+    names = {"README.md", "agent/system_prompt.md", "agent/analysis_protocol.md", "agent/dialogue_protocol.md", "agent/retrieval_protocol.md", "agent/playbooks.json", "evals/cases.json"}
     for article in store.articles:
         if article.get("origin") != "user":
             names.add(article["workspace_file"])
@@ -26,14 +26,14 @@ def release():
         names.add("知识图谱/index.json")
     names.update(p.relative_to(ROOT).as_posix() for p in (ROOT / "graph").glob("*.json"))
     names.update("docs/" + name for name in DOCS if (ROOT / "docs" / name).is_file())
-    manifest = {"version":"0.3.1", "knowledge_files":sorted(names)}
-    (ROOT / "bundle_manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+    manifest = {"version":"0.4.0", "knowledge_files":sorted(names)}
+    (ROOT / "bundle_manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n")
     export = ROOT / "exports"
     export.mkdir(exist_ok=True)
     knowledge_zip = export / "separator-knowledge.zip"
     knowledge_zip.write_bytes(store.portable_bundle())
     program = set(names) | {"bundle_manifest.json", "启动工作台.cmd", "启动工作台.ps1", ".gitignore", "config/model.example.json", "知识投递/_使用说明.md", "知识投递/_模板.md"}
-    for folder, suffixes in (("app", {".py", ".html", ".css", ".js", ".svg"}), ("tests", {".py"}), ("tools", {".py"})):
+    for folder, suffixes in (("app", {".py", ".html", ".css", ".js", ".svg"}), ("tests", {".py", ".js"}), ("tools", {".py"})):
         for p in (ROOT / folder).rglob("*"):
             if p.is_file() and p.suffix in suffixes and "__pycache__" not in p.parts:
                 program.add(p.relative_to(ROOT).as_posix())

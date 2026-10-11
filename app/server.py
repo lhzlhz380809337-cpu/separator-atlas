@@ -4,6 +4,7 @@ import argparse
 import json
 import mimetypes
 import os
+import re
 from pathlib import Path
 import secrets
 import sys
@@ -23,7 +24,7 @@ from app.dialogue import respond
 from app.research import search_public
 
 WEB = ROOT / "app/web/dist"
-VERSION = "0.3.1"
+VERSION = "0.4.0"
 
 
 def public_article(article):
@@ -122,7 +123,7 @@ def make_handler(store, csrf_token, port):
                     self.send_data(store.portable_bundle(), content_type="application/zip", filename="separator-knowledge.zip")
                 elif path == "/api/health":
                     self.send_data({"ok":True, "version":VERSION, "application":"separator-workbench"})
-                elif path in ("/", "/index.html", "/app.js", "/style.css", "/favicon.svg", "/cosmos.js", "/cosmos.css", "/atlas.js", "/atlas.css"):
+                elif path in ("/", "/index.html", "/app.js", "/style.css", "/favicon.svg", "/session.js", "/cosmos.js", "/cosmos.css", "/atlas.js", "/atlas.css"):
                     file = WEB / ("index.html" if path == "/" else path.lstrip("/"))
                     if not file.is_file():
                         self.send_data({"error":"界面文件尚未生成。"}, 404)
@@ -140,7 +141,7 @@ def make_handler(store, csrf_token, port):
                 return
             try:
                 length = int(self.headers.get("Content-Length", "0"))
-                if length <= 0 or length > 160000:
+                if length <= 0 or length > (2_000_000 if urlsplit(self.path).path == '/api/dialogue' else 160000):
                     self.send_data({"error":"请求大小不符合要求。"}, 413)
                     return
                 if "application/json" not in self.headers.get("Content-Type", ""):
@@ -196,7 +197,9 @@ def make_handler(store, csrf_token, port):
                     ctx = store.context(payload, for_model=True)
                     for chunk in ctx["retrieved"]:
                         if store.by_article[chunk["article_id"]].get("origin") == "user":
-                            check_outbound({"observations":chunk["text"]})
+                            check_outbound({"observations":re.sub(r'https?://[^\s<>"）)]+','[公开链接]',json.dumps(chunk,ensure_ascii=False))})
+                    for edge in ctx.get('related_edges',[]):
+                        check_outbound({'observations':re.sub(r'https?://[^\s<>"）)]+','[公开链接]',json.dumps(edge,ensure_ascii=False))})
                     result = call_model(settings, ctx["messages"])
                     warnings = list(result.get("warnings", []))
                     if payload.get("two_pass"):

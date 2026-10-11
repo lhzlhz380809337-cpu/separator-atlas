@@ -1,12 +1,14 @@
 {
-  "version": "0.3.1",
+  "version": "0.4.0",
   "knowledge_files": [
     "README.md",
     "agent/analysis_protocol.md",
     "agent/dialogue_protocol.md",
     "agent/playbooks.json",
+    "agent/retrieval_protocol.md",
     "agent/system_prompt.md",
     "docs/下一步资料需求.md",
+    "docs/动态检索与分析进度.md",
     "docs/数据边界.md",
     "docs/星图对话使用说明.md",
     "docs/模型接入与迁移.md",
