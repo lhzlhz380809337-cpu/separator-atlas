@@ -32,7 +32,7 @@ def release():
     export.mkdir(exist_ok=True)
     knowledge_zip = export / "separator-knowledge.zip"
     knowledge_zip.write_bytes(store.portable_bundle())
-    program = set(names) | {"bundle_manifest.json", "启动工作台.cmd", "启动工作台.ps1", ".gitignore", "config/model.example.json", "知识投递/_使用说明.md", "知识投递/_模板.md"}
+    program = set(names) | {"bundle_manifest.json", "启动工作台.cmd", "启动工作台.ps1", "start-workbench.ps1", ".gitignore", "config/model.example.json", "知识投递/_使用说明.md", "知识投递/_模板.md"}
     for folder, suffixes in (("app", {".py", ".html", ".css", ".js", ".svg"}), ("tests", {".py", ".js"}), ("tools", {".py"})):
         for p in (ROOT / folder).rglob("*"):
             if p.is_file() and p.suffix in suffixes and "__pycache__" not in p.parts:

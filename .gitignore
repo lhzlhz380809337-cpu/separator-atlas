@@ -5,6 +5,7 @@
 !/bundle_manifest.json
 !/启动工作台.cmd
 !/启动工作台.ps1
+!/start-workbench.ps1
 !/agent/
 !/app/
 !/config/
