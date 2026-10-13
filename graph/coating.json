@@ -102,24 +102,66 @@
     {
       "id": "coat_bubble",
       "label": "浆料气泡",
-      "type": "缺陷",
+      "type": "过程状态",
       "stage": "涂覆",
       "summary": "可参与局部供液中断或成膜缺口。",
       "article_ids": [
+        "atlas_coat_voids",
         "atlas_coatclean",
         "coat_slurry"
-      ]
+      ],
+      "aliases": [],
+      "diagnosis": {
+        "definition": "可参与局部供液中断或成膜缺口。",
+        "first_checks": [
+          "泡在储罐、回流、涂头还是湿膜？",
+          "前态膜与下游样的物料坐标能否对应？"
+        ],
+        "branches": [
+          "卷气及吸气",
+          "脱泡不足",
+          "循环和材料起泡"
+        ],
+        "impact": [
+          "按层位和实物结构评价覆盖、结合与局部完整性。"
+        ],
+        "verification": [
+          "同供料条件下泡量与湿膜缺失响应",
+          "措施后复验原缺陷和相关性能，比较相同口径缺陷率。"
+        ]
+      }
     },
     {
       "id": "coat_agglomerate",
       "label": "颗粒团聚",
-      "type": "缺陷",
+      "type": "过程状态",
       "stage": "涂覆",
       "summary": "区别于一次颗粒的聚集体，可改变表面与流动。",
       "article_ids": [
+        "atlas_coat_black",
         "atlas_coatclean",
         "coat_slurry"
-      ]
+      ],
+      "aliases": [],
+      "diagnosis": {
+        "definition": "区别于一次颗粒的聚集体，可改变表面与流动。",
+        "first_checks": [
+          "颗粒在浆料中还是涂后才出现？",
+          "前态膜与下游样的物料坐标能否对应？"
+        ],
+        "branches": [
+          "分散不足",
+          "沉积再带入",
+          "后段积料误判"
+        ],
+        "impact": [
+          "按层位和实物结构评价覆盖、结合与局部完整性。"
+        ],
+        "verification": [
+          "过滤前后与湿膜颗粒形貌成分",
+          "措施后复验原缺陷和相关性能，比较相同口径缺陷率。"
+        ]
+      }
     },
     {
       "id": "coat_surface",
@@ -194,9 +236,30 @@
       "stage": "涂覆",
       "summary": "局部供液、铺展或后续干燥形成的覆盖异常。",
       "article_ids": [
+        "atlas_coat_stripes",
         "atlas_application",
         "coat_uniformity"
-      ]
+      ],
+      "aliases": [],
+      "diagnosis": {
+        "definition": "局部供液、铺展或后续干燥形成的覆盖异常。",
+        "first_checks": [
+          "条纹什么方向，涂层真正缺失了吗？",
+          "前态膜与下游样的物料坐标能否对应？"
+        ],
+        "branches": [
+          "涂头与供料",
+          "走膜接触",
+          "润湿干燥"
+        ],
+        "impact": [
+          "按层位和实物结构评价覆盖、结合与局部完整性。"
+        ],
+        "verification": [
+          "厚度、覆盖及方向周期分组",
+          "措施后复验原缺陷和相关性能，比较相同口径缺陷率。"
+        ]
+      }
     },
     {
       "id": "coat_drying",
@@ -293,9 +356,30 @@
       "stage": "涂覆",
       "summary": "载荷或摩擦下的涂层物质脱落。",
       "article_ids": [
+        "atlas_coat_integrity_defects",
         "atlas_interface",
         "coat_adhesion"
-      ]
+      ],
+      "aliases": [],
+      "diagnosis": {
+        "definition": "载荷或摩擦下的涂层物质脱落。",
+        "first_checks": [
+          "是松散粉、涂层碎片还是外来粉尘？",
+          "前态膜与下游样的物料坐标能否对应？"
+        ],
+        "branches": [
+          "内聚或界面弱",
+          "组分分布",
+          "摩擦分切"
+        ],
+        "impact": [
+          "按层位和实物结构评价覆盖、结合与局部完整性。"
+        ],
+        "verification": [
+          "同受力、干湿条件下掉粉及破坏面",
+          "措施后复验原缺陷和相关性能，比较相同口径缺陷率。"
+        ]
+      }
     },
     {
       "id": "coat_slitting",
@@ -315,9 +399,30 @@
       "stage": "涂覆",
       "summary": "切边、擦伤或局部应力集中形成的缺陷。",
       "article_ids": [
+        "atlas_coat_webdefects",
         "atlas_finishing",
         "coat_finishing"
-      ]
+      ],
+      "aliases": [],
+      "diagnosis": {
+        "definition": "切边、擦伤或局部应力集中形成的缺陷。",
+        "first_checks": [
+          "是涂层崩边还是基膜裂口？",
+          "前态膜与下游样的物料坐标能否对应？"
+        ],
+        "branches": [
+          "刀具支撑",
+          "原有边部薄弱",
+          "积粉磨损"
+        ],
+        "impact": [
+          "按层位和实物结构评价覆盖、结合与局部完整性。"
+        ],
+        "verification": [
+          "切前切后及刀位、分层形貌",
+          "措施后复验原缺陷和相关性能，比较相同口径缺陷率。"
+        ]
+      }
     },
     {
       "id": "coat_winding",
@@ -337,9 +442,30 @@
       "stage": "涂覆",
       "summary": "需按形状、组成、位置及来源分类评价。",
       "article_ids": [
+        "atlas_coat_black",
         "atlas_coatclean",
         "coat_finishing"
-      ]
+      ],
+      "aliases": [],
+      "diagnosis": {
+        "definition": "需按形状、组成、位置及来源分类评价。",
+        "first_checks": [
+          "在基膜、界面、涂层还是表面？",
+          "前态膜与下游样的物料坐标能否对应？"
+        ],
+        "branches": [
+          "前态膜带入",
+          "浆料过滤",
+          "磨耗及接触"
+        ],
+        "impact": [
+          "按层位和实物结构评价覆盖、结合与局部完整性。"
+        ],
+        "verification": [
+          "成分和首次出现区间",
+          "措施后复验原缺陷和相关性能，比较相同口径缺陷率。"
+        ]
+      }
     },
     {
       "id": "coat_static",
@@ -569,6 +695,170 @@
       "summary": "规定温度、倍率及截止条件下可充放的容量，受活性材料与局部传输共同影响。",
       "article_ids": [
         "atlas_celltransport"
+      ]
+    },
+    {
+      "id": "coat_supply_stability",
+      "label": "涂头供料稳定性",
+      "type": "质量特性",
+      "stage": "涂覆",
+      "summary": "到达涂布头的瞬时流量、组成和含气量的稳定程度。",
+      "article_ids": [
+        "atlas_coat_supply"
+      ]
+    },
+    {
+      "id": "coat_pipeline_deposit",
+      "label": "管路与罐底沉积",
+      "type": "缺陷机理",
+      "stage": "涂覆",
+      "summary": "浆料在静置、低流速和死角处沉降、絮凝或形成胶状聚集体。",
+      "article_ids": [
+        "atlas_coat_supply"
+      ]
+    },
+    {
+      "id": "coat_air_ingress",
+      "label": "进料卷气与气塞",
+      "type": "缺陷机理",
+      "stage": "涂覆",
+      "summary": "进料冲击、入口漏气或回流卷气把空气带入供料循环。",
+      "article_ids": [
+        "atlas_coat_supply"
+      ]
+    },
+    {
+      "id": "coat_web_state",
+      "label": "涂覆走膜平整状态",
+      "type": "质量特性",
+      "stage": "涂覆",
+      "summary": "膜进入涂布头和烘箱时的横向受力、褶皱、居中与贴附状态。",
+      "article_ids": [
+        "atlas_coat_web"
+      ]
+    },
+    {
+      "id": "coat_tension_accuracy",
+      "label": "张力测控准确性",
+      "type": "质量特性",
+      "stage": "涂覆",
+      "summary": "设定、传感器显示与膜面实际牵引力的一致程度。",
+      "article_ids": [
+        "atlas_coat_web"
+      ]
+    },
+    {
+      "id": "coat_absorption_state",
+      "label": "吸附辊有效状态",
+      "type": "设备状态",
+      "stage": "涂覆",
+      "summary": "吸附分布、包角、网套、孔道和边部设置共同形成的牵引与展平能力。",
+      "article_ids": [
+        "atlas_coat_web",
+        "atlas_coat_fingerprint"
+      ]
+    },
+    {
+      "id": "coat_head_geometry",
+      "label": "料盒刮刀与涂辊几何",
+      "type": "设备状态",
+      "stage": "涂覆",
+      "summary": "料盒、刮刀、凹版辊和背辊之间的动态位置与接触关系。",
+      "article_ids": [
+        "atlas_coat_head"
+      ]
+    },
+    {
+      "id": "coat_roller_runout",
+      "label": "辊系跳动与传动波动",
+      "type": "设备状态",
+      "stage": "涂覆",
+      "summary": "辊筒偏心、轴承、联轴器、皮带和底座引起的周期运动异常。",
+      "article_ids": [
+        "atlas_coat_head"
+      ]
+    },
+    {
+      "id": "coat_under_dry",
+      "label": "局部膜面不干",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "局部湿层在接触后续辊面时仍具粘性或流动性的状态。",
+      "article_ids": [
+        "atlas_coat_webdefects",
+        "atlas_coat_drydefect"
+      ],
+      "aliases": [],
+      "diagnosis": {
+        "definition": "局部湿层在接触后续辊面时仍具粘性或流动性的状态。",
+        "first_checks": [
+          "粘性伴残留偏高，还是聚合物固有粘性？",
+          "前态膜与下游样的物料坐标能否对应？"
+        ],
+        "branches": [
+          "局部厚涂",
+          "风量排湿及停留不匹配",
+          "表面粘性误判"
+        ],
+        "impact": [
+          "按层位和实物结构评价覆盖、结合与局部完整性。"
+        ],
+        "verification": [
+          "同位置残留、涂量和风区",
+          "措施后复验原缺陷和相关性能，比较相同口径缺陷率。"
+        ]
+      }
+    },
+    {
+      "id": "coat_thermal_wrinkle",
+      "label": "烘箱热皱与折印",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "膜在烘箱热史和不均匀约束下产生的皱折及其收卷残留。",
+      "article_ids": [
+        "atlas_coat_webdefects",
+        "atlas_coat_drydefect",
+        "atlas_coat_web"
+      ],
+      "aliases": [],
+      "diagnosis": {
+        "definition": "膜在烘箱热史和不均匀约束下产生的皱折及其收卷残留。",
+        "first_checks": [
+          "烘箱前已经有皱吗，出箱后能否自由展平？",
+          "前态膜与下游样的物料坐标能否对应？"
+        ],
+        "branches": [
+          "原有褶皱",
+          "热约束不均",
+          "牵引或辊不转"
+        ],
+        "impact": [
+          "按层位和实物结构评价覆盖、结合与局部完整性。"
+        ],
+        "verification": [
+          "箱前箱后形态、膜温及实际受力",
+          "措施后复验原缺陷和相关性能，比较相同口径缺陷率。"
+        ]
+      }
+    },
+    {
+      "id": "coat_periodic_fingerprint",
+      "label": "涂覆缺陷周期指纹",
+      "type": "方法",
+      "stage": "涂覆",
+      "summary": "由固定横向坐标、纵向节距、形貌和接触面构成的辊面定位证据。",
+      "article_ids": [
+        "atlas_coat_fingerprint"
+      ]
+    },
+    {
+      "id": "coat_contact_debris",
+      "label": "接触件异物与突起",
+      "type": "缺陷机理",
+      "stage": "涂覆",
+      "summary": "辊面料渣、残胶、积粉、胶带或网套异常形成的局部接触突起。",
+      "article_ids": [
+        "atlas_coat_fingerprint"
       ]
     }
   ],
@@ -2751,6 +3041,418 @@
       ],
       "failure_modes": [
         "规定测试条件下可用容量下降或一致性变差，需区分传输受限与活性材料损失。"
+      ]
+    },
+    {
+      "id": "field_coat_001",
+      "source": "coat_stability",
+      "target": "coat_pipeline_deposit",
+      "relation": "静置与循环中形成",
+      "mechanism": "浆料在静置和循环中可能沉降、絮凝、形成胶状聚集体或出现温度相关的流变变化。停机后，沉积物可在复机时集中进入管路和料盒，造成带核颗粒、拖尾漏涂或过滤器快速堵塞；平均取样仍可能看起来合格。",
+      "conditions": [
+        "浆料存在沉降或流变时间依赖，且经历静置或低流速区"
+      ],
+      "checks": [
+        "检查罐底、弯管和回流死角，比较复机首段浆料"
+      ],
+      "article_ids": [
+        "atlas_coat_supply"
+      ],
+      "control_points": [
+        "按材料体系规定停机搅拌、再分散和复机排放方法，记录停机时长、温度和首段浆料状态",
+        "检查罐底、弯管、缩径、低流速区和回流死角，避免只清洗容易看到的直管",
+        "对异常浆料做过滤残渣、粒径或显微对照，并与正常批次在相同供料条件下验证"
+      ],
+      "failure_modes": [
+        "复机后集中出现颗粒、黑点、带核漏涂和过滤器堵塞。"
+      ]
+    },
+    {
+      "id": "field_coat_002",
+      "source": "coat_pipeline_deposit",
+      "target": "coat_supply_stability",
+      "relation": "扰动供料",
+      "mechanism": "浆料在静置和循环中可能沉降、絮凝、形成胶状聚集体或出现温度相关的流变变化。停机后，沉积物可在复机时集中进入管路和料盒，造成带核颗粒、拖尾漏涂或过滤器快速堵塞；平均取样仍可能看起来合格。",
+      "conditions": [
+        "沉积物能够脱落并进入供料循环"
+      ],
+      "checks": [
+        "观察清洗、直管化或复机排放后缺陷与压差响应"
+      ],
+      "article_ids": [
+        "atlas_coat_supply"
+      ],
+      "control_points": [
+        "按材料体系规定停机搅拌、再分散和复机排放方法，记录停机时长、温度和首段浆料状态",
+        "检查罐底、弯管、缩径、低流速区和回流死角，避免只清洗容易看到的直管",
+        "对异常浆料做过滤残渣、粒径或显微对照，并与正常批次在相同供料条件下验证"
+      ],
+      "failure_modes": [
+        "瞬时组成和颗粒状态失稳，使缺陷时有时无并难以由平均物性识别。"
+      ]
+    },
+    {
+      "id": "field_coat_003",
+      "source": "coat_air_ingress",
+      "target": "coat_bubble",
+      "relation": "引入气泡",
+      "mechanism": "液位落差、进料冲击、泵入口漏气、回流卷气或过滤器高压降会把空气带入浆料。气泡进入料盒后占据应由浆料填充的空间，破裂时可造成点状或条状缺涂；气塞还会使流量计和实际供料发生波动。",
+      "conditions": [
+        "空气被带入且未在进入料盒前排出"
+      ],
+      "checks": [
+        "比较进料方式、排泡状态、流量与缺陷同步性"
+      ],
+      "article_ids": [
+        "atlas_coat_supply",
+        "atlas_coatclean"
+      ],
+      "control_points": [
+        "观察进料、回流和料盒泡沫，而不只读取泵速；核对启动停止液位、进料冲击和排泡路径",
+        "检查泵入口密封、过滤器前后压差、回流液面和管路高点，确认空气从何处进入和聚集",
+        "通过降低单次进料扰动、稳定液位或设置有效排泡做对照，观察缺陷和流量是否同步响应"
+      ],
+      "failure_modes": [
+        "形成随机亮点、点状漏涂、周期性供料不足和局部膜面不干。"
+      ]
+    },
+    {
+      "id": "field_coat_004",
+      "source": "coat_filter",
+      "target": "coat_supply_stability",
+      "relation": "压降影响",
+      "mechanism": "过滤器、管路或料盒通道堵塞会提高压降并削弱有效流量。泵速正常不代表涂头流量正常；部分堵塞还会让横向供料和回流不均。过滤能够拦截颗粒，但过细、堵塞或清洗无效时也会成为波动源。",
+      "conditions": [
+        "过滤器或通道压降占供料能力的重要部分"
+      ],
+      "checks": [
+        "监测压差、通量和清洗更换后的恢复程度"
+      ],
+      "article_ids": [
+        "atlas_coat_supply"
+      ],
+      "control_points": [
+        "记录过滤器前后压差、实际流量、泵负荷和回流状态，建立清洗或更换后的通量确认",
+        "分段旁路或替换管路、过滤器和泵进行单因素验证，不以“已清洗”代替有效性检查",
+        "拆检料盒进料口、回流口和内部通道，核对两侧回流与横向供料状态"
+      ],
+      "failure_modes": [
+        "供料不足、脉动、横向不均或积料脱落形成条纹和带核缺陷。"
+      ]
+    },
+    {
+      "id": "field_coat_005",
+      "source": "coat_supply_stability",
+      "target": "coat_application",
+      "relation": "决定瞬时湿层供给",
+      "mechanism": "过滤器、管路或料盒通道堵塞会提高压降并削弱有效流量。泵速正常不代表涂头流量正常；部分堵塞还会让横向供料和回流不均。过滤能够拦截颗粒，但过细、堵塞或清洗无效时也会成为波动源。",
+      "conditions": [
+        "涂布量受供料和回流状态影响"
+      ],
+      "checks": [
+        "对齐流量、回流、湿膜与CCD缺陷时间轴"
+      ],
+      "article_ids": [
+        "atlas_coat_supply",
+        "atlas_application"
+      ],
+      "control_points": [
+        "记录过滤器前后压差、实际流量、泵负荷和回流状态，建立清洗或更换后的通量确认",
+        "分段旁路或替换管路、过滤器和泵进行单因素验证，不以“已清洗”代替有效性检查",
+        "拆检料盒进料口、回流口和内部通道，核对两侧回流与横向供料状态"
+      ],
+      "failure_modes": [
+        "湿层供给中断或波动，出现漏涂、条纹和克重不稳。"
+      ]
+    },
+    {
+      "id": "field_coat_006",
+      "source": "coat_tension_accuracy",
+      "target": "coat_web_state",
+      "relation": "决定实际受力",
+      "mechanism": "张力设定通过驱动、摆辊和接触摩擦传到膜面。传感器未校准、摆辊机构异常或某根辊失速时，设定值与实际牵引力分离；不同段之间的张力差会把小皱折拉长、推向边部或送入涂布间隙。",
+      "conditions": [
+        "膜路包含多段张力和被动接触辊"
+      ],
+      "checks": [
+        "校准张力并联查摆辊、实际辊速和动态波动"
+      ],
+      "article_ids": [
+        "atlas_coat_web"
+      ],
+      "control_points": [
+        "用受控方法校准张力和摆辊，检查设定值、实际值、摆辊位置及动态波动是否一致",
+        "测量关键主动辊和从动辊实际转速，检查轴承、皮带、包角和辊面摩擦，识别停转或打滑",
+        "调参前记录各段基线，调整后恢复无关变化，避免多个张力和辊位同时改变"
+      ],
+      "failure_modes": [
+        "形成斜褶、边部打折、暗条纹、条状漏涂或收卷折印。"
+      ]
+    },
+    {
+      "id": "field_coat_007",
+      "source": "coat_absorption_state",
+      "target": "coat_web_state",
+      "relation": "提供吸附与展平",
+      "mechanism": "吸附辊通过负压和包角让膜贴附并传递牵引。滤网或孔道堵塞、网套积粉破损、吸附宽度不匹配或包角不合适，会造成横向吸力差和局部滑移。提高风频只能增加系统负荷，不能修复堵塞和几何不匹配。",
+      "conditions": [
+        "该膜段依靠吸附辊传递牵引或展平"
+      ],
+      "checks": [
+        "确认横向吸力、网套和包角状态及清洁有效性"
+      ],
+      "article_ids": [
+        "atlas_coat_web"
+      ],
+      "control_points": [
+        "检查吸附辊横向吸力、孔道、过滤网、网套和边部胶带，确认清洁后吸附分布真正恢复",
+        "按膜宽设置有效吸附区和边部间隙，检查网套张紧、破损、积粉与打滑",
+        "调整包角时同步观察膜面接触、划伤、张力报警和下游条纹，不只看负压读数"
+      ],
+      "failure_modes": [
+        "吸附不足会造成未展平和漏涂，吸附或包角过强会增加摩擦和划伤。"
+      ]
+    },
+    {
+      "id": "field_coat_008",
+      "source": "coat_web_state",
+      "target": "coat_stripe",
+      "relation": "转化为覆盖缺陷",
+      "mechanism": "弯辊和调节辊通过横向长度差展开膜面，背辊与涂布辊之间的几何决定膜进入涂布点时的平整度。角度过大、过小或左右不平都会形成受力偏斜；膜面在灯下看似只有轻微皱纹，进入涂布间隙后却可能转化为条纹和漏涂。",
+      "conditions": [
+        "皱折进入涂布接触区"
+      ],
+      "checks": [
+        "侧光观察涂布点前后的皱纹方向和位置响应"
+      ],
+      "article_ids": [
+        "atlas_coat_web",
+        "atlas_application"
+      ],
+      "control_points": [
+        "用侧光观察弯辊、调节辊、背辊上下游膜面，确认皱纹方向与膜行进方向一致且不游移",
+        "检查背辊、调节辊和机架平行度、跳动、轴承及紧固状态，排除底座松动和共振",
+        "调整弯辊或纠偏后确认膜面居中、边部间隙和涂布两侧状态，避免只在一个观察点判定"
+      ],
+      "failure_modes": [
+        "形成斜纹、短亮线、版辊印、边部折叠和横向涂层量差异。"
+      ]
+    },
+    {
+      "id": "field_coat_009",
+      "source": "coat_head_geometry",
+      "target": "coat_uniformity",
+      "relation": "决定带料与转移间隙",
+      "mechanism": "刮刀需要以稳定角度和接触线贴合凹版辊。靠距不平、刮刀磨损、料盒紧固松动或进回料压力变化，会让局部带料量随横向位置或时间改变；平均克重可能合格，但局部出现厚涂、漏涂、条纹或膜面不干。",
+      "conditions": [
+        "采用刮刀与凹版辊形成计量和转移"
+      ],
+      "checks": [
+        "检查带料、刮刀接触、料盒紧固及运行中位移"
+      ],
+      "article_ids": [
+        "atlas_coat_head"
+      ],
+      "control_points": [
+        "检查刮刀磨损、直线度、角度和两侧接触状态，记录使用寿命并观察凹版辊带料是否均匀",
+        "检查料盒紧固件、滑块、基座和校准位置，确认运行振动下不会发生微位移",
+        "固化进料与回流的管径、方式和压力边界，变化后同步观察料盒振动、刮刀接触和湿膜条纹"
+      ],
+      "failure_modes": [
+        "出现周期性不干、横纹、局部厚涂、克重横向差和刮刀碎屑。"
+      ]
+    },
+    {
+      "id": "field_coat_010",
+      "source": "coat_roller_runout",
+      "target": "coat_stripe",
+      "relation": "形成周期横纹",
+      "mechanism": "凹版辊、背辊、调节辊或联轴器发生径向跳动、偏心、轴承卡滞和皮带周期波动时，涂布接触或供料状态随转动周期变化。该变化沿机器方向重复，视觉上常呈横向明暗相间条纹；回流脉动也可能通过料盒压力形成相似横纹。",
+      "conditions": [
+        "运动波动能够传递到涂布接触或料盒压力"
+      ],
+      "checks": [
+        "比较横纹主频与辊周长、传动和回流周期"
+      ],
+      "article_ids": [
+        "atlas_coat_head"
+      ],
+      "control_points": [
+        "分别检查辊筒跳动、轴承、联轴器、皮带、底座紧固和空载转动，不以目视“能转”判定正常",
+        "将横纹纵向节距与辊周长、传动周期、泵和回流波动比较，确认主频来源",
+        "机械检查无效时核对回流管径、缩径位置、进回料流量和料盒腔体压力，使用单因素变更验证"
+      ],
+      "failure_modes": [
+        "横纹贯穿整幅并随速度改变，局部调参只能掩盖而不能消除周期源。"
+      ]
+    },
+    {
+      "id": "field_coat_011",
+      "source": "coat_head_geometry",
+      "target": "coat_foreign",
+      "relation": "磨损产生颗粒",
+      "mechanism": "刮刀或辊面材料磨损后，既可能改变带料，也可能产生碎屑。凹版辊在不同浆料中使用后，其微观网穴和表面状态可能变化，肉眼看不出异常却会造成颗粒、点涂形貌或条状漏涂改变。",
+      "conditions": [
+        "部件存在磨损、跨浆料使用或表面损伤"
+      ],
+      "checks": [
+        "核对部件履历并用受控试涂确认"
+      ],
+      "article_ids": [
+        "atlas_coat_head"
+      ],
+      "control_points": [
+        "按材料体系管理凹版辊、刮刀和胶辊履历，避免未经验证跨浆料复用",
+        "通过标准膜或受控试涂确认带料状态，结合点形貌、克重和厚度而非只看辊面",
+        "胶辊和网套在转运、清洗、安装后检查损伤、突起和周期性印记"
+      ],
+      "failure_modes": [
+        "形成颗粒、点径异常、固定凹痕、带核漏涂和厚度不均。"
+      ]
+    },
+    {
+      "id": "field_coat_012",
+      "source": "coat_mass",
+      "target": "coat_under_dry",
+      "relation": "增加蒸发负荷",
+      "mechanism": "湿层越厚或含液越多，单位面积需要移除的液体越多。若热量和传质能力不足，涂层在接触后续辊筒时仍具有粘性或可流动性；局部涂厚、料盒微位移和供料波动会使不干呈周期性或集中在特定横向位置。",
+      "conditions": [
+        "湿层负荷超过当时有效干燥能力"
+      ],
+      "checks": [
+        "对应涂层面联查局部厚涂、膜温和粘辊"
+      ],
+      "article_ids": [
+        "atlas_coat_drydefect"
+      ],
+      "control_points": [
+        "将涂层面密度、固含、线速和实际膜温与烘箱进排风、温湿度及压差配对观察",
+        "拉取不干位置实物，确认对应涂层面、局部厚涂、粘性和辊面转印，不以CCD亮点直接判定",
+        "参数在范围内但缺陷不响应时，检查料盒间隙、紧固和涂布量周期波动"
+      ],
+      "failure_modes": [
+        "产生粘辊、积料、亮点、黑点和收卷粘连。"
+      ]
+    },
+    {
+      "id": "field_coat_013",
+      "source": "coat_drying",
+      "target": "coat_thermal_wrinkle",
+      "relation": "热史与约束耦合",
+      "mechanism": "膜面在烘箱中受热会发生热收缩和应力释放。左右温度或风压不均、膜面过松、过紧或辊面不转时，局部收缩不能均匀释放，形成斜皱、横纹或中间折痕。提高温度可能解决不干，却同时加重热皱和基膜变形。",
+      "conditions": [
+        "基膜受热且横向或纵向约束不均"
+      ],
+      "checks": [
+        "连续观察入口、段间、出口膜面并测实际热风与辊速"
+      ],
+      "article_ids": [
+        "atlas_coat_drydefect"
+      ],
+      "control_points": [
+        "检查各段实际温度、风量、过滤状态和辊筒转动，确认横向及上下层一致性",
+        "将烘箱入口、段间和出口膜面状态连续观察，区分进入烘箱前的皱与烘箱内新产生的皱",
+        "克重、线速或膜宽变化后重新匹配温度、风量和张力，以膜温和干燥结果验证"
+      ],
+      "failure_modes": [
+        "出现灯箱条纹、收卷折印、边部打折和卷形异常。"
+      ]
+    },
+    {
+      "id": "field_coat_014",
+      "source": "coat_under_dry",
+      "target": "coat_contact_debris",
+      "relation": "转移并积累",
+      "mechanism": "未完全干燥的涂层接触辊面后会转移并逐渐积累。辊面积料再反向压到膜面，形成周期性颗粒、硌伤、粘连或黑点；积料凸起严重时还会把膜推向风嘴或其他结构，造成划伤和穿孔。",
+      "conditions": [
+        "未干涂层接触辊面并发生转移"
+      ],
+      "checks": [
+        "观察辊面积料生成位置和清洁后再生速度"
+      ],
+      "article_ids": [
+        "atlas_coat_drydefect",
+        "atlas_coat_fingerprint"
+      ],
+      "control_points": [
+        "按风险检查烘箱入口、出口、吸附辊和第一根接触辊的积料，记录清洁后再生速度",
+        "检查过滤棉和风嘴洁净度，确认风量衰减是否让某一侧长期干燥不足",
+        "清理积料后继续验证干燥能力，避免只去掉结果而未消除未干来源"
+      ],
+      "failure_modes": [
+        "缺陷从随机不干发展为固定周期复制，并可能造成批量硌伤。"
+      ]
+    },
+    {
+      "id": "field_coat_015",
+      "source": "coat_stripe",
+      "target": "coat_periodic_fingerprint",
+      "relation": "提供周期定位线索",
+      "mechanism": "固定横向位置并以稳定纵向间隔重复的缺陷，通常来自旋转接触件上的固定异常。缺陷间距接近辊周长时，可反推候选辊径；S形、直线形和点列还可帮助区分涂覆吸附辊、普通导辊、网套或上游来料。",
+      "conditions": [
+        "缺陷具有稳定横向位置和重复节距"
+      ],
+      "checks": [
+        "计算多个最小间距并按接触面筛选候选辊"
+      ],
+      "article_ids": [
+        "atlas_coat_fingerprint"
+      ],
+      "control_points": [
+        "用多个最小相邻间距计算周期，结合实际膜速、辊速和是否打滑列出候选接触件",
+        "确认缺陷位于基膜面还是涂层面，并沿对应接触路径排除不接触该面的辊",
+        "对候选辊整周检查积料、异物、胶带、网套破损和表面损伤，清理后连续验证多个周期"
+      ],
+      "failure_modes": [
+        "按名义辊径误定位会使固定缺陷持续复制并形成整卷降级。"
+      ]
+    },
+    {
+      "id": "field_coat_016",
+      "source": "coat_contact_debris",
+      "target": "coat_stripe",
+      "relation": "造成硌伤或离缝",
+      "mechanism": "料渣、残胶、积粉、胶带翘边或网套破洞在辊面形成局部突起。膜经过突起时会被压伤、划伤或抬离涂布接触点，形成带核漏涂、固定位置亮点、黑点和局部薄弱；异物被带走后缺陷可能间歇消失。",
+      "conditions": [
+        "接触件突起位于膜路或涂布接触点"
+      ],
+      "checks": [
+        "整周检查并确认颗粒位于表面还是涂层内部"
+      ],
+      "article_ids": [
+        "atlas_coat_fingerprint"
+      ],
+      "control_points": [
+        "辊面清洁后用侧光、手感或受控检查确认无突起，旋转整周而非只擦停留位置",
+        "规范无尘纸、抹布和胶带的使用，防止清洁过程掉屑、停顿留渣或产生胶带重叠",
+        "网套、胶辊和胶带建立安装、张紧、破损、清洁和更换履历，开机首件检查对应周期缺陷"
+      ],
+      "failure_modes": [
+        "形成重复硌伤、涂层缺失和颗粒污染，严重时损伤基膜。"
+      ]
+    },
+    {
+      "id": "field_coat_017",
+      "source": "coat_periodic_fingerprint",
+      "target": "coat_contact_debris",
+      "relation": "缩小接触件范围",
+      "mechanism": "设备固定位置缺陷通常保持设备坐标；膜上已有缺陷会随纠偏、卷段和来料工位移动。受控改变纠偏位置、切换正常对照卷或比较涂一涂二面，可缩小是来料、涂布头还是后段接触生成。",
+      "conditions": [
+        "能够进行小幅受控纠偏或前后卷位置对照"
+      ],
+      "checks": [
+        "比较缺陷横向坐标是否随膜移动并对齐多级CCD"
+      ],
+      "article_ids": [
+        "atlas_coat_fingerprint"
+      ],
+      "control_points": [
+        "在允许范围内小幅移动纠偏并记录缺陷横向坐标响应，不用大幅纠偏制造新的边部问题",
+        "将前态膜CCD、涂覆CCD和分切CCD按卷长与横向位置对齐，确认首次出现和形貌变化",
+        "异常前后核对换卷、接带、清洁、网套、辊筒和幅宽变化点，优先验证唯一变化"
+      ],
+      "failure_modes": [
+        "可能把来料缺陷归到涂覆设备，或把设备污染错误归给来料。"
       ]
     }
   ]

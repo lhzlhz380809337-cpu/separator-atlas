@@ -193,13 +193,18 @@ class KnowledgeStore:
     def match_playbooks(self, issue, stage="全部", limit=2):
         q = normalized(issue)
         qt = set(terms(issue))
+        # A named discovery stage selects the diagnostic route, not the root cause.
+        named = [s for s in ('基膜','涂覆','电芯') if s in issue]
+        effective_stage = stage if stage != '全部' else named[0] if len(named) == 1 else '全部'
         ranked = []
         for p in self.playbooks:
+            if effective_stage != '全部' and effective_stage not in p.get('stages', []):
+                continue
             score = sum(max(2, len(k)) for k in p.get("keywords", []) if normalized(k) in q)
+            if effective_stage in p.get('stages', []):
+                score += sum(max(3,len(k)) for k in p.get('symptoms', []) if normalized(k) in q)
             overlap = len(qt & set(terms(p["title"])))
             score += min(overlap, 5)*0.4
-            if stage != "全部" and stage not in p.get("stages", []):
-                score *= 0.55
             if score >= 2:
                 ranked.append((score, p))
         ranked.sort(key=lambda pair: pair[0], reverse=True)
@@ -249,7 +254,7 @@ class KnowledgeStore:
                 used += len(segments[-1])
         graph_text = "## 相关机制关系\n"
         for edge in edges[:8]:
-            line = (f'- 关系 {edge["id"]}：{edge["source_label"]} → {edge["target_label"]}：{edge.get("mechanism", "")}；'
+            line = (f'- 关系 {edge["id"]}（{edge.get("relation", "条件关系")}）：{edge["source_label"]} → {edge["target_label"]}：{edge.get("mechanism", "")}；'
                 f'质量控制点：{"；".join(edge.get("control_points", []))}；'
                 f'失控问题：{"；".join(edge.get("failure_modes", []))}；'
                 f'适用条件：{"；".join(edge.get("conditions", []))}；'

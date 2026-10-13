@@ -56,5 +56,61 @@ class AtlasTests(unittest.TestCase):
             self.assertIn(edge['mechanism'],note)
             self.assertTrue(all(p in note for p in edge['control_points']))
 
+    def test_field_lessons_are_retrievable_as_general_mechanisms(self):
+        store=KnowledgeStore()
+        cases={
+            '厚度 面密度 孔隙率 透气 热收缩 联合判读':'atlas_base_performance',
+            'CCD 固定位置 等间距 辊径 首次出现':'atlas_base_fingerprint',
+            '涂覆 料盒 泡沫 回流 过滤压差 停机沉降':'atlas_coat_supply',
+            '吸附辊 包角 网套 张力 打皱 条状漏涂':'atlas_coat_web',
+            '横纹 凹版辊 背辊 联轴器 刮刀 料盒':'atlas_coat_head',
+            '膜面不干 膜温 风量 热皱 辊面积料':'atlas_coat_drydefect',
+        }
+        for query,expected in cases.items():
+            with self.subTest(query=query):
+                self.assertIn(expected,{item['article_id'] for item in store.search(query,limit=8)})
+
+    def test_defect_coverage_has_working_entries_and_stage_specific_routes(self):
+        store=KnowledgeStore()
+        coverage=json.loads((store.root/'evals/defect_coverage.json').read_text(encoding='utf-8'))['entries']
+        self.assertGreaterEqual(len(coverage),50)
+        for row in coverage:
+            with self.subTest(node=row['node_id']):
+                node=store.by_node[row['node_id']]
+                self.assertEqual(node['stage'],row['stage'])
+                self.assertTrue(node.get('diagnosis',{}).get('first_checks'))
+                self.assertTrue(node['diagnosis']['branches'])
+                self.assertTrue(node['diagnosis']['verification'])
+                for query in row['queries']:
+                    found={r['article_id'] for r in store.search(query,row['stage'],8)}
+                    self.assertIn(row['article_id'],found)
+        expected={
+            '涂覆 CCD 黑点':('pb_coat_black','coat_black'),
+            '涂覆 CCD 亮点':('pb_coat_bright','coat_bright'),
+            '涂覆 厚度不均':('pb_coat_thickness_variation','coat_thickness_variation'),
+            '涂覆 油斑':('pb_coat_oilspot','coat_oilspot'),
+            '基膜 亮点':('pb_base_bright','base_bright'),
+        }
+        for query,(playbook,node_id) in expected.items():
+            stage='基膜' if query.startswith('基膜') else '涂覆'
+            ctx=store.context({'issue':query,'stage':stage,'context_chars':16000},for_model=True)
+            self.assertEqual(ctx['playbooks'][0]['id'],playbook)
+            self.assertIn(node_id,ctx['activation']['node_ids'])
+
+    def test_defect_inheritance_is_conditional_and_old_graph_is_preserved(self):
+        store=KnowledgeStore()
+        edge=next(e for e in store.edges if e['source']=='base_black' and e['target']=='coat_black')
+        self.assertEqual(edge['relation'],'可能传递')
+        self.assertIn('不自动消除',edge['mechanism'])
+        self.assertTrue(edge['conditions'])
+        self.assertTrue(any(e['source']=='coat_hole' and e['target']=='cell_local_weak' for e in store.edges))
+        self.assertGreaterEqual(len(store.nodes),157)
+        self.assertGreaterEqual(len(store.edges),294)
+        for nid in ('base_pe','base_black','coat_feed','coat_stripe','cell_resistance'):
+            self.assertIn(nid,store.by_node)
+        current_edges={e['id'] for e in store.edges}
+        for eid in ('base_edge_001','coat_edge_001','bridge_01','field_base_001','field_coat_001'):
+            self.assertIn(eid,current_edges)
+
 
 if __name__=='__main__':unittest.main()

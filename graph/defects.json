@@ -1,0 +1,2759 @@
+{
+  "nodes": [
+    {
+      "id": "base_ccd_review",
+      "label": "CCD与实物复核",
+      "type": "方法",
+      "stage": "基膜",
+      "summary": "检测标签需要与同位置实物及检测条件对应，才能进入原因排查。",
+      "article_ids": [
+        "atlas_ccd_review"
+      ],
+      "aliases": [],
+      "diagnosis": {
+        "definition": "检测标签需要与同位置实物及检测条件对应，才能进入原因排查。",
+        "first_checks": [
+          "报警图、纵向米数和横向位置能否对应实物？",
+          "实物复核的照明、面别和检测能力是否合适？"
+        ],
+        "branches": [
+          "实物一致：按层位与形貌分流。",
+          "实物不明显：先查定位与检测能力，再验证光学伪影。",
+          "缺陷率突变：核对工况和检测口径是否同时改变。"
+        ],
+        "impact": [
+          "误报造成降级与无效调机；漏检使真实异常进入后续工序。"
+        ],
+        "verification": [
+          "代表性缺陷与正常样双向验证误报和漏检，记录相机配置。"
+        ]
+      }
+    },
+    {
+      "id": "coat_ccd_review",
+      "label": "CCD与实物复核",
+      "type": "方法",
+      "stage": "涂覆",
+      "summary": "检测标签需要与同位置实物及检测条件对应，才能进入原因排查。",
+      "article_ids": [
+        "atlas_ccd_review"
+      ],
+      "aliases": [],
+      "diagnosis": {
+        "definition": "检测标签需要与同位置实物及检测条件对应，才能进入原因排查。",
+        "first_checks": [
+          "报警图、纵向米数和横向位置能否对应实物？",
+          "实物复核的照明、面别和检测能力是否合适？"
+        ],
+        "branches": [
+          "实物一致：按层位与形貌分流。",
+          "实物不明显：先查定位与检测能力，再验证光学伪影。",
+          "缺陷率突变：核对工况和检测口径是否同时改变。"
+        ],
+        "impact": [
+          "误报造成降级与无效调机；漏检使真实异常进入后续工序。"
+        ],
+        "verification": [
+          "代表性缺陷与正常样双向验证误报和漏检，记录相机配置。"
+        ]
+      }
+    },
+    {
+      "id": "coat_black",
+      "label": "涂覆黑点与暗点",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "涂覆检出的黑色或暗色局部异常，先确认是否颗粒、涂层堆积、阴影或检测伪影。",
+      "article_ids": [
+        "atlas_coat_black"
+      ],
+      "aliases": [
+        "黑点",
+        "暗点",
+        "黑色颗粒"
+      ],
+      "diagnosis": {
+        "definition": "涂覆检出的黑色或暗色局部异常，先确认是否颗粒、涂层堆积、阴影或检测伪影。",
+        "first_checks": [
+          "黑点实物是否有颗粒核，位于哪一层和哪一面？",
+          "同卷前态膜对应位置是否存在，能否按卷长追溯？"
+        ],
+        "branches": [
+          "前态膜嵌入或原有污染：查上游同位置。",
+          "涂层内颗粒：查浆料、过滤前后和沉积再带入。",
+          "表面周期颗粒：查接触辊、刮刀磨损和网套。",
+          "无颗粒且随光路改变：查局部形貌与检测系统。"
+        ],
+        "impact": [
+          "可能造成外观降级、局部压伤或污染；是否影响绝缘取决于材质、尺寸及位置。"
+        ],
+        "verification": [
+          "验证颗粒来源与首次出现区间，消除后观察复机及连续运行是否复发。"
+        ]
+      }
+    },
+    {
+      "id": "coat_bright",
+      "label": "涂覆亮点与白点",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "涂覆CCD亮点是光学表现，需区分白色颗粒、涂层缺失、压痕与膜体薄弱。",
+      "article_ids": [
+        "atlas_coat_bright"
+      ],
+      "aliases": [
+        "亮点",
+        "白点",
+        "透明点"
+      ],
+      "diagnosis": {
+        "definition": "涂覆CCD亮点是光学表现，需区分白色颗粒、涂层缺失、压痕与膜体薄弱。",
+        "first_checks": [
+          "实物有核、无核，还是只有透光差异？",
+          "涂层是否缺失，基膜是否完整？"
+        ],
+        "branches": [
+          "白色凸起：验证颗粒材质与所在层。",
+          "露底凹点：查漏涂、缩孔、气泡与带核离缝。",
+          "膜体破损或薄点：查来料及接触损伤。",
+          "实物不对应：查CCD位置及成像。"
+        ],
+        "impact": [
+          "覆盖、粘接或局部机械完整性可能受影响，需按实物分支评价。"
+        ],
+        "verification": [
+          "复验缺陷层位、覆盖率和基膜完整性，观察周期与随机缺陷分别是否降低。"
+        ]
+      }
+    },
+    {
+      "id": "coat_thickness_variation",
+      "label": "涂覆厚度不均",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "总厚度或本次涂层厚度在横纵向或局部超出规定的一致性范围，需同位置实测确认。",
+      "article_ids": [
+        "atlas_coat_thickness_defect"
+      ],
+      "aliases": [
+        "厚度不均",
+        "厚薄不均",
+        "克重不均"
+      ],
+      "diagnosis": {
+        "definition": "总厚度或本次涂层厚度在横纵向或局部超出规定的一致性范围，需同位置实测确认。",
+        "first_checks": [
+          "测的是复合膜总厚度、单面涂层还是双面增量？",
+          "横向固定、纵向周期还是点状异常？前态膜对应曲线如何？"
+        ],
+        "branches": [
+          "来料已有差异：核对同位置前后厚度。",
+          "涂布量不稳：核对流量、固含、转移和辊系。",
+          "局部凸起或折叠：先判颗粒与走膜。",
+          "测量差异：核对压力、取样、面别与点涂结构。"
+        ],
+        "impact": [
+          "局部覆盖、传输、干燥负荷与收卷受力可能不均。"
+        ],
+        "verification": [
+          "同位置厚度与面密度交叉验证，并复验透气增值、覆盖和两面差异。"
+        ]
+      }
+    },
+    {
+      "id": "coat_thick_thin",
+      "label": "局部厚涂与薄涂",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "已确认本次涂层局部沉积或几何厚度偏离，需分别处理堆料与覆盖不足。",
+      "article_ids": [
+        "atlas_coat_thickness_defect"
+      ],
+      "aliases": [
+        "厚涂",
+        "薄涂"
+      ],
+      "diagnosis": {
+        "definition": "已确认本次涂层局部沉积或几何厚度偏离，需分别处理堆料与覆盖不足。",
+        "first_checks": [
+          "是连续薄带、孤立厚斑还是边部堆料？",
+          "相同位置是否伴漏涂、气泡或未干？"
+        ],
+        "branches": [
+          "厚涂：查刮刀、滴料、局部供料及网穴状态。",
+          "薄涂：查供料、接触离缝、退润湿与刮除。"
+        ],
+        "impact": [
+          "厚处可能增加干燥负荷，薄处可能损失目标覆盖。"
+        ],
+        "verification": [
+          "分别统计厚区与薄区，检查覆盖、残留和后加工表现。"
+        ]
+      }
+    },
+    {
+      "id": "coat_long_stripe",
+      "label": "涂覆纵条纹",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "沿机器方向持续的条带，需区分固定带料差、来料带状异常、走膜褶皱及光学差异。",
+      "article_ids": [
+        "atlas_coat_stripes"
+      ],
+      "aliases": [
+        "纵条纹",
+        "竖条纹",
+        "纵向条纹"
+      ],
+      "diagnosis": {
+        "definition": "沿机器方向持续的条带，需区分固定带料差、来料带状异常、走膜褶皱及光学差异。",
+        "first_checks": [
+          "是否固定横向位置，是否与来料同坐标？",
+          "条纹区涂层量、覆盖或膜面平整度是否异常？"
+        ],
+        "branches": [
+          "固定厚薄带：查刮刀、网穴、涂头分布。",
+          "位置随膜移动：查前态膜。",
+          "伴皱纹游移：查张力、展平及几何。"
+        ],
+        "impact": [
+          "可能形成整卷连续厚薄带或条状漏涂。"
+        ],
+        "verification": [
+          "固定横向位置连续取样，验证恢复后厚薄带和外观同步消失。"
+        ]
+      }
+    },
+    {
+      "id": "coat_cross_stripe",
+      "label": "涂覆横条纹",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "跨幅明暗带沿运行方向周期或间歇重复，需验证时间扰动来源。",
+      "article_ids": [
+        "atlas_coat_stripes"
+      ],
+      "aliases": [
+        "横条纹",
+        "横纹",
+        "横向条纹"
+      ],
+      "diagnosis": {
+        "definition": "跨幅明暗带沿运行方向周期或间歇重复，需验证时间扰动来源。",
+        "first_checks": [
+          "节距是否稳定，换速度后按时间或辊周长如何变化？",
+          "条纹是否与泵压、回流、传动或张力波动同步？"
+        ],
+        "branches": [
+          "旋转周期：查跳动、偏心、轴承与传动。",
+          "供料周期：查泵、回流、液位及气塞。",
+          "仅成像周期：查光源、编码器和振动。"
+        ],
+        "impact": [
+          "可能形成周期性涂量与干燥负荷变化，造成整段降级。"
+        ],
+        "verification": [
+          "对齐缺陷频率与候选信号，单因素验证并复测同位置厚度。"
+        ]
+      }
+    },
+    {
+      "id": "coat_skip",
+      "label": "点状与条状漏涂",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "目标涂覆区域未形成应有涂层，先确认设计留白及缺失的层位。",
+      "article_ids": [
+        "atlas_coat_voids"
+      ],
+      "aliases": [
+        "漏涂",
+        "点漏涂",
+        "条状漏涂",
+        "露底"
+      ],
+      "diagnosis": {
+        "definition": "目标涂覆区域未形成应有涂层，先确认设计留白及缺失的层位。",
+        "first_checks": [
+          "在湿膜、出烘箱还是接触辊后首次出现？",
+          "有颗粒核、周期规律或局部退缩边缘吗？"
+        ],
+        "branches": [
+          "湿膜即缺失：查供料、气泡、转移与走膜离缝。",
+          "湿膜后退缩：查污染和润湿。",
+          "干后缺失：查粘辊、开裂或剥落。"
+        ],
+        "impact": [
+          "目标覆盖、粘接与热尺寸稳定功能可能局部不足。"
+        ],
+        "verification": [
+          "测覆盖形态并确认基膜完整，分面复验相关性能。"
+        ]
+      }
+    },
+    {
+      "id": "coat_crater",
+      "label": "缩孔与涂层针孔",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "涂层坑状收缩或孔状缺失；是否贯穿基膜必须另行确认。",
+      "article_ids": [
+        "atlas_coat_voids"
+      ],
+      "aliases": [
+        "缩孔",
+        "涂层针孔",
+        "鱼眼"
+      ],
+      "diagnosis": {
+        "definition": "涂层坑状收缩或孔状缺失；是否贯穿基膜必须另行确认。",
+        "first_checks": [
+          "中心有核或环状堆积吗，基膜是否完整？",
+          "湿膜是否先铺展后回缩？"
+        ],
+        "branches": [
+          "退润湿：查局部油污、表面状态与浆料匹配。",
+          "气泡破裂：查卷气、脱泡和供料。",
+          "颗粒抬膜：查异物与接触件。"
+        ],
+        "impact": [
+          "可能造成局部覆盖缺失及功能不均，贯穿破损需单独处理。"
+        ],
+        "verification": [
+          "将缩孔、设计留白与贯穿孔分开计数和复验。"
+        ]
+      }
+    },
+    {
+      "id": "coat_oilspot",
+      "label": "涂覆油斑与污染斑",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "油状或透明斑是外观描述，须验证成分及基膜、界面或涂层位置。",
+      "article_ids": [
+        "atlas_coat_stains"
+      ],
+      "aliases": [
+        "涂覆油斑",
+        "油渍",
+        "油点"
+      ],
+      "diagnosis": {
+        "definition": "油状或透明斑是外观描述，须验证成分及基膜、界面或涂层位置。",
+        "first_checks": [
+          "前态膜是否同位置有斑，还是某工位后首次出现？",
+          "是否伴缩孔、粘接差或辊面重复转印？"
+        ],
+        "branches": [
+          "来料局部残留：同位置成分与对照。",
+          "设备滴油或转印：追接触路径和滴落点。",
+          "其他光学斑：核对层结构与测法。"
+        ],
+        "impact": [
+          "可能改变润湿、覆盖及界面粘接，需实测确认。"
+        ],
+        "verification": [
+          "源头处置后复验斑点、润湿及粘接，记录复发条件。"
+        ]
+      }
+    },
+    {
+      "id": "coat_watermark",
+      "label": "水渍与色差斑",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "水印、斑驳或颜色不均，先区分滴落、残留迁移、涂量分布与成像。",
+      "article_ids": [
+        "atlas_coat_stains"
+      ],
+      "aliases": [
+        "水渍",
+        "水印",
+        "色差",
+        "斑驳"
+      ],
+      "diagnosis": {
+        "definition": "水印、斑驳或颜色不均，先区分滴落、残留迁移、涂量分布与成像。",
+        "first_checks": [
+          "是否有滴落边界，是否随干燥或观察光路改变？",
+          "局部水分、涂层量和表面形貌是否对应？"
+        ],
+        "branches": [
+          "滴落：查露点、冷表面与上方积液。",
+          "干燥分布：查风量、排湿和湿层负荷。",
+          "组分或厚薄变化：查浆料稳定与涂布。"
+        ],
+        "impact": [
+          "外观、残留和局部覆盖可能异常，颜色正常不代表残留合格。"
+        ],
+        "verification": [
+          "同位置复测水分或对应残留、外观及覆盖。"
+        ]
+      }
+    },
+    {
+      "id": "coat_scratch",
+      "label": "涂覆划伤与刮伤",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "膜面线状损伤，可限于涂层，也可伤及基膜。",
+      "article_ids": [
+        "atlas_coat_damage"
+      ],
+      "aliases": [
+        "划伤",
+        "刮伤"
+      ],
+      "diagnosis": {
+        "definition": "膜面线状损伤，可限于涂层，也可伤及基膜。",
+        "first_checks": [
+          "损伤在涂层还是基膜，是否连续固定横向位置？",
+          "哪一接触区前后开始出现？"
+        ],
+        "branches": [
+          "持续摩擦：查不转辊、毛刺、刮碰。",
+          "来料已有：同位置追溯。",
+          "分切新增：查刀具、边部与导向。"
+        ],
+        "impact": [
+          "可能造成掉粉、露底及基膜局部薄弱。"
+        ],
+        "verification": [
+          "复核两面损伤深度，清除接触源后连续验证。"
+        ]
+      }
+    },
+    {
+      "id": "coat_dent",
+      "label": "压痕与颗粒硌伤",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "局部压陷、凸点转印或颗粒硌伤，不能只按可见颗粒判断损伤是否存在。",
+      "article_ids": [
+        "atlas_coat_damage"
+      ],
+      "aliases": [
+        "压痕",
+        "硌伤",
+        "凹痕"
+      ],
+      "diagnosis": {
+        "definition": "局部压陷、凸点转印或颗粒硌伤，不能只按可见颗粒判断损伤是否存在。",
+        "first_checks": [
+          "有无颗粒核或周期，压痕是否在两面对应？",
+          "卷内层间是否重复相同形貌？"
+        ],
+        "branches": [
+          "接触突起：查辊面、网套、胶带。",
+          "夹入颗粒：查洁净和卷内高点。",
+          "局部受压：查折叠与收卷。"
+        ],
+        "impact": [
+          "可能压伤涂层或基膜，并形成后续绝缘薄弱。"
+        ],
+        "verification": [
+          "检查局部完整性及多个周期，不能仅擦掉颗粒后判好。"
+        ]
+      }
+    },
+    {
+      "id": "coat_hole",
+      "label": "薄点与贯穿破孔",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "局部膜体变薄或贯穿缺损，与仅涂层漏涂分开诊断。",
+      "article_ids": [
+        "atlas_coat_damage"
+      ],
+      "aliases": [
+        "薄点",
+        "破孔",
+        "贯穿孔",
+        "针孔"
+      ],
+      "diagnosis": {
+        "definition": "局部膜体变薄或贯穿缺损，与仅涂层漏涂分开诊断。",
+        "first_checks": [
+          "确认的是涂层针孔还是膜体贯穿孔？",
+          "上游同卷是否存在，制样是否可能造孔？"
+        ],
+        "branches": [
+          "来料薄弱继承：查基膜同位置。",
+          "新增机械伤：查突起、拉扯与折叠。",
+          "检测或制样差异：复核原样和正常对照。"
+        ],
+        "impact": [
+          "可能损害局部隔离完整性，不能由平均物性排除。"
+        ],
+        "verification": [
+          "按现行检测方法复验局部完整性、范围及对应风险。"
+        ]
+      }
+    },
+    {
+      "id": "coat_wrinkle",
+      "label": "涂覆打皱与折痕",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "涂布前后或收卷出现皱纹与折线，需区分在线受力形状和永久损伤。",
+      "article_ids": [
+        "atlas_coat_webdefects"
+      ],
+      "aliases": [
+        "打皱",
+        "褶皱",
+        "折痕"
+      ],
+      "diagnosis": {
+        "definition": "涂布前后或收卷出现皱纹与折线，需区分在线受力形状和永久损伤。",
+        "first_checks": [
+          "来料自由展平是否已有中波或塌边？",
+          "首次出现于涂头、烘箱还是收卷？"
+        ],
+        "branches": [
+          "来料形状继承。",
+          "张力、平行度及展平失配。",
+          "干燥热约束或收卷夹折。"
+        ],
+        "impact": [
+          "可能产生条状漏涂、局部厚度假高及折伤。"
+        ],
+        "verification": [
+          "在相同调湿及存放条件下复验形态、开卷性、边部和受影响局部完整性。"
+        ]
+      }
+    },
+    {
+      "id": "coat_curl",
+      "label": "涂覆翘曲与卷曲",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "自由状态下膜向一面或一个方向卷曲，需排除制样和环境差异。",
+      "article_ids": [
+        "atlas_coat_webdefects"
+      ],
+      "aliases": [
+        "翘曲",
+        "卷曲"
+      ],
+      "diagnosis": {
+        "definition": "自由状态下膜向一面或一个方向卷曲，需排除制样和环境差异。",
+        "first_checks": [
+          "两面结构与涂量是否对称？",
+          "同条件裁样后方向与程度是否复现？"
+        ],
+        "branches": [
+          "基膜残余应力。",
+          "两面涂层或干燥收缩不对称。",
+          "调湿、取样及卷绕记忆差异。"
+        ],
+        "impact": [
+          "可能影响分切、展平、叠片与对齐。"
+        ],
+        "verification": [
+          "在相同调湿及存放条件下复验形态、开卷性、边部和受影响局部完整性。"
+        ]
+      }
+    },
+    {
+      "id": "coat_blocking",
+      "label": "收卷粘连与反粘",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "相邻膜层非预期粘住或开卷时涂层转移，需记录温湿度和压力历史。",
+      "article_ids": [
+        "atlas_coat_webdefects"
+      ],
+      "aliases": [
+        "粘连",
+        "反粘",
+        "粘卷"
+      ],
+      "diagnosis": {
+        "definition": "相邻膜层非预期粘住或开卷时涂层转移，需记录温湿度和压力历史。",
+        "first_checks": [
+          "剥开后在哪一面留下转移物？",
+          "与收卷温度、存放时间或未干位置是否对应？"
+        ],
+        "branches": [
+          "残留偏高或局部膜面不干。",
+          "聚合物表面粘性与热态受压。",
+          "污染或存储条件。"
+        ],
+        "impact": [
+          "开卷撕伤、掉层、颗粒和涂层再分布。"
+        ],
+        "verification": [
+          "在相同调湿及存放条件下复验形态、开卷性、边部和受影响局部完整性。"
+        ]
+      }
+    },
+    {
+      "id": "coat_rollshape",
+      "label": "涂覆卷形与端面异常",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "错层、端面不齐、暴筋或端面变形，需分别描述形状及卷径演化。",
+      "article_ids": [
+        "atlas_coat_webdefects"
+      ],
+      "aliases": [
+        "端面不齐",
+        "错层",
+        "暴筋",
+        "卷形异常"
+      ],
+      "diagnosis": {
+        "definition": "错层、端面不齐、暴筋或端面变形，需分别描述形状及卷径演化。",
+        "first_checks": [
+          "哪种卷形，始于内层还是外层？",
+          "厚度横向轮廓、卷芯和纠偏是否对应？"
+        ],
+        "branches": [
+          "横向高点持续累积。",
+          "张力、压辊或卷芯状态。",
+          "层间摩擦及纠偏漂移。"
+        ],
+        "impact": [
+          "可能造成后段跑偏、折皱、压伤与接料困难。"
+        ],
+        "verification": [
+          "在相同调湿及存放条件下复验形态、开卷性、边部和受影响局部完整性。"
+        ]
+      }
+    },
+    {
+      "id": "coat_edge_defect",
+      "label": "涂覆毛边与边部缺损",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "分切边缘毛边、裂口、涂层崩边及掉屑，需要分层检查。",
+      "article_ids": [
+        "atlas_coat_webdefects"
+      ],
+      "aliases": [
+        "毛边",
+        "崩边",
+        "边部缺损"
+      ],
+      "diagnosis": {
+        "definition": "分切边缘毛边、裂口、涂层崩边及掉屑，需要分层检查。",
+        "first_checks": [
+          "切前切后何时出现，母卷还是单个刀位？",
+          "是基膜撕裂、涂层崩边还是吸附粉尘？"
+        ],
+        "branches": [
+          "刀具磨损及几何不当。",
+          "张力和支撑不稳。",
+          "涂层内聚不足及积粉。"
+        ],
+        "impact": [
+          "边部损伤、颗粒及有效覆盖宽度不足。"
+        ],
+        "verification": [
+          "在相同调湿及存放条件下复验形态、开卷性、边部和受影响局部完整性。"
+        ]
+      }
+    },
+    {
+      "id": "coat_crack",
+      "label": "涂层开裂与龟裂",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "涂层线状或网状裂纹，需确认是否影响基膜及是否在后加工前已经存在。",
+      "article_ids": [
+        "atlas_coat_integrity_defects"
+      ],
+      "aliases": [
+        "开裂",
+        "龟裂",
+        "裂纹"
+      ],
+      "diagnosis": {
+        "definition": "涂层线状或网状裂纹，需确认是否影响基膜及是否在后加工前已经存在。",
+        "first_checks": [
+          "湿膜、出烘箱、弯折或开卷后首次出现？",
+          "裂纹是否伴厚涂、掉粉或基膜损伤？"
+        ],
+        "branches": [
+          "干燥约束应力与局部厚层。",
+          "涂层内聚不足或组分分布不均。",
+          "后加工弯折和受压损伤。"
+        ],
+        "impact": [
+          "覆盖和结合可能破坏并产生颗粒。"
+        ],
+        "verification": [
+          "同位置显微、弯折及掉粉复验，必要时验证湿态与热态完整性。"
+        ]
+      }
+    },
+    {
+      "id": "coat_delamination",
+      "label": "涂层脱层与起泡",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "涂层界面分离或局部鼓起，需区别颗粒凸起及涂层内部破坏。",
+      "article_ids": [
+        "atlas_coat_integrity_defects"
+      ],
+      "aliases": [
+        "脱层",
+        "起泡",
+        "鼓包",
+        "剥落"
+      ],
+      "diagnosis": {
+        "definition": "涂层界面分离或局部鼓起，需区别颗粒凸起及涂层内部破坏。",
+        "first_checks": [
+          "失效界面在哪里，剥离两侧残留如何？",
+          "是否与局部污染、未干或后段热压相关？"
+        ],
+        "branches": [
+          "界面润湿或污染。",
+          "残留、干燥应力及组分迁移。",
+          "后段载荷使原有结合薄弱暴露。"
+        ],
+        "impact": [
+          "可能引发片状掉层、覆盖失效与颗粒。"
+        ],
+        "verification": [
+          "按相同干湿和温度条件复验界面、掉粉与覆盖。"
+        ]
+      }
+    },
+    {
+      "id": "coat_pattern_defect",
+      "label": "点涂缺点与连点",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "偏离目标点阵的缺点、并点、拖尾或点径点高分布异常。",
+      "article_ids": [
+        "atlas_coat_pattern"
+      ],
+      "aliases": [
+        "点涂缺点",
+        "连点",
+        "点径异常",
+        "拖尾"
+      ],
+      "diagnosis": {
+        "definition": "偏离目标点阵的缺点、并点、拖尾或点径点高分布异常。",
+        "first_checks": [
+          "产品是否设计为点涂，目标留白与缺点如何定义？",
+          "异常点位置固定还是随机，点高和点径是否共同变化？"
+        ],
+        "branches": [
+          "固定漏点：查网穴堵塞或转移件损伤。",
+          "随机缺点：查供料气泡及走膜。",
+          "并点拖尾：查流变、转移、铺展和定形。"
+        ],
+        "impact": [
+          "粘接分布、离子通道和开卷性可能改变。"
+        ],
+        "verification": [
+          "复验点径点高、覆盖、粘接和透气，勿用总克重替代点阵。"
+        ]
+      }
+    },
+    {
+      "id": "coat_registration",
+      "label": "涂幅与图案偏移",
+      "type": "缺陷",
+      "stage": "涂覆",
+      "summary": "涂层宽度、留边或多层图案位置偏离设计，需以膜边和层位坐标核对。",
+      "article_ids": [
+        "atlas_coat_pattern"
+      ],
+      "aliases": [
+        "图案偏移",
+        "涂幅偏移",
+        "留边不均",
+        "套准偏差"
+      ],
+      "diagnosis": {
+        "definition": "涂层宽度、留边或多层图案位置偏离设计，需以膜边和层位坐标核对。",
+        "first_checks": [
+          "是单面边界漂移、双面错位还是整幅收缩？",
+          "偏移是否与纠偏、接带或热史同步？"
+        ],
+        "branches": [
+          "纠偏和卷材位置。",
+          "涂头定位或套准同步。",
+          "基膜尺寸变化与多次涂覆叠加。"
+        ],
+        "impact": [
+          "可能引起有效功能区覆盖不足、边部积料或下游对齐困难。"
+        ],
+        "verification": [
+          "分面测有效涂幅、留边及图案位置，复验宽度和走膜。"
+        ]
+      }
+    },
+    {
+      "id": "base_bright",
+      "label": "基膜亮点与透明点",
+      "type": "缺陷",
+      "stage": "基膜",
+      "summary": "基膜局部高透光或发亮异常，需区分薄点、孔、液斑与接触印迹。",
+      "article_ids": [
+        "atlas_base_symptoms"
+      ],
+      "aliases": [
+        "基膜亮点",
+        "亮点",
+        "透明点"
+      ],
+      "diagnosis": {
+        "definition": "基膜局部高透光或发亮异常，需区分薄点、孔、液斑与接触印迹。",
+        "first_checks": [
+          "实物是否有孔、局部变薄或液状斑？",
+          "首次出现工序和位置规律是什么？"
+        ],
+        "branches": [
+          "薄点或孔：查成型、拉伸与局部损伤。",
+          "液体或接触印迹：查萃取后带液、滴落与辊面。",
+          "检测表现：先做成像和位置复核。"
+        ],
+        "impact": [
+          "可能涉及局部完整性或污染，需按实物评价。"
+        ],
+        "verification": [
+          "局部厚度、完整性和相关成分对照验证，不用平均值排除。"
+        ]
+      }
+    },
+    {
+      "id": "base_thickness_variation",
+      "label": "基膜厚度不均",
+      "type": "缺陷",
+      "stage": "基膜",
+      "summary": "基膜横纵向或局部厚度不均，先排除折叠、颗粒和不可比测量。",
+      "article_ids": [
+        "atlas_base_symptoms"
+      ],
+      "aliases": [
+        "基膜厚度不均",
+        "厚度不均",
+        "厚薄不均"
+      ],
+      "diagnosis": {
+        "definition": "基膜横纵向或局部厚度不均，先排除折叠、颗粒和不可比测量。",
+        "first_checks": [
+          "横向固定还是纵向波动？同位置克重与透气怎样变化？",
+          "在哪道工序前后开始出现？"
+        ],
+        "branches": [
+          "供料、模头与流延分布。",
+          "拉伸温度、牵引与夹持差异。",
+          "后段受力、折叠及测量条件。"
+        ],
+        "impact": [
+          "可能伴随承载、孔结构与收卷不均，但需分别测定。"
+        ],
+        "verification": [
+          "厚度曲线和面密度、透气、力学及热收缩同步复验。"
+        ]
+      }
+    },
+    {
+      "id": "coat_inherited_defect",
+      "label": "前态膜缺陷传递",
+      "type": "方法",
+      "stage": "涂覆",
+      "summary": "前态膜异常可能被保留、放大或改变可见性；需同位置和层位证据确认。",
+      "article_ids": [
+        "atlas_defect_inheritance"
+      ],
+      "aliases": [
+        "来料继承",
+        "基膜带入",
+        "首次出现"
+      ],
+      "diagnosis": {
+        "definition": "前态膜异常可能被保留、放大或改变可见性；需同位置和层位证据确认。",
+        "first_checks": [
+          "前后样是否同一物料坐标，剔除接带与分切映射是否校正？",
+          "基膜、界面和涂层的形貌分别怎样？"
+        ],
+        "branches": [
+          "原样继承。",
+          "接触或涂布使原缺陷扩大。",
+          "光学对比变化导致检出变化。",
+          "与来料无关的新生缺陷。"
+        ],
+        "impact": [
+          "影响责任定位、源头控制及受影响范围判断。"
+        ],
+        "verification": [
+          "同位置前后对照与候选因素响应共同验证，保存未检出的能力边界。"
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "defect_link_001",
+      "source": "coat_ccd_review",
+      "target": "coat_black",
+      "relation": "诊断判别",
+      "mechanism": "“涂覆黑点与暗点”需要同位置实物和对应测量确认。CCD记录光学或算法分类，只有层位、形貌和检测条件可比，才可选择物理排查分支。",
+      "control_points": [
+        "保留报警位置、面别、原样和正常样，记录相机及测量条件"
+      ],
+      "failure_modes": [
+        "检测变化误作工艺异常，或把不同实物缺陷混为同类。"
+      ],
+      "checks": [
+        "同位置实物、层位和相应厚度或成分对照"
+      ],
+      "conditions": [
+        "样品可追溯且检测能力明确"
+      ],
+      "article_ids": [
+        "atlas_coat_black"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_002",
+      "source": "coat_ccd_review",
+      "target": "coat_bright",
+      "relation": "诊断判别",
+      "mechanism": "“涂覆亮点与白点”需要同位置实物和对应测量确认。CCD记录光学或算法分类，只有层位、形貌和检测条件可比，才可选择物理排查分支。",
+      "control_points": [
+        "保留报警位置、面别、原样和正常样，记录相机及测量条件"
+      ],
+      "failure_modes": [
+        "检测变化误作工艺异常，或把不同实物缺陷混为同类。"
+      ],
+      "checks": [
+        "同位置实物、层位和相应厚度或成分对照"
+      ],
+      "conditions": [
+        "样品可追溯且检测能力明确"
+      ],
+      "article_ids": [
+        "atlas_coat_bright"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_003",
+      "source": "coat_ccd_review",
+      "target": "coat_thickness_variation",
+      "relation": "诊断判别",
+      "mechanism": "“涂覆厚度不均”需要同位置实物和对应测量确认。CCD记录光学或算法分类，只有层位、形貌和检测条件可比，才可选择物理排查分支。",
+      "control_points": [
+        "保留报警位置、面别、原样和正常样，记录相机及测量条件"
+      ],
+      "failure_modes": [
+        "检测变化误作工艺异常，或把不同实物缺陷混为同类。"
+      ],
+      "checks": [
+        "同位置实物、层位和相应厚度或成分对照"
+      ],
+      "conditions": [
+        "样品可追溯且检测能力明确"
+      ],
+      "article_ids": [
+        "atlas_coat_thickness_defect"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_004",
+      "source": "coat_ccd_review",
+      "target": "coat_skip",
+      "relation": "诊断判别",
+      "mechanism": "“点状与条状漏涂”需要同位置实物和对应测量确认。CCD记录光学或算法分类，只有层位、形貌和检测条件可比，才可选择物理排查分支。",
+      "control_points": [
+        "保留报警位置、面别、原样和正常样，记录相机及测量条件"
+      ],
+      "failure_modes": [
+        "检测变化误作工艺异常，或把不同实物缺陷混为同类。"
+      ],
+      "checks": [
+        "同位置实物、层位和相应厚度或成分对照"
+      ],
+      "conditions": [
+        "样品可追溯且检测能力明确"
+      ],
+      "article_ids": [
+        "atlas_coat_voids"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_005",
+      "source": "coat_ccd_review",
+      "target": "coat_crater",
+      "relation": "诊断判别",
+      "mechanism": "“缩孔与涂层针孔”需要同位置实物和对应测量确认。CCD记录光学或算法分类，只有层位、形貌和检测条件可比，才可选择物理排查分支。",
+      "control_points": [
+        "保留报警位置、面别、原样和正常样，记录相机及测量条件"
+      ],
+      "failure_modes": [
+        "检测变化误作工艺异常，或把不同实物缺陷混为同类。"
+      ],
+      "checks": [
+        "同位置实物、层位和相应厚度或成分对照"
+      ],
+      "conditions": [
+        "样品可追溯且检测能力明确"
+      ],
+      "article_ids": [
+        "atlas_coat_voids"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_006",
+      "source": "coat_ccd_review",
+      "target": "coat_oilspot",
+      "relation": "诊断判别",
+      "mechanism": "“涂覆油斑与污染斑”需要同位置实物和对应测量确认。CCD记录光学或算法分类，只有层位、形貌和检测条件可比，才可选择物理排查分支。",
+      "control_points": [
+        "保留报警位置、面别、原样和正常样，记录相机及测量条件"
+      ],
+      "failure_modes": [
+        "检测变化误作工艺异常，或把不同实物缺陷混为同类。"
+      ],
+      "checks": [
+        "同位置实物、层位和相应厚度或成分对照"
+      ],
+      "conditions": [
+        "样品可追溯且检测能力明确"
+      ],
+      "article_ids": [
+        "atlas_coat_stains"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_007",
+      "source": "coat_ccd_review",
+      "target": "coat_watermark",
+      "relation": "诊断判别",
+      "mechanism": "“水渍与色差斑”需要同位置实物和对应测量确认。CCD记录光学或算法分类，只有层位、形貌和检测条件可比，才可选择物理排查分支。",
+      "control_points": [
+        "保留报警位置、面别、原样和正常样，记录相机及测量条件"
+      ],
+      "failure_modes": [
+        "检测变化误作工艺异常，或把不同实物缺陷混为同类。"
+      ],
+      "checks": [
+        "同位置实物、层位和相应厚度或成分对照"
+      ],
+      "conditions": [
+        "样品可追溯且检测能力明确"
+      ],
+      "article_ids": [
+        "atlas_coat_stains"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_008",
+      "source": "coat_ccd_review",
+      "target": "coat_scratch",
+      "relation": "诊断判别",
+      "mechanism": "“涂覆划伤与刮伤”需要同位置实物和对应测量确认。CCD记录光学或算法分类，只有层位、形貌和检测条件可比，才可选择物理排查分支。",
+      "control_points": [
+        "保留报警位置、面别、原样和正常样，记录相机及测量条件"
+      ],
+      "failure_modes": [
+        "检测变化误作工艺异常，或把不同实物缺陷混为同类。"
+      ],
+      "checks": [
+        "同位置实物、层位和相应厚度或成分对照"
+      ],
+      "conditions": [
+        "样品可追溯且检测能力明确"
+      ],
+      "article_ids": [
+        "atlas_coat_damage"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_009",
+      "source": "coat_ccd_review",
+      "target": "coat_dent",
+      "relation": "诊断判别",
+      "mechanism": "“压痕与颗粒硌伤”需要同位置实物和对应测量确认。CCD记录光学或算法分类，只有层位、形貌和检测条件可比，才可选择物理排查分支。",
+      "control_points": [
+        "保留报警位置、面别、原样和正常样，记录相机及测量条件"
+      ],
+      "failure_modes": [
+        "检测变化误作工艺异常，或把不同实物缺陷混为同类。"
+      ],
+      "checks": [
+        "同位置实物、层位和相应厚度或成分对照"
+      ],
+      "conditions": [
+        "样品可追溯且检测能力明确"
+      ],
+      "article_ids": [
+        "atlas_coat_damage"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_010",
+      "source": "coat_ccd_review",
+      "target": "coat_hole",
+      "relation": "诊断判别",
+      "mechanism": "“薄点与贯穿破孔”需要同位置实物和对应测量确认。CCD记录光学或算法分类，只有层位、形貌和检测条件可比，才可选择物理排查分支。",
+      "control_points": [
+        "保留报警位置、面别、原样和正常样，记录相机及测量条件"
+      ],
+      "failure_modes": [
+        "检测变化误作工艺异常，或把不同实物缺陷混为同类。"
+      ],
+      "checks": [
+        "同位置实物、层位和相应厚度或成分对照"
+      ],
+      "conditions": [
+        "样品可追溯且检测能力明确"
+      ],
+      "article_ids": [
+        "atlas_coat_damage"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_011",
+      "source": "coat_ccd_review",
+      "target": "coat_long_stripe",
+      "relation": "诊断判别",
+      "mechanism": "“涂覆纵条纹”需要同位置实物和对应测量确认。CCD记录光学或算法分类，只有层位、形貌和检测条件可比，才可选择物理排查分支。",
+      "control_points": [
+        "保留报警位置、面别、原样和正常样，记录相机及测量条件"
+      ],
+      "failure_modes": [
+        "检测变化误作工艺异常，或把不同实物缺陷混为同类。"
+      ],
+      "checks": [
+        "同位置实物、层位和相应厚度或成分对照"
+      ],
+      "conditions": [
+        "样品可追溯且检测能力明确"
+      ],
+      "article_ids": [
+        "atlas_coat_stripes"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_012",
+      "source": "coat_ccd_review",
+      "target": "coat_cross_stripe",
+      "relation": "诊断判别",
+      "mechanism": "“涂覆横条纹”需要同位置实物和对应测量确认。CCD记录光学或算法分类，只有层位、形貌和检测条件可比，才可选择物理排查分支。",
+      "control_points": [
+        "保留报警位置、面别、原样和正常样，记录相机及测量条件"
+      ],
+      "failure_modes": [
+        "检测变化误作工艺异常，或把不同实物缺陷混为同类。"
+      ],
+      "checks": [
+        "同位置实物、层位和相应厚度或成分对照"
+      ],
+      "conditions": [
+        "样品可追溯且检测能力明确"
+      ],
+      "article_ids": [
+        "atlas_coat_stripes"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_013",
+      "source": "coat_foreign",
+      "target": "coat_black",
+      "relation": "可能导致",
+      "mechanism": "颗粒遮光、吸光或造成局部堆积时可能呈黑点；光路不同可改变灰度，颜色不能确定材质。",
+      "control_points": [
+        "控制物料、过滤及接触件洁净，分层定位颗粒"
+      ],
+      "failure_modes": [
+        "黑点、带核漏涂或硌伤。"
+      ],
+      "checks": [
+        "成分、显微层位及取样空白对照"
+      ],
+      "conditions": [
+        "实物已确认有颗粒"
+      ],
+      "article_ids": [
+        "atlas_coat_black"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_014",
+      "source": "coat_pipeline_deposit",
+      "target": "coat_black",
+      "relation": "可能导致",
+      "mechanism": "沉积在复机或流量变化时被重新带起，异色颗粒或团聚物进入涂层后可能形成黑点。",
+      "control_points": [
+        "控制循环死角、清洁及复机稳定过程"
+      ],
+      "failure_modes": [
+        "复机集中颗粒、黑点与带核缺陷。"
+      ],
+      "checks": [
+        "供料切换前后颗粒与首现卷段对照"
+      ],
+      "conditions": [
+        "不是所有沉积都呈黑色；需成分和时序支持"
+      ],
+      "article_ids": [
+        "atlas_coat_black"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_015",
+      "source": "coat_agglomerate",
+      "target": "coat_bright",
+      "relation": "可能导致",
+      "mechanism": "白色颗粒团聚形成凸起与散射差异，可能被检为白点或亮点，与露底亮点的层位和厚度不同。",
+      "control_points": [
+        "控制分散和浆料稳定，复核粒径尾部"
+      ],
+      "failure_modes": [
+        "白点、凸起及周边覆盖异常。"
+      ],
+      "checks": [
+        "颗粒成分、凸起及周边涂层连续性"
+      ],
+      "conditions": [
+        "实物证实有核且材料具相应光学响应"
+      ],
+      "article_ids": [
+        "atlas_coat_bright"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_016",
+      "source": "coat_skip",
+      "target": "coat_bright",
+      "relation": "可能导致",
+      "mechanism": "局部涂层缺失改变透光，可能形成亮点；该表现不证明基膜贯穿。",
+      "control_points": [
+        "区分目标涂覆区和设计留白，控制实际覆盖"
+      ],
+      "failure_modes": [
+        "亮点及局部功能覆盖不足。"
+      ],
+      "checks": [
+        "覆盖、基膜完整性及透反射对照"
+      ],
+      "conditions": [
+        "检测光路对覆盖变化有响应"
+      ],
+      "article_ids": [
+        "atlas_coat_bright"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_017",
+      "source": "coat_hole",
+      "target": "coat_bright",
+      "relation": "可能导致",
+      "mechanism": "基膜变薄或贯穿可能增强透光，涂层也可能遮掩该响应，需验证实物完整性。",
+      "control_points": [
+        "保留原样并验证局部膜体连续性"
+      ],
+      "failure_modes": [
+        "亮点或未检出的薄弱。"
+      ],
+      "checks": [
+        "局部厚度及完整性检查，排除制样造孔"
+      ],
+      "conditions": [
+        "不以灰度作厚度定量"
+      ],
+      "article_ids": [
+        "atlas_coat_bright"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_018",
+      "source": "coat_surface",
+      "target": "coat_crater",
+      "relation": "可能导致",
+      "mechanism": "局部污染或润湿不匹配使湿膜从局部退开，可能形成中心露底和边缘堆积的缩孔。",
+      "control_points": [
+        "控制前态膜洁净和已验证的浆料匹配"
+      ],
+      "failure_modes": [
+        "缩孔、露底和界面不均。"
+      ],
+      "checks": [
+        "观察铺展时间过程及斑区正常区差异"
+      ],
+      "conditions": [
+        "不能仅凭环形边界确认退润湿"
+      ],
+      "article_ids": [
+        "atlas_coat_voids"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_019",
+      "source": "coat_bubble",
+      "target": "coat_crater",
+      "relation": "可能导致",
+      "mechanism": "气泡进入湿膜后破裂，周围液体来不及填平时可能留下坑点或涂层针孔。",
+      "control_points": [
+        "控制吸气卷气和脱泡，检查涂头实际泡量"
+      ],
+      "failure_modes": [
+        "针孔、坑点和露底。"
+      ],
+      "checks": [
+        "湿膜气泡与干后坑点时空对照"
+      ],
+      "conditions": [
+        "涂层针孔不等于膜体贯穿孔"
+      ],
+      "article_ids": [
+        "atlas_coat_voids"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_020",
+      "source": "coat_supply_stability",
+      "target": "coat_skip",
+      "relation": "可能导致",
+      "mechanism": "短时供料不足、气塞或分布不均使涂布点缺液，可能形成点状、条状或间歇漏涂。",
+      "control_points": [
+        "稳定液位、回流、压差及复机供料"
+      ],
+      "failure_modes": [
+        "漏涂、薄涂与间歇缺失。"
+      ],
+      "checks": [
+        "按物料滞后对齐供料与湿膜缺失"
+      ],
+      "conditions": [
+        "波动能传到涂布点"
+      ],
+      "article_ids": [
+        "atlas_coat_voids"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_021",
+      "source": "coat_web_state",
+      "target": "coat_skip",
+      "relation": "可能导致",
+      "mechanism": "皱纹或支撑不稳使局部膜面偏离正常涂布几何，转移不完整时形成漏涂。",
+      "control_points": [
+        "控制实际张力、平行度、展平和涂布点支撑"
+      ],
+      "failure_modes": [
+        "条状漏涂及随走膜变化的缺失。"
+      ],
+      "checks": [
+        "涂头前后皱纹和漏涂位置对照"
+      ],
+      "conditions": [
+        "该路线对接触或间隙变化敏感"
+      ],
+      "article_ids": [
+        "atlas_coat_voids"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_022",
+      "source": "coat_contact_debris",
+      "target": "coat_dent",
+      "relation": "可能导致",
+      "mechanism": "接触件突起把载荷集中到局部，可产生压痕、硌伤或变薄；颗粒移走后损伤仍可能保留。",
+      "control_points": [
+        "检查整周辊面、网套、胶带和安装后突起"
+      ],
+      "failure_modes": [
+        "周期压痕、薄点或破孔。"
+      ],
+      "checks": [
+        "按面别周期检查候选接触件与损伤深度"
+      ],
+      "conditions": [
+        "接触路径和载荷相符"
+      ],
+      "article_ids": [
+        "atlas_coat_damage"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_023",
+      "source": "coat_contact_debris",
+      "target": "coat_skip",
+      "relation": "可能导致",
+      "mechanism": "颗粒或突起抬膜或阻碍局部涂液接触，可形成带核漏涂。",
+      "control_points": [
+        "控制接触件清洁、表面完整和异物脱落"
+      ],
+      "failure_modes": [
+        "带核漏涂及点状缺失。"
+      ],
+      "checks": [
+        "核所在层位及涂布前后、接触前后对照"
+      ],
+      "conditions": [
+        "突起作用到转移或湿膜区域"
+      ],
+      "article_ids": [
+        "atlas_coat_voids"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_024",
+      "source": "coat_head_geometry",
+      "target": "coat_thickness_variation",
+      "relation": "可能导致",
+      "mechanism": "横向几何及刮刀接触差异改变带液和转移，可能形成固定厚薄带，总平均涂量仍可合格。",
+      "control_points": [
+        "按路线控制平行度、刮刀和有效宽度"
+      ],
+      "failure_modes": [
+        "横向厚度不均、局部厚涂薄涂。"
+      ],
+      "checks": [
+        "同位置厚度面密度与几何对照"
+      ],
+      "conditions": [
+        "凹版和刮刀结构适用，其他路线核对其几何"
+      ],
+      "article_ids": [
+        "atlas_coat_thickness_defect"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_025",
+      "source": "coat_supply_stability",
+      "target": "coat_thickness_variation",
+      "relation": "可能导致",
+      "mechanism": "供料、固含或有效转移随时间变化可能改变单位面积沉积量，厚度读数还受孔隙和压缩性影响。",
+      "control_points": [
+        "控制供料固含与速度配合，分单面双面"
+      ],
+      "failure_modes": [
+        "纵向厚薄与面密度波动。"
+      ],
+      "checks": [
+        "时间对齐供料与同源前后厚度面密度"
+      ],
+      "conditions": [
+        "供料变化实际传到膜面且测法可比"
+      ],
+      "article_ids": [
+        "atlas_coat_thickness_defect"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_026",
+      "source": "coat_thickness_variation",
+      "target": "coat_thick_thin",
+      "relation": "诊断判别",
+      "mechanism": "厚度差经层位和涂量确认后才可分为本次涂层厚涂或薄涂，基膜差和测量差不能归入该分支。",
+      "control_points": [
+        "分开确认总厚度、前态厚度和涂层增量"
+      ],
+      "failure_modes": [
+        "误把来料厚差当涂头问题。"
+      ],
+      "checks": [
+        "同源样、截面或已验证的增量测法"
+      ],
+      "conditions": [
+        "已确认差异属于涂层"
+      ],
+      "article_ids": [
+        "atlas_coat_thickness_defect"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_027",
+      "source": "coat_thick_thin",
+      "target": "coat_under_dry",
+      "relation": "可能导致",
+      "mechanism": "局部湿层更厚或含液负荷更大时，同样干燥条件可能不能充分去除挥发物。",
+      "control_points": [
+        "将局部涂量和干燥能力联合控制"
+      ],
+      "failure_modes": [
+        "未干、粘辊及粘连。"
+      ],
+      "checks": [
+        "厚区和正常区残留、粘性对照"
+      ],
+      "conditions": [
+        "含液负荷增加且干燥为限制因素"
+      ],
+      "article_ids": [
+        "atlas_coat_thickness_defect"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_028",
+      "source": "coat_thickness_variation",
+      "target": "coat_pore",
+      "relation": "影响",
+      "mechanism": "厚度和沉积分布影响传输路径长度与孔道覆盖，实际响应还取决于孔隙、连通和粘结剂分布。",
+      "control_points": [
+        "同步复验厚度、面密度、透气增值及必要的浸液阻抗"
+      ],
+      "failure_modes": [
+        "局部传输和覆盖不均。"
+      ],
+      "checks": [
+        "同位置厚度与传输指标联合比较"
+      ],
+      "conditions": [
+        "不以厚度单独推定离子阻抗"
+      ],
+      "article_ids": [
+        "atlas_coat_thickness_defect"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_029",
+      "source": "coat_head_geometry",
+      "target": "coat_long_stripe",
+      "relation": "可能导致",
+      "mechanism": "固定横向刮刀缺口、网穴堵塞或涂头分布差持续改变带液，可留下纵条纹。",
+      "control_points": [
+        "控制刮刀、网穴和横向分布"
+      ],
+      "failure_modes": [
+        "厚薄带或条状漏涂。"
+      ],
+      "checks": [
+        "条纹位置与部件异常一一核对"
+      ],
+      "conditions": [
+        "实测确认涂量或覆盖变化"
+      ],
+      "article_ids": [
+        "atlas_coat_stripes"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_030",
+      "source": "coat_web_state",
+      "target": "coat_long_stripe",
+      "relation": "可能导致",
+      "mechanism": "细皱或不贴附改变反光和涂布接触，可能呈纵向暗带，但未必存在厚度差。",
+      "control_points": [
+        "核实涂布及检测工位平整度"
+      ],
+      "failure_modes": [
+        "暗带、漏涂或形貌误判。"
+      ],
+      "checks": [
+        "自由展平、侧光与局部厚度对照"
+      ],
+      "conditions": [
+        "皱纹与条纹位置对应"
+      ],
+      "article_ids": [
+        "atlas_coat_stripes"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_031",
+      "source": "coat_roller_runout",
+      "target": "coat_cross_stripe",
+      "relation": "可能导致",
+      "mechanism": "跳动、偏心或传动波动使转移接触按旋转周期变化，可能形成横纹及涂量周期。",
+      "control_points": [
+        "控制辊系跳动、轴承、联轴器和基座"
+      ],
+      "failure_modes": [
+        "周期横纹和厚薄波动。"
+      ],
+      "checks": [
+        "缺陷节距、辊速及相位响应对照"
+      ],
+      "conditions": [
+        "排除同径多辊、打滑与倍周期"
+      ],
+      "article_ids": [
+        "atlas_coat_stripes"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_032",
+      "source": "coat_supply_stability",
+      "target": "coat_cross_stripe",
+      "relation": "可能导致",
+      "mechanism": "泵、气塞和回流压力周期变化可使供液和涂头受力波动，留下横纹。",
+      "control_points": [
+        "控制回流、气密、压力和液位动态稳定"
+      ],
+      "failure_modes": [
+        "横纹或间歇漏涂。"
+      ],
+      "checks": [
+        "缺陷频率与供料压力流量时间对齐"
+      ],
+      "conditions": [
+        "供料波动能引起涂头实际响应"
+      ],
+      "article_ids": [
+        "atlas_coat_stripes"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_033",
+      "source": "coat_rheology",
+      "target": "coat_long_stripe",
+      "relation": "可能导致",
+      "mechanism": "流变、界面张力、速度及几何共同影响液桥和湿膜稳定，流动失稳可能形成条纹，即使刮刀无可见损伤。",
+      "control_points": [
+        "按实际温度剪切核验浆料，保持已验证窗口"
+      ],
+      "failure_modes": [
+        "细密条纹或转移不均。"
+      ],
+      "checks": [
+        "单因素比较浆料及速度变化的条纹响应"
+      ],
+      "conditions": [
+        "一般涂布研究只提供候选机理，隔膜体系需验证"
+      ],
+      "article_ids": [
+        "atlas_coat_stripes"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_034",
+      "source": "coat_oilspot",
+      "target": "coat_crater",
+      "relation": "可能导致",
+      "mechanism": "油状污染若改变局部润湿，湿膜可能退开成缩孔；并非所有油斑都会产生该后果。",
+      "control_points": [
+        "核对污染成分及实际铺展"
+      ],
+      "failure_modes": [
+        "缩孔、露底及界面不均。"
+      ],
+      "checks": [
+        "污染区正常区成分、铺展和覆盖对照"
+      ],
+      "conditions": [
+        "污染实际影响所用浆料润湿"
+      ],
+      "article_ids": [
+        "atlas_coat_stains"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_035",
+      "source": "base_condensation",
+      "target": "coat_watermark",
+      "relation": "可能导致",
+      "mechanism": "涂覆环境冷表面低于局部露点时可凝露，液滴落到膜或湿层上后可能留下水渍或溶质分布印迹。",
+      "control_points": [
+        "核对冷表面露点、积液及滴落路径"
+      ],
+      "failure_modes": [
+        "水渍和局部涂层分布异常。"
+      ],
+      "checks": [
+        "滴落位置时序、斑形及必要的残留检查"
+      ],
+      "conditions": [
+        "采用通用凝露机理，不套用基膜专有工艺"
+      ],
+      "article_ids": [
+        "atlas_coat_stains"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_036",
+      "source": "coat_drying",
+      "target": "coat_watermark",
+      "relation": "可能导致",
+      "mechanism": "不均干燥和液体迁移可能改变局部组分与形貌，产生斑驳；成像差异需另行排除。",
+      "control_points": [
+        "控制风区、排湿和湿层负荷"
+      ],
+      "failure_modes": [
+        "斑驳、残留或组分差异。"
+      ],
+      "checks": [
+        "同位置残留、涂层量和形貌检查"
+      ],
+      "conditions": [
+        "颜色本身不证明迁移或未干"
+      ],
+      "article_ids": [
+        "atlas_coat_stains"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_037",
+      "source": "coat_web_state",
+      "target": "coat_scratch",
+      "relation": "可能导致",
+      "mechanism": "跑偏或支撑异常可能使膜碰到非预期表面，有毛刺或相对滑动时形成刮伤。",
+      "control_points": [
+        "控制膜路、辊转动、导向间隙和支撑"
+      ],
+      "failure_modes": [
+        "划伤、掉粉或局部薄弱。"
+      ],
+      "checks": [
+        "沿损伤面接触路径找首次出现工位"
+      ],
+      "conditions": [
+        "有接触或摩擦证据"
+      ],
+      "article_ids": [
+        "atlas_coat_damage"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_038",
+      "source": "coat_dent",
+      "target": "coat_hole",
+      "relation": "可能导致",
+      "mechanism": "局部硌压超过膜体在当前状态的承载能力时，压痕可能发展成变薄或贯穿。",
+      "control_points": [
+        "消除突起并复核受影响段局部完整性"
+      ],
+      "failure_modes": [
+        "薄点、破孔与隔离薄弱。"
+      ],
+      "checks": [
+        "孔边、损伤深度及正常区比较"
+      ],
+      "conditions": [
+        "压痕并非一定破孔，取决于载荷及状态"
+      ],
+      "article_ids": [
+        "atlas_coat_damage"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_039",
+      "source": "coat_hole",
+      "target": "cell_local_weak",
+      "relation": "风险传递",
+      "mechanism": "膜体贯穿或严重变薄削弱局部隔离屏障，在电极接触、压力等条件下可能出现绝缘问题。",
+      "control_points": [
+        "按现行标准处置范围并验证局部完整性"
+      ],
+      "failure_modes": [
+        "局部绝缘薄弱或潜在电子通路。"
+      ],
+      "checks": [
+        "局部完整性与电芯接触条件联合评价"
+      ],
+      "conditions": [
+        "缺陷真实存在于有效隔离区"
+      ],
+      "article_ids": [
+        "atlas_coat_damage"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_040",
+      "source": "coat_foreign",
+      "target": "cell_local_weak",
+      "relation": "风险传递",
+      "mechanism": "导电颗粒或能压伤膜的硬颗粒在适当位置与载荷下可能削弱隔离，一般黑点不能直接证明该路径。",
+      "control_points": [
+        "识别颗粒材质尺寸层位，验证是否压伤"
+      ],
+      "failure_modes": [
+        "局部绝缘薄弱或颗粒夹入。"
+      ],
+      "checks": [
+        "成分、位置和局部损伤联合检查"
+      ],
+      "conditions": [
+        "需有导电或机械损伤相关证据"
+      ],
+      "article_ids": [
+        "atlas_coat_black"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_041",
+      "source": "coat_web_state",
+      "target": "coat_wrinkle",
+      "relation": "可能导致",
+      "mechanism": "横向长度与受力不均、展平支撑不匹配时，多余长度可能以皱纹释放，受压后可留下折痕。",
+      "control_points": [
+        "控制实际张力、平行度、展平和支撑"
+      ],
+      "failure_modes": [
+        "皱纹、折痕及漏涂。"
+      ],
+      "checks": [
+        "工位前后和自由展平对照"
+      ],
+      "conditions": [
+        "调张力需复验伸长及损伤"
+      ],
+      "article_ids": [
+        "atlas_coat_webdefects"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_042",
+      "source": "coat_thermal_wrinkle",
+      "target": "coat_wrinkle",
+      "relation": "可能导致",
+      "mechanism": "烘箱内热收缩与约束不均可形成皱纹，后段接触与收卷可能将其固化为折印。",
+      "control_points": [
+        "区分入箱原有与箱内新增，控制风温牵引"
+      ],
+      "failure_modes": [
+        "热皱与永久折印。"
+      ],
+      "checks": [
+        "入箱出箱收卷同段形态对照"
+      ],
+      "conditions": [
+        "首次出现或加重在干燥段"
+      ],
+      "article_ids": [
+        "atlas_coat_webdefects"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_043",
+      "source": "coat_drying",
+      "target": "coat_curl",
+      "relation": "可能导致",
+      "mechanism": "两面涂层或热史不对称可能造成收缩和残余应力差，自由状态下翘曲；来料和调湿也可能贡献。",
+      "control_points": [
+        "控制双面结构、干燥与调湿条件"
+      ],
+      "failure_modes": [
+        "翘曲及对齐困难。"
+      ],
+      "checks": [
+        "同条件裁样、面别方向与前态对照"
+      ],
+      "conditions": [
+        "单面双面和多层分开评价"
+      ],
+      "article_ids": [
+        "atlas_coat_webdefects"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_044",
+      "source": "coat_under_dry",
+      "target": "coat_blocking",
+      "relation": "可能导致",
+      "mechanism": "残留保持表面粘性，在收卷压力与驻留下可形成层间粘连或涂层转移。",
+      "control_points": [
+        "核验局部残留、冷却及收卷条件"
+      ],
+      "failure_modes": [
+        "粘连、反粘和开卷撕伤。"
+      ],
+      "checks": [
+        "残留与剥卷转移面同位置检查"
+      ],
+      "conditions": [
+        "与聚合物固有粘性或污染分开"
+      ],
+      "article_ids": [
+        "atlas_coat_webdefects"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_045",
+      "source": "coat_winding",
+      "target": "coat_blocking",
+      "relation": "可能导致",
+      "mechanism": "膜温、压力和存放时间可能促成粘性聚合物表面层间粘接，残留正常时仍需检查。",
+      "control_points": [
+        "验证收卷膜温、压力历史和存储"
+      ],
+      "failure_modes": [
+        "粘卷及剥开掉层。"
+      ],
+      "checks": [
+        "相同材料不同受控接触历史下开卷对照"
+      ],
+      "conditions": [
+        "材料具备相关粘性响应"
+      ],
+      "article_ids": [
+        "atlas_coat_webdefects"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_046",
+      "source": "coat_thickness_variation",
+      "target": "coat_rollshape",
+      "relation": "可能导致",
+      "mechanism": "横向高点逐层叠加可能形成暴筋和局部受压差，单层厚差不大也可能累积。",
+      "control_points": [
+        "控制全幅轮廓并按卷径观察卷形"
+      ],
+      "failure_modes": [
+        "暴筋、压伤和滑移。"
+      ],
+      "checks": [
+        "高点与卷形横向位置对应"
+      ],
+      "conditions": [
+        "持续高点在卷中叠加"
+      ],
+      "article_ids": [
+        "atlas_coat_webdefects"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_047",
+      "source": "coat_winding",
+      "target": "coat_rollshape",
+      "relation": "可能导致",
+      "mechanism": "张力、压辊、卷芯或纠偏不匹配改变层间受力位置，可能形成端面不齐、错层或失稳。",
+      "control_points": [
+        "检查实际受力卷芯及纠偏，分卷径跟踪"
+      ],
+      "failure_modes": [
+        "错层、端面不齐及折皱。"
+      ],
+      "checks": [
+        "卷径演化与运行记录对照"
+      ],
+      "conditions": [
+        "同时排查来料厚差和摩擦差"
+      ],
+      "article_ids": [
+        "atlas_coat_webdefects"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_048",
+      "source": "coat_slitting",
+      "target": "coat_edge_defect",
+      "relation": "可能导致",
+      "mechanism": "刀具、切割几何或支撑不当可撕裂基膜或崩落涂层，形成毛边、碎屑和缺口。",
+      "control_points": [
+        "控制刀具刀位、支撑及吸尘"
+      ],
+      "failure_modes": [
+        "毛边、掉屑和边裂。"
+      ],
+      "checks": [
+        "切前切后及不同刀位分层形貌对照"
+      ],
+      "conditions": [
+        "区分基膜撕裂和涂层内聚破坏"
+      ],
+      "article_ids": [
+        "atlas_coat_webdefects"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_049",
+      "source": "coat_cohesion",
+      "target": "coat_crack",
+      "relation": "可能导致",
+      "mechanism": "结合不足时干燥收缩或后段弯折应力可能超过内聚承载，形成裂纹及碎屑。",
+      "control_points": [
+        "控制粘结剂分布、分散及干燥状态"
+      ],
+      "failure_modes": [
+        "开裂、掉粉和覆盖破坏。"
+      ],
+      "checks": [
+        "首次出现、破坏面与相同弯折对照"
+      ],
+      "conditions": [
+        "材料及干湿状态可比"
+      ],
+      "article_ids": [
+        "atlas_coat_integrity_defects"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_050",
+      "source": "coat_drying",
+      "target": "coat_crack",
+      "relation": "可能导致",
+      "mechanism": "湿层收缩受到基膜约束，干燥分布和局部厚层影响应力建立，超过承载时可能开裂。",
+      "control_points": [
+        "联合控制湿层负荷、干燥梯度和结合"
+      ],
+      "failure_modes": [
+        "网状裂纹及后段裂纹扩展。"
+      ],
+      "checks": [
+        "箱前后、厚薄区与受力后显微比较"
+      ],
+      "conditions": [
+        "通用湿层机制需在具体体系验证"
+      ],
+      "article_ids": [
+        "atlas_coat_integrity_defects"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_051",
+      "source": "coat_interface",
+      "target": "coat_delamination",
+      "relation": "可能导致",
+      "mechanism": "污染、润湿不足或界面结合弱，在干燥和后段载荷下可能发生界面分离或鼓起。",
+      "control_points": [
+        "控制洁净润湿，分开记录剥离力与破坏位置"
+      ],
+      "failure_modes": [
+        "脱层、鼓包和片状脱落。"
+      ],
+      "checks": [
+        "剥离两侧残留、截面与干湿对照"
+      ],
+      "conditions": [
+        "已确认破坏在相应界面"
+      ],
+      "article_ids": [
+        "atlas_coat_integrity_defects"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_052",
+      "source": "coat_crack",
+      "target": "coat_powder",
+      "relation": "可能导致",
+      "mechanism": "裂纹分割出较弱片段，摩擦、弯折或分切可释放颗粒；掉粉也可能无可见裂纹。",
+      "control_points": [
+        "降低开裂因素并验证后加工负荷"
+      ],
+      "failure_modes": [
+        "掉粉及颗粒污染。"
+      ],
+      "checks": [
+        "裂区正常区相同受力比较"
+      ],
+      "conditions": [
+        "裂纹和掉落位置相符"
+      ],
+      "article_ids": [
+        "atlas_coat_integrity_defects"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_053",
+      "source": "coat_delamination",
+      "target": "coat_skip",
+      "relation": "可能导致",
+      "mechanism": "已形成的涂层脱离并被辊或相邻膜带走，最终可呈露底，区别于一开始未涂上。",
+      "control_points": [
+        "核对干后接触、粘辊反粘及界面"
+      ],
+      "failure_modes": [
+        "片状露底和二次颗粒。"
+      ],
+      "checks": [
+        "接触前后形貌及转移物对应"
+      ],
+      "conditions": [
+        "有先存在后脱落的时序证据"
+      ],
+      "article_ids": [
+        "atlas_coat_integrity_defects"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_054",
+      "source": "coat_head_geometry",
+      "target": "coat_pattern_defect",
+      "relation": "可能导致",
+      "mechanism": "点涂转移件堵塞磨损或接触不均可使目标点缺失或变形，并随位置和周期重复。",
+      "control_points": [
+        "控制转移件清洁几何及安装"
+      ],
+      "failure_modes": [
+        "缺点和点径不均。"
+      ],
+      "checks": [
+        "点阵位置与转移件、周期对应"
+      ],
+      "conditions": [
+        "采用图案转移结构的设备"
+      ],
+      "article_ids": [
+        "atlas_coat_pattern"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_055",
+      "source": "coat_rheology",
+      "target": "coat_pattern_defect",
+      "relation": "可能导致",
+      "mechanism": "流变和铺展改变液点的形态保持，可能引起拖尾、并点及点高差。",
+      "control_points": [
+        "控制浆料、转移与干燥定形"
+      ],
+      "failure_modes": [
+        "连点、拖尾和覆盖异常。"
+      ],
+      "checks": [
+        "同面密度下比较点径点高覆盖"
+      ],
+      "conditions": [
+        "材料与点涂路线明确"
+      ],
+      "article_ids": [
+        "atlas_coat_pattern"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_056",
+      "source": "coat_pattern_defect",
+      "target": "coat_bond",
+      "relation": "影响",
+      "mechanism": "缺点或并点改变有效接触位置及受力，即使平均涂量一致也可能改变粘接。",
+      "control_points": [
+        "将点阵与规定热压干湿条件联合验证"
+      ],
+      "failure_modes": [
+        "局部粘接不均。"
+      ],
+      "checks": [
+        "点阵与同条件粘接透气对照"
+      ],
+      "conditions": [
+        "点涂承担相应粘接功能"
+      ],
+      "article_ids": [
+        "atlas_coat_pattern"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_057",
+      "source": "coat_web_state",
+      "target": "coat_registration",
+      "relation": "可能导致",
+      "mechanism": "纠偏漂移、膜路或尺寸变化会改变膜边相对涂头位置，造成留边和套准偏差。",
+      "control_points": [
+        "核验面别、纠偏、尺寸及同步"
+      ],
+      "failure_modes": [
+        "涂幅偏移或双面错位。"
+      ],
+      "checks": [
+        "连续测膜边涂层边和两面相对位置"
+      ],
+      "conditions": [
+        "区分膜宽变化与涂头位移"
+      ],
+      "article_ids": [
+        "atlas_coat_pattern"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_058",
+      "source": "coat_registration",
+      "target": "cell_assembly",
+      "relation": "风险传递",
+      "mechanism": "功能区域偏移可能使涂层或粘接区与极片设计位置不匹配，增加装配对齐困难。",
+      "control_points": [
+        "验证有效涂幅留边与装配公差接口"
+      ],
+      "failure_modes": [
+        "功能覆盖不足或加工不匹配。"
+      ],
+      "checks": [
+        "实际装配对齐及覆盖验证"
+      ],
+      "conditions": [
+        "不把涂层偏移直接等同绝缘失效"
+      ],
+      "article_ids": [
+        "atlas_coat_pattern"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_059",
+      "source": "base_ccd_review",
+      "target": "base_black",
+      "relation": "诊断判别",
+      "mechanism": "“黑点与异物”需同位置实物和测量确认，CCD名称不证明成分、孔洞或厚度变化。",
+      "control_points": [
+        "保留同源样与检测条件"
+      ],
+      "failure_modes": [
+        "错误归因或漏掉局部弱点。"
+      ],
+      "checks": [
+        "形貌、测量与正常区对照"
+      ],
+      "conditions": [
+        "样品身份和能力明确"
+      ],
+      "article_ids": [
+        "atlas_base_symptoms"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_060",
+      "source": "base_ccd_review",
+      "target": "base_bright",
+      "relation": "诊断判别",
+      "mechanism": "“基膜亮点与透明点”需同位置实物和测量确认，CCD名称不证明成分、孔洞或厚度变化。",
+      "control_points": [
+        "保留同源样与检测条件"
+      ],
+      "failure_modes": [
+        "错误归因或漏掉局部弱点。"
+      ],
+      "checks": [
+        "形貌、测量与正常区对照"
+      ],
+      "conditions": [
+        "样品身份和能力明确"
+      ],
+      "article_ids": [
+        "atlas_base_symptoms"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_061",
+      "source": "base_ccd_review",
+      "target": "base_thickness_variation",
+      "relation": "诊断判别",
+      "mechanism": "“基膜厚度不均”需同位置实物和测量确认，CCD名称不证明成分、孔洞或厚度变化。",
+      "control_points": [
+        "保留同源样与检测条件"
+      ],
+      "failure_modes": [
+        "错误归因或漏掉局部弱点。"
+      ],
+      "checks": [
+        "形貌、测量与正常区对照"
+      ],
+      "conditions": [
+        "样品身份和能力明确"
+      ],
+      "article_ids": [
+        "atlas_base_symptoms"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_062",
+      "source": "base_ccd_review",
+      "target": "base_thin",
+      "relation": "诊断判别",
+      "mechanism": "“局部薄点或针孔”需同位置实物和测量确认，CCD名称不证明成分、孔洞或厚度变化。",
+      "control_points": [
+        "保留同源样与检测条件"
+      ],
+      "failure_modes": [
+        "错误归因或漏掉局部弱点。"
+      ],
+      "checks": [
+        "形貌、测量与正常区对照"
+      ],
+      "conditions": [
+        "样品身份和能力明确"
+      ],
+      "article_ids": [
+        "atlas_base_symptoms"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_063",
+      "source": "base_ccd_review",
+      "target": "base_oilspot",
+      "relation": "诊断判别",
+      "mechanism": "“油斑”需同位置实物和测量确认，CCD名称不证明成分、孔洞或厚度变化。",
+      "control_points": [
+        "保留同源样与检测条件"
+      ],
+      "failure_modes": [
+        "错误归因或漏掉局部弱点。"
+      ],
+      "checks": [
+        "形貌、测量与正常区对照"
+      ],
+      "conditions": [
+        "样品身份和能力明确"
+      ],
+      "article_ids": [
+        "atlas_base_symptoms"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_064",
+      "source": "base_thin",
+      "target": "base_bright",
+      "relation": "可能导致",
+      "mechanism": "变薄或孔洞可能改变透光而呈亮点，但亮点也可能来自液斑与印迹。",
+      "control_points": [
+        "分别验证连续性厚度和成分"
+      ],
+      "failure_modes": [
+        "亮点及潜在局部薄弱。"
+      ],
+      "checks": [
+        "原样显微和局部厚度"
+      ],
+      "conditions": [
+        "光路对薄弱有响应"
+      ],
+      "article_ids": [
+        "atlas_base_symptoms"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_065",
+      "source": "base_roller_transfer",
+      "target": "base_bright",
+      "relation": "可能导致",
+      "mechanism": "转移附着物或压力印迹改变膜面光学响应，可能形成亮点与亮线。",
+      "control_points": [
+        "核对接触面整周辊面及首次出现"
+      ],
+      "failure_modes": [
+        "周期亮点、液斑或压痕。"
+      ],
+      "checks": [
+        "周期成分形貌联合验证"
+      ],
+      "conditions": [
+        "周长接近只筛选候选"
+      ],
+      "article_ids": [
+        "atlas_base_symptoms"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_066",
+      "source": "base_cast",
+      "target": "base_thickness_variation",
+      "relation": "可能导致",
+      "mechanism": "供料和冷却分布形成初始厚差，后续拉伸可能保留或放大。",
+      "control_points": [
+        "稳定熔体供给模头与冷却分布"
+      ],
+      "failure_modes": [
+        "厚度和后续变形不均。"
+      ],
+      "checks": [
+        "同源流延后段轮廓比较"
+      ],
+      "conditions": [
+        "坐标与拉伸映射可对应"
+      ],
+      "article_ids": [
+        "atlas_base_symptoms"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_067",
+      "source": "base_md",
+      "target": "base_thickness_variation",
+      "relation": "可能导致",
+      "mechanism": "膜温与实际牵伸差异改变局部变形，可能重新分配厚度；倍率设定不代表实际变形均匀。",
+      "control_points": [
+        "核对温度辊速受力，联合检查其他拉伸段"
+      ],
+      "failure_modes": [
+        "厚薄及方向性能不均。"
+      ],
+      "checks": [
+        "沿工序厚度面密度力学比较"
+      ],
+      "conditions": [
+        "路线与变形段明确"
+      ],
+      "article_ids": [
+        "atlas_base_symptoms"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_068",
+      "source": "base_black",
+      "target": "coat_black",
+      "relation": "可能传递",
+      "mechanism": "基膜原有颗粒在涂覆后可能保留，涂层可改变对比但不自动消除颗粒。",
+      "control_points": [
+        "校正母子卷、剔除接带、面别与检测点坐标"
+      ],
+      "failure_modes": [
+        "来源误判或因涂层遮盖而漏判。"
+      ],
+      "checks": [
+        "同位置前后实物及层位、检测能力比较"
+      ],
+      "conditions": [
+        "同源物料；不以相近图像或米数认同源"
+      ],
+      "article_ids": [
+        "atlas_defect_inheritance"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_069",
+      "source": "base_bright",
+      "target": "coat_bright",
+      "relation": "可能传递",
+      "mechanism": "基膜亮点对应的薄弱、液斑或印迹可保留或改变明暗，需逐一确认实物分支。",
+      "control_points": [
+        "校正母子卷、剔除接带、面别与检测点坐标"
+      ],
+      "failure_modes": [
+        "来源误判或因涂层遮盖而漏判。"
+      ],
+      "checks": [
+        "同位置前后实物及层位、检测能力比较"
+      ],
+      "conditions": [
+        "同源物料；不以相近图像或米数认同源"
+      ],
+      "article_ids": [
+        "atlas_defect_inheritance"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_070",
+      "source": "base_thickness_variation",
+      "target": "coat_thickness_variation",
+      "relation": "可能传递",
+      "mechanism": "前态膜厚差贡献复合总厚度差，单看涂后值容易误判为涂层异常。",
+      "control_points": [
+        "校正母子卷、剔除接带、面别与检测点坐标"
+      ],
+      "failure_modes": [
+        "来源误判或因涂层遮盖而漏判。"
+      ],
+      "checks": [
+        "同位置前后实物及层位、检测能力比较"
+      ],
+      "conditions": [
+        "同源物料；不以相近图像或米数认同源"
+      ],
+      "article_ids": [
+        "atlas_defect_inheritance"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_071",
+      "source": "base_oilspot",
+      "target": "coat_oilspot",
+      "relation": "可能传递",
+      "mechanism": "前态膜油状斑可传到界面并影响光学或润湿，成分及后果需要验证。",
+      "control_points": [
+        "校正母子卷、剔除接带、面别与检测点坐标"
+      ],
+      "failure_modes": [
+        "来源误判或因涂层遮盖而漏判。"
+      ],
+      "checks": [
+        "同位置前后实物及层位、检测能力比较"
+      ],
+      "conditions": [
+        "同源物料；不以相近图像或米数认同源"
+      ],
+      "article_ids": [
+        "atlas_defect_inheritance"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_072",
+      "source": "base_wrinkle",
+      "target": "coat_wrinkle",
+      "relation": "可能传递",
+      "mechanism": "前态膜中波塌边与长度差可在涂覆中继续表现，受压后还可能形成折印。",
+      "control_points": [
+        "校正母子卷、剔除接带、面别与检测点坐标"
+      ],
+      "failure_modes": [
+        "来源误判或因涂层遮盖而漏判。"
+      ],
+      "checks": [
+        "同位置前后实物及层位、检测能力比较"
+      ],
+      "conditions": [
+        "同源物料；不以相近图像或米数认同源"
+      ],
+      "article_ids": [
+        "atlas_defect_inheritance"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_073",
+      "source": "base_scratch",
+      "target": "coat_scratch",
+      "relation": "可能传递",
+      "mechanism": "原有划伤可被涂层遮盖或继续显现，可见性变化不等于损伤已修复。",
+      "control_points": [
+        "校正母子卷、剔除接带、面别与检测点坐标"
+      ],
+      "failure_modes": [
+        "来源误判或因涂层遮盖而漏判。"
+      ],
+      "checks": [
+        "同位置前后实物及层位、检测能力比较"
+      ],
+      "conditions": [
+        "同源物料；不以相近图像或米数认同源"
+      ],
+      "article_ids": [
+        "atlas_defect_inheritance"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_074",
+      "source": "base_thin",
+      "target": "coat_hole",
+      "relation": "可能传递",
+      "mechanism": "前态膜薄弱可能在涂覆受力后被暴露或扩大，涂层覆盖不能证明膜体恢复完整。",
+      "control_points": [
+        "校正母子卷、剔除接带、面别与检测点坐标"
+      ],
+      "failure_modes": [
+        "来源误判或因涂层遮盖而漏判。"
+      ],
+      "checks": [
+        "同位置前后实物及层位、检测能力比较"
+      ],
+      "conditions": [
+        "同源物料；不以相近图像或米数认同源"
+      ],
+      "article_ids": [
+        "atlas_defect_inheritance"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_075",
+      "source": "base_dust",
+      "target": "coat_foreign",
+      "relation": "可能传递",
+      "mechanism": "前态膜颗粒可能被包入界面或涂层，成为异物或局部转移障碍。",
+      "control_points": [
+        "校正母子卷、剔除接带、面别与检测点坐标"
+      ],
+      "failure_modes": [
+        "来源误判或因涂层遮盖而漏判。"
+      ],
+      "checks": [
+        "同位置前后实物及层位、检测能力比较"
+      ],
+      "conditions": [
+        "同源物料；不以相近图像或米数认同源"
+      ],
+      "article_ids": [
+        "atlas_defect_inheritance"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_076",
+      "source": "coat_inherited_defect",
+      "target": "coat_black",
+      "relation": "诊断判别",
+      "mechanism": "对“涂覆黑点与暗点”比较同位置前后样，区分原有、新增、放大与可见性改变；上游未检出不能单独证明涂覆新生。",
+      "control_points": [
+        "固定物料坐标面别并确认首次出现"
+      ],
+      "failure_modes": [
+        "来源判断及范围错误。"
+      ],
+      "checks": [
+        "同卷前后对照及候选因素响应"
+      ],
+      "conditions": [
+        "需实物、时序和能力支持"
+      ],
+      "article_ids": [
+        "atlas_defect_inheritance"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_077",
+      "source": "coat_inherited_defect",
+      "target": "coat_bright",
+      "relation": "诊断判别",
+      "mechanism": "对“涂覆亮点与白点”比较同位置前后样，区分原有、新增、放大与可见性改变；上游未检出不能单独证明涂覆新生。",
+      "control_points": [
+        "固定物料坐标面别并确认首次出现"
+      ],
+      "failure_modes": [
+        "来源判断及范围错误。"
+      ],
+      "checks": [
+        "同卷前后对照及候选因素响应"
+      ],
+      "conditions": [
+        "需实物、时序和能力支持"
+      ],
+      "article_ids": [
+        "atlas_defect_inheritance"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_078",
+      "source": "coat_inherited_defect",
+      "target": "coat_thickness_variation",
+      "relation": "诊断判别",
+      "mechanism": "对“涂覆厚度不均”比较同位置前后样，区分原有、新增、放大与可见性改变；上游未检出不能单独证明涂覆新生。",
+      "control_points": [
+        "固定物料坐标面别并确认首次出现"
+      ],
+      "failure_modes": [
+        "来源判断及范围错误。"
+      ],
+      "checks": [
+        "同卷前后对照及候选因素响应"
+      ],
+      "conditions": [
+        "需实物、时序和能力支持"
+      ],
+      "article_ids": [
+        "atlas_defect_inheritance"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_079",
+      "source": "coat_inherited_defect",
+      "target": "coat_wrinkle",
+      "relation": "诊断判别",
+      "mechanism": "对“涂覆打皱与折痕”比较同位置前后样，区分原有、新增、放大与可见性改变；上游未检出不能单独证明涂覆新生。",
+      "control_points": [
+        "固定物料坐标面别并确认首次出现"
+      ],
+      "failure_modes": [
+        "来源判断及范围错误。"
+      ],
+      "checks": [
+        "同卷前后对照及候选因素响应"
+      ],
+      "conditions": [
+        "需实物、时序和能力支持"
+      ],
+      "article_ids": [
+        "atlas_defect_inheritance"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_080",
+      "source": "coat_inherited_defect",
+      "target": "coat_oilspot",
+      "relation": "诊断判别",
+      "mechanism": "对“涂覆油斑与污染斑”比较同位置前后样，区分原有、新增、放大与可见性改变；上游未检出不能单独证明涂覆新生。",
+      "control_points": [
+        "固定物料坐标面别并确认首次出现"
+      ],
+      "failure_modes": [
+        "来源判断及范围错误。"
+      ],
+      "checks": [
+        "同卷前后对照及候选因素响应"
+      ],
+      "conditions": [
+        "需实物、时序和能力支持"
+      ],
+      "article_ids": [
+        "atlas_defect_inheritance"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    },
+    {
+      "id": "defect_link_081",
+      "source": "coat_inherited_defect",
+      "target": "coat_hole",
+      "relation": "诊断判别",
+      "mechanism": "对“薄点与贯穿破孔”比较同位置前后样，区分原有、新增、放大与可见性改变；上游未检出不能单独证明涂覆新生。",
+      "control_points": [
+        "固定物料坐标面别并确认首次出现"
+      ],
+      "failure_modes": [
+        "来源判断及范围错误。"
+      ],
+      "checks": [
+        "同卷前后对照及候选因素响应"
+      ],
+      "conditions": [
+        "需实物、时序和能力支持"
+      ],
+      "article_ids": [
+        "atlas_defect_inheritance"
+      ],
+      "evidence": "通用机理及条件性诊断关系；现场因果需验证"
+    }
+  ]
+}

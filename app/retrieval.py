@@ -67,8 +67,12 @@ def retrieve(store, payload, for_model=False):
                           ' '.join(edge.get('checks',[]))])
         return len(qt & set(terms(content)))
     top_articles=unique(c['article_id'] for c in supplemental+direct)[:5]
-    exact=[n['id'] for n in store.nodes if len(n.get('label',''))>=2
-           and normalized(n['label']) in normalized(query) and allowed_node(n['id'])]
+    exact=[n['id'] for n in store.nodes if allowed_node(n['id']) and any(
+           len(label)>=2 and normalized(label) in normalized(query)
+           for label in [n.get('label','')]+n.get('aliases',[]))]
+    named=[s for s in ('基膜','涂覆','电芯') if s in query]
+    if len(named)==1:
+        exact.sort(key=lambda nid:store.by_node[nid].get('stage')!=named[0])
     seeds=unique(exact[:4]+[n['id'] for n in store.nodes if allowed_node(n['id'])
                   and set(n.get('article_ids',[])) & set(top_articles[:3])])[:7]
     # Author links are topic links, never promoted to causal edges.

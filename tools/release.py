@@ -17,7 +17,7 @@ def release():
     if not result["ok"]:
         raise ValueError("先修复知识结构校验错误")
     store = KnowledgeStore()
-    names = {"README.md", "agent/system_prompt.md", "agent/analysis_protocol.md", "agent/dialogue_protocol.md", "agent/retrieval_protocol.md", "agent/playbooks.json", "evals/cases.json"}
+    names = {"README.md", "agent/system_prompt.md", "agent/analysis_protocol.md", "agent/dialogue_protocol.md", "agent/retrieval_protocol.md", "agent/playbooks.json", "evals/cases.json", "evals/defect_coverage.json"}
     for article in store.articles:
         if article.get("origin") != "user":
             names.add(article["workspace_file"])
@@ -32,8 +32,8 @@ def release():
     export.mkdir(exist_ok=True)
     knowledge_zip = export / "separator-knowledge.zip"
     knowledge_zip.write_bytes(store.portable_bundle())
-    program = set(names) | {"bundle_manifest.json", "启动工作台.cmd", "启动工作台.ps1", "start-workbench.ps1", ".gitignore", "config/model.example.json", "知识投递/_使用说明.md", "知识投递/_模板.md"}
-    for folder, suffixes in (("app", {".py", ".html", ".css", ".js", ".svg"}), ("tests", {".py", ".js"}), ("tools", {".py"})):
+    program = set(names) | {"bundle_manifest.json", "启动工作台.cmd", "启动工作台.ps1", "start-workbench.ps1", "启动桌面版.cmd", "隔膜研析.exe", ".gitignore", "config/model.example.json", "知识投递/_使用说明.md", "知识投递/_模板.md"}
+    for folder, suffixes in (("app", {".py", ".html", ".css", ".js", ".svg"}), ("tests", {".py", ".js"}), ("tools", {".py"}), ("desktop", {".cs", ".ps1", ".ico", ".md"})):
         for p in (ROOT / folder).rglob("*"):
             if p.is_file() and p.suffix in suffixes and "__pycache__" not in p.parts:
                 program.add(p.relative_to(ROOT).as_posix())

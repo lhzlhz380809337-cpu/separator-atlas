@@ -72,7 +72,7 @@ def oil_answers(history, current, conclude=False):
 def local_dialogue(store, payload, ctx, history, question):
     issue = history[0]['question'] if history else question
     conclude = payload.get('conclude') is True
-    if re.search('油斑|油点|油渍', issue):
+    if re.search('油斑|油点|油渍', issue) and '涂覆' not in issue and payload.get('stage') != '涂覆':
         answers = oil_answers(history, question, conclude)
         if 'discovery' not in answers and re.search(r'CCD|相机', issue, re.I):
             answers = {'discovery':{'choice':'A','value':'CCD 检出；成分是否确认仍未知'}, **answers}

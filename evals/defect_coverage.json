@@ -1,0 +1,473 @@
+{
+  "description": "现场入口与正文、关系的覆盖验收；不代表全部失效已穷尽",
+  "entries": [
+    {
+      "node_id": "base_ccd_review",
+      "stage": "基膜",
+      "article_id": "atlas_ccd_review",
+      "label": "CCD与实物复核",
+      "queries": [
+        "基膜 CCD与实物复核"
+      ]
+    },
+    {
+      "node_id": "coat_ccd_review",
+      "stage": "涂覆",
+      "article_id": "atlas_ccd_review",
+      "label": "CCD与实物复核",
+      "queries": [
+        "涂覆 CCD与实物复核"
+      ]
+    },
+    {
+      "node_id": "coat_black",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_black",
+      "label": "涂覆黑点与暗点",
+      "queries": [
+        "涂覆 黑点"
+      ]
+    },
+    {
+      "node_id": "coat_bright",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_bright",
+      "label": "涂覆亮点与白点",
+      "queries": [
+        "涂覆 亮点"
+      ]
+    },
+    {
+      "node_id": "coat_thickness_variation",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_thickness_defect",
+      "label": "涂覆厚度不均",
+      "queries": [
+        "涂覆 厚度不均"
+      ]
+    },
+    {
+      "node_id": "coat_thick_thin",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_thickness_defect",
+      "label": "局部厚涂与薄涂",
+      "queries": [
+        "涂覆 厚涂"
+      ]
+    },
+    {
+      "node_id": "coat_long_stripe",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_stripes",
+      "label": "涂覆纵条纹",
+      "queries": [
+        "涂覆 纵条纹"
+      ]
+    },
+    {
+      "node_id": "coat_cross_stripe",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_stripes",
+      "label": "涂覆横条纹",
+      "queries": [
+        "涂覆 横条纹"
+      ]
+    },
+    {
+      "node_id": "coat_skip",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_voids",
+      "label": "点状与条状漏涂",
+      "queries": [
+        "涂覆 漏涂"
+      ]
+    },
+    {
+      "node_id": "coat_crater",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_voids",
+      "label": "缩孔与涂层针孔",
+      "queries": [
+        "涂覆 缩孔"
+      ]
+    },
+    {
+      "node_id": "coat_oilspot",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_stains",
+      "label": "涂覆油斑与污染斑",
+      "queries": [
+        "涂覆 涂覆油斑"
+      ]
+    },
+    {
+      "node_id": "coat_watermark",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_stains",
+      "label": "水渍与色差斑",
+      "queries": [
+        "涂覆 水渍"
+      ]
+    },
+    {
+      "node_id": "coat_scratch",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_damage",
+      "label": "涂覆划伤与刮伤",
+      "queries": [
+        "涂覆 划伤"
+      ]
+    },
+    {
+      "node_id": "coat_dent",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_damage",
+      "label": "压痕与颗粒硌伤",
+      "queries": [
+        "涂覆 压痕"
+      ]
+    },
+    {
+      "node_id": "coat_hole",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_damage",
+      "label": "薄点与贯穿破孔",
+      "queries": [
+        "涂覆 薄点"
+      ]
+    },
+    {
+      "node_id": "coat_wrinkle",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_webdefects",
+      "label": "涂覆打皱与折痕",
+      "queries": [
+        "涂覆 打皱"
+      ]
+    },
+    {
+      "node_id": "coat_curl",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_webdefects",
+      "label": "涂覆翘曲与卷曲",
+      "queries": [
+        "涂覆 翘曲"
+      ]
+    },
+    {
+      "node_id": "coat_blocking",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_webdefects",
+      "label": "收卷粘连与反粘",
+      "queries": [
+        "涂覆 粘连"
+      ]
+    },
+    {
+      "node_id": "coat_rollshape",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_webdefects",
+      "label": "涂覆卷形与端面异常",
+      "queries": [
+        "涂覆 端面不齐"
+      ]
+    },
+    {
+      "node_id": "coat_edge_defect",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_webdefects",
+      "label": "涂覆毛边与边部缺损",
+      "queries": [
+        "涂覆 毛边"
+      ]
+    },
+    {
+      "node_id": "coat_crack",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_integrity_defects",
+      "label": "涂层开裂与龟裂",
+      "queries": [
+        "涂覆 开裂"
+      ]
+    },
+    {
+      "node_id": "coat_delamination",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_integrity_defects",
+      "label": "涂层脱层与起泡",
+      "queries": [
+        "涂覆 脱层"
+      ]
+    },
+    {
+      "node_id": "coat_pattern_defect",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_pattern",
+      "label": "点涂缺点与连点",
+      "queries": [
+        "涂覆 点涂缺点"
+      ]
+    },
+    {
+      "node_id": "coat_registration",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_pattern",
+      "label": "涂幅与图案偏移",
+      "queries": [
+        "涂覆 图案偏移"
+      ]
+    },
+    {
+      "node_id": "base_bright",
+      "stage": "基膜",
+      "article_id": "atlas_base_symptoms",
+      "label": "基膜亮点与透明点",
+      "queries": [
+        "基膜 基膜亮点"
+      ]
+    },
+    {
+      "node_id": "base_thickness_variation",
+      "stage": "基膜",
+      "article_id": "atlas_base_symptoms",
+      "label": "基膜厚度不均",
+      "queries": [
+        "基膜 基膜厚度不均"
+      ]
+    },
+    {
+      "node_id": "coat_inherited_defect",
+      "stage": "涂覆",
+      "article_id": "atlas_defect_inheritance",
+      "label": "前态膜缺陷传递",
+      "queries": [
+        "涂覆 来料继承"
+      ]
+    },
+    {
+      "node_id": "base_black",
+      "stage": "基膜",
+      "article_id": "atlas_base_symptoms",
+      "label": "黑点与异物",
+      "queries": [
+        "基膜 黑点与异物"
+      ]
+    },
+    {
+      "node_id": "base_thin",
+      "stage": "基膜",
+      "article_id": "atlas_base_symptoms",
+      "label": "局部薄点或针孔",
+      "queries": [
+        "基膜 局部薄点或针孔"
+      ]
+    },
+    {
+      "node_id": "base_oilspot",
+      "stage": "基膜",
+      "article_id": "atlas_base_symptoms",
+      "label": "油斑",
+      "queries": [
+        "基膜 油斑"
+      ]
+    },
+    {
+      "node_id": "base_wrinkle",
+      "stage": "基膜",
+      "article_id": "atlas_base_symptoms",
+      "label": "打皱、中波与塌边",
+      "queries": [
+        "基膜 打皱、中波与塌边"
+      ]
+    },
+    {
+      "node_id": "base_camber",
+      "stage": "基膜",
+      "article_id": "atlas_base_symptoms",
+      "label": "弧度与跑偏倾向",
+      "queries": [
+        "基膜 弧度与跑偏倾向"
+      ]
+    },
+    {
+      "node_id": "base_slip",
+      "stage": "基膜",
+      "article_id": "atlas_base_symptoms",
+      "label": "层间滑移与端面不齐",
+      "queries": [
+        "基膜 层间滑移与端面不齐"
+      ]
+    },
+    {
+      "node_id": "base_edge",
+      "stage": "基膜",
+      "article_id": "atlas_base_symptoms",
+      "label": "分切边缘损伤",
+      "queries": [
+        "基膜 分切边缘损伤"
+      ]
+    },
+    {
+      "node_id": "base_gel",
+      "stage": "基膜",
+      "article_id": "atlas_base_symptoms",
+      "label": "凝胶点与鱼眼",
+      "queries": [
+        "基膜 凝胶点与鱼眼"
+      ]
+    },
+    {
+      "node_id": "base_break",
+      "stage": "基膜",
+      "article_id": "atlas_base_symptoms",
+      "label": "破膜与针孔",
+      "queries": [
+        "基膜 破膜与针孔"
+      ]
+    },
+    {
+      "node_id": "base_cast_ears",
+      "stage": "基膜",
+      "article_id": "atlas_base_symptoms",
+      "label": "铸片厚边",
+      "queries": [
+        "基膜 铸片厚边"
+      ]
+    },
+    {
+      "node_id": "base_scratch",
+      "stage": "基膜",
+      "article_id": "atlas_base_symptoms",
+      "label": "划伤与压印",
+      "queries": [
+        "基膜 划伤与压印"
+      ]
+    },
+    {
+      "node_id": "base_oilstripe",
+      "stage": "基膜",
+      "article_id": "atlas_base_symptoms",
+      "label": "条状亮油斑",
+      "queries": [
+        "基膜 条状亮油斑"
+      ]
+    },
+    {
+      "node_id": "base_oildark",
+      "stage": "基膜",
+      "article_id": "atlas_base_symptoms",
+      "label": "暗油斑",
+      "queries": [
+        "基膜 暗油斑"
+      ]
+    },
+    {
+      "node_id": "base_oilrow",
+      "stage": "基膜",
+      "article_id": "atlas_base_symptoms",
+      "label": "横排点状亮斑",
+      "queries": [
+        "基膜 横排点状亮斑"
+      ]
+    },
+    {
+      "node_id": "base_clipmark",
+      "stage": "基膜",
+      "article_id": "atlas_base_symptoms",
+      "label": "链夹痕与针板痕",
+      "queries": [
+        "基膜 链夹痕与针板痕"
+      ]
+    },
+    {
+      "node_id": "base_cut_burr",
+      "stage": "基膜",
+      "article_id": "atlas_base_symptoms",
+      "label": "分切边毛与毛刺",
+      "queries": [
+        "基膜 分切边毛与毛刺"
+      ]
+    },
+    {
+      "node_id": "base_dust",
+      "stage": "基膜",
+      "article_id": "atlas_base_symptoms",
+      "label": "膜屑与粉尘附着",
+      "queries": [
+        "基膜 膜屑与粉尘附着"
+      ]
+    },
+    {
+      "node_id": "coat_bubble",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_voids",
+      "label": "浆料气泡",
+      "queries": [
+        "涂覆 浆料气泡"
+      ]
+    },
+    {
+      "node_id": "coat_agglomerate",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_black",
+      "label": "颗粒团聚",
+      "queries": [
+        "涂覆 颗粒团聚"
+      ]
+    },
+    {
+      "node_id": "coat_stripe",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_stripes",
+      "label": "条纹与漏涂",
+      "queries": [
+        "涂覆 条纹与漏涂"
+      ]
+    },
+    {
+      "node_id": "coat_powder",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_integrity_defects",
+      "label": "涂层掉粉",
+      "queries": [
+        "涂覆 涂层掉粉"
+      ]
+    },
+    {
+      "node_id": "coat_edge",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_webdefects",
+      "label": "切边与局部损伤",
+      "queries": [
+        "涂覆 切边与局部损伤"
+      ]
+    },
+    {
+      "node_id": "coat_foreign",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_black",
+      "label": "膜面异物",
+      "queries": [
+        "涂覆 膜面异物"
+      ]
+    },
+    {
+      "node_id": "coat_under_dry",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_webdefects",
+      "label": "局部膜面不干",
+      "queries": [
+        "涂覆 局部膜面不干"
+      ]
+    },
+    {
+      "node_id": "coat_thermal_wrinkle",
+      "stage": "涂覆",
+      "article_id": "atlas_coat_webdefects",
+      "label": "烘箱热皱与折印",
+      "queries": [
+        "涂覆 烘箱热皱与折印"
+      ]
+    }
+  ]
+}
