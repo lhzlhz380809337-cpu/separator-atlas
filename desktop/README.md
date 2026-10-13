@@ -14,6 +14,8 @@ QUALITY · CONTINUOUS IMPROVEMENT · 2026
 
 桌面窗口优先调用 Microsoft Edge，找不到 Edge 时调用 Google Chrome；两者都不可用时会退回默认浏览器。首次运行需要本机有 Python 3.10 或更新版本。当前电脑会优先复用工作环境中已经可用的 Python。
 
+程序运行时只使用 Python 标准库，不需要安装第三方包。完整环境检查和故障排查见根目录的 `docs/环境与依赖.md`。
+
 ## 重新生成启动器
 
 在项目根目录运行：

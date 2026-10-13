@@ -1,0 +1,5 @@
+-r requirements.txt
+
+# Only needed when regenerating desktop/SeparatorAtlas.ico.
+Pillow>=10.0,<13.0
+

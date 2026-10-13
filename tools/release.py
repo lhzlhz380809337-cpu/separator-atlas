@@ -9,7 +9,7 @@ sys.path.insert(0, str(ROOT))
 from app.core import KnowledgeStore
 from tools.validate import validate
 
-DOCS = ["模型接入与迁移.md", "知识结构与维护.md", "下一步资料需求.md", "数据边界.md", "验证记录.md", "星图对话使用说明.md", "动态检索与分析进度.md"]
+DOCS = ["环境与依赖.md", "模型接入与迁移.md", "知识结构与维护.md", "下一步资料需求.md", "数据边界.md", "验证记录.md", "星图对话使用说明.md", "动态检索与分析进度.md"]
 
 
 def release():
@@ -32,7 +32,7 @@ def release():
     export.mkdir(exist_ok=True)
     knowledge_zip = export / "separator-knowledge.zip"
     knowledge_zip.write_bytes(store.portable_bundle())
-    program = set(names) | {"bundle_manifest.json", "启动工作台.cmd", "启动工作台.ps1", "start-workbench.ps1", "启动桌面版.cmd", "隔膜研析.exe", ".gitignore", "config/model.example.json", "知识投递/_使用说明.md", "知识投递/_模板.md"}
+    program = set(names) | {"bundle_manifest.json", "requirements.txt", "requirements-dev.txt", "启动工作台.cmd", "启动工作台.ps1", "start-workbench.ps1", "启动桌面版.cmd", "隔膜研析.exe", ".gitignore", "config/model.example.json", "知识投递/_使用说明.md", "知识投递/_模板.md"}
     for folder, suffixes in (("app", {".py", ".html", ".css", ".js", ".svg"}), ("tests", {".py", ".js"}), ("tools", {".py"}), ("desktop", {".cs", ".ps1", ".ico", ".md"})):
         for p in (ROOT / folder).rglob("*"):
             if p.is_file() and p.suffix in suffixes and "__pycache__" not in p.parts:

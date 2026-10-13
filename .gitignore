@@ -3,6 +3,8 @@
 !/.gitignore
 !/README.md
 !/bundle_manifest.json
+!/requirements.txt
+!/requirements-dev.txt
 !/启动工作台.cmd
 !/启动工作台.ps1
 !/start-workbench.ps1

@@ -34,6 +34,15 @@ class DesktopLauncherTests(unittest.TestCase):
             self.assertIn(signature, unescape((ROOT / relative).read_text(encoding="utf-8")))
         self.assertIn("QUALITY · CONTINUOUS IMPROVEMENT · 2026", (ROOT / "app/web/dist/index.html").read_text(encoding="utf-8"))
 
+    def test_environment_requirements_are_explicit(self):
+        runtime = (ROOT / "requirements.txt").read_text(encoding="utf-8")
+        development = (ROOT / "requirements-dev.txt").read_text(encoding="utf-8")
+        guide = (ROOT / "docs" / "环境与依赖.md").read_text(encoding="utf-8")
+        self.assertIn("standard library", runtime)
+        self.assertIn("Pillow", development)
+        self.assertIn("Python 3.10", guide)
+        self.assertIn("DeepSeek", guide)
+
 
 if __name__ == "__main__":
     unittest.main()

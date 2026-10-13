@@ -12,6 +12,7 @@
     "docs/数据边界.md",
     "docs/星图对话使用说明.md",
     "docs/模型接入与迁移.md",
+    "docs/环境与依赖.md",
     "docs/知识结构与维护.md",
     "docs/验证记录.md",
     "evals/cases.json",

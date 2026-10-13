@@ -1,0 +1,8 @@
+# Separator Atlas runtime dependencies
+#
+# The application uses only the Python standard library at runtime.
+# Python 3.10 or newer is required, so this file intentionally contains
+# no third-party packages. The following command is still safe to run:
+#
+#   python -m pip install -r requirements.txt
+
