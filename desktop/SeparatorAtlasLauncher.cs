@@ -15,8 +15,8 @@ using System.Windows.Forms;
 [assembly: AssemblyCompany("刘鸿志")]
 [assembly: AssemblyProduct("隔膜研析 · 质量知识工作台")]
 [assembly: AssemblyCopyright("BUILT & CURATED BY 刘鸿志 · 2026")]
-[assembly: AssemblyVersion("0.4.0.0")]
-[assembly: AssemblyFileVersion("0.4.0.0")]
+[assembly: AssemblyVersion("0.5.1.0")]
+[assembly: AssemblyFileVersion("0.5.1.0")]
 
 namespace SeparatorAtlasDesktop
 {
@@ -221,7 +221,7 @@ namespace SeparatorAtlasDesktop
         {
             splash.Hide();
             StopOwnedServer();
-            MessageBox.Show(ex.Message + "\r\n\r\n原来的“启动工作台.cmd”仍可继续使用。", "隔膜研析未能启动", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(ex.Message + "\r\n\r\n也可以运行 start-workbench.ps1 使用浏览器入口。", "隔膜研析未能启动", MessageBoxButtons.OK, MessageBoxIcon.Error);
             tray.Dispose();
             ExitThread();
         }

@@ -26,14 +26,16 @@ def release():
         names.add("知识图谱/index.json")
     names.update(p.relative_to(ROOT).as_posix() for p in (ROOT / "graph").glob("*.json"))
     names.update("docs/" + name for name in DOCS if (ROOT / "docs" / name).is_file())
-    manifest = {"version":"0.4.0", "knowledge_files":sorted(names)}
+    manifest = {"version":"0.5.1", "knowledge_files":sorted(names)}
     (ROOT / "bundle_manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n")
     export = ROOT / "exports"
     export.mkdir(exist_ok=True)
     knowledge_zip = export / "separator-knowledge.zip"
     knowledge_zip.write_bytes(store.portable_bundle())
-    program = set(names) | {"bundle_manifest.json", "requirements.txt", "requirements-dev.txt", "启动工作台.cmd", "启动工作台.ps1", "start-workbench.ps1", "启动桌面版.cmd", "隔膜研析.exe", ".gitignore", "config/model.example.json", "知识投递/_使用说明.md", "知识投递/_模板.md"}
-    for folder, suffixes in (("app", {".py", ".html", ".css", ".js", ".svg"}), ("tests", {".py", ".js"}), ("tools", {".py"}), ("desktop", {".cs", ".ps1", ".ico", ".md"})):
+    optional = {"启动工作台.cmd", "启动工作台.ps1", "start-workbench.ps1", "启动桌面版.cmd", "隔膜研析.exe", "config/model.example.json", "知识投递/_使用说明.md", "知识投递/_模板.md"}
+    program = set(names) | {"bundle_manifest.json", "requirements.txt", "requirements-dev.txt", ".gitignore"}
+    program.update(name for name in optional if (ROOT / name).is_file())
+    for folder, suffixes in (("app", {".py", ".html", ".css", ".js", ".svg"}), ("tests", {".py", ".js", ".cjs"}), ("tools", {".py"}), ("desktop", {".cs", ".ps1", ".ico", ".md"})):
         for p in (ROOT / folder).rglob("*"):
             if p.is_file() and p.suffix in suffixes and "__pycache__" not in p.parts:
                 program.add(p.relative_to(ROOT).as_posix())

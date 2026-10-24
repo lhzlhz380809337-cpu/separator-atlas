@@ -170,7 +170,7 @@ def _correction(state, current):
 
 
 def _append(state, question, previous, turn):
-    if question.strip() in ('继续','整理结论','整理交接','整理交接记录'):
+    if question.strip() in ('继续','继续深入分析','整理结论','整理交接','整理交接记录'):
         return
     pending = pending_from(previous.get('report',''), previous.get('options')) if previous else {'question':'','options':[]}
     choice = re.fullmatch(r'\s*([A-Ja-j])[.．、]?\s*', question)

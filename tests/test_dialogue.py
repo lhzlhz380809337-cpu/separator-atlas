@@ -42,6 +42,19 @@ class DialogueTests(unittest.TestCase):
         self.assertEqual(r['facts'],[])
         self.assertIn('尚不能确认根因',r['report'])
 
+    def test_continue_after_conclusion_reopens_the_pending_question(self):
+        first=respond(self.store,{'issue':'基膜 CCD 发现油斑','mode':'offline'})
+        history=[{'question':'基膜 CCD 发现油斑','report':first['report'],
+                  'question_key':first['question_key'],'options':first['options']}]
+        conclusion=respond(self.store,{'issue':'请根据目前的问答整理阶段性结论和下一步验证任务。',
+            'mode':'offline','history':history,'conclude':True})
+        history.append({'question':'请根据目前的问答整理阶段性结论和下一步验证任务。',
+            'report':conclusion['report'],'question_key':conclusion['question_key'],'options':conclusion['options']})
+        continued=respond(self.store,{'issue':'继续深入分析','mode':'offline','history':history})
+        self.assertEqual(continued['question_key'],'physical')
+        self.assertIn('报警位置的实物复核结果是什么',continued['report'])
+        self.assertNotIn('已记录：继续',continued['report'])
+
     def test_model_gets_full_turns_and_external_status(self):
         history=[{'question':'基膜油斑','report':'A 发现油污 B 未发现油污','question_key':'roller'}]
         source={'id':'ext_synthetic','title':'Synthetic','url':'https://example.org/test','excerpt':'Synthetic excerpt','status':'未核验'}
@@ -90,7 +103,9 @@ class DialogueTests(unittest.TestCase):
 
     def test_daily_dialogue_is_short_and_handoff_is_explicit(self):
         first=respond(self.store,{'issue':'CCD 检出基膜油斑'})
-        self.assertTrue(first['report'].startswith('报警位置'))
+        self.assertTrue(first['report'].startswith('分析路线：'))
+        self.assertIn('报警位置',first['report'])
+        self.assertLess(len(first['report']),360)
         self.assertNotIn('已记录',first['report'])
         history=[{'question':'CCD 检出基膜油斑','report':first['report'],'question_key':'physical'}]
         with patch('app.dialogue.call_model',return_value={'report':'待核对的交接记录','warnings':[]}) as call:
@@ -101,6 +116,16 @@ class DialogueTests(unittest.TestCase):
             r=respond(self.store,{'issue':'整理交接','action':'handoff','mode':'model','allow_send':True,'history':history})
             self.assertIn('详细交接记录',call.call_args[0][1][1]['content'])
             self.assertEqual(r['phase'],'交接记录 · 待核对')
+
+    def test_alternate_fta_branch_is_explicit_and_not_mixed_with_old_answer(self):
+        history=[{'question':'CCD 检出基膜油斑','report':'实物是否对应？\nA．对应\nB．不对应','question_key':'physical'}]
+        with patch('app.dialogue.call_model',return_value={'report':'先核对新的分支。','warnings':[]}) as call:
+            respond(self.store,{'issue':'B','mode':'model','allow_send':True,'history':history,
+                'branch_context':{'alternate':True,'from_question':'实物是否对应？','prior_answers':['A']}})
+        material=call.call_args[0][1][1]['content']
+        self.assertIn('FTA分支说明',material)
+        self.assertIn('另一条分析路径',material)
+        self.assertIn('不把旧路径回答混入当前事实',material)
 
     def test_resumed_context_preserves_original_issue_and_corrections(self):
         payload={'issue':'B','mode':'model','allow_send':True,

@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0",
+  "version": "0.5.1",
   "knowledge_files": [
     "README.md",
     "agent/analysis_protocol.md",

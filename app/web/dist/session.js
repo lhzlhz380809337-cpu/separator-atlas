@@ -1,7 +1,7 @@
 'use strict';
 // Portable conversation records. Only allowlisted fields cross the file boundary.
 ((root) => {
-  const FORMAT = 'separator-atlas-session', VERSION = 1, MAX_BYTES = 5 * 1024 * 1024;
+  const FORMAT = 'separator-atlas-session', VERSION = 2, MAX_BYTES = 10 * 1024 * 1024;
   function fail(message) { throw new Error(message); }
   function object(value) { return value && typeof value === 'object' && !Array.isArray(value); }
   function text(value, max, field, required = false) {
@@ -94,29 +94,106 @@
       warnings:list(value.warnings, 20, '提示').map(w => text(w, 2000, '提示')),
       context:evidence(value.context)};
   }
+  function newNodeId(nodes) {
+    const used=new Set((nodes||[]).map(n=>n.id));let i=(nodes||[]).length+1;
+    while(used.has('fta_'+i))i++;
+    return 'fta_'+i;
+  }
+  function linearFta(turns) {
+    const nodes=[];let parent='';
+    for(const item of turns){const id=newNodeId(nodes);nodes.push({id,parent_id:parent,created_at:new Date().toISOString(),deleted:false,turn:turn(item)});parent=id;}
+    return {version:1,nodes,active_leaf_id:parent,deletions:[]};
+  }
+  function normalizeFta(value, fallbackTurns=[]) {
+    if(value===undefined||value===null)return linearFta(fallbackTurns);
+    if(!object(value)||value.version!==1)fail('FTA 分析树版本或格式不正确。');
+    const nodes=list(value.nodes,1000,'FTA 节点').map(n=>{
+      if(!object(n))fail('FTA 节点格式不正确。');
+      return {id:text(n.id,100,'FTA 节点标识',true),parent_id:text(n.parent_id,100,'FTA 父节点'),
+        created_at:text(n.created_at,100,'FTA 建立时间'),deleted:n.deleted===true,
+        deleted_at:text(n.deleted_at,100,'FTA 删除时间'),turn:turn(n.turn)};
+    });
+    if(!nodes.length)fail('FTA 分析树没有问答节点。');
+    const byId=new Map(nodes.map(n=>[n.id,n]));
+    if(byId.size!==nodes.length)fail('FTA 节点标识重复。');
+    const roots=nodes.filter(n=>!n.parent_id);
+    if(roots.length!==1||nodes.some(n=>n.parent_id&&!byId.has(n.parent_id)))fail('FTA 分析树的父子关系不完整。');
+    for(const node of nodes){const seen=new Set();let current=node;while(current.parent_id){if(seen.has(current.id))fail('FTA 分析树存在循环。');seen.add(current.id);current=byId.get(current.parent_id);}}
+    const active=text(value.active_leaf_id,100,'FTA 当前节点',true);
+    if(!byId.has(active)||byId.get(active).deleted)fail('FTA 当前路径指向不存在或已删除的节点。');
+    const deletions=list(value.deletions,500,'FTA 删除记录').map(d=>{
+      if(!object(d))fail('FTA 删除记录格式不正确。');
+      const node_ids=list(d.node_ids,1000,'FTA 删除节点').map(id=>text(id,100,'FTA 节点标识',true));
+      if(!node_ids.length||node_ids.some(id=>!byId.has(id)))fail('FTA 删除记录引用了不存在的节点。');
+      const previous=text(d.previous_leaf_id,100,'FTA 删除前节点',true);
+      if(!byId.has(previous))fail('FTA 删除前路径不存在。');
+      return {id:text(d.id,100,'FTA 删除记录标识',true),root_id:text(d.root_id,100,'FTA 删除根节点',true),node_ids,
+        previous_leaf_id:previous,deleted_at:text(d.deleted_at,100,'FTA 删除时间',true),restored_at:text(d.restored_at,100,'FTA 恢复时间')};
+    });
+    return {version:1,nodes,active_leaf_id:active,deletions};
+  }
+  function pathNodes(tree,nodeId=tree.active_leaf_id,includeDeleted=false) {
+    const byId=new Map(tree.nodes.map(n=>[n.id,n])),result=[];let current=byId.get(nodeId);
+    if(!current)fail('FTA 节点不存在。');
+    while(current){if(current.deleted&&!includeDeleted)fail('FTA 路径包含已删除节点，请先恢复。');result.push(current);current=current.parent_id?byId.get(current.parent_id):null;}
+    return result.reverse();
+  }
+  function turnsTo(tree,nodeId=tree.active_leaf_id,includeDeleted=false){return pathNodes(tree,nodeId,includeDeleted).map(n=>n.turn);}
+  function appendFta(value,newTurn,parentId='') {
+    const tree=normalizeFta(value),parent=parentId||tree.active_leaf_id,byId=new Map(tree.nodes.map(n=>[n.id,n]));
+    if(!byId.has(parent)||byId.get(parent).deleted)fail('不能从不存在或已删除的 FTA 节点继续。');
+    const id=newNodeId(tree.nodes);tree.nodes.push({id,parent_id:parent,created_at:new Date().toISOString(),deleted:false,deleted_at:'',turn:turn(newTurn)});tree.active_leaf_id=id;return tree;
+  }
+  function switchFta(value,nodeId) {
+    const tree=normalizeFta(value);pathNodes(tree,nodeId);tree.active_leaf_id=nodeId;return tree;
+  }
+  function deleteFta(value,nodeId) {
+    const tree=normalizeFta(value),byId=new Map(tree.nodes.map(n=>[n.id,n])),root=byId.get(nodeId);
+    if(!root||!root.parent_id)fail('初始问题不能删除；可以新建对话。');
+    if(root.deleted)fail('这个答案已经删除，可以从删除记录中恢复。');
+    const children=new Map();for(const n of tree.nodes){if(!children.has(n.parent_id))children.set(n.parent_id,[]);children.get(n.parent_id).push(n.id);}
+    const nodeIds=[],queue=[nodeId];while(queue.length){const id=queue.shift(),n=byId.get(id);if(!n||n.deleted)continue;nodeIds.push(id);queue.push(...(children.get(id)||[]));}
+    const previous=tree.active_leaf_id,stamp=new Date().toISOString();for(const id of nodeIds){byId.get(id).deleted=true;byId.get(id).deleted_at=stamp;}
+    if(nodeIds.includes(previous))tree.active_leaf_id=root.parent_id;
+    tree.deletions.push({id:'del_'+(tree.deletions.length+1),root_id:nodeId,node_ids:nodeIds,previous_leaf_id:previous,deleted_at:stamp,restored_at:''});
+    return tree;
+  }
+  function restoreFta(value,deletionId) {
+    const tree=normalizeFta(value),record=tree.deletions.find(d=>d.id===deletionId);
+    if(!record||record.restored_at)fail('这条删除记录不存在或已经恢复。');
+    const byId=new Map(tree.nodes.map(n=>[n.id,n]));for(const id of record.node_ids){byId.get(id).deleted=false;byId.get(id).deleted_at='';}
+    record.restored_at=new Date().toISOString();pathNodes(tree,record.previous_leaf_id);tree.active_leaf_id=record.previous_leaf_id;return tree;
+  }
   function normalize(value) {
-    if (!object(value) || value.format !== FORMAT) fail('请选择“保存进度”生成的 JSON 文件。Markdown 对话和模型材料包不能直接载入。');
-    if (value.version !== VERSION) fail('此进度文件版本暂不支持，请使用兼容版本的工作台。');
-    const turns = list(value.turns, 500, '完整问答').map(turn);
+    if (!object(value) || value.format !== FORMAT) fail('请选择“保存进度”生成的 Markdown 或 JSON 文件。');
+    if (![1,VERSION].includes(value.version)) fail('此进度文件版本暂不支持，请使用兼容版本的工作台。');
+    const legacyTurns=value.version===1?list(value.turns,500,'完整问答').map(turn):list(value.turns,500,'完整问答').map(turn);
+    const fta=normalizeFta(value.fta,legacyTurns),turns=turnsTo(fta);
     if (!turns.length) fail('进度文件没有问答记录。');
     const handoff = value.handoff || {text:'', through:0};
     if (!object(handoff) || !Number.isInteger(handoff.through) || handoff.through < 0 || handoff.through >= turns.length) fail('交接记录的覆盖轮次不正确。');
     const notes = text(handoff.text, 16000, '交接记录');
     if (handoff.through && !notes.trim()) fail('分段进度缺少交接记录，不能丢弃前面的问答。');
     const clean = {format:FORMAT, version:VERSION, title:text(value.title, 160, '分析标题') || turns[0].question.slice(0,80),
-      saved_at:text(value.saved_at, 100, '保存时间'), turns, handoff:{text:notes,through:handoff.through},
+      saved_at:text(value.saved_at, 100, '保存时间'),fta,handoff:{text:notes,through:handoff.through},
       draft:text(value.draft, 6000, '未发送草稿'),analysis_state:analysisState(value.analysis_state)};
     if(clean.analysis_state && (clean.analysis_state.turn!==turns.length || clean.analysis_state.initial_issue!==turns[0].question))fail('分析进度与问答轮次或初始问题不对应。');
-    if (new TextEncoder().encode(JSON.stringify(clean)).length > MAX_BYTES) fail('进度内容超过 5 MB，请分开保存不同问题。');
+    Object.defineProperty(clean,'turns',{value:turns,enumerable:false,writable:true});
+    if (new TextEncoder().encode(JSON.stringify(clean)).length > MAX_BYTES) fail('进度内容超过 10 MB，请分开保存不同问题。');
     return clean;
   }
-  function create(turns, handoff = {text:'',through:0}, draft = '', analysis_state = null) {
-    return normalize({format:FORMAT, version:VERSION, title:turns[0]?.question.slice(0,80), saved_at:new Date().toISOString(), turns, handoff, draft,analysis_state});
+  function create(turns, handoff = {text:'',through:0}, draft = '', analysis_state = null, fta = null) {
+    return normalize({format:FORMAT, version:VERSION, title:turns[0]?.question.slice(0,80), saved_at:new Date().toISOString(), turns,fta:fta||linearFta(turns), handoff, draft,analysis_state});
   }
   function parse(raw) {
-    if (typeof raw !== 'string' || new TextEncoder().encode(raw).length > MAX_BYTES) fail('请选择不超过 5 MB 的进度文件。');
+    if (typeof raw !== 'string' || new TextEncoder().encode(raw).length > MAX_BYTES) fail('请选择不超过 10 MB 的进度文件。');
     let parsed;
-    try { parsed = JSON.parse(raw.replace(/^\uFEFF/, '')); } catch { fail('无法读取 JSON 文件，当前对话没有被替换。'); }
+    const cleanRaw=raw.replace(/^\uFEFF/, '');
+    try { parsed = JSON.parse(cleanRaw); } catch {
+      const embedded=cleanRaw.match(/```separator-atlas-session\s*\n([\s\S]+)\n```\s*$/);
+      if(!embedded)fail('无法读取进度文件。请选择本程序保存的 Markdown 或 JSON，当前对话没有被替换。');
+      try{parsed=JSON.parse(embedded[1]);}catch{fail('Markdown 中的恢复数据不完整，当前对话没有被替换。');}
+    }
     return normalize(parsed);
   }
   function input(session, forHandoff = false) {
@@ -128,7 +205,17 @@
   }
   function markdown(session) {
     const s = normalize(session);
-    return '# 隔膜问题分析记录\n\n'+s.title+'\n\n保存时间：'+s.saved_at+'\n\n'+
+    const active=new Set(pathNodes(s.fta).map(n=>n.id));
+    const byId=new Map(s.fta.nodes.map(n=>[n.id,n]));
+    const depth=node=>{let n=0,p=node;while(p.parent_id){n++;p=byId.get(p.parent_id);}return n;};
+    const treeText=s.fta.nodes.map((node,i)=>{
+      const state=node.deleted?'已删除（可恢复）':active.has(node.id)?'当前分析路径':'保留的其他分支';
+      const deleted=node.deleted_at?`\n\n删除时间：${node.deleted_at}`:'';
+      const opts=node.turn.options.length?'\n\n下一问选项：'+node.turn.options.map(o=>`${o.value}=${o.label}`).join('；'):'';
+      return `${'  '.repeat(depth(node))}- 节点 ${i+1} · ${state} · ${node.id}\n\n${'  '.repeat(depth(node)+1)}用户：${node.turn.question}\n\n${'  '.repeat(depth(node)+1)}助手：${node.turn.report.replace(/\n/g,'\n'+ '  '.repeat(depth(node)+1))}${opts}${deleted}`;
+    }).join('\n\n');
+    const deletionText=s.fta.deletions.length?s.fta.deletions.map(d=>`- ${d.id}：删除 ${d.node_ids.length} 个节点，时间 ${d.deleted_at}${d.restored_at?'；已于 '+d.restored_at+' 恢复':'；尚未恢复'}`).join('\n'):'- 无';
+    const human='# 隔膜问题分析记录\n\n'+s.title+'\n\n保存时间：'+s.saved_at+'\n\n'+
       '用户陈述、模型候选及现场验证应分别核查。外部来源为历史摘录，未自动重新核验。\n\n'+
       (s.handoff.text ? '## 交接记录（待接手人核对）\n\n'+s.handoff.text+'\n\n' : '')+
       (s.analysis_state ? '## 分析进度（用户陈述与候选，需核对）\n\n'+
@@ -136,11 +223,39 @@
         s.analysis_state.hypotheses.map(h=>`- 候选：${h.text}；支持陈述：${h.support.join('、')||'未提供'}；反对陈述：${h.against.join('、')||'未提供'}`).join('\n')+'\n\n'+
         s.analysis_state.checks.map(c=>`- 用户报告的检查：${c.text}`).join('\n')+'\n\n'+
         s.analysis_state.open_questions.map(q=>'- 未决：'+q).join('\n')+'\n\n' : '')+
-      s.turns.map((t,i) => `## 第 ${i+1} 轮 · 用户\n\n${t.question}\n\n### 助手\n\n${t.report}\n\n`+
+      '## FTA 分析树（包含保留分支与软删除）\n\n'+treeText+'\n\n## 删除与恢复记录\n\n'+deletionText+'\n\n'+
+      '## 当前分析路径的完整对话\n\n'+s.turns.map((t,i) => `### 第 ${i+1} 轮 · 用户\n\n${t.question}\n\n#### 助手\n\n${t.report}\n\n`+
         t.sources.map(x => `外部参考：[${x.title}](${x.url}) · 历史摘录，待核验`).join('\n')).join('\n\n---\n\n')+
       (s.draft ? '\n\n## 未发送的草稿\n\n'+s.draft : '');
+    return human+'\n\n## 程序恢复数据\n\n下面的数据供隔膜研析重新载入。人工阅读和模型阅读以上正文即可。\n\n```separator-atlas-session\n'+JSON.stringify(s,null,2)+'\n```';
   }
-  const api = {FORMAT, VERSION, MAX_BYTES, normalize, create, parse, input, markdown,analysisState,evidence};
+  function branchInput(value,nodeId){const tree=normalizeFta(value),turns=turnsTo(tree,nodeId,true);const size=turns.reduce((n,t)=>n+t.question.length+t.report.length,0);if(turns.length>50||size>60000)fail('到该节点的对话较长，请先整理交接记录。');return {history:turns.map(t=>({question:t.question,report:t.report,question_key:t.question_key,options:t.options})),analysis_state:null,handoff:{initial_issue:turns[0].question,notes:'',archived_turns:0}};}
+  function questionFromTurn(value) {
+    const lines=(value?.report||'').split('\n').map(line=>line.trim().replace(/^#{1,6}\s+/, '').replace(/\*\*|__/g,''));
+    const optionLine=/^(?:[-*]\s*)?(?:[A-J][.．、:：)）]|[（(][A-J][）)])\s*/i;
+    const beforeOptions=lines.slice(0,lines.findIndex(line=>optionLine.test(line))<0?lines.length:lines.findIndex(line=>optionLine.test(line)));
+    const candidates=beforeOptions.filter(line=>line&&!optionLine.test(line));
+    const question=[...candidates].reverse().find(line=>/[？?]/.test(line));
+    if(question)return question.replace(/^(?:下一步确认|下一问|问题)\s*[:：]\s*/,'');
+    // Some models provide options after an instruction without a question mark.
+    return value?.options?.length?(candidates.at(-1)||'请根据现场情况选择以下选项。'):'';
+  }
+  function selectedAnswer(value, previousTurn) {
+    const raw=String(value||'').trim();
+    const choice=raw.match(/^(?:[（(]([A-J])[）)]|([A-J])[.．、:：)）]?)(?:\s|$)/i);
+    const option=choice&&(previousTurn?.options||[]).find(item=>item.value.toUpperCase()===(choice[1]||choice[2]).toUpperCase());
+    if(!option)return raw;
+    const tail=raw.slice(choice[0].length).trim();
+    return option.value+' · '+option.label+(tail&&tail!==option.label?'\n补充：'+tail:'');
+  }
+  function nodeDetail(tree,nodeId) {
+    const node=tree.nodes.find(item=>item.id===nodeId);if(!node)fail('FTA 节点不存在。');
+    const parent=tree.nodes.find(item=>item.id===node.parent_id);
+    return {node,parent:parent||null,previousQuestion:parent?questionFromTurn(parent.turn):'',
+      selectedAnswer:selectedAnswer(node.turn.question,parent?.turn),question:questionFromTurn(node.turn),options:node.turn.options||[]};
+  }
+  const api = {FORMAT, VERSION, MAX_BYTES, normalize, create, parse, input, markdown,analysisState,evidence,questionFromTurn,selectedAnswer,nodeDetail,
+    normalizeFta,linearFta,appendFta,switchFta,deleteFta,restoreFta,turnsTo,pathNodes,branchInput};
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.SeparatorSession = api;
 })(globalThis);

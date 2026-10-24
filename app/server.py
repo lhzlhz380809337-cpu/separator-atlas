@@ -24,7 +24,7 @@ from app.dialogue import respond
 from app.research import search_public
 
 WEB = ROOT / "app/web/dist"
-VERSION = "0.4.0"
+VERSION = "0.5.1"
 
 
 def public_article(article):

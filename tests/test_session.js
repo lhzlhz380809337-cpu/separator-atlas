@@ -73,3 +73,55 @@ test('import rejects mismatched ledger, nonexistent citations and invented confi
   // Earlier files lack the ledger and snippets and remain readable.
   assert.equal(S.parse(JSON.stringify(S.create([row()]))).analysis_state,null);
 });
+
+test('FTA keeps alternate branches, soft deletion, restoration and Markdown reload',()=>{
+  const initial=S.create([row('初始问题')]);
+  let tree=S.appendFta(initial.fta,row('A'));
+  tree=S.appendFta(tree,row('继续检查'));
+  const oldLeaf=tree.active_leaf_id;
+  tree=S.switchFta(tree,'fta_1');
+  tree=S.appendFta(tree,row('B'),'fta_1');
+  assert.equal(tree.nodes.length,4);
+  assert.deepEqual(S.turnsTo(tree).map(t=>t.question),['初始问题','B']);
+  assert.equal(tree.nodes.find(n=>n.id===oldLeaf).deleted,false);
+  const branchLeaf=tree.active_leaf_id;
+  tree=S.deleteFta(tree,branchLeaf);
+  assert.equal(tree.nodes.find(n=>n.id===branchLeaf).deleted,true);
+  assert.deepEqual(S.turnsTo(tree).map(t=>t.question),['初始问题']);
+  tree=S.restoreFta(tree,tree.deletions.at(-1).id);
+  assert.equal(tree.active_leaf_id,branchLeaf);
+  assert.equal(tree.nodes.find(n=>n.id===branchLeaf).deleted,false);
+  const saved=S.create([],{text:'',through:0},'',null,tree);
+  const md=S.markdown(saved),restored=S.parse(md);
+  assert(md.includes('FTA 分析树'));
+  assert(md.includes('删除与恢复记录'));
+  assert.equal(restored.fta.nodes.length,4);
+  assert.deepEqual(restored.turns.map(t=>t.question),['初始问题','B']);
+});
+
+test('Markdown archive retains an unrestored deletion for later recovery',()=>{
+  let tree=S.appendFta(S.create([row('初始问题')]).fta,row('待删除回答'));
+  tree=S.deleteFta(tree,tree.active_leaf_id);
+  const restored=S.parse(S.markdown(S.create([],{text:'',through:0},'',null,tree)));
+  assert.equal(restored.fta.deletions[0].restored_at,'');
+  assert.equal(restored.fta.nodes.find(n=>n.turn.question==='待删除回答').deleted,true);
+  assert.equal(S.restoreFta(restored.fta,restored.fta.deletions[0].id).active_leaf_id,'fta_2');
+});
+
+test('FTA details resolve the previous choice against its parent and show the current question',()=>{
+  let tree=S.linearFta([row('基膜油斑')]);
+  tree=S.appendFta(tree,{...row('B'),report:'先补齐实物对应。\n\n**能否找到对应样品？**\nA．能找到\nB．找不到',options:[{value:'A',label:'能找到'},{value:'B',label:'找不到'}]});
+  const info=S.nodeDetail(tree,'fta_2');
+  assert.equal(info.previousQuestion,'实物能对应吗？');
+  assert.equal(info.selectedAnswer,'B · 尚未检查');
+  assert.equal(info.question,'能否找到对应样品？');
+  assert.equal(info.options[1].label,'找不到');
+  assert.equal(S.nodeDetail(tree,'fta_1').parent,null);
+  assert.equal(S.selectedAnswer('（b）',tree.nodes[0].turn),'B · 尚未检查');
+  assert.equal(S.selectedAnswer('A，局部异常',tree.nodes[0].turn),'A，局部异常');
+  assert.equal(S.selectedAnswer('临时停机检查',tree.nodes[0].turn),'临时停机检查');
+  assert.equal(S.questionFromTurn({report:'请选最符合的情况\nA．已检查\nB．未检查',options:row().options}),'请选最符合的情况');
+  assert.equal(S.questionFromTurn({report:'当前只能提出待验证候选。',options:[]}),'');
+  tree=S.appendFta(tree,row('之后的新信息'));
+  assert.deepEqual(S.branchInput(tree,'fta_2').history.map(item=>item.question),['基膜油斑','B']);
+});

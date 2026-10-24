@@ -169,8 +169,11 @@ class ServerTests(unittest.TestCase):
         h.update(headers or {})
         data = json.dumps(payload).encode() if payload is not None else None
         req = request.Request(f"http://127.0.0.1:{self.port}"+path, data=data, headers=h)
+        # Keep loopback security checks on the loopback socket even when the
+        # developer machine has HTTP_PROXY configured and Host is intentionally invalid.
+        opener = request.build_opener(request.ProxyHandler({}))
         try:
-            response = request.urlopen(req, timeout=5)
+            response = opener.open(req, timeout=5)
         except error.HTTPError as exc:
             response = exc
         with response:
