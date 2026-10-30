@@ -28,6 +28,8 @@ const archive=JSON.stringify(S.create([],{text:'',through:0},'',null,tree));
     await context.addInitScript(raw=>{localStorage.setItem('separator.dialogue.v5',raw);},archive);
     const page=await context.newPage(),errors=[];
     page.on('pageerror',error=>errors.push(error.message));
+    await page.route('**/api/config',route=>route.fulfill({json:{model:{base_url:'https://example.org/v1',model:'synthetic-model',protocol:'chat_completions',context_chars:16000,allow_send:true},preferences:{}}}));
+    await page.route('**/api/dialogue',route=>{const payload=route.request().postDataJSON();return route.fulfill({json:{report:payload.conclude?'阶段性结论：仍需现场核查。':'异常在哪个工位开始？',mode:'model',phase:payload.conclude?'阶段性结论 · 待验证':'模型对话',turn_kind:payload.conclude?'conclusion':'dialogue',options:[],warnings:[],context:{activation:{article_ids:[],node_ids:[],edge_ids:[]},retrieved:[],related_edges:[]}}});});
     await page.goto(url);await page.locator('#fta-open').click();
     await page.locator('.fta-node[data-node-id="fta_2"]').waitFor({state:'visible'});
     assert.equal(await page.locator('#fta-detail').isVisible(),false,'Details open only on click');

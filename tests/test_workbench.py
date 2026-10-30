@@ -194,6 +194,19 @@ class ServerTests(unittest.TestCase):
             self.assertEqual(self.send("/api/model/analyze", {"issue":"客户名称：示例", "allow_send":True})[0], 400)
             model.assert_not_called()
 
+    def test_local_settings_require_token_and_never_return_credentials(self):
+        with tempfile.TemporaryDirectory() as folder, patch.dict(os.environ, {'SEPARATOR_CONFIG_DIR':folder}):
+            payload={'settings':{'base_url':'https://example.invalid/v1','model':'test'},'allow_send':True}
+            self.assertEqual(self.send('/api/config',payload,{'X-Workbench-Token':'wrong'})[0],403)
+            self.assertEqual(self.send('/api/config',payload,{'Origin':'https://outside.invalid'})[0],403)
+            self.assertEqual(self.send('/api/config',payload)[0],200)
+            status,raw=self.send('/api/config')
+            self.assertEqual(status,200)
+            data=json.loads(raw)
+            self.assertEqual(data['model']['model'],'test')
+            self.assertNotIn('secret',data)
+            self.assertFalse(data['has_saved_key'])
+
     def test_offline_api_and_context_download(self):
         status, raw = self.send("/api/analyze", {"issue":"涂覆透气增值升高", "stage":"涂覆"})
         self.assertEqual(status, 200)

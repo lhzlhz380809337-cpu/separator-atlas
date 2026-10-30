@@ -59,7 +59,8 @@ function switchView(view){
   if(view==='library')searchKnowledge();if(view==='graph'){state.selectedNode=null;state.graphStage='全部';atlasZoom=1;$('node-search').value='';document.querySelectorAll('#graph-stages button').forEach(b=>b.classList.toggle('active',b.dataset.stage==='全部'));renderNodeList();renderGraph();}
   window.scrollTo({top:0,behavior:'smooth'});
 }
-function modelSettings(){return {protocol:$('protocol').value,base_url:$('base-url').value.trim(),model:$('model-name').value.trim(),api_key:$('api-key').value};}
+function modelSettings(){return {protocol:$('protocol').value,base_url:$('base-url').value.trim(),model:$('model-name').value.trim(),api_key:$('api-key').value,use_saved_key:true};}
+function applyConnection(config){const model=config.model||{};if(model.base_url){$('base-url').value=model.base_url;$('model-name').value=model.model;$('protocol').value=model.protocol;$('context-budget').value=String(model.context_chars||16000);$('allow-send').checked=model.allow_send===true;}$('key-note').textContent=config.has_saved_key?'密钥已加密保存在本机。留空沿用，填写新密钥后保存可更换。':'可保存本机加密密钥，也可使用启动环境提供。';$('delete-key').disabled=!config.has_saved_key;}
 function showPacket(ctx){state.packet=ctx;$('packet-info').textContent=`本次分析材料共 ${ctx.total_prompt_chars.toLocaleString()} 字符，包含知识、对话及适用规则。`;$('packet-preview').textContent=ctx.messages.map(m=>`【${m.role}】\n${m.content}`).join('\n\n');$('context-dialog').showModal();}
 async function openArticle(id){
   try{const a=await api('/api/article?id='+encodeURIComponent(id));$('reader-stage').textContent=a.stage+' / '+a.category;$('reader-title').textContent=a.title;$('reader-content').innerHTML=markdown(a.content);if(!$('reader-dialog').open)$('reader-dialog').showModal();$('reader-dialog').scrollTop=0;}catch(err){toast(err.message);}
@@ -75,10 +76,11 @@ async function searchKnowledge(){const q=$('knowledge-search').value.trim();if(!
 async function loadAll(){
   const [boot,graph,universe]=await Promise.all([api('/api/bootstrap'),api('/api/graph'),api('/api/universe')]);
   state.token=boot.token;state.articles=boot.articles;state.graph=graph;state.playbooks=boot.playbooks;
+  if(!state.configLoaded){state.configLoaded=true;try{const config=await api('/api/config');applyConnection(config);window.WorkbenchPreferences.connect(api,config.preferences);}catch(err){toast(err.message);}}
   $('side-count').textContent=`${boot.stats.articles} 篇知识 · ${boot.stats.playbooks} 个剧本`;
   $('graph-count').textContent=`${boot.stats.nodes} 个节点 / ${boot.stats.edges} 条关系`;
   if(boot.model_defaults.has_search_key)$('search-key-note').textContent='启动环境已提供搜索密钥；联网仅发送公开检索词。';
-  if(boot.model_defaults.has_env_key)$('key-note').textContent='启动环境已提供密钥，仅在接口地址完全匹配时使用。也可临时填写密钥；页面不保存密钥。';
+  if(boot.model_defaults.has_env_key)$('key-note').textContent+=' 启动环境另有密钥，仅在接口地址匹配时使用。';
   if(!$('base-url').value)$('base-url').value=boot.model_defaults.base_url;
   if(!$('model-name').value)$('model-name').value=boot.model_defaults.model;
   renderNodeList();renderGraph();renderLibrary();
@@ -102,7 +104,9 @@ function wire(){
   $('node-read').addEventListener('click',()=>{const n=state.graph.nodes.find(n=>n.id===state.selectedNode);if(n?.article_ids?.length)openArticle(n.article_ids[0]);});
   $('sources-btn').addEventListener('click',showSources);$('export-package').addEventListener('click',()=>{const a=document.createElement('a');a.href='/api/package';a.download='separator-knowledge.zip';a.click();});
   $('refresh-btn').addEventListener('click',async()=>{try{await api('/api/reload',{});await loadAll();toast('知识已重新载入。');}catch(err){toast(err.message);}});
-  $('save-settings').addEventListener('click',()=>{localStorage.setItem('separator.settings',JSON.stringify({base_url:$('base-url').value,model:$('model-name').value,protocol:$('protocol').value,context_chars:$('context-budget').value}));toast('已保存地址、模型名和预算，未保存密钥。');});
+  $('save-settings').addEventListener('click',async()=>{const button=$('save-settings');button.disabled=true;try{const data=await api('/api/config',{action:'save',settings:{...modelSettings(),context_chars:Number($('context-budget').value)},allow_send:$('allow-send').checked});applyConnection(data);$('api-key').value='';$('connection-status').className='';$('connection-status').textContent='连接配置已保存，重开可继续使用；可点击测试连接确认服务状态。';toast('连接已保存。');}catch(err){toast(err.message);}finally{button.disabled=false;}});
+  $('delete-key').addEventListener('click',async()=>{try{const data=await api('/api/config',{action:'delete_key'});applyConnection(data);$('api-key').value='';toast('已删除本机保存的模型密钥。');}catch(err){toast(err.message);}});
+  window.addEventListener('separator-preference-error',()=>toast('本机显示偏好未能保存，当前页面设置仍有效。'));
   $('test-model').addEventListener('click',async()=>{
     if(!$('allow-send').checked){toast('请先确认允许向所填模型服务发送请求。');return;}
     $('test-model').disabled=true;$('connection-status').className='';$('connection-status').textContent='正在测试接口，仅发送一条连接测试消息…';

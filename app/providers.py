@@ -1,6 +1,6 @@
-"""Minimal model adapter. API keys are request-scoped or read from environment.
+"""Minimal model adapter. API keys come from request, protected local settings, or environment.
 
-No credential is persisted by this module. No external call occurs in offline
+Credentials are resolved from the request, protected local settings, or environment by this module. No external call occurs in offline
 analysis. Keep provider-specific behavior behind this small replaceable boundary.
 """
 from __future__ import annotations
@@ -22,7 +22,7 @@ def connection_error(exc):
     code = getattr(reason, "winerror", None) or getattr(reason, "errno", None)
     if isinstance(reason, PermissionError) or code in (13, 10013):
         return ("程序的联网请求被运行环境或系统权限阻止。若使用的是预览服务，请关闭该服务，"
-                "再双击文件夹中的“启动工作台.cmd”以普通本机方式启动；仍失败时检查防火墙对 Python 的访问规则。")
+                "再双击文件夹中的“start-workbench.ps1”以普通本机方式启动；仍失败时检查防火墙对 Python 的访问规则。")
     if isinstance(reason, ssl.SSLCertVerificationError):
         return "模型服务的 HTTPS 证书校验失败。请检查系统时间、可信证书或网络代理配置，不要关闭证书校验。"
     if isinstance(reason, ssl.SSLError):
@@ -68,6 +68,9 @@ def settings_from(payload):
     env_base = os.environ.get("SEPARATOR_BASE_URL", "")
     # A saved destination must never silently receive another service's key.
     api_key = str(payload.get("api_key") or "").strip()
+    if not api_key and payload.get('use_saved_key') is True:
+        from app.local_config import saved_key
+        api_key = saved_key(base_url, protocol)
     if not api_key and payload.get("use_env_key", True) and env_base:
         try:
             if endpoint(base_url, protocol) == endpoint(env_base, protocol):

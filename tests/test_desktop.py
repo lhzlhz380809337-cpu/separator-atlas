@@ -51,7 +51,7 @@ class DesktopLauncherTests(unittest.TestCase):
         page = (ROOT / "app" / "web" / "dist" / "index.html").read_text(encoding="utf-8")
         script = (ROOT / "app" / "web" / "dist" / "cosmos.js").read_text(encoding="utf-8")
         self.assertIn("与星云对话", page)
-        self.assertIn('id="cosmic-mode-label">模型<', page)
+        self.assertNotIn('id="cosmic-mode-label"', page)
         self.assertIn('id="fta-dialog"', page)
         self.assertIn('id="fta-viewport"', page)
         self.assertIn('id="fta-detail"', page)

@@ -9,7 +9,7 @@ sys.path.insert(0, str(ROOT))
 from app.core import KnowledgeStore
 from tools.validate import validate
 
-DOCS = ["环境与依赖.md", "模型接入与迁移.md", "知识结构与维护.md", "下一步资料需求.md", "数据边界.md", "验证记录.md", "星图对话使用说明.md", "动态检索与分析进度.md"]
+DOCS = ["环境与依赖.md", "模型接入与迁移.md", "知识结构与维护.md", "下一步资料需求.md", "数据边界.md", "验证记录.md", "星图对话使用说明.md", "动态检索与分析进度.md", "版本说明_0.6.0.md"]
 
 
 def release():
@@ -17,7 +17,7 @@ def release():
     if not result["ok"]:
         raise ValueError("先修复知识结构校验错误")
     store = KnowledgeStore()
-    names = {"README.md", "agent/system_prompt.md", "agent/analysis_protocol.md", "agent/dialogue_protocol.md", "agent/retrieval_protocol.md", "agent/playbooks.json", "evals/cases.json", "evals/defect_coverage.json"}
+    names = {"README.md", "agent/system_prompt.md", "agent/analysis_protocol.md", "agent/dialogue_protocol.md", "agent/retrieval_protocol.md", "agent/system_plan_protocol.md", "agent/playbooks.json", "evals/cases.json", "evals/defect_coverage.json"}
     for article in store.articles:
         if article.get("origin") != "user":
             names.add(article["workspace_file"])
@@ -26,7 +26,7 @@ def release():
         names.add("知识图谱/index.json")
     names.update(p.relative_to(ROOT).as_posix() for p in (ROOT / "graph").glob("*.json"))
     names.update("docs/" + name for name in DOCS if (ROOT / "docs" / name).is_file())
-    manifest = {"version":"0.5.1", "knowledge_files":sorted(names)}
+    manifest = {"version":"0.6.0", "knowledge_files":sorted(names)}
     (ROOT / "bundle_manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n")
     export = ROOT / "exports"
     export.mkdir(exist_ok=True)

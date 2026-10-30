@@ -5,11 +5,12 @@ Unknown fields are discarded at the import boundary.
 """
 import json
 import re
+from app import analysis_actions
 
 
 def unperformed(text):
     value=re.sub(r'\s+','',text)
-    action=r'(?:实物)?(?:检查|检测|测量|确认|复核|核对|取样|比较|留样|验证|试验|对照)'
+    action=r'(?:实物)?(?:检查|检测|测量|确认|复核|核对|核查|取样|比较|留样|验证|试验|对照)'
     return bool(re.search(r'(?:尚|暂|还)?未(?:做|进行|完成)?'+action+
         r'|(?:还)?没(?:有)?(?:做过|进行过|做|进行|去|能)?'+action+
         r'|还没|未做|不清楚|不知道|需要.*确认|准备|计划|打算',value))
@@ -127,6 +128,28 @@ def normalize_state(value):
             raise ValueError('候选引用了不存在的现场陈述。')
         state['hypotheses'].append({'id':_text(row.get('id'),80,'候选标识',True),
             'text':_text(row.get('text'),1500,'候选',True),'support':support,'against':against,'status':row['status']})
+    hypothesis_ids = {h['id'] for h in state['hypotheses']}
+    if len(hypothesis_ids) != len(state['hypotheses']):
+        raise ValueError('候选标识重复。')
+    state['factor_relations'] = []
+    for row in _list(value.get('factor_relations'), 24, '因素关系'):
+        if not isinstance(row, dict) or row.get('kind') not in ('competing', 'joint', 'unclear'):
+            raise ValueError('因素关系格式不正确。')
+        members = _ids(row.get('members'), 12)
+        refs = _ids(row.get('fact_ids'), 30)
+        if len(set(members)) < 2 or not set(members) <= hypothesis_ids or not set(refs) <= fact_ids:
+            raise ValueError('因素关系引用不完整。')
+        state['factor_relations'].append({'kind':row['kind'], 'members':members, 'fact_ids':refs,
+            'reason':_text(row.get('reason'), 1500, '关系说明'), 'status':'unverified'})
+    state['plan_basis'] = {}
+    basis = value.get('plan_basis') or {}
+    if not isinstance(basis, dict):
+        raise ValueError('方案依据格式不正确。')
+    for key in ('scope', 'location', 'comparison', 'action'):
+        refs = _ids(basis.get(key), 20)
+        if not set(refs) <= fact_ids:
+            raise ValueError('方案依据引用不存在。')
+        state['plan_basis'][key] = refs
     for row in _list(value.get('checks'),30,'检查'):
         if not isinstance(row, dict):
             raise ValueError('分析进度的检查格式不正确。')
@@ -172,13 +195,14 @@ def _correction(state, current):
 def _append(state, question, previous, turn):
     if question.strip() in ('继续','继续深入分析','整理结论','整理交接','整理交接记录'):
         return
-    pending = pending_from(previous.get('report',''), previous.get('options')) if previous else {'question':'','options':[]}
-    choice = re.fullmatch(r'\s*([A-Ja-j])[.．、]?\s*', question)
+    pending = state.get('pending') or (pending_from(previous.get('report',''), previous.get('options')) if previous else {'question':'','options':[]})
+    choice = re.fullmatch(r'\s*([A-Ja-j](?:\s*[,，、+＋/和及 ]\s*[A-Ja-j])*)[.．、]?(?:\s+(.+))?\s*', question, re.S)
     meaning, status = question, 'reported'
     if choice:
         options = {o['value'].upper():o['label'] for o in pending['options']}
-        if choice[1].upper() in options:
-            meaning = options[choice[1].upper()]
+        selected = re.findall(r'[A-J]', choice[1].upper())
+        if all(letter in options for letter in selected):
+            meaning = '；'.join(options[letter] for letter in dict.fromkeys(selected)) + ('；'+choice[2] if choice[2] else '')
         else:
             meaning, status = '选项 '+choice[1].upper()+' 的含义未能对应，需要核对上一轮选项', 'unknown'
     if unperformed(meaning):
@@ -207,13 +231,20 @@ def advance(payload, history, initial, question, archived=0, handoff=False):
         # Old sessions have no ledger. Replay only real user messages, never turn a
         # handoff summary or assistant answer into a verified observation.
         for i, row in enumerate(history):
-            _append(state,row['question'],history[i-1] if i else None,archived+i+1)
+            row_kind = analysis_actions.kind(row)
+            statement = analysis_actions.observation(row['question']) if row_kind == 'system_plan' else row['question']
+            if statement and row_kind != 'conclusion':
+                _append(state,statement,None,archived+i+1)
+            if row_kind == 'dialogue':
+                state['pending'] = pending_from(row.get('report',''), row.get('options'))
     if not handoff:
         state['turn'] = expected+1
         if state['turn'] > 500:
             raise ValueError('本次调查已达 500 轮，请先保存进度。')
         if payload.get('conclude') is not True:
-            _append(state,question,history[-1] if history else None,state['turn'])
+            statement = analysis_actions.observation(question) if payload.get('action') == 'system_plan' else question
+            if statement:
+                _append(state,statement,history[-1] if history else None,state['turn'])
     return apply_plan(normalize_state(state),{})
 
 
@@ -258,9 +289,12 @@ def apply_plan(state, plan):
         explicit = re.search(r'更正|纠正|说错|记错|不是|并非|实际|重新|不固定|不呈周期',new['answer'])
         old['status']='superseded' if explicit else 'disputed'
         old['superseded_by']=new['id']
-    for field in ('hypotheses','checks','open_questions'):
+    for field in ('hypotheses','checks','open_questions','factor_relations','plan_basis'):
         if field in plan:
             candidate[field]=plan[field]
+    if 'hypotheses' in plan and 'factor_relations' not in plan:
+        available = {h.get('id') for h in plan['hypotheses'] if isinstance(h, dict)}
+        candidate['factor_relations'] = [r for r in candidate.get('factor_relations', []) if set(r['members']) <= available]
     clean=normalize_state(candidate)
     active={f['id'] for f in clean['facts'] if f['status']=='reported' and stated_part(f['answer']) and not unperformed(stated_part(f['answer']))}
     # No candidate may keep a superseded/unknown observation as supporting proof.
@@ -270,6 +304,10 @@ def apply_plan(state, plan):
         h['against']=[i for i in h['against'] if i in active]
         if prior_support and not h['support']:
             h['status']='weakened'
+    for refs in clean['plan_basis'].values():
+        refs[:] = [i for i in refs if i in active]
+    for relation in clean['factor_relations']:
+        relation['fact_ids'] = [i for i in relation['fact_ids'] if i in active]
     completed=r'(?:已|刚|重新|再次|实际|做了|进行过).{0,12}(?:检查|检测|测量|核对|复核|取样|试验)|(?:检查|检测|测量|复核|核对|取样|留样|对照|复验|试验)(?:过|了|结果|显示|完成)|未见|未发现|发现|观察到|测得|实物.*对应|比较接近'
     clean['checks']=[c for c in clean['checks'] if set(c['fact_ids']) <= active
         and all(re.search(completed, stated_part(facts[i]['answer'])) and not unperformed(stated_part(facts[i]['answer'])) for i in c['fact_ids'])]
@@ -278,10 +316,26 @@ def apply_plan(state, plan):
 
 def finish(state, result, ctx, handoff=False):
     if not handoff:
-        state['pending']=pending_from(result['report'],result.get('options'))
+        if result.get('turn_kind', 'dialogue') == 'dialogue':
+            state['pending']=pending_from(result['report'],result.get('options'))
+        else:
+            result['resume_pending'] = state['pending']
         trace=ctx.get('retrieval_trace',[])
         queries=list(dict.fromkeys(t['query'] for t in trace if t.get('query')))[:3]
         state['retrieval_history'].append({'turn':state['turn'], 'queries':[q[:2000] for q in queries],
             'article_ids':ctx['activation']['article_ids'], 'edge_ids':ctx['activation']['edge_ids']})
     result['analysis_state']=normalize_state(state)
+    result['plan_readiness'] = readiness(state)
     return result
+
+
+def readiness(state):
+    active = {f['id'] for f in state['facts'] if f['status']=='reported' and stated_part(f['answer']) and not unperformed(stated_part(f['answer']))}
+    unique = {re.sub(r'\s+', '', f['text']) for f in state['facts'] if f['id'] in active}
+    basis = state.get('plan_basis', {})
+    covered = [key for key in ('scope','location','comparison','action') if set(basis.get(key, [])) & active]
+    conflict = any(f['status']=='disputed' for f in state['facts'])
+    ready = 'scope' in covered and 'action' in covered and ('location' in covered or 'comparison' in covered) and not conflict
+    unknown = sum(f['status']=='unknown' for f in state['facts'][-3:]) >= 2
+    return {'ready':ready,'effective_turns':len(unique),'covered':covered,
+            'reason':'可形成阶段方案，根因仍需验证' if ready else '需要现场取证，也可先生成初步方案' if unknown else '可随时生成初步方案'}

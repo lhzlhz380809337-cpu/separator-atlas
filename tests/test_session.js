@@ -125,3 +125,25 @@ test('FTA details resolve the previous choice against its parent and show the cu
   tree=S.appendFta(tree,row('之后的新信息'));
   assert.deepEqual(S.branchInput(tree,'fta_2').history.map(item=>item.question),['基膜油斑','B']);
 });
+
+test('system plan archives keep the pending decision through branches and Markdown reload',()=>{
+  const pending={question:'实物能对应吗？',options:row().options};
+  let tree=S.linearFta([row()]);
+  tree=S.appendFta(tree,{...row('请生成系统方案'),report:'候选路径尚未区分，先开展两组对照。',phase:'系统方案 · 待验证',turn_kind:'system_plan',options:[],resume_pending:pending});
+  const saved=S.parse(S.markdown(S.create([],{text:'',through:0},'',null,tree)));
+  assert.equal(saved.version,3);assert.equal(saved.turns[1].turn_kind,'system_plan');
+  assert.equal(S.nodeDetail(saved.fta,'fta_2').options[1].label,'尚未检查');
+  assert.equal(S.branchInput(saved.fta,'fta_2').history[1].turn_kind,'system_plan');
+  tree=S.appendFta(saved.fta,row('B'));
+  assert.equal(S.nodeDetail(tree,'fta_3').selectedAnswer,'B · 尚未检查');
+  assert.equal(S.nodeDetail(tree,'fta_3').previousQuestion,pending.question);
+  const older=S.create([row()]);older.version=2;assert.equal(S.parse(JSON.stringify(older)).turns.length,1);
+});
+test('factor relations roundtrip with evidence references and reject invented members',()=>{
+  const state=ledger();state.hypotheses.push({id:'material',text:'材料因素',status:'candidate',support:['f2'],against:[]});
+  state.factor_relations=[{kind:'unclear',members:['contact','material'],fact_ids:['f2'],reason:'待对照',status:'unverified'}];
+  state.plan_basis={scope:['f2'],location:[],comparison:[],action:[]};
+  const saved=S.parse(JSON.stringify(S.create([row(),row('补充')],{text:'',through:0},'',state)));
+  assert.equal(saved.analysis_state.factor_relations[0].kind,'unclear');
+  state.factor_relations[0].members[1]='invented';assert.throws(()=>S.create([row(),row('补充')],{text:'',through:0},'',state));
+});

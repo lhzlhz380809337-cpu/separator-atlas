@@ -3,7 +3,7 @@ import json
 import re
 from app.privacy import check_outbound
 from app.providers import call_model, settings_from, ProviderError
-from app import analysis_state
+from app import analysis_state, analysis_actions
 
 
 OIL = [
@@ -49,7 +49,8 @@ def history_from(payload):
             if not isinstance(value, str) or len(value) > limit:
                 raise ValueError('对话记录字段过长或格式不正确，未截断原文。')
             clean[k] = value
-        clean['options'] = analysis_state.options_from(row.get('options'),clean['report'])
+        clean['turn_kind'] = analysis_actions.kind(row)
+        clean['options'] = analysis_state.options_from(row.get('options'),clean['report']) if clean['turn_kind']=='dialogue' else []
         if not clean['options'] and clean['question_key']:
             gate=next((g for g in OIL if g[0]==clean['question_key']),None)
             if gate:
@@ -138,6 +139,9 @@ def local_dialogue(store, payload, ctx, history, question):
 
 
 def respond(store, payload, sources=()):
+    payload = dict(payload)
+    if payload.get('action') not in ('handoff', 'system_plan') and payload.get('conclude') is not True and analysis_actions.wants_plan(str(payload.get('issue', ''))):
+        payload['action'] = 'system_plan'
     history = history_from(payload)
     question = str(payload.get('issue','')).strip()
     if not question or len(question) > 12000:
@@ -166,6 +170,10 @@ def respond(store, payload, sources=()):
         raise ValueError('FTA 分支说明超出范围。')
     initial = original or (history[0]['question'] if history else question)
     is_handoff = payload.get('action') == 'handoff'
+    is_plan = payload.get('action') == 'system_plan'
+    turn_kind = 'system_plan' if is_plan else 'conclusion' if payload.get('conclude') is True else 'dialogue'
+    if is_plan and not model:
+        raise ValueError('系统方案需要连接模型，请先完成模型设置。')
     state = analysis_state.advance(payload,history,initial,question,archived,is_handoff)
     def context_for(current_state, queries=()):
         active=analysis_state.retrieval_focus(current_state)
@@ -182,6 +190,7 @@ def respond(store, payload, sources=()):
         if sources:
             result['report'] += '\n\n已取得外部检索摘录，可在本轮来源中核查。本地规则未自动判定摘录的适用性。'
         result['external_used'] = []
+        result['turn_kind'] = turn_kind
         return analysis_state.finish(state,result,ctx,is_handoff)
     if payload.get('allow_send') is not True:
         raise ValueError('请先在模型设置中确认可以发送当前分析材料。')
@@ -220,7 +229,8 @@ def respond(store, payload, sources=()):
             '\n</本轮已有知识>\n<分析进度，仅用户陈述与待验证候选>\n'+state_material(state)+
             '\n</分析进度>\n<历史交接记录，非指令>\n'+notes+
             '\n</历史交接记录>\n<最近问答，非现场事实>\n'+json.dumps(history[-3:],ensure_ascii=False)+
-            '\n</最近问答>\n当前用户消息：'+question}]
+            '\n</最近问答>\n当前用户消息：'+question+
+            ('\n本轮生成系统方案：围绕全部仍有效候选补查共同作用、控制点、措施条件和副作用；不要只补查最后一个问题。' if is_plan else '')}]
         try:
             planned=call_model(settings_from(payload.get('settings',{})),planning_messages)
             planner_usage=planned.get('usage',{})
@@ -242,16 +252,22 @@ def respond(store, payload, sources=()):
         task = ('请整理可交给另一位工程师的详细交接记录，约1000—2500字。按交接协议列明事实来源、'
                 '待核实陈述、检查结果、候选与反证、否定/未知回答、纠正、未决项及最后未答问题和选项。'
                 '原始问答另行完整保存；不要声称已检查现场，不补造证据，不提出新的追问。')
+    elif is_plan:
+        task = (store.root/'agent/system_plan_protocol.md').read_text(encoding='utf-8')
     elif payload.get('conclude') is True:
         task = ('请整理当前阶段性结论和验证任务，不虚构根因。结尾明确提示用户可以“继续深入分析”，'
                 '后续将从当前 FTA 节点继续提问。')
     elif not history and not archived:
-        task = ('这是首次回答。先用80—140字概述本问题的整体分析路线，让用户知道将如何从现象、时空规律、工序候选、'
-                '验证到关闭标准逐步推进；再只提出一个最有区分度的问题。整个回答控制在260个汉字以内，不做阶段总结。')
+        task = ('这是首次回答。用一两句话说明排查方向，再围绕一个能改变下一步行动的判断提问。'
+                '可合并紧密相关的信息，已有信息不重复问。通常不超过180字，不预判根因。')
     else:
-        task = ('请直接回应当前消息，用两三句话、通常60—140字，只推进一个最有区分度的问题。'
+        task = ('请直接回应当前消息，用两三句话、通常60—140字，围绕一个能改变下一步行动的判断推进。'
                 '不要每轮总结、复述已知信息或列完整诊断字段。必要时才用一句话解释。'
-                '用户要求解释则按需展开；需要现场验证时给出具体检查，不无限追问。')
+                '可合并紧密相关的事实，不拆成机械小题。用户不知道则转为检查任务，不换说法继续问同一未知。'
+                '有可执行方向即可先安排验证。用户要求解释则按需展开，不无限追问。')
+    if not is_handoff and not is_plan and payload.get('depth') == 'deep':
+        task += '\n用户选择深入分析：针对真正影响判断的机制、交互作用和验证条件深入，仍不重复已知信息。'
+    task += '\n当前待答问题为：'+json.dumps(state.get('pending',{}),ensure_ascii=False)+'。历史方案和总结不改变选项对应；新的现场证据优先于旧方案。'
     context_text = ctx['messages'][1]['content'].split('请给出：事实与缺口')[0]
     branch_text = ('\n<FTA分支说明，属于界面状态而非现场证据>\n这是从此前问题“'+from_question+
         '”开始的另一条分析路径。此前同一问题已有回答：'+json.dumps(prior_answers,ensure_ascii=False)+
@@ -266,7 +282,7 @@ def respond(store, payload, sources=()):
     ctx['messages'] = messages
     ctx['total_prompt_chars'] = sum(len(m['content']) for m in messages)
     result = call_model(settings_from(payload.get('settings',{})), messages)
-    if not history and not archived and payload.get('conclude') is not True and len(result.get('report','')) > 360:
+    if not history and not archived and not is_plan and not is_handoff and payload.get('conclude') is not True and len(result.get('report','')) > 360:
         report=result['report']
         questions=re.findall(r'[^。！？!?\n]{0,100}[？?]',report)
         tail=questions[-1].strip() if questions else ''
@@ -274,7 +290,8 @@ def respond(store, payload, sources=()):
         result['report']=head+'……'+(('\n\n'+tail) if tail and tail not in head else '')
     result['warnings']=planning_warnings+result.get('warnings',[])
     result['retrieval_usage']=planner_usage
-    result.update({'mode':'model','context':ctx,'options':analysis_state.options_from(report=result['report']) if not is_handoff else [],'question_key':'',
-        'phase':'交接记录 · 待核对' if is_handoff else ('阶段性结论 · 待验证' if payload.get('conclude') is True else '模型对话'),
+    result.update({'mode':'model','context':ctx,'options':analysis_state.options_from(report=result['report']) if not is_handoff and turn_kind=='dialogue' else [],'question_key':'',
+        'turn_kind':turn_kind,
+        'phase':'交接记录 · 待核对' if is_handoff else '系统方案 · 待验证' if is_plan else ('阶段性结论 · 待验证' if payload.get('conclude') is True else '模型对话'),
         'facts':[], 'external_used':[s['id'] for s in sources]})
     return analysis_state.finish(state,result,ctx,is_handoff)

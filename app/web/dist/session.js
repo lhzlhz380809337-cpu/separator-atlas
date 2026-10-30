@@ -1,7 +1,7 @@
 'use strict';
 // Portable conversation records. Only allowlisted fields cross the file boundary.
 ((root) => {
-  const FORMAT = 'separator-atlas-session', VERSION = 2, MAX_BYTES = 10 * 1024 * 1024;
+  const FORMAT = 'separator-atlas-session', VERSION = 3, MAX_BYTES = 10 * 1024 * 1024;
   function fail(message) { throw new Error(message); }
   function object(value) { return value && typeof value === 'object' && !Array.isArray(value); }
   function text(value, max, field, required = false) {
@@ -47,6 +47,15 @@
         return {turn:r.turn,queries:list(r.queries,3,'检索词').map(q=>text(q,2000,'检索词',true)),article_ids:ids(r.article_ids),edge_ids:ids(r.edge_ids)};
       }),
       pending:{question:text(value.pending?.question,2000,'待答问题'),options:options(value.pending?.options)}};
+    const hypothesisIds=new Set(clean.hypotheses.map(h=>h.id));
+    if(hypothesisIds.size!==clean.hypotheses.length)fail('候选标识重复。');
+    clean.factor_relations=list(value.factor_relations,24,'因素关系').map(r=>{
+      if(!object(r)||!['competing','joint','unclear'].includes(r.kind))fail('因素关系格式不正确。');
+      const members=list(r.members,12,'候选关系').map(id=>text(id,80,'候选标识',true));
+      if(new Set(members).size<2||members.some(id=>!hypothesisIds.has(id)))fail('因素关系引用不存在。');
+      return {kind:r.kind,members,fact_ids:refs(r.fact_ids),reason:text(r.reason,1500,'关系说明'),status:'unverified'};
+    });
+    clean.plan_basis={};for(const key of ['scope','location','comparison','action'])clean.plan_basis[key]=refs(value.plan_basis?.[key]);
     if(JSON.stringify(clean).length>250000)fail('结构化分析进度较大，请保存完整记录后，为新的调查阶段建立对话。');
     return clean;
   }
@@ -88,7 +97,8 @@
     if (!object(value)) fail('问答记录格式不正确。');
     return {question:text(value.question, 12000, '问题', true), report:text(value.report, 16000, '回答', true),
       question_key:text(value.question_key, 100, '问题标识'), mode:value.mode === 'model' ? 'model' : 'offline',
-      phase:text(value.phase, 150, '分析阶段'),
+      phase:text(value.phase, 150, '分析阶段'),turn_kind:turnKind(value),
+      resume_pending:{question:text(value.resume_pending?.question,2000,'原待答问题'),options:options(value.resume_pending?.options)},
       options:options(value.options),
       sources:list(value.sources, 5, '外部参考').map(source), external_used:ids(value.external_used),
       warnings:list(value.warnings, 20, '提示').map(w => text(w, 2000, '提示')),
@@ -166,7 +176,7 @@
   }
   function normalize(value) {
     if (!object(value) || value.format !== FORMAT) fail('请选择“保存进度”生成的 Markdown 或 JSON 文件。');
-    if (![1,VERSION].includes(value.version)) fail('此进度文件版本暂不支持，请使用兼容版本的工作台。');
+    if (![1,2,VERSION].includes(value.version)) fail('此进度文件版本暂不支持，请使用兼容版本的工作台。');
     const legacyTurns=value.version===1?list(value.turns,500,'完整问答').map(turn):list(value.turns,500,'完整问答').map(turn);
     const fta=normalizeFta(value.fta,legacyTurns),turns=turnsTo(fta);
     if (!turns.length) fail('进度文件没有问答记录。');
@@ -200,7 +210,7 @@
     const clean = normalize(session), active = clean.turns.slice(clean.handoff.through);
     const size = active.reduce((n,t) => n + t.question.length + t.report.length, 0);
     if (active.length > 50 || (!forHandoff && active.length >= 50) || size > (forHandoff ? 85000 : 60000)) fail('本段对话较长，请在“保存进度”中整理并核对交接记录，再勾选采用后继续。完整问答仍保留。');
-    return {history:active.map(t => ({question:t.question,report:t.report,question_key:t.question_key,options:t.options})),analysis_state:clean.analysis_state,
+    return {history:active.map(historyTurn),analysis_state:clean.analysis_state,
       handoff:{initial_issue:clean.turns[0].question, notes:clean.handoff.text, archived_turns:clean.handoff.through}};
   }
   function markdown(session) {
@@ -229,8 +239,11 @@
       (s.draft ? '\n\n## 未发送的草稿\n\n'+s.draft : '');
     return human+'\n\n## 程序恢复数据\n\n下面的数据供隔膜研析重新载入。人工阅读和模型阅读以上正文即可。\n\n```separator-atlas-session\n'+JSON.stringify(s,null,2)+'\n```';
   }
-  function branchInput(value,nodeId){const tree=normalizeFta(value),turns=turnsTo(tree,nodeId,true);const size=turns.reduce((n,t)=>n+t.question.length+t.report.length,0);if(turns.length>50||size>60000)fail('到该节点的对话较长，请先整理交接记录。');return {history:turns.map(t=>({question:t.question,report:t.report,question_key:t.question_key,options:t.options})),analysis_state:null,handoff:{initial_issue:turns[0].question,notes:'',archived_turns:0}};}
+  function turnKind(value){return ['dialogue','system_plan','conclusion'].includes(value.turn_kind)?value.turn_kind:/^系统方案/.test(value.phase||'')?'system_plan':/^阶段性结论/.test(value.phase||'')?'conclusion':'dialogue';}
+  function historyTurn(t){return {question:t.question,report:t.report,question_key:t.question_key,options:t.options,turn_kind:turnKind(t)};}
+  function branchInput(value,nodeId){const tree=normalizeFta(value),turns=turnsTo(tree,nodeId,true);const size=turns.reduce((n,t)=>n+t.question.length+t.report.length,0);if(turns.length>50||size>60000)fail('到该节点的对话较长，请先整理交接记录。');return {history:turns.map(historyTurn),analysis_state:null,handoff:{initial_issue:turns[0].question,notes:'',archived_turns:0}};}
   function questionFromTurn(value) {
+    if(turnKind(value||{})!=='dialogue')return value?.resume_pending?.question||'';
     const lines=(value?.report||'').split('\n').map(line=>line.trim().replace(/^#{1,6}\s+/, '').replace(/\*\*|__/g,''));
     const optionLine=/^(?:[-*]\s*)?(?:[A-J][.．、:：)）]|[（(][A-J][）)])\s*/i;
     const beforeOptions=lines.slice(0,lines.findIndex(line=>optionLine.test(line))<0?lines.length:lines.findIndex(line=>optionLine.test(line)));
@@ -243,7 +256,7 @@
   function selectedAnswer(value, previousTurn) {
     const raw=String(value||'').trim();
     const choice=raw.match(/^(?:[（(]([A-J])[）)]|([A-J])[.．、:：)）]?)(?:\s|$)/i);
-    const option=choice&&(previousTurn?.options||[]).find(item=>item.value.toUpperCase()===(choice[1]||choice[2]).toUpperCase());
+    const option=choice&&(turnKind(previousTurn||{})==='dialogue'?previousTurn?.options||[]:previousTurn?.resume_pending?.options||[]).find(item=>item.value.toUpperCase()===(choice[1]||choice[2]).toUpperCase());
     if(!option)return raw;
     const tail=raw.slice(choice[0].length).trim();
     return option.value+' · '+option.label+(tail&&tail!==option.label?'\n补充：'+tail:'');
@@ -252,7 +265,7 @@
     const node=tree.nodes.find(item=>item.id===nodeId);if(!node)fail('FTA 节点不存在。');
     const parent=tree.nodes.find(item=>item.id===node.parent_id);
     return {node,parent:parent||null,previousQuestion:parent?questionFromTurn(parent.turn):'',
-      selectedAnswer:selectedAnswer(node.turn.question,parent?.turn),question:questionFromTurn(node.turn),options:node.turn.options||[]};
+      selectedAnswer:selectedAnswer(node.turn.question,parent?.turn),question:questionFromTurn(node.turn),options:turnKind(node.turn)==='dialogue'?node.turn.options||[]:node.turn.resume_pending?.options||[]};
   }
   const api = {FORMAT, VERSION, MAX_BYTES, normalize, create, parse, input, markdown,analysisState,evidence,questionFromTurn,selectedAnswer,nodeDetail,
     normalizeFta,linearFta,appendFta,switchFta,deleteFta,restoreFta,turnsTo,pathNodes,branchInput};

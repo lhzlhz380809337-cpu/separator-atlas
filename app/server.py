@@ -19,12 +19,12 @@ if __package__ in (None, ""):
 from app.core import ROOT, KnowledgeStore
 from app.providers import ProviderError, call_model, settings_from
 from app.privacy import check_outbound
-from app import custom_knowledge
+from app import custom_knowledge, local_config
 from app.dialogue import respond
 from app.research import search_public
 
 WEB = ROOT / "app/web/dist"
-VERSION = "0.5.1"
+VERSION = "0.6.0"
 
 
 def public_article(article):
@@ -104,6 +104,8 @@ def make_handler(store, csrf_token, port):
                         "model_defaults":{"base_url":os.environ.get("SEPARATOR_BASE_URL", ""),
                             "model":os.environ.get("SEPARATOR_MODEL", ""), "has_env_key":bool(os.environ.get("SEPARATOR_API_KEY")),
                             "has_search_key":bool(os.environ.get("TAVILY_API_KEY"))}})
+                elif path == '/api/config':
+                    self.send_data(local_config.public())
                 elif path == "/api/graph":
                     self.send_data({"nodes":store.nodes, "edges":store.edges})
                 elif path == "/api/universe":
@@ -123,7 +125,7 @@ def make_handler(store, csrf_token, port):
                     self.send_data(store.portable_bundle(), content_type="application/zip", filename="separator-knowledge.zip")
                 elif path == "/api/health":
                     self.send_data({"ok":True, "version":VERSION, "application":"separator-workbench"})
-                elif path in ("/", "/index.html", "/app.js", "/style.css", "/favicon.svg", "/session.js", "/cosmos.js", "/cosmos.css", "/atlas.js", "/atlas.css"):
+                elif path in ("/", "/index.html", "/app.js", "/style.css", "/favicon.svg", "/session.js", "/cosmos.js", "/cosmos.css", "/atlas.js", "/atlas.css", "/preferences.js", "/workbench.css"):
                     file = WEB / ("index.html" if path == "/" else path.lstrip("/"))
                     if not file.is_file():
                         self.send_data({"error":"界面文件尚未生成。"}, 404)
@@ -133,7 +135,7 @@ def make_handler(store, csrf_token, port):
                 else:
                     self.send_data({"error":"此路径不在工作台开放范围内。"}, 404)
             except (ValueError, OSError, KeyError):
-                self.send_data({"error":"知识文件读取失败，请检查索引格式并重新启动。"}, 500)
+                self.send_data({"error":"本机连接配置无法读取，原文件未覆盖，请检查或恢复配置文件。" if path == "/api/config" else "知识文件读取失败，请检查索引格式并重新启动。"}, 500)
 
         def do_POST(self):
             store = snapshot[0]
@@ -155,6 +157,8 @@ def make_handler(store, csrf_token, port):
                     replacement = KnowledgeStore(store.root)
                     snapshot[0] = replacement
                     self.send_data({"stats":replacement.stats()})
+                elif path == '/api/config':
+                    self.send_data(local_config.update(payload))
                 elif path == "/api/custom/sync":
                     changed = payload.get("force") is True or custom_knowledge.signature(store.root) != store.custom_status["signature"]
                     if changed:

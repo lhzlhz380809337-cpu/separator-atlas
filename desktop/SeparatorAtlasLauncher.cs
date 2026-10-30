@@ -15,8 +15,8 @@ using System.Windows.Forms;
 [assembly: AssemblyCompany("刘鸿志")]
 [assembly: AssemblyProduct("隔膜研析 · 质量知识工作台")]
 [assembly: AssemblyCopyright("BUILT & CURATED BY 刘鸿志 · 2026")]
-[assembly: AssemblyVersion("0.5.1.0")]
-[assembly: AssemblyFileVersion("0.5.1.0")]
+[assembly: AssemblyVersion("0.6.0.0")]
+[assembly: AssemblyFileVersion("0.6.0.0")]
 
 namespace SeparatorAtlasDesktop
 {
